@@ -7,8 +7,8 @@ h2 {
     text-align: left;
 }
 h3 {
-    color:darkblue;
-    alpha-value: 0.8
+    color:darkblue,80%;
+
 
 }
 p {
