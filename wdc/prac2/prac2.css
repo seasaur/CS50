@@ -45,7 +45,6 @@ body {
     background-color: white;
     border-radius: 8px;
     border: 1px solid darkgrey;
-    border-color:#CFDFE4;
 }
 
 .blue {
@@ -54,4 +53,16 @@ body {
 
 .fancy {
     font-family: cursive;
+}
+
+hr {
+    border-color:#CFDFE4;
+}
+
+.red-border {
+    
+}
+
+.red-outline {
+
 }
