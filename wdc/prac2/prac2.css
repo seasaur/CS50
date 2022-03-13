@@ -8,8 +8,8 @@ h2 {
 }
 
 h3 {
-    color:rgba(0,0,139);
-    opacity:0.8;
+    color:rgba(0,0,139,0.8);
+    /* opacity:0.8; */
 }
 
 p {
