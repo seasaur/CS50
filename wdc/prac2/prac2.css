@@ -96,7 +96,6 @@ hr {
     padding: 12px;
     border: 1px solid red;
     margin: 10px 20px;
-    text-align:right;
   }
 
   .bot-blue {
@@ -112,5 +111,8 @@ hr {
     border: 1px solid red;
     margin: 10px 20px;
     margin-left: -200px;
+}
+
+.box {
     text-align:right;
-  }
+}
