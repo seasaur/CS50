@@ -72,8 +72,9 @@ hr {
 }
 
 .red-border-edit {
-    border-radius: 8px;
+    border-radius: 8px 8px 1px 1px;
     border: 1px solid red;
+    border-bottom: none;
 }
 
 .blue-border-edit {
