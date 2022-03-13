@@ -1,31 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="utf-8">
 <title>task</title>
-</head>
+<style>
 
+</style>
+</head>
 <body>
-<h1>
-A page about lists and things!
-</h1>
-<hr>
-<ol reversed start="8">
-  <li>The first item.</li>
-  <li>The second item</li>
-  <li>The third item.</li>
-</ol>
+
 <p>
-The list above, counting 8,7,6, will only work on newer web browsers, for example it won't work on Microsoft Edge older than version 79, or Mozilla Firefox older than version 18.
+This is a paragraph with <a href="http://nyan.cat"> a link to http://nyan.cat</a>, followed by some other text.
+
 </p>
-<hr>
-<h4>
-Choose an option: (this is a L4 heading)
-</h4>
-<select name="option" id="option">
-    <option value="first">The first option</option>
-    <option value="default" selected>This is the last option, but is shown as the default option.</option>
-  </select>
+
+<p title="Wow! A tooltip.">This paragraph has a tooltip that says <i>"Wow! A tooltip."</i>
+
+</p>
+
+<p title='This tooltip "has quotes in the middle" of it.'>This paragraph has a tooltip that says <i>This tooltip "has quotes in the middle" of it.</i>
+
+</p>
+
 </body>
 </html>
