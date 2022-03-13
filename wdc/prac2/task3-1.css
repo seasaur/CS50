@@ -22,7 +22,7 @@ span {
     color: red;
 }
 
-div p + .bold normal {
+div p {
     color: green;
 }
 
@@ -39,7 +39,7 @@ div p span span.color {
 }
 
 p span span.normal {
-    color: black;
+    color: green;
 }
 
 div + p span span.color {
