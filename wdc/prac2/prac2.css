@@ -85,12 +85,14 @@ hr {
 }
 
 .top-blue {
+    background:blue;
     padding: 0;
     margin: 0;
     border: 1px solid red;
 }
 
 .top-yellow {
+    background:yellow;
     width: 700px;
     height: 200px;
     padding: 12px;
@@ -99,6 +101,7 @@ hr {
   }
 
   .bot-blue {
+    background:blue;
     padding: 0;
     margin: 20px 0px 0px 0px;
     border: 1px solid red;
