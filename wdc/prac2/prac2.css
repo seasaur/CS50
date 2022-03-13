@@ -97,3 +97,17 @@ hr {
     border: 1px solid red;
     margin: 10px 20px;
   }
+
+  .bot-blue {
+    padding: 0;
+    margin: 0;
+    border: 1px solid red;
+}
+
+.bot-yellow {
+    width: 700px;
+    height: 200px;
+    padding: 12px;
+    border: 1px solid red;
+    margin: 10px 20px;
+  }
