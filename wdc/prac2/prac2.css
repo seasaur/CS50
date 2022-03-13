@@ -105,10 +105,10 @@ hr {
 }
 
 .bot-yellow {
-    
     width: 400px;
     height: 400px;
     padding: 12px;
     border: 1px solid red;
     margin: 10px 20px;
+    margin-left: -200px;
   }
