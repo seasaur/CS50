@@ -41,7 +41,7 @@ body {
     background-color: #DCF5F5;
 }
 
-.content {
+#content {
     background-color: white;
     border-radius: 8px;
     border: 1px solid darkgrey;
