@@ -105,6 +105,7 @@ hr {
 }
 
 .bot-yellow {
+    background:yellow;
     width: 400px;
     height: 400px;
     padding: 12px;
