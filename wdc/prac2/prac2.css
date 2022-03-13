@@ -37,5 +37,6 @@ mark {
 }
 
 body {
+    background-image: url("cross.png");
     background-color: #DCF5F5;
 }
