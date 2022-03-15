@@ -123,7 +123,8 @@ hr {
     text-align:right;
 }
 
-.quote {
-    line-height=1.5px;
-    
+q {
+    line-height:1.5px;
+    word-spacing:0.2em;
+    align:justified;
 }
