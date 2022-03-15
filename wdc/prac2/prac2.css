@@ -19,7 +19,7 @@ h4 {
 }
 
 p {
-    font-family:'Noto Serif',serif;
+    font-family:serif;
 }
 
 pre {
@@ -46,6 +46,7 @@ mark {
 body {
     background-image: url("cross.png");
     background-color: #DCF5F5;
+    font-family:'Noto Serif';
 }
 
 #content {
