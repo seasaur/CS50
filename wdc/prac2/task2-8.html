@@ -8,35 +8,39 @@
 <body>
 <div id="content">
 <h1>
-Fun with nested boxes!
+This new heading font is much more elegant
 </h1>
+
+<p>
+We've modified the content div to have a 1px darkgrey border with rounded corners of an 8px radius.
+</p>
+
+<p>
+Other elements can have borders too, <span class="red-border">like this span with the class red-border</span>.
+</p>
 <hr>
-
-<div class="top-blue">
-<div class="top-yellow">
-<p class="box">
-A nested div <br />
-The outer div has no margin or padding. <br />
-The inner div has 20px margin on the left and right, 10px above and below. <br />
-The inner div has 12px padding <br />
-The inner div is 700px from the left to right borders (inclusive) <br />
-and 200px from the top to bottom borders (inclusive)
+<p>
+You can change the color of horizontal rules by changing the border color;
+<br />
+all horizontal rules are now #CFDFE4.
+</p>
+<p>
+Alternatively, <span class="red-outline">this span has a red outline</span>.
+<br />
+That prevents it from messing with the line height.
 </p>
 </div>
-</div>
-
-<div class="bot-blue">
-<div class="bot-yellow">
-<p class="box">
-A nested div <br />
-The outer div has a top margin of 20px, but no <br />
-padding. <br />
-The inner div is centred <br />
-The inner div has 12px padding <br />
-The inner div is 400px square with borders
+<p>
+Notice how the borders double up here:
 </p>
-</div>
-</div>
-</div>
+
+<div class="red-border">This div has a red border</div>
+<div class="blue-border">This div has a blue border</div>
+
+<p>
+Notice how this fixes the borders:
+</p>
+<div class="red-border-edit">This div has a red border, except on the bottom, and 8px round top corners</div>
+<div class="blue-border-edit">This div has a blue border, and 8px round bottom corners</div>
 </body>
 </html>
