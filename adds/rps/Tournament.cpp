@@ -11,6 +11,13 @@
 #include "PaperDoll.h"
 #include "RandomComputer.h"
 
+Tournament::Tournament {
+
+}
+
+Tournament::setPlayer() {
+    
+}
 
 Tournament::Player * run(std::array<Player *, 8> competitors){
     for(int i=0;i<4;i++) {
