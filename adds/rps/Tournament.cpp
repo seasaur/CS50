@@ -15,12 +15,8 @@ Tournament::Tournament {
 
 }
 
-char Tournament::setPlayer() {
-
-}
-
 Player Tournament::* run(std::array<Player *, 8> competitors){
-    for(int i=0;i<4;i++) {
+    for(int i=0;i<4;i++) { //each round
         competitors[0]->makeMove();
         competitors[1]->makeMove();
 

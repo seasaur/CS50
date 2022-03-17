@@ -10,7 +10,6 @@ using namespace std;
 class Tournament {
     public:
     Tournament();
-    char setPlayer();
     Player * run(std::array<Player *, 8>  competitors;
 
 
