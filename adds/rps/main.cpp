@@ -30,7 +30,7 @@ int main() {
     Toolbox *player3 = new Toolbox();
     Crescendo *player4 = new Crescendo();
     PaperDoll *player5 = new PaperDoll();
-    
+    FistfullODollars *player6 = new FistfullODollars();
 
 
 
