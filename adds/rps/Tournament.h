@@ -12,7 +12,7 @@ class Tournament {
     string array;
     public:
     Tournament();
-    Player
+    Player setPlayer
     Player * run(std::array<Player *, 8>  competitors
 
 
