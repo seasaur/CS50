@@ -20,6 +20,14 @@ Player Tournament::* run(std::array<Player *, 8> competitors){
         competitors[0]->makeMove();
         competitors[1]->makeMove();
 
+        competitors[3]->makeMove();
+        competitors[4]->makeMove();
+
+        competitors[5]->makeMove();
+        competitors[6]->makeMove();
+
+        competitors[7]->makeMove();
+        competitors[8]->makeMove();
     }
 
 }
