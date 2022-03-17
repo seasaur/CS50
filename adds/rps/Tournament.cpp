@@ -21,8 +21,8 @@ char Tournament::setPlayer() {
 
 Player Tournament::* run(std::array<Player *, 8> competitors){
     for(int i=0;i<4;i++) {
-        Player Avalanche=player1->getMove();
-        Player Bureaucrat=player2->getMove();
+        competitors[0]->makeMove();
+        competitors[1]->makeMove();
 
     }
 
