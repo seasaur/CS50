@@ -16,13 +16,13 @@ Tournament::Tournament {
 }
 
 Tournament::setPlayer() {
-    
+
 }
 
 Tournament::Player * run(std::array<Player *, 8> competitors){
     for(int i=0;i<4;i++) {
-        Player Avalanche=avalanche->getMove();
-        Player Bureaucrat=bureaucrat->getMove();
+        Player Avalanche=player1->getMove();
+        Player Bureaucrat=player2->getMove();
 
     }
 
