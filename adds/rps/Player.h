@@ -5,7 +5,7 @@
 #define PLAYER_H
 
 class Player {
-    private:
+    protected:
     char move;
     public:
     Player();
