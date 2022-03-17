@@ -31,6 +31,8 @@ int main() {
     Crescendo *player4 = new Crescendo();
     PaperDoll *player5 = new PaperDoll();
     FistfullODollars *player6 = new FistfullODollars();
+    RandomComputer *player7 =  new RandomComputer();
+    Human *player8 = new Human();
 
 
 
