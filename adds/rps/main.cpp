@@ -18,12 +18,16 @@ int main() {
     // Computer player2 = Computer();
     // Referee referee = Referee();
     // RandomComputer random = RandomComputer();
-    Crescendo crescendo;
-    // // player1.makeMove();
-    // // player2.makeMove();
-    // // std::cout << referee.refGame(player1,player2) << std::endl;
-    std::cout << crescendo.makeMove() << std::endl;
+    // Crescendo crescendo;
+    // // // player1.makeMove();
+    // // // player2.makeMove();
+    // // // std::cout << referee.refGame(player1,player2) << std::endl;
+    // std::cout << crescendo.makeMove() << std::endl;
     // crescendo.makeMove();
+
+    Avalanche *player1 = new Avalanche();
+    Bureaucrat *player2 = new Bureaucrat();
+    Tool
 
 
 
