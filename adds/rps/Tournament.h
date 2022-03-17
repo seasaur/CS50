@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <array>
 #include "Player.h"
 using namespace std;
 
@@ -12,7 +13,7 @@ class Tournament {
     public:
     Tournament();
     Player
-    Player * run(array<Player *, 8>  competitors
+    Player * run(std::array<Player *, 8>  competitors
 
 
 };
