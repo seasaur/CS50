@@ -5,8 +5,8 @@ using namespace std;
 #define COMPUTER_H
 
 class Computer: public Player {
-    protected:
-    char move;
+    // protected:
+    // char move;
     public:
     Computer();
     char makeMove();
