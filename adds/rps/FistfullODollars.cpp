@@ -15,8 +15,6 @@ char FistfullODollars::makeMove() {
     prevMove++;
     //std::cout << prevMove << std::endl;
 
-
-    return move;
     return move;
 }
 
