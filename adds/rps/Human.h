@@ -8,11 +8,11 @@ using namespace std;
 #define HUMAN_H
 
 class Human: public Player {
-    private:
-    char move;
+    // private:
+    // char move;
     public:
-    Human();                      
-    char makeMove();   
+    Human();
+    char makeMove();
     //char getMove();
 
 };
