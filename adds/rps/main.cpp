@@ -29,6 +29,7 @@ int main() {
     Bureaucrat *player2 = new Bureaucrat();
     Toolbox *player3 = new Toolbox();
     Crescendo *player4 = new Crescendo();
+    PaperDoll *player5 = new PaperDoll();
     
 
 
