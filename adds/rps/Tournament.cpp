@@ -11,7 +11,7 @@
 #include "PaperDoll.h"
 #include "RandomComputer.h"
 
-Tournament::Tournament {
+Tournament::Tournament() {
 
 }
 
