@@ -12,8 +12,8 @@ class Tournament {
     string array;
     public:
     Tournament();
-    Player setPlayer
-    Player * run(std::array<Player *, 8>  competitors
+    void setPlayer();
+    Player * run(std::array<Player *, 8>  competitors;
 
 
 };
