@@ -15,7 +15,7 @@ Tournament::Tournament {
 
 }
 
-void Tournament::setPlayer() {
+char Tournament::setPlayer() {
 
 }
 

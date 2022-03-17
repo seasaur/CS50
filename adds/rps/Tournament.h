@@ -8,11 +8,9 @@ using namespace std;
 #define TOURNAMENT_H
 
 class Tournament {
-    private:
-    string array;
     public:
     Tournament();
-    void setPlayer();
+    char setPlayer();
     Player * run(std::array<Player *, 8>  competitors;
 
 
