@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <array>
 #include "Referee.h"
 #include "Human.h"
 #include "Computer.h"
@@ -12,7 +12,7 @@
 #include "RandomComputer.h"
 
 
-Tournament::Player * run(array<Player *, 8> competitors){
+Tournament::Player * run(std::array<Player *, 8> competitors){
     for(int i=0;i<4;i++) {
         Player Avalanche=avalanche->getMove();
         Player Bureaucrat=bureaucrat->getMove();
