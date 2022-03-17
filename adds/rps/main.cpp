@@ -27,7 +27,9 @@ int main() {
 
     Avalanche *player1 = new Avalanche();
     Bureaucrat *player2 = new Bureaucrat();
-    Tool
+    Toolbox *player3 = new Toolbox();
+    Crescendo *player4 = new Crescendo();
+    
 
 
 
