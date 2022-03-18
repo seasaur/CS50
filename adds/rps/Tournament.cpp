@@ -18,12 +18,14 @@ Tournament::Tournament() {
 }
 
 Player Tournament::* run(std::array<Player *, 8> competitors){
-    char results[4];
-    for(int i=0;i<7;i+2) { //each round
-        for (int j=0;j<5;j++) {
+    char results[5];
+    for(int i=0;i<7;i+2) { //matches players 1-2, 3-4, 5-6, 7-8
+        for (int j=0;j<5;j++) { //each bracket plays 5 rounds
             competitors[i]->Referee();
             competitors[i+1]->Referee();
+            
         }
+
     }
 
 }
