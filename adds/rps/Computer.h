@@ -9,7 +9,7 @@ class Computer: public Player {
     // char move;
     public:
     Computer();
-    char makeMove();
+    virtual char makeMove();
 };
 
 #endif
