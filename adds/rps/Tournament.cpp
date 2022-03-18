@@ -25,7 +25,7 @@ Player * Tournament::run(std::array<Player *, 8> competitors){
     int loseCount=0;
     int winnerCount = 0; //winner count
 
-    for(int i=0;i<7;i+=2) { //ROUND 1 matches players 1-2, 3-4, 5-6, 7-8
+    for(int i=0;i<7;i++) { //ROUND 1 matches players 1-2, 3-4, 5-6, 7-8
         for (int j=0;j<5;j++) { //each bracket plays 5 rounds
             results[j] = referee.refGame(competitors[i],competitors[i+1]);
         //check number of wins & losses in terms of player with lower index
@@ -50,7 +50,7 @@ Player * Tournament::run(std::array<Player *, 8> competitors){
     //winners[4]={0}; //reset winner array
     winnerCount = 0;
 
-    for(int i=0;i<3;i+=2) { //ROUND 2 matches winners 1-2 3-4
+    for(int i=0;i<3;i++) { //ROUND 2 matches winners 1-2 3-4
         for(int j=0;j<5;j++) {
             results[j] = referee.refGame(winners[i],winners[i+1]);
          //check number of wins & losses in terms of player with lower index
@@ -60,6 +60,7 @@ Player * Tournament::run(std::array<Player *, 8> competitors){
             if(results[j] == 'L') {
                 loseCount++;
             }
+            i++;
         }
         if((winCount>loseCount) || (winCount==loseCount)) { //lower index player win or lose
             winners[winnerCount] = winners[i];
