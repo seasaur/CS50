@@ -11,8 +11,6 @@
 #include "PaperDoll.h"
 #include "RandomComputer.h"
 
-using namespace std;
-
 int main() {
     Avalanche *player1 = new Avalanche();
     Bureaucrat *player2 = new Bureaucrat();
@@ -23,7 +21,7 @@ int main() {
     RandomComputer *player7 =  new RandomComputer();
     RandomComputer *player8 = new RandomComputer();
 
-    competitors[8] = {player1,player2,player3,player4,player5,player6,player7,player8};
+    std::array<int, 8> competitors = {player1,player2,player3,player4,player5,player6,player7,player8};
 
 
 }
