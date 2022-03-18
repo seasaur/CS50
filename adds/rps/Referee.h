@@ -10,8 +10,6 @@ using namespace std;
 
 
 class Referee {
-    private:
-    char checkMove;
     public:
     Referee() ;
     char refGame(Player *player1, Player *player2);
