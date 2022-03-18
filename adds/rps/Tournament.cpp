@@ -25,7 +25,7 @@ Player Tournament::* run(std::array<Player *, 8> competitors){
         for (int j=0;j<5;j++) { //each bracket plays 5 rounds
             results[j] = referee.refGame(competitors[i],competitors[i+1]);
         }
-
+        
     }
 
 
