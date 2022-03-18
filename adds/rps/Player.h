@@ -9,7 +9,7 @@ class Player {
     char move;
     public:
     Player();
-    char makeMove();
+    virtual char makeMove() = 0;
 };
 
 #endif
