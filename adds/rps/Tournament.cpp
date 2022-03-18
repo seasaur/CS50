@@ -91,7 +91,7 @@ Player * Tournament::run(std::array<Player *, 8> competitors){
         if(results[j] == 'L') {
             loseCount++;
         }
-
+    }
     if(winCount>=loseCount) { //lower index player win or lose
         return winners[0];
     }
