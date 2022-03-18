@@ -11,6 +11,7 @@
 #include "PaperDoll.h"
 #include "RandomComputer.h"
 #include "Tournament.h"
+#include "Referee.h"
 
 Tournament::Tournament() {
 
@@ -27,11 +28,12 @@ Player Tournament::* run(std::array<Player *, 8> competitors){
     Human *player8 = new Human();
 
     competitors[8] = {player1,player2,player3,player4,player5,player6,player7,player8};
-    // for(int i=0;i<5;i++) { //each round
-    //     for (int j=0;j<8;j++) {
-    //         competitors[i]->makeMove();
-    //     }
-    // }
+    for(int i=0;i<5;i++) { //each round
+        for (int j=0;j<8;j++) {
+            competitors[i]->makeMove();
+            
+        }
+    }
 
 }
 
