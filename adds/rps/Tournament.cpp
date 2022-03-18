@@ -21,8 +21,10 @@ Player Tournament::* run(std::array<Player *, 8> competitors){
 
     for(int i=0;i<5;i++) { //each round
         for (int j=0;j<8;j++) {
-            competitors[i]->makeMove();
-
+            for(int k=0;k<8;k++) {
+                competitors[j]->makeMove();
+                competitors
+            }
         }
     }
 
