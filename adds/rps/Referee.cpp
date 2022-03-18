@@ -20,8 +20,8 @@ char Referee::refGame(Player *player1, Player *player2) {
     // std::cout << "human: " << iiMove << std::endl;
     // std::cout << "computer: " << iMove << std::endl;
 
-    if(iMove=='R') {
-        switch(iiMove) {
+    if(iiMove=='R') {
+        switch(iMove) {
             case 'R':
                 return 'T';
 
@@ -37,8 +37,8 @@ char Referee::refGame(Player *player1, Player *player2) {
         }
     }
 
-    if(iMove=='P') {
-        switch(iiMove) {
+    if(iiMove=='P') {
+        switch(iMove) {
             case 'R':
                 return 'L';
 
@@ -54,8 +54,8 @@ char Referee::refGame(Player *player1, Player *player2) {
         }
     }
 
-    if(iMove=='S') {
-        switch(iiMove) {
+    if(iiMove=='S') {
+        switch(iMove) {
             case 'R':
                 return 'W';
 

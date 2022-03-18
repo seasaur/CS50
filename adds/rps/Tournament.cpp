@@ -22,6 +22,7 @@ Player Tournament::* run(std::array<Player *, 8> competitors){
     char results[5];
     Player * winner[4];
     int count = 0;
+    int winCount = 0;
     for(int i=0;i<7;i+2) { //matches players 1-2, 3-4, 5-6, 7-8
         for (int j=0;j<5;j++) { //each bracket plays 5 rounds
             results[j] = referee.refGame(competitors[i],competitors[i+1]);
@@ -31,7 +32,12 @@ Player Tournament::* run(std::array<Player *, 8> competitors){
                 count++;
             }
         }
-        
+        if(count>2) { //player 1 win
+            winner[winCount] = competitors[i];
+        }
+        else if(count=2) {
+            
+        }
     }
 
 
