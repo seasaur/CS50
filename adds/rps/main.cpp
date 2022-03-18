@@ -14,17 +14,6 @@
 using namespace std;
 
 int main() {
-    // Human player1 = Human();
-    // Computer player2 = Computer();
-    // Referee referee = Referee();
-    // RandomComputer random = RandomComputer();
-    // Crescendo crescendo;
-    // // // player1.makeMove();
-    // // // player2.makeMove();
-    // // // std::cout << referee.refGame(player1,player2) << std::endl;
-    // std::cout << crescendo.makeMove() << std::endl;
-    // crescendo.makeMove();
-
     Avalanche *player1 = new Avalanche();
     Bureaucrat *player2 = new Bureaucrat();
     Toolbox *player3 = new Toolbox();
@@ -32,8 +21,9 @@ int main() {
     PaperDoll *player5 = new PaperDoll();
     FistfullODollars *player6 = new FistfullODollars();
     RandomComputer *player7 =  new RandomComputer();
-    Human *player8 = new Human();
+    RandomComputer *player8 = new RandomComputer();
 
-    
+    competitors[8] = {player1,player2,player3,player4,player5,player6,player7,player8};
+
 
 }
