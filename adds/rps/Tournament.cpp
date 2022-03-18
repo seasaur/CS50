@@ -19,11 +19,10 @@ Tournament::Tournament() {
 
 Player Tournament::* run(std::array<Player *, 8> competitors){
 
-    for(int i=0;i<5;i++) { //each round
-        for (int j=0;j<8;j++) {
-                competitors[j]->makeMove();
-
-            }
+    for(int i=0;i<7;i++) { //each round
+        for (int j=0;j<7;j+2) {
+            competitors[j]->Referee();
+            competitors[j+1]->Referee();
         }
     }
 
