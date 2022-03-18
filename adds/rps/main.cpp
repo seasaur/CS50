@@ -11,6 +11,7 @@
 #include "FistfullODollars.h"
 #include "PaperDoll.h"
 #include "RandomComputer.h"
+#include "Tournament.h"
 
 int main() {
     Avalanche *player1 = new Avalanche();
@@ -23,6 +24,7 @@ int main() {
     RandomComputer *player8 = new RandomComputer();
 
     std::array<Player*, 8> competitors = {player1,player2,player3,player4,player5,player6,player7,player8};
-    Tournament T
+    Tournament *Tournament;
+    Tournament->run(competitors);
 
 }
