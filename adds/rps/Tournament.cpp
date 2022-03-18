@@ -79,29 +79,29 @@ Player Tournament::* run(std::array<Player *, 8> competitors){
     winnerCount = 0;
 
 
-    for(int i=0;i<3;i+2) { //ROUND 3 matches winners 1-2
-        for(int j=0;j<5;j++) {
-            results[j] = referee.refGame(winners[i],competitors[i+1]);
-        }
-        for(int k=0;k<5;k++) { //check number of wins & losses in terms of player with lower index
-            if(results[k] == 'W') {
-                winCount++;
-            }
-            if(results[k] == 'L') {
-                loseCount++;
-            }
-        }
-        if((winCount>loseCount) || (winCount==loseCount)) { //lower index player win or lose
-            winners[winnerCount] = competitors[i];
-        }
-        else {
-            winners[winnerCount] == competitors[i+1];
-        }
-        winnerCount++;
-        winCount=0; //resetting counters
-        loseCount=0;
-        results[5] = {0};
+//ROUND 3 matches winners 1-2
+    for(int j=0;j<5;j++) {
+        results[j] = referee.refGame(winners[i],competitors[i+1]);
     }
-    
+    for(int k=0;k<5;k++) { //check number of wins & losses in terms of player with lower index
+        if(results[k] == 'W') {
+            winCount++;
+        }
+        if(results[k] == 'L') {
+            loseCount++;
+        }
+    }
+    if((winCount>loseCount) || (winCount==loseCount)) { //lower index player win or lose
+        winners[winnerCount] = competitors[i];
+    }
+    else {
+        winners[winnerCount] == competitors[i+1];
+    }
+    winnerCount++;
+    winCount=0; //resetting counters
+    loseCount=0;
+    results[5] = {0};
+}
+
 }
 
