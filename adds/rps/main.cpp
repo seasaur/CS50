@@ -22,7 +22,7 @@ int main() {
     RandomComputer *player7 =  new RandomComputer();
     RandomComputer *player8 = new RandomComputer();
 
-    std::array<int, 8> competitors = {player1,player2,player3,player4,player5,player6,player7,player8};
+    std::array<Player*, 8> competitors = {player1,player2,player3,player4,player5,player6,player7,player8};
 
 
 }
