@@ -20,7 +20,7 @@ Tournament::Tournament() {
 Player Tournament::* run(std::array<Player *, 8> competitors){
     Referee referee;
     char results[5];
-    Player * winner[4];
+    Player * winners[4];
     int winCount=0; //count for results array
     int loseCount=0;
     int winnerCount = 0; //winner array
@@ -38,19 +38,26 @@ Player Tournament::* run(std::array<Player *, 8> competitors){
             }
         }
         if((winCount>loseCount) || (winCount==loseCount)) { //lower index player win or lose
-            winner[winnerCount] = competitors[i];
+            winners[winnerCount] = competitors[i];
         }
         }
         else {
-            winner[winnerCount] == competitors[i+1];
+            winners[winnerCount] == competitors[i+1];
         }
         winnerCount++; //results array will overwrite itself
     }
 
-    for(int i=0;i<3;i+2) {
+    for(int i=0;i<3;i+2) { //ROUND 2 matches winners 1-2 3-4
         for(int j=0;j<5;j++) {
-            
+            results[j] = referee.refGame(winners[i],competitors[i+1]);
         }
+        for(int k=0;k<5;k++) { //check number of wins & losses in terms of player with lower index
+            if(results[k] == 'W') {
+                winCount++;
+            }
+            if(results[k] == 'L') {
+                loseCount++;
+            }
     }
 
 
