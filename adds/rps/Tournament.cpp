@@ -92,12 +92,12 @@ Player Tournament::* run(std::array<Player *, 8> competitors){
         }
     }
     if((winCount>loseCount) || (winCount==loseCount)) { //lower index player win or lose
-        winners[winnerCount] = winners[i];
+        winners[winnerCount] = winners[0];
     }
     else {
-        winners[winnerCount] == winners[i+1];
+        winners[winnerCount] == winners[1];
     }
-    return winners[0];
+    return &winners[0];
 
 }
 
