@@ -95,6 +95,6 @@ Player * Tournament::run(std::array<Player *, 8> competitors){
     else {
         return winners[1];
     }
-    return 0;
+    return winners[0];
 }
 
