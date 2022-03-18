@@ -73,6 +73,7 @@ Player * Tournament::run(std::array<Player *, 8> competitors){
         winCount=0; //resetting counters
         loseCount=0;
         results[5] = {0};
+        i++;
     }
 
     // winners[4]={0}; //reset winner array
@@ -90,8 +91,7 @@ Player * Tournament::run(std::array<Player *, 8> competitors){
         if(results[j] == 'L') {
             loseCount++;
         }
-        i++;
-    }
+
     if(winCount>=loseCount) { //lower index player win or lose
         return winners[0];
     }
