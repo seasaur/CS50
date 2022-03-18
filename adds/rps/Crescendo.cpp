@@ -4,6 +4,7 @@
 //constructor
 Crescendo::Crescendo() {
     prevMove=0;
+    count=0;
 }
 
 char Crescendo::makeMove() {
@@ -14,6 +15,12 @@ char Crescendo::makeMove() {
     }
     move=fMove[prevMove];
     prevMove++;
+    count++;
+
+    if(count==5) {
+        prevMove=0;
+        count=0;
+    }
     //std::cout << prevMove << std::endl;
 
 

@@ -8,6 +8,7 @@ using namespace std;
 class FistfullODollars: public Computer {
     private:
     int prevMove;
+    int count;
     public:
     FistfullODollars();
     char makeMove();

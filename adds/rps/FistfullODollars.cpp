@@ -11,9 +11,16 @@ char FistfullODollars::makeMove() {
      if(prevMove==3) {
         prevMove=0;
     }
+
     move=fMove[prevMove];
     prevMove++;
+    count++;
     //std::cout << prevMove << std::endl;
+
+    if(count==5) {
+        prevMove=0;
+        count=0;
+    }
 
     return move;
 }

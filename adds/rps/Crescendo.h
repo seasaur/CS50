@@ -8,6 +8,7 @@ using namespace std;
 class Crescendo: public Computer {
     private:
     int prevMove;
+    int count;
     public:
     Crescendo();
     char makeMove();
