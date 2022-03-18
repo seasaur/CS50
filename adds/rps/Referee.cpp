@@ -14,9 +14,9 @@
 Referee::Referee() {
 }
 
-char Referee::refGame(Player player1, Player player2) {
-    char iMove = player1.makeMove();
-    char iiMove = player2.makeMove();
+char Referee::refGame(Player *player1, Player *player2) {
+    char iMove = player1->makeMove();
+    char iiMove = player2->makeMove();
     // std::cout << "human: " << iiMove << std::endl;
     // std::cout << "computer: " << iMove << std::endl;
 
