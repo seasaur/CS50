@@ -8,6 +8,7 @@ using namespace std;
 class PaperDoll: public Computer {
     private:
     int prevMove;
+    int count;
     public:
     PaperDoll();
     char makeMove();

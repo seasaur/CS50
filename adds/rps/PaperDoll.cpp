@@ -13,6 +13,12 @@ char PaperDoll::makeMove() {
     }
     move=fMove[prevMove];
     prevMove++;
+    count++;
+
+    if(count==5) {
+        prevMove=0;
+        count=0;
+    }
     return move;
 }
 
