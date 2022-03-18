@@ -44,7 +44,8 @@ Player Tournament::* run(std::array<Player *, 8> competitors){
         else {
             winners[winnerCount] == competitors[i+1];
         }
-        winnerCount++; //results array will overwrite itself
+        winnerCount++;
+        results[5] = {0};
     }
 
     for(int i=0;i<3;i+2) { //ROUND 2 matches winners 1-2 3-4
