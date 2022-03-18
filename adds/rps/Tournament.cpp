@@ -40,7 +40,7 @@ Player * Tournament::run(std::array<Player *, 8> competitors){
             winners[winnerCount] = competitors[i];
         }
         else {
-            winners[winnerCount] == competitors[i+1];
+            winners[winnerCount] = competitors[i+1];
         }
         winnerCount++;
         winCount=0; //resetting counters
@@ -67,7 +67,7 @@ Player * Tournament::run(std::array<Player *, 8> competitors){
             winners[winnerCount] = winners[i];
         }
         else {
-            winners[winnerCount] == winners[i+1];
+            winners[winnerCount] = winners[i+1];
         }
         winnerCount++;
         winCount=0; //resetting counters
