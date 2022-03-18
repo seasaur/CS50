@@ -40,13 +40,16 @@ Player Tournament::* run(std::array<Player *, 8> competitors){
         if((winCount>loseCount) || (winCount==loseCount)) { //lower index player win or lose
             winners[winnerCount] = competitors[i];
         }
-        }
         else {
             winners[winnerCount] == competitors[i+1];
         }
         winnerCount++;
+        winCount=0; //resetting counters
+        loseCount=0;
         results[5] = {0};
     }
+
+    winnerCount={0}; //reset winner array
 
     for(int i=0;i<3;i+2) { //ROUND 2 matches winners 1-2 3-4
         for(int j=0;j<5;j++) {
@@ -59,8 +62,18 @@ Player Tournament::* run(std::array<Player *, 8> competitors){
             if(results[k] == 'L') {
                 loseCount++;
             }
+        }
+        if((winCount>loseCount) || (winCount==loseCount)) { //lower index player win or lose
+            winners[winnerCount] = competitors[i];
+        }
+        else {
+            winners[winnerCount] == competitors[i+1];
+        }
+        winnerCount++;
+        winCount=0; //resetting counters
+        loseCount=0;
+        results[5] = {0};
     }
-
 
 
 
