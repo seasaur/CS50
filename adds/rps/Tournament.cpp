@@ -75,7 +75,7 @@ Player Tournament::* run(std::array<Player *, 8> competitors){
         results[5] = {0};
     }
 
-    winners[4]={0}; //reset winner array
+    // winners[4]={0}; //reset winner array
     winnerCount = 0;
 
 
