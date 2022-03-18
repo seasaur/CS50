@@ -79,7 +79,7 @@ Player Tournament::* run(std::array<Player *, 8> competitors){
     winnerCount = 0;
 
 
-    for(int i=0;i<3;i+2) { //ROUND 2 matches winners 1-2 3-4
+    for(int i=0;i<3;i+2) { //ROUND 3 matches winners 1-2
         for(int j=0;j<5;j++) {
             results[j] = referee.refGame(winners[i],competitors[i+1]);
         }
@@ -102,5 +102,6 @@ Player Tournament::* run(std::array<Player *, 8> competitors){
         loseCount=0;
         results[5] = {0};
     }
+    
 }
 
