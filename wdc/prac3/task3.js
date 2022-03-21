@@ -1,3 +1,2 @@
-document.getElementById("demo");
+document.getElementById("mcount");
 
-mcount
