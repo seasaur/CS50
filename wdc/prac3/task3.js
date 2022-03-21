@@ -1,2 +1,5 @@
-document.getElementById("mcount");
+function mouseOver {
+    document.getElementById("mcount");
+
+}
 
