@@ -4,7 +4,6 @@ function mouseOver(){
 }
 
 function click() {
-    const d = new Date();
-    document.getElementsByClassName("post-time").[0]innerHTML = d;
-    document.getElementsByClassName("post-content").[0]innerHTML = "Hello World";
+    document.getElementsByClassName("post-time")[0].innerHTML = Date();
+    document.getElementsByClassName("post-content")[0].innerHTML = "Hello World";
   }
