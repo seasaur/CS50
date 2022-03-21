@@ -5,5 +5,5 @@ function mouseOver(){
 
 function post(){
     const d = new Date();
-    document.getElementById("demo").innerHTML = d;
+    document.getElementById("posts").innerHTML = d;
 }
