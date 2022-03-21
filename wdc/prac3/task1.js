@@ -1,3 +1,1 @@
-class time_box {
-    
-}
+document.getElementById("demo").innerHTML = Date();
