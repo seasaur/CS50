@@ -9,5 +9,6 @@ function post(){
 }
 
 function click() {
-    document.getElementById("demo").innerHTML = "Hello World";
+    document.getElementsByClassName("post-time").innerHTML = Date();
+    document.getElementsByClassName("post-content").innerHTML = "Hello World";
   }
