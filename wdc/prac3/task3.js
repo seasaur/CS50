@@ -9,6 +9,7 @@ function post(){
 }
 
 function click() {
-    document.getElementsByClassName("post-time").innerHTML = Date();
+    const d = new Date();
+    document.getElementsByClassName("post-time").innerHTML = d;
     document.getElementsByClassName("post-content").innerHTML = "Hello World";
   }
