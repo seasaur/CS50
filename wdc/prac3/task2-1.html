@@ -5,11 +5,11 @@
         <meta charset="utf-8"/>
     </head>
     <body>
-        {# <p id="text"><strong>NOT</strong> working</p> #}
+        <p id="text">"It "<strong>IS</strong>" working"</p>
 
         <script>
-            var t = document.getElementById("text")
-            t.innerHTML() = "It <strong>IS</strong> working"
+            var p = document.getElementById("text")
+            p.innerHTML() = "It "<strong>IS</strong>" working"
         </script>
     </body>
 </html>
