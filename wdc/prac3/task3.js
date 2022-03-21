@@ -1,6 +1,5 @@
 function mouseOver {
-    document.getElementById("mcount");
-    console.log(i)
-
+    int i=0;
+    document.getElementById("mcount").console.log(i+1);
 }
 
