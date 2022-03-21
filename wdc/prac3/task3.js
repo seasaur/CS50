@@ -7,3 +7,7 @@ function post(){
     const d = new Date();
     document.getElementById("posts").innerHTML = d;
 }
+
+function click() {
+    document.getElementById("demo").innerHTML = "Hello World";
+  }
