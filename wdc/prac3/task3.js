@@ -3,11 +3,6 @@ function mouseOver(){
     document.getElementById("count").innerText = i++;
 }
 
-function post(){
-    const d = new Date();
-    document.getElementById("posts").innerHTML = d;
-}
-
 function click() {
     const d = new Date();
     document.getElementsByClassName("post-time").innerHTML = d;
