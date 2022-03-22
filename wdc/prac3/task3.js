@@ -26,16 +26,6 @@ function toggleMain() {
     menu.style.display = "none";
 }
 
-
-var ignoreClickOnMeElement = document.getElementById("BG");
-
-document.addEventListener('click', function(event) {
-    var isClickInsideElement = ignoreClickOnMeElement.contains(event.target);
-    if (!isClickInsideElement) {
-        //Do something click is outside specified element
-    }
-});
-
 var color;
 
 function BGFunc() {
@@ -43,3 +33,13 @@ function BGFunc() {
     color = document.getElementById("BG").value;
     document.body.style.backgroundColor = color;
 }
+
+var ignoreClickOnMeElement = document.getElementById("BG");
+
+document.addEventListener('click', function(event) {
+    var isClickInsideElement = ignoreClickOnMeElement.contains(event.target);
+    if (!isClickInsideElement) {
+        BGFunc();
+    }
+});
+
