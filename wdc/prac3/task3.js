@@ -29,17 +29,17 @@ function toggleMain() {
 var color;
 
 function BGFunc() {
-
-    color = document.getElementById("BG").value;
-    document.body.style.backgroundColor = color;
-}
-
 var ignoreClickOnMeElement = document.getElementById("menu");
 
 document.addEventListener('click', function(event) {
     var isClickInsideElement = ignoreClickOnMeElement.contains(event.target);
     if (!isClickInsideElement) {
-        BGFunc();
+        color = document.getElementById("BG").value;
+        document.body.style.backgroundColor = color;
     }
 });
+
+}
+
+
 
