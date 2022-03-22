@@ -38,10 +38,10 @@ function postColor() {
     // const btn = document.querySelector('#colorBtn');
     const radioButtons = document.querySelectorAll('input[type="radio"]');
     btn.addEventListener("click", () => {
-        let selectedSize;
+        let selectedColor;
         for (const radioButton of radioButtons) {
             if (radioButton.checked) {
-                selectedSize = radioButton.value;
+                selectedColor = radioButton.value;
                 break;
             }
         }
