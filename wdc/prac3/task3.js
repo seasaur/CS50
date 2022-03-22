@@ -14,7 +14,7 @@ var menu = document.getElementById("menu");
 
 function toggleBG() {
     main.style.display = "none";
-    menu.style.display = "block";
+    menu.style.display = "inline";
 }
 
 function toggleMain() {
