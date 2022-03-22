@@ -47,4 +47,15 @@ function postColor() {
         }
     document.getElementsByClassName("post-content")[0].style.color = selectedColor;
     });
+
+    var radioButtons = document.querySelectorAll('input[name="color"]');
+var selectedColor;
+for(let radioButton of radioButtons){
+if(radioButton.checked){
+selectedColor = radioButton.value;
+break;
+}
+}
+postText.style.color= selectedColor;
+}
 }
