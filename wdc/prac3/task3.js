@@ -37,7 +37,7 @@ function postColor() {
     // document.getElementById("blueButton").style.color = "blue";
     // const btn = document.querySelector('#colorBtn');
     const radioButtons = document.querySelectorAll('input[type="radio"]');
-    btn.addEventListener("click", () => {
+    textColor.addEventListener("click", () => {
         let selectedColor;
         for (const radioButton of radioButtons) {
             if (radioButton.checked) {
