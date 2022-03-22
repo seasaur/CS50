@@ -27,7 +27,7 @@ function toggleMain() {
 }
 
 
-var ignoreClickOnMeElement = document.getElementById('someElementID');
+var ignoreClickOnMeElement = document.getElementById("BG");
 
 document.addEventListener('click', function(event) {
     var isClickInsideElement = ignoreClickOnMeElement.contains(event.target);
