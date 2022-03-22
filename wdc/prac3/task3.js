@@ -36,7 +36,7 @@ function BGFunc() {
 // function postColor() {
 //     // document.getElementById("blueButton").style.color = "blue";
 //     // const btn = document.querySelector('#colorBtn');
-//     const radioButtons = document.querySelectorAll('input[type="radio"]');
+//     const radioButtons = document.querySelectorAll('input[name="color"]');
 //     textColor.addEventListener("click", () => {
 //         let selectedColor;
 //         for (const radioButton of radioButtons) {
