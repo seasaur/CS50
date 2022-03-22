@@ -30,5 +30,5 @@ var color;
 
 function BGFunc() {
     color = document.getElementById("BGcolor").value;
-    document.bgColor = color;
+    document.body.style.backgroundColor = color;
 }
