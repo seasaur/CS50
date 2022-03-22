@@ -29,6 +29,6 @@ function toggleMain() {
 var color;
 
 function BGFunc() {
-    color = document.getElementById("BGcolor").value;
+    color = document.getElementById("BG").value;
     document.body.style.backgroundColor = color;
 }
