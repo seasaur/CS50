@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="task3.css">
         <script src="task3.js"></script>
     </head>
-    <body onclick="BGFunc()">
+    <body>
         <div id="main" class="container">
             <button class="right" onclick="toggleBG()">MENU</button>
             <h1>Part 3 - Javascript Playground</h1>
@@ -41,7 +41,7 @@
         <div id="menu" class="container" style="display:none;">
             <button class="right" onclick="toggleMain()">BACK</button>
             <p>&nbsp;</p>
-            <span>Background Color:</span><input type="text" id="BG">
+            <span>Background Color:</span><input type="text" id="BG" onblur="BGFunc()">
         </div>
 
     </body>

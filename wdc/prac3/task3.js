@@ -33,16 +33,3 @@ function BGFunc() {
         document.body.style.backgroundColor = color;
 }
 
-// function BGFunc() {
-//     var ignoreClickOnMeElement = document.getElementById("menu");
-
-//     document.addEventListener('click', function(event) {
-//         var isClickInsideElement = ignoreClickOnMeElement.contains(event.target);
-//         if (!isClickInsideElement) {
-//             color = document.getElementById("BG").value;
-//             document.body.style.backgroundColor = color;
-//         }
-//     });
-
-//     }
-
