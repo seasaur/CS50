@@ -46,4 +46,5 @@ function postColor() {
             }
         }
     document.getElementsByClassName("post-content")[0].style.color = selectedColor;
+    });
 }
