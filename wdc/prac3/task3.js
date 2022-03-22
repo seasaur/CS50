@@ -33,28 +33,28 @@ function BGFunc() {
         document.body.style.backgroundColor = color;
 }
 
-function postColor() {
-    // document.getElementById("blueButton").style.color = "blue";
-    // const btn = document.querySelector('#colorBtn');
-    const radioButtons = document.querySelectorAll('input[name="color"]');
-    textColor.addEventListener("click", () => {
-        let selectedColor;
-        for (const radioButton of radioButtons) {
-            if (radioButton.checked) {
-                selectedColor = radioButton.value;
-                break;
-            }
-        }
-    document.getElementsByClassName("post-content")[0].style.color = selectedColor;
-    });
-}
-//     var radioButtons = document.querySelectorAll('input[name="color"]');
-//     var selectedColor;
-//     for(let radioButton of radioButtons){
-//         if(radioButton.checked){
-//             selectedColor = radioButton.value;
-//             break;
+function postColor(postText) {
+//     // document.getElementById("blueButton").style.color = "blue";
+//     // const btn = document.querySelector('#colorBtn');
+//     const radioButtons = document.querySelectorAll('input[name="color"]');
+//     textColor.addEventListener("click", () => {
+//         let selectedColor;
+//         for (const radioButton of radioButtons) {
+//             if (radioButton.checked) {
+//                 selectedColor = radioButton.value;
+//                 break;
+//             }
 //         }
-//     }
-//     postText.style.color= selectedColor;
+//     document.getElementsByClassName("post-content")[0].style.color = selectedColor;
+//     });
 // }
+    var radioButtons = document.querySelectorAll('input[name="color"]');
+    var selectedColor;
+    for(let radioButton of radioButtons){
+        if(radioButton.checked){
+            selectedColor = radioButton.value;
+            break;
+        }
+    }
+    postText.style.color= selectedColor;
+}
