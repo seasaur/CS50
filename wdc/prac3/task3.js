@@ -42,9 +42,8 @@ function postColor() {
         for (const radioButton of radioButtons) {
             if (radioButton.checked) {
                 selectedColor = radioButton.value;
-
                 break;
-            }document.getElementsByClassName("post-content")[0].style.color
+            }
         }
-
+    document.getElementsByClassName("post-content")[0].style.color = selectedColor;
 }
