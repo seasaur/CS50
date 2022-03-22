@@ -8,3 +8,5 @@ function clickFunc() {
     var displayText = document.getElementsByTagName("textarea")[0].value;
     document.getElementsByClassName("post-content")[0].innerHTML = displayText;
   }
+
+  
