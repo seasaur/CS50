@@ -33,17 +33,17 @@ function BGFunc() {
         document.body.style.backgroundColor = color;
 }
 
-// function postColor() {
-//     // document.getElementById("blueButton").style.color = "blue";
-//     // const btn = document.querySelector('#colorBtn');
-//     const radioButtons = document.querySelectorAll('input[name="color"]');
-//     textColor.addEventListener("click", () => {
-//         let selectedColor;
-//         for (const radioButton of radioButtons) {
-//             if (radioButton.checked) {
-//                 selectedColor = radioButton.value;
-//                 break;
-//             }
-//         }
-//     document.getElementsByClassName("post-content")[0].style.color = selectedColor;
-// }
+function postColor() {
+    // document.getElementById("blueButton").style.color = "blue";
+    // const btn = document.querySelector('#colorBtn');
+    const radioButtons = document.querySelectorAll('input[name="color"]');
+    textColor.addEventListener("click", () => {
+        let selectedColor;
+        for (const radioButton of radioButtons) {
+            if (radioButton.checked) {
+                selectedColor = radioButton.value;
+                break;
+            }
+        }
+    document.getElementsByClassName("post-content")[0].style.color = selectedColor;
+}
