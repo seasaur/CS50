@@ -34,7 +34,7 @@ function BGFunc() {
     document.body.style.backgroundColor = color;
 }
 
-var ignoreClickOnMeElement = document.getElementById("BG");
+var ignoreClickOnMeElement = document.getElementById("menu");
 
 document.addEventListener('click', function(event) {
     var isClickInsideElement = ignoreClickOnMeElement.contains(event.target);
