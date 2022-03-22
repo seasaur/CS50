@@ -33,3 +33,7 @@ function BGFunc() {
         document.body.style.backgroundColor = color;
 }
 
+function textBlue() {
+    document.getElementById("blueButton").style.color = "blue";
+
+}
