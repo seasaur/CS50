@@ -14,10 +14,10 @@ function clickFunc() {
         let breakLine1 = document.createElement("Br");
         let breakLine2 = document.createElement("Br");
         var displayText = document.getElementsByTagName("textarea")[0].value;
-        postTime.classList.add("post-time")
+        postTime.classList.add("post-time");
         postTime.innerHTML = Date();
         var postContent = document.createElement("Span");
-        postColor(postContent)
+        postColor(postContent);
         postContent.classList.add("post-content");
         postContent.innerHTML = displayText;
         post.appendChild(postTime);
