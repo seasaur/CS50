@@ -42,6 +42,7 @@ function postColor() {
         for (const radioButton of radioButtons) {
             if (radioButton.checked) {
                 selectedColor = radioButton.value;
+                document.getElementById("myP2").style.color
                 break;
             }
         }
