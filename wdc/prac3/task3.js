@@ -27,7 +27,8 @@ function toggleMain() {
 }
 
 function BGFunc() {
-    document.BGcolor = color;
+    var color = document.getElementById("BGcolor").value;
+    document.bgColor = color;
 
     // The code I'd like to use for changing the text simultaneously - however it does not work.
     document.getElementById("coltext").style.color = color;
