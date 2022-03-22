@@ -9,11 +9,14 @@ function clickFunc() {
     document.getElementsByClassName("post-content")[0].innerHTML = displayText;
 }
 
+var main = document.getElementById("main");
+var menu = document.getElementById("menu");
+
 function toggleBG() {
-    var x = document.getElementById("main");
-    
+    main.style.display = "none";
+
 }
 
-unction toggleMain() {
+function toggleMain() {
 
 }
