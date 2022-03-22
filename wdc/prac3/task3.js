@@ -9,15 +9,19 @@ function clickFunc() {
     document.getElementsByClassName("post-content")[0].innerHTML = displayText;
 }
 
-var main = document.getElementById("main");
-var menu = document.getElementById("menu");
+var main;
+var menu;
 
 function toggleBG() {
+    main = document.getElementById("main");
+    menu = document.getElementById("menu");
     main.style.display = "none";
     menu.style.display = "block";
 }
 
 function toggleMain() {
+    main = document.getElementById("main");
+    menu = document.getElementById("menu");
     main.style.display = "block";
     menu.style.display = "none";
 }
