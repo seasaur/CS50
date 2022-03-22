@@ -10,5 +10,9 @@ function clickFunc() {
   }
 
   function toggleBG() {
-    
+
+  }
+
+  function toggleMain() {
+
   }
