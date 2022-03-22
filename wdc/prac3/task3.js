@@ -4,9 +4,27 @@ function mouseOver() {
 }
 
 function clickFunc() {
-    document.getElementsByClassName("post-time")[0].innerHTML = Date();
+    // document.getElementsByClassName("post-time")[0].innerHTML = Date();
+    // var displayText = document.getElementsByTagName("textarea")[0].value;
+    // document.getElementsByClassName("post-content")[0].innerHTML = displayText;
+    var post = document.getElementById("posts");
+    var number = document.getElementById("postNumber").value;
+    for(let i = 0; i < number; i++){
+    var postTime = document.createElement("Span");
+    let breakLine1 = document.createElement("Br");
+    let breakLine2 = document.createElement("Br");
     var displayText = document.getElementsByTagName("textarea")[0].value;
-    document.getElementsByClassName("post-content")[0].innerHTML = displayText;
+    postTime.classList.add("post-time")
+    postTime.innerHTML = Date();
+    var postContent = document.createElement("Span");
+    colorPost(postContent)
+    postContent.classList.add("post-content");
+    postContent.innerHTML = displayText;
+    post.appendChild(postTime);
+    post.appendChild(breakLine1);
+    post.appendChild(postContent);
+    post.appendChild(breakLine2);
+    }
 }
 
 var main;
