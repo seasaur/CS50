@@ -1,5 +1,5 @@
 var i = 1;
-function mouseOver(){
+function mouseOver() {
     document.getElementById("count").innerText = i++;
 }
 
@@ -9,4 +9,6 @@ function clickFunc() {
     document.getElementsByClassName("post-content")[0].innerHTML = displayText;
   }
 
-  
+  function toggleBG() {
+    
+  }
