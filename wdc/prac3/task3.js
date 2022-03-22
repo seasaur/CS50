@@ -14,9 +14,10 @@ var menu = document.getElementById("menu");
 
 function toggleBG() {
     main.style.display = "none";
-
+    menu.style.display = "block";
 }
 
 function toggleMain() {
-
+    main.style.display = "block";
+    menu.style.display = "none";
 }
