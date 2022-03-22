@@ -26,7 +26,9 @@ function toggleMain() {
     menu.style.display = "none";
 }
 
+var color;
+
 function BGFunc() {
-    var color = document.getElementById("BGcolor").value;
+    color = document.getElementById("BGcolor").value;
     document.bgColor = color;
 }
