@@ -33,7 +33,16 @@ function BGFunc() {
         document.body.style.backgroundColor = color;
 }
 
-function textBlue() {
-    document.getElementById("blueButton").style.color = "blue";
-
+function postColor() {
+    // document.getElementById("blueButton").style.color = "blue";
+    const btn = document.querySelector('#colorBtn');
+    const radioButtons = document.querySelectorAll('input[name="size"]');
+    btn.addEventListener("click", () => {
+        let selectedSize;
+        for (const radioButton of radioButtons) {
+            if (radioButton.checked) {
+                selectedSize = radioButton.value;
+                break;
+            }
+        }
 }
