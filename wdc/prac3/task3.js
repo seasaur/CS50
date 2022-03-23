@@ -88,9 +88,7 @@ function postStyle(postText) {
 function postRange(postNumber) {
     var posts = document.getElementById("posts");
     posts.innerHTML="";
-    for(let i=array.length;i>postNumber;i--) {
+    for(let i=0;i<postNumber;i++) {
         posts.appendChild(array[i]);
     }
-
-
 }
