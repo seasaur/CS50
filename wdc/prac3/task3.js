@@ -81,8 +81,8 @@ function postStyle(postText) {
 }
 
 function postRange(postNumber) {
-    var checkBox = document.querySelectorAll('input[type="range"]');
-    var textStyle;
+    var slider = document.querySelectorAll('input[type="range"]');
+    slider.value = 
     for(var i=0, n=checkBox.length;i<n;i++) {
         if (checkBox[i].checked == true){
             textStyle = checkBox[i].value;
