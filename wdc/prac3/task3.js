@@ -15,7 +15,7 @@ function clickFunc() {
         var displayText = document.getElementsByTagName("textarea")[0].value;
         postTime.classList.add("post-time");
         postTime.innerHTML = Date();
-        var postContent = document.createElement("Span");
+        var postContent = document.createElement("span");
         postColor(postContent);
         postStyle(postContent);
         postContent.classList.add("post-content");
@@ -24,8 +24,13 @@ function clickFunc() {
         post.appendChild(breakLine1);
         post.appendChild(postContent);
         post.appendChild(breakLine2);
-        
 
+        var divPost=document.createElement("div");
+        divPost.appendChild(postTime);
+        divPost.appendChild(breakLine1);
+        divPost.appendChild(postContent);
+        divPost.appendChild(breakLine2);
+        array.push(divPost);
     }
 }
 
