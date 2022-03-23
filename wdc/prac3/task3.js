@@ -19,17 +19,16 @@ function clickFunc() {
         postStyle(postContent);
         postContent.classList.add("post-content");
         postContent.innerHTML = displayText;
-        post.appendChild(postTime);
-        post.appendChild(breakLine);
-        post.appendChild(postContent);
-        post.appendChild(breakLine);
-
-        // var divPost=document.createElement("div");
-        // divPost.appendChild(postTime);
-        // divPost.appendChild(breakLine1);
-        // divPost.appendChild(postContent);
-        // divPost.appendChild(breakLine2);
-        // array.push(divPost);
+        // post.appendChild(postTime);
+        // post.appendChild(breakLine);
+        // post.appendChild(postContent);
+        // post.appendChild(breakLine);
+        var postContainer = document.createElement("div");
+        postContainer.appendChild(postTime);
+        postContainer.appendChild(breakLine);
+        postContainer.appendChild(postContent);
+        postContainer.appendChild(breakLine);
+        array.push(postContainer);
     }
 }
 
