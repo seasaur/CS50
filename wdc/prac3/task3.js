@@ -22,6 +22,7 @@ function clickFunc() {
         post.appendChild(breakLine1);
         post.appendChild(postContent);
         post.appendChild(breakLine2);
+        
     }
 }
 
