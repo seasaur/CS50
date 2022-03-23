@@ -25,12 +25,12 @@ function clickFunc() {
         post.appendChild(postContent);
         post.appendChild(breakLine2);
 
-        // var divPost=document.createElement("div");
-        // divPost.appendChild(postTime);
-        // divPost.appendChild(breakLine1);
-        // divPost.appendChild(postContent);
-        // divPost.appendChild(breakLine2);
-        // array.push(divPost);
+        var divPost=document.createElement("div");
+        divPost.appendChild(postTime);
+        divPost.appendChild(breakLine1);
+        divPost.appendChild(postContent);
+        divPost.appendChild(breakLine2);
+        array.push(divPost);
     }
 }
 
