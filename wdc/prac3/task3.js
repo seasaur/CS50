@@ -6,15 +6,15 @@ function mouseOver() {
 }
 
 function clickFunc() {
-    var post = document.getElementById("posts");
+    var posts = document.getElementById("posts");
     var number = document.getElementById("postNum").value;
     for(let i = 0; i < number; i++){
-        var postTime = document.createElement("Span");
-        let breakLine = document.createElement("Br");
+        var postTime = document.createElement("p");
+        // let breakLine = document.createElement("Br");
         var displayText = document.getElementsByTagName("textarea")[0].value;
         postTime.classList.add("post-time");
         postTime.innerHTML = Date();
-        var postContent = document.createElement("span");
+        var postContent = document.createElement("p");
         postColor(postContent);
         postStyle(postContent);
         postContent.classList.add("post-content");
@@ -27,10 +27,8 @@ function clickFunc() {
 
         var postContainer = document.createElement("div");
         postContainer.appendChild(postTime);
-        postContainer.appendChild(breakLine);
         postContainer.appendChild(postContent);
-        postContainer.appendChild(breakLine);
-        post.appendChild(postContainer);
+        posts.appendChild(postContainer);
         array.push(postContainer);
     }
 }
@@ -88,10 +86,10 @@ function postStyle(postText) {
 }
 
 function postRange(postNumber) {
-    console.log(postNumber);
-    var slider = document.querySelectorAll('input[type="range"]');
-    for(let i=array.length;i>slider.value;i--) {
-
+    var posts = document.getElementById("posts");
+    posts.innerHTML="";
+    for(let i=array.length;i>postNumber;i--) {
+        posts.appendChild(array[i]);
     }
 
 
