@@ -53,20 +53,6 @@ function BGFunc() {
 }
 
 function postColor(postText) {
-//     // document.getElementById("blueButton").style.color = "blue";
-//     // const btn = document.querySelector('#colorBtn');
-//     const radioButtons = document.querySelectorAll('input[name="color"]');
-//     textColor.addEventListener("click", () => {
-//         let selectedColor;
-//         for (const radioButton of radioButtons) {
-//             if (radioButton.checked) {
-//                 selectedColor = radioButton.value;
-//                 break;
-//             }
-//         }
-//     document.getElementsByClassName("post-content")[0].style.color = selectedColor;
-//     });
-// }
     var radioButtons = document.querySelectorAll('input[name="color"]');
     var selectedColor;
     for(let radioButton of radioButtons){
@@ -78,14 +64,14 @@ function postColor(postText) {
     postText.style.color= selectedColor;
 }
 
-// function postStyle(postText) {
-//     var checkBox = document.querySelectorAll('input[name="style"]');
-//     var textStyle;
-//     for(var i=0, n=checkbox.length;i<n;i++) {
-//         if (checkBox[i].checked == true){
-//             textStyle = checkBox[i].value;
-//             break;
-//         }
-//     }
-//     textStyle.style.fontStyle = textStyle;
-// }
+function postStyle(postText) {
+    var checkBox = document.querySelectorAll('input[name="style"]');
+    var textStyle;
+    for(var i=0, n=checkbox.length;i<n;i++) {
+        if (checkBox[i].checked == true){
+            textStyle = checkBox[i].value;
+            break;
+        }
+    }
+    postText.style.fontStyle = textStyle;
+}
