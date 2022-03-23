@@ -67,7 +67,7 @@ function postColor(postText) {
 function postStyle(postText) {
     var checkBox = document.querySelectorAll('input[name="style"]');
     var textStyle;
-    for(var i=0, n=checkbox.length;i<n;i++) {
+    for(var i=0, n=checkBox.length;i<n;i++) {
         if (checkBox[i].checked == true){
             textStyle = checkBox[i].value;
             if(textStyle=="italic") {
