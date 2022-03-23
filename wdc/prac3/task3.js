@@ -9,7 +9,6 @@ function clickFunc() {
     // document.getElementsByClassName("post-content")[0].innerHTML = displayText;
     var post = document.getElementById("posts");
     var number = document.getElementById("postNum").value;
-    var count = 0;
     for(let i = 0; i < number; i++){
         var postTime = document.createElement("Span");
         let breakLine1 = document.createElement("Br");
@@ -26,7 +25,6 @@ function clickFunc() {
         post.appendChild(breakLine1);
         post.appendChild(postContent);
         post.appendChild(breakLine2);
-        count++;
     }
 }
 
