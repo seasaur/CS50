@@ -23,11 +23,14 @@ function clickFunc() {
         // post.appendChild(breakLine);
         // post.appendChild(postContent);
         // post.appendChild(breakLine);
+
+
         var postContainer = document.createElement("div");
         postContainer.appendChild(postTime);
         postContainer.appendChild(breakLine);
         postContainer.appendChild(postContent);
         postContainer.appendChild(breakLine);
+        post.appendChild(postContainer);
         array.push(postContainer);
     }
 }
