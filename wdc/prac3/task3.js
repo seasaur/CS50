@@ -76,3 +76,8 @@ function postColor(postText) {
     }
     postText.style.color= selectedColor;
 }
+
+function postStyle(postText) {
+
+    
+}
