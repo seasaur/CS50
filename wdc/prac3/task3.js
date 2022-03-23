@@ -1,4 +1,6 @@
 var i = 1;
+var array = [];
+
 function mouseOver() {
     document.getElementById("count").innerText = i++;
 }
@@ -23,6 +25,7 @@ function clickFunc() {
         post.appendChild(postContent);
         post.appendChild(breakLine2);
         
+
     }
 }
 
@@ -78,7 +81,8 @@ function postStyle(postText) {
     }
 }
 
-function postRange(postNumber) {
+function postRange() {
     var slider = document.querySelectorAll('input[type="range"]');
+
 
 }
