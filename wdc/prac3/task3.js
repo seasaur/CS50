@@ -10,8 +10,7 @@ function clickFunc() {
     var number = document.getElementById("postNum").value;
     for(let i = 0; i < number; i++){
         var postTime = document.createElement("Span");
-        let breakLine1 = document.createElement("Br");
-        let breakLine2 = document.createElement("Br");
+        let breakLine = document.createElement("Br");
         var displayText = document.getElementsByTagName("textarea")[0].value;
         postTime.classList.add("post-time");
         postTime.innerHTML = Date();
@@ -21,9 +20,9 @@ function clickFunc() {
         postContent.classList.add("post-content");
         postContent.innerHTML = displayText;
         post.appendChild(postTime);
-        post.appendChild(breakLine1);
+        post.appendChild(breakLine);
         post.appendChild(postContent);
-        post.appendChild(breakLine2);
+        post.appendChild(breakLine);
 
         // var divPost=document.createElement("div");
         // divPost.appendChild(postTime);
