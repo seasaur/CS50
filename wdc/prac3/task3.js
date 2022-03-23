@@ -70,7 +70,12 @@ function postStyle(postText) {
     for(var i=0, n=checkbox.length;i<n;i++) {
         if (checkBox[i].checked == true){
             textStyle = checkBox[i].value;
-            postText.style.fontStyle = textStyle;
+            if(textStyle=="italic") {
+                postText.style.fontStyle = textStyle;
+            }
+            if(textStyle=="bold") {
+                postText.style.fontWeight = textStyle;
+            }
         }
     }
 }
