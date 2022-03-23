@@ -4,9 +4,6 @@ function mouseOver() {
 }
 
 function clickFunc() {
-    // document.getElementsByClassName("post-time")[0].innerHTML = Date();
-    // var displayText = document.getElementsByTagName("textarea")[0].value;
-    // document.getElementsByClassName("post-content")[0].innerHTML = displayText;
     var post = document.getElementById("posts");
     var number = document.getElementById("postNum").value;
     for(let i = 0; i < number; i++){
@@ -82,5 +79,5 @@ function postStyle(postText) {
 
 function postRange(postNumber) {
     var slider = document.querySelectorAll('input[type="range"]');
-    
+
 }
