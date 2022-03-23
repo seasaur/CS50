@@ -18,6 +18,7 @@ function clickFunc() {
         postTime.innerHTML = Date();
         var postContent = document.createElement("Span");
         postColor(postContent);
+        postStyle(postContent);
         postContent.classList.add("post-content");
         postContent.innerHTML = displayText;
         post.appendChild(postTime);
