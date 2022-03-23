@@ -78,6 +78,6 @@ function postColor(postText) {
 }
 
 function postStyle(postText) {
-
     
+
 }
