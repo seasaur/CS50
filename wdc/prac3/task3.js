@@ -89,6 +89,9 @@ function postStyle(postText) {
 
 function postRange() {
     var slider = document.querySelectorAll('input[type="range"]');
+    for(let i=array.length;i>slider.value;i--) {
+
+    }
 
 
 }
