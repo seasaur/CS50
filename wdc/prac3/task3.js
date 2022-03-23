@@ -18,7 +18,7 @@ function clickFunc() {
         postTime.innerHTML = Date();
         var postContent = document.createElement("Span");
         postColor(postContent);
-        // postStyle(postContent);
+        //postStyle(postContent);
         postContent.classList.add("post-content");
         postContent.innerHTML = displayText;
         post.appendChild(postTime);
@@ -70,7 +70,7 @@ function postStyle(postText) {
     for(var i=0, n=checkbox.length;i<n;i++) {
         if (checkBox[i].checked == true){
             textStyle = checkBox[i].value;
-            break;
+            //break;
         }
     }
     postText.style.fontStyle = textStyle;
