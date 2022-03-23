@@ -82,16 +82,5 @@ function postStyle(postText) {
 
 function postRange(postNumber) {
     var slider = document.querySelectorAll('input[type="range"]');
-    slider.value = 
-    for(var i=0, n=checkBox.length;i<n;i++) {
-        if (checkBox[i].checked == true){
-            textStyle = checkBox[i].value;
-            if(textStyle=="italic") {
-                postText.style.fontStyle = textStyle;
-            }
-            if(textStyle=="bold") {
-                postText.style.fontWeight = textStyle;
-            }
-        }
-    }
+    
 }
