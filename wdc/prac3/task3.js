@@ -81,9 +81,11 @@ function postColor(postText) {
 function postStyle(postText) {
     var checkBox = document.querySelectorAll('input[name="style"]');
     var textStyle;
-    if (checkBox.checked == true){
-      textStyle = checkBox.value;
-      break;
+    for(var i=0, n=checkbox.length;i<n;i++) {
+        if (checkBox[i].checked == true){
+            textStyle = checkBox[i].value;
+            break;
+        }
     }
     textStyle.style.fontStyle = textStyle;
 }
