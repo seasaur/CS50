@@ -1,0 +1,60 @@
+<!-- Partials head.html -->
+<!doctype html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" dir="ltr">
+
+<head>
+	<script type="text/javascript">
+		var uoa_data = {
+english_accept: "1",
+ga_domain: "adelaide.edu.au",
+ga_id: "UA-7185376-1",
+global: "/global/v/style-guide3/",
+site_root: "/front"
+};
+	</script>
+	<!-- Google Tag Manager -->
+	<script>
+		(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','IRXDataLayer','GTM-PT5SCSP');
+	</script>
+	<!-- End Google Tag Manager -->
+
+	<!-- Adobe Launch  -->
+	<script>
+		var hostname = window.location.hostname,
+site = hostname.match(/^www/) ? 'uoa' : hostname.replace('.adelaide.edu.au', ''),
+pageLink = window.location.pathname.split('/'),
+sections = pageLink.map(x => x.replace(/_/g, '-')).join(':').replace(/^:/, '') || 'home',
+category = 'UoA Homepage',
+pageName = site + ':' + sections;
+uoaAdobeData = {
+  "page": {
+    "pageName": pageName,
+    "contentCat": category
+  }
+}
+	</script>
+	<script src="//assets.adobedtm.com/68ba8c8184ab/7af167091cb7/launch-067420168aaf.min.js" async></script>
+	<!-- End Adobe Launch -->
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="icon"
+		href="//global.adelaide.edu.au/v/style-guide3/assets/img/icons/apple-touch-icon-144-precomposed.png"
+		type="image/x-icon">
+	<title>The University of Adelaide</title>
+
+	<!--[if gt IE 8]><!-->
+	<link href="//global.adelaide.edu.au/style-guide-v3/latest/css/app.css" rel="stylesheet">
+	<link href="//global.adelaide.edu.au/style-guide-v3/latest/css/global-assets.css" rel="stylesheet">
+
+	<!--<![endif]-->
+	<link href="/front/includes/local.css" rel="stylesheet">
+</head>
