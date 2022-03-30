@@ -13,7 +13,7 @@ router.get('/last.txt', function(req, res, next) {
   time = now;
 });
 
-var count;
+var count=0;
 router.get('/color.html', function(req, res, next) {
   const color =["red", "yellow", "green", "blue"];
   res.send(`<!DOCTYPE html>
@@ -25,12 +25,13 @@ router.get('/color.html', function(req, res, next) {
 
     <body>
     <h1 style = "color:${color[color%4]}">
-    color:${color[color%4]}
+    ${color[color%4]}
     </h1>
     </body>
 
     </html>`
     );
+    count++;
 });
 
 module.exports = router;
