@@ -7,8 +7,15 @@
 
 <body>
   <h1>My Prac 4 Express Server</h1>
-  <p>
-  </p>
+  <p></p>
 </body>
+
+<script>
+  fetch('last.txt')
+  .then(u => u.text())
+  .then((data) => {
+    console.log(data);
+  });
+</script>
 
 </html>
