@@ -14,7 +14,21 @@ router.get('/last.txt', function(req, res, next) {
 });
 
 router.get('/color.html', function(req, res, next) {
-  res.send();
+  res.send(<!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="utf-8">
+      <title>Express</title>
+    </head>
+
+    <body>
+    <h1>
+    My Prac 4 Express Server
+    </h1>
+    </body>
+
+    </html>
+    );
 });
 
 
