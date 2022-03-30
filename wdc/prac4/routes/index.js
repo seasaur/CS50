@@ -62,7 +62,7 @@ router.get('/color.txt', function(req, res, next) {
 var arrayDates = [];
 router.get('/log.json', function(req, res, next) {
   arrayDates+=new Date();
-  var myArray = JSON.Parse(arrayDates);
+  var myArray = JSON.stringify(arrayDates);
   res.send(myArray);
 });
 
