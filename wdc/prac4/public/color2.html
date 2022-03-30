@@ -3,6 +3,12 @@
 <head>
 <meta charset="utf-8">
   <title>Express</title>
+
+</head>
+
+<body>
+  <h1>Color!</h1>
+  <button id="colorButton" onclick="clickFunc()">click</button>
   <script>
   fetch('/color.txt')
   .then(u => u.text()) // => returns u.text. u is fulfilled promise. u is what is at last.txt, .text returns it as body from a response object, formats as string
@@ -15,11 +21,6 @@
   }
 
 </script>
-</head>
-
-<body>
-  <h1>Color!</h1>
-  <button id="colorButton" onclick="clickFunc()">click</button>
 </body>
 
 </html>
