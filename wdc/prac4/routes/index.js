@@ -14,8 +14,9 @@ router.get('/last.txt', function(req, res, next) {
 });
 
 var count=0;
+const color =["red", "yellow", "green", "blue"];
 router.get('/color.html', function(req, res, next) {
-  const color =["red", "yellow", "green", "blue"];
+
   res.send(`<!DOCTYPE html>
     <html lang="en">
     <head>
@@ -50,6 +51,12 @@ router.get('/log.html', function(req, res, next) {
   </body>
 
   </html>`);
+});
+
+router.get('/color.txt', function(req, res, next) {
+  var now = new Date();
+  res.send(String(time));
+  time = now;
 });
 
 module.exports = router;
