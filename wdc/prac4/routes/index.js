@@ -53,7 +53,7 @@ router.get('/log.html', function(req, res, next) {
   </html>`);
 });
 
-count1=0;
+var count1=0;
 router.get('/color.txt', function(req, res, next) {
   res.send(color[count1%4]);
   count1++;
