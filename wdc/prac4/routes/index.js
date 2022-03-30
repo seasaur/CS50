@@ -24,7 +24,7 @@ router.get('/color.html', function(req, res, next) {
     </head>
 
     <body>
-    <h1 style co>
+    <h1 style = "color:$[color[color%4]]>
 
     </h1>
     </body>
