@@ -8,14 +8,14 @@ router.get('/', function(req, res, next) {
 
 var time;
 router.get('/last.txt', function(req, res, next) {
-  var now = new Date();
-  res.send(String(time));
+  var now = new Date()
+  res.send(String(time))
   time = now;
 });
 
 var count;
 router.get('/color.html', function(req, res, next) {
-  const color = {"red", "yellow", "green", "blue"};
+  const color =["red", "yellow", "green", "blue"];
   res.send(`<!DOCTYPE html>
     <html lang="en">
     <head>
