@@ -8,6 +8,6 @@ router.get('/', function(req, res, next) {
 
 module.exports = router;
 
-router.get('/', (req, res) => {
+router.get('/last.txt', (req, res) => {
   res.send('GET request to the homepage')
 })
