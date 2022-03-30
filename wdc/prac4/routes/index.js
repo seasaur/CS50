@@ -14,9 +14,7 @@ router.get('/last.txt', function(req, res, next) {
 });
 
 router.get('/color.html', function(req, res, next) {
-  var now = new Date();
-  res.send(String(time));
-  time = now;
+  
 });
 
 
