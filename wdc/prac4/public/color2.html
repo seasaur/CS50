@@ -6,9 +6,14 @@
   <script>
 function clickFunc() {
       var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange=function() {
+        if (this.readyState==4 && this.status==200) {
+      document.getElementsByTagName("h1")[0].innerHTML = this.responseText;
+      document.getElementsByTagName("h1")[0].style.color = this.responseText;
+        }
+      };
       xhttp.open("GET", "/color.txt", true);
       xhttp.send();
-      document.getElementsByTagName("h1")[0].innerHTML = xhttp;
   }
 
 </script>
@@ -17,7 +22,7 @@ function clickFunc() {
 <body>
   <h1>Color!</h1>
   <button id="colorButton" onclick="clickFunc()">click</button>
-
+  onload=clickFunc();
 </body>
 
 </html>
