@@ -36,6 +36,7 @@ router.get('/color.html', function(req, res, next) {
 
 router.get('/log.html', function(req, res, next) {
   var now = new Date();
+  var timeList = document.createElement("li");
   res.send(`<!DOCTYPE html>
   <html lang="en">
   <head>
