@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
 });
 
 var time;
-router.get('/last.txt', (req, res, next) {
+router.get('/last.txt', function(req, res, next) {
   var now = new Date();
   res.send(String(time));
   time = now;
