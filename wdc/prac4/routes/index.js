@@ -13,6 +13,7 @@ router.get('/last.txt', function(req, res, next) {
   time = now;
 });
 
+var count;
 router.get('/color.html', function(req, res, next) {
   res.send(<!DOCTYPE html>
     <html lang="en">
