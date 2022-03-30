@@ -7,13 +7,14 @@
 
 <body>
   <h1>My Prac 4 Express Server</h1>
-  <p></p>
+  <p id="timestamp"></p>
 </body>
 
 <script>
   fetch('last.txt')
   .then(u => u.text())
   .then((data) => {
+    document.getElementById("timestamp").innerText = `This page was last viewed ${data}`;
     console.log(data);
   });
 </script>
