@@ -53,10 +53,10 @@ router.get('/log.html', function(req, res, next) {
   </html>`);
 });
 
+count1=0;
 router.get('/color.txt', function(req, res, next) {
-  var now = new Date();
-  res.send(String(time));
-  time = now;
+  res.send(color[count1%4]);
+  count1++;
 });
 
 module.exports = router;
