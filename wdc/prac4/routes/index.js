@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 module.exports = router;
 
 router.get('/last.txt', (req, res) => {
-  var timestamps = moment().format('HH:mm:ss')
-  console.log(timestamps + ' From routes/index.js')
-  res.send('GET request to the homepage')
+  var timestamps = '/';
+  res.send(timestamps + ' From routes/index.js');
+  var timestamps = moment().format('HH:mm:ss');
 })
