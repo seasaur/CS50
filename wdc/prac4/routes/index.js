@@ -15,7 +15,7 @@ router.get('/last.txt', function(req, res, next) {
 
 var count;
 router.get('/color.html', function(req, res, next) {
-  const color = {'red', 'yellow', 'green', 'blue'};
+  const color = {"red", "yellow", "green", "blue"};
   res.send(`<!DOCTYPE html>
     <html lang="en">
     <head>
