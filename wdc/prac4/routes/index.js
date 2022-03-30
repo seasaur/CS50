@@ -36,7 +36,20 @@ router.get('/color.html', function(req, res, next) {
 
 router.get('/log.html', function(req, res, next) {
   var now = new Date();
-  res.send(String(time));
+  res.send(`<!DOCTYPE html>
+  <html lang="en">
+  <head>
+  <meta charset="utf-8">
+    <title>Express</title>
+  </head>
+
+  <body>
+  <h1 style = "color:${color[count%4]}">
+  ${color[count%4]}
+  </h1>
+  </body>
+
+  </html>`);
   time = now;
 });
 
