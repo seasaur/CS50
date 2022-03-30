@@ -3,14 +3,7 @@
 <head>
 <meta charset="utf-8">
   <title>Express</title>
-</head>
-
-<body>
-  <h1>My Prac 4 Express Server</h1>
-  <p id="timestamp"></p>
-</body>
-
-<script>
+  <script>
   fetch('/last.txt')
   .then(u => u.text()) // => returns u.text. u is fulfilled promise. u is what is at last.txt, .text returns it as body from a response object, formats as string
   .then((data) => { //picks up u.text()
@@ -18,5 +11,11 @@
     console.log(data);
   });
 </script>
+</head>
+
+<body>
+  <h1>My Prac 4 Express Server</h1>
+  <p id="timestamp"></p>
+</body>
 
 </html>
