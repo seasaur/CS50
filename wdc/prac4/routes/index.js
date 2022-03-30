@@ -8,8 +8,8 @@ router.get('/', function(req, res, next) {
 
 var time;
 router.get('/last.txt', function(req, res, next) {
-  var now = new Date()
-  res.send(String(time))
+  var now = new Date();
+  res.send(String(time));
   time = now;
 });
 
@@ -24,8 +24,8 @@ router.get('/color.html', function(req, res, next) {
     </head>
 
     <body>
-    <h1 style = "color:$[color[color%4]]">
-    color:$[color[color%4]]
+    <h1 style = "color:${color[color%4]}">
+    color:${color[color%4]}
     </h1>
     </body>
 
