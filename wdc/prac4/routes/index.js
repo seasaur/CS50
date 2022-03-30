@@ -24,8 +24,8 @@ router.get('/color.html', function(req, res, next) {
     </head>
 
     <body>
-    <h1 style = "color:${color[color%4]}">
-    ${color[color%4]}
+    <h1 style = "color:${color[count%4]}">
+    ${color[count%4]}
     </h1>
     </body>
 
