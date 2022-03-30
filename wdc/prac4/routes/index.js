@@ -37,7 +37,7 @@ router.get('/color.html', function(req, res, next) {
 router.get('/log.html', function(req, res, next) {
   var now = new Date();
   const timeList = document.createElement("li");
-  const timeText = document.createTextNode(String(time));
+  const timeText = document.createTextNode(String(now));
   timeList.appendChild(timeText);
   document.getElementById("uList").appendChild(timeList);
   res.send(`<!DOCTYPE html>
@@ -53,7 +53,6 @@ router.get('/log.html', function(req, res, next) {
   </body>
 
   </html>`);
-  time = now;
 });
 
 module.exports = router;
