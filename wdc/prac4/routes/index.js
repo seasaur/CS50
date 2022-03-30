@@ -44,9 +44,11 @@ router.get('/log.html', function(req, res, next) {
   </head>
 
   <body>
-  <h1 style = "color:${color[count%4]}">
-  ${color[count%4]}
-  </h1>
+  <ul>
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ul>
   </body>
 
   </html>`);
