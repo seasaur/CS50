@@ -59,22 +59,11 @@ router.get('/color.txt', function(req, res, next) {
   count1++;
 });
 
+const arrayDates;
 router.get('/log.json', function(req, res, next) {
-  ff+=`<li>${new Date()}</li>`; //string concatenation, += adds on top of existing list and doesn't overwrite it
-  res.send(`<!DOCTYPE html>
-  <html lang="en">
-  <head>
-  <meta charset="utf-8">
-    <title>Express</title>
-  </head>
-
-  <body>
-  <ul>
-  ${ff}
-  </ul>
-  </body>
-
-  </html>`);
+  arrayDates+=new Date(); //string concatenation, += adds on top of existing list and doesn't overwrite it
+  myArray = JSON.Parse(arrayDates);
+  res.send(myArray);
 });
 
 module.exports = router;
