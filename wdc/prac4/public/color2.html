@@ -4,15 +4,10 @@
 <meta charset="utf-8">
   <title>Express</title>
   <script>
-
-var xhttp = new XMLHttpRequest();
-xhttp.open("GET", "/color.txt", true);
-xhttp.send();
-
-    document.getElementsByTagName("h1")[0].innerHTML = xhttp;
-  });
-
 function clickFunc() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.open("GET", "/color.txt", true);
+      xhttp.send();
       document.getElementsByTagName("h1")[0].innerHTML = xhttp;
   }
 
