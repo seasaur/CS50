@@ -59,10 +59,10 @@ router.get('/color.txt', function(req, res, next) {
   count1++;
 });
 
-const arrayDates;
+var arrayDates = [];
 router.get('/log.json', function(req, res, next) {
   arrayDates+=new Date(); //string concatenation, += adds on top of existing list and doesn't overwrite it
-  myArray = JSON.Parse(arrayDates);
+  var myArray = JSON.Parse(arrayDates);
   res.send(myArray);
 });
 
