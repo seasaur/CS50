@@ -7,11 +7,5 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/last.txt', (req, res) => {
-  var timestamp;
-  res.send(timestamp);
-  timestamp = moment().format('HH:mm:ss');
-})
-
 
 module.exports = router;
