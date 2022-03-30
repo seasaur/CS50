@@ -36,10 +36,6 @@ router.get('/color.html', function(req, res, next) {
 let ff='';
 router.get('/log.html', function(req, res, next) {
   ff+=`<li>${new Date()}</li>`
-  const timeList = document.createElement("li");
-  const timeText = document.createTextNode(String(now));
-  timeList.appendChild(timeText);
-  document.getElementById("uList").appendChild(timeList);
   res.send(`<!DOCTYPE html>
   <html lang="en">
   <head>
@@ -48,7 +44,8 @@ router.get('/log.html', function(req, res, next) {
   </head>
 
   <body>
-  <ul id = "uList">
+  <ul>
+  ${ff}
   </ul>
   </body>
 
