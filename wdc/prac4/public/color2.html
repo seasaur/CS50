@@ -7,15 +7,14 @@
   fetch('/color.txt')
   .then(u => u.text()) // => returns u.text. u is fulfilled promise. u is what is at last.txt, .text returns it as body from a response object, formats as string
   .then((data) => { //picks up u.text()
-    document.getElementById("colorButton").innerText = `This page was last viewed ${data}`;
-    console.log(data);
+
   });
 </script>
 </head>
 
 <body>
   <h1>Color!</h1>
-  <button id="colorButton">click</button>
+  <button id="colorButton" onclick="clickFunc()">click</button>
 </body>
 
 </html>
