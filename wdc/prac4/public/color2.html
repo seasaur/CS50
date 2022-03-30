@@ -9,11 +9,11 @@ var xhttp = new XMLHttpRequest();
 xhttp.open("GET", "/color.txt", true);
 xhttp.send();
 
-    document.getElementsByTagName("h1")[0].innerText = data;
+    document.getElementsByTagName("h1")[0].innerHTML = xhttp;
   });
 
 function clickFunc() {
-      document.getElementsByTagName("h1")[0].innerText = data;
+      document.getElementsByTagName("h1")[0].innerHTML = xhttp;
   }
 
 </script>
