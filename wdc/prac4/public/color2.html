@@ -10,9 +10,9 @@
   <h1>Color!</h1>
   <button id="colorButton" onclick="clickFunc()">click</button>
   <script>
-  fetch('/color.txt')
-  .then(u => u.text()) // => returns u.text. u is fulfilled promise. u is what is at last.txt, .text returns it as body from a response object, formats as string
-  .then((data) => { //picks up u.text()
+
+var xhttp = new XMLHttpRequest();
+
     document.getElementsByTagName("h1")[0].innerText = data;
   });
 
