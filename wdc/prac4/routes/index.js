@@ -59,4 +59,9 @@ router.get('/color.txt', function(req, res, next) {
   count1++;
 });
 
+router.get('/log.json', function(req, res, next) {
+  res.send(color[count1%4]);
+  count1++;
+});
+
 module.exports = router;
