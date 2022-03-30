@@ -35,7 +35,7 @@ router.get('/color.html', function(req, res, next) {
 });
 let ff='';
 router.get('/log.html', function(req, res, next) {
-  ff+=`<li>${new Date()}</li>`;
+  ff+=`<li>${new Date()}</li>`; //string concatenation, += adds on top of existing list and doesn't overwrite it
   res.send(`<!DOCTYPE html>
   <html lang="en">
   <head>
