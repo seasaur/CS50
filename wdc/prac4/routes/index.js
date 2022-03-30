@@ -33,9 +33,9 @@ router.get('/color.html', function(req, res, next) {
     );
     count++;
 });
-
+let ff='';
 router.get('/log.html', function(req, res, next) {
-  var now = new Date();
+  ff+=`<li>${new Date()}</li>`
   const timeList = document.createElement("li");
   const timeText = document.createTextNode(String(now));
   timeList.appendChild(timeText);
