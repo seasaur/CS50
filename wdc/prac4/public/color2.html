@@ -13,11 +13,11 @@
   fetch('/color.txt')
   .then(u => u.text()) // => returns u.text. u is fulfilled promise. u is what is at last.txt, .text returns it as body from a response object, formats as string
   .then((data) => { //picks up u.text()
-    document.getElementsByTagName("h1").innerText = data;
+    document.getElementsByTagName("h1")[0].innerText = data;
   });
 
   clickFunc() {
-      document.getElementsByTagName("h1").innerText = data;
+      document.getElementsByTagName("h1")[0].innerText = data;
   }
 
 </script>
