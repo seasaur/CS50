@@ -11,9 +11,9 @@
 </body>
 
 <script>
-  fetch('last.txt')
-  .then(u => u.text())
-  .then((data) => {
+  fetch('/last.txt')
+  .then(u => u.text()) // => returns u.text. u is fulfilled promise. u is what is at last.txt, .text returns it as body from a response object, formats as string
+  .then((data) => { //picks up u.text()
     document.getElementById("timestamp").innerText = `This page was last viewed ${data}`;
     console.log(data);
   });
