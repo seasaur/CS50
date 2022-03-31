@@ -80,6 +80,7 @@ router.get('/accept', function(req, res, next) {
 router.get('/content.ajax', function(req, res, next) {
   if (accept=0) {
     res.sendStatus(403);
+    res.send(0);
   }
   else {
     res.send('<p>some html</p> <p>some more html</p>')
