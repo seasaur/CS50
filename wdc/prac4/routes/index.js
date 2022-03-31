@@ -82,7 +82,7 @@ router.get('/content.ajax', function(req, res, next) {
     res.sendStatus(403);
   }
   else {
-    
+    res.send('<p>some html</p> <p>')
   }
 });
 
