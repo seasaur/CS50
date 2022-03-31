@@ -6,10 +6,11 @@
   <script>
   var x = document.getElementById("tnc");
   x.style.display = "none";
+
   function accept() {
   var xhttp = new XMLHttpRequest();
   xhttp.onload=function() {
-   if (this.readyState==4 && this.status==403) {
+   if (this.status==403) { //if not accepted
           x.style.display = "block";
      }
      else { //if accepted
