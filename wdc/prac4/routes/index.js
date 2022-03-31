@@ -71,5 +71,13 @@ router.get('/log-ro.json', function(req, res, next) {
   res.send(logroArray);
 });
 
+router.get('/accept', function(req, res, next) {
+  res.sendStatus(200);
+});
+
+router.get('/content.ajax', function(req, res, next) {
+  res.sendStatus(200);
+});
+
 
 module.exports = router;
