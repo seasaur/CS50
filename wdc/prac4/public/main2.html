@@ -4,14 +4,17 @@
 <meta charset="utf-8">
   <title>Express</title>
   <script>
-  var x = document.getElementsByTagName("div")[0];
-  //x.style.display = "none";
-
+  const x = document.getElementsByClassName("hide");
+  x[0].style.display = "none";
+x[1].style.display = "none";
   function content() {
   var xhttp = new XMLHttpRequest();
   xhttp.onload=function() {
    if (this.status==403) { //if not accepted
           //x.style.display = "block";
+          
+            <p>accept the terms and conditions</p>
+          <button onclick="accept()">accept</button>
      }
      else { //if accepted
         //x.innerHTML = this.responseText;
@@ -38,10 +41,7 @@
 
 <body onload="content()">
   <h1>My Prac 4 Express Server</h1>
-  <div>
-  <p>accept the terms and conditions</p>
-  <button onclick="accept()">accept</button>
-  </div>
+
 </body>
 
 </html>
