@@ -9,10 +9,10 @@
   xhttp.onreadystatechange=function() {
    if (this.readyState==4 && this.status==200) {
        if(this.responseText == 0) {
-
+           x.style.display = "block"
      }
-    document.getElementById("logList").innerHTML = aaa;
-    logRo();
+    var x = document.getElementById("tnc");
+
       }
       };
   xhttp.open("GET", "/content.ajax", true);
@@ -25,9 +25,10 @@
 
 <body>
   <h1>My Prac 4 Express Server</h1>
-  <p> </p> <button id="tnc" onclick="accept()">accept</button>
-
-
+  <div id="tnc">
+  <p>accept the terms and conditions</p>
+  <button onclick="accept()">accept</button>
+  </div>
 </body>
 
 </html>
