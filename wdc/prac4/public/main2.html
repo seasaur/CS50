@@ -8,7 +8,7 @@
   x.style.display = "none";
   function accept() {
   var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange=function() {
+  xhttp.onload=function() {
    if (this.readyState==4 && this.status==403) {
           x.style.display = "block";
      }
