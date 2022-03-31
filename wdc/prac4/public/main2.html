@@ -4,14 +4,14 @@
 <meta charset="utf-8">
   <title>Express</title>
   <script>
-  var x = document.getElementsByTagName("div")[0];
-  x.style.display = "none";
+  //var x = document.getElementsByTagName("div")[0];
+  //x.style.display = "none";
 
   function accept() {
   var xhttp = new XMLHttpRequest();
   xhttp.onload=function() {
    if (this.status==403) { //if not accepted
-          x.style.display = "block";
+          //x.style.display = "block";
      }
      else { //if accepted
         x.innerHTML = this.responseText;
