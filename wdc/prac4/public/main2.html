@@ -11,10 +11,10 @@
   xhttp.onreadystatechange=function() {
    if (this.readyState==4 && this.status==200) {
        if(this.responseText == 0) { //if not accepted
-           x.style.display = "block"
+           x.style.display = "block";
      }
      else { //if accepted
-        x.innerHTML =`<p>paragraph 1</p> <p> paragraph 2 </p>`
+        x.innerHTML =`<p>paragraph 1</p> <p> paragraph 2 </p>`;
       }
       };
   xhttp.open("GET", "/content.ajax", true);
