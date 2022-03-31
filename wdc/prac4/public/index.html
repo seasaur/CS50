@@ -20,9 +20,9 @@ let aaa = ''; //me screaming youre welcome
      var arrayLog = this.responseText;
      if (var i=0;i<arrayLog.length;i++) {
       aaa +=`<li>${arrayLog[i]}</li>`;
+      document.getElementById("logList").innerHTML = aaa;
      }
       }
-
       };
   xhttp.open("GET", "/log.json", true);
   xhttp.send();
@@ -34,7 +34,7 @@ let aaa = ''; //me screaming youre welcome
 <body>
   <h1>My Prac 4 Express Server</h1>
   <p id="timestamp"></p>
-  <ul id = "logList">
+  <ul id ="logList">
 
   </ul>
 </body>
