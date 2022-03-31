@@ -61,7 +61,7 @@ router.get('/color.txt', function(req, res, next) {
 
 var arrayDates = [];
 router.get('/log.json', function(req, res, next) {
-  arrayDates+=new Date();
+  arrayDates.push(Date());
   var myArray = JSON.stringify(arrayDates);
   res.send(myArray);
 });
