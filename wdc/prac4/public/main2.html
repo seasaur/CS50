@@ -11,7 +11,7 @@
        let aaa = '';
      var arrayLog = JSON.parse(this.responseText);
      for (var i=0;i<arrayLog.length;i++) {
-        aaa +=`<li>${arrayLog[i]}</li>`;
+        aaa +=`  <p> </p> <button id="tnc" onclick="accept()">accept</button>`;
      }
     document.getElementById("logList").innerHTML = aaa;
     logRo();
@@ -27,8 +27,7 @@
 
 <body>
   <h1>My Prac 4 Express Server</h1>
-  <p> </p>
-  <button id="tnc" onclick="accept()">accept</button>
+
 
 </body>
 
