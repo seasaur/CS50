@@ -11,17 +11,11 @@
     console.log(data);
   });
 
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange=function() {
+  xhttp.open("GET", "/log.json", true);
+  xhttp.send();
 
-      var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange=function() {
-        if (this.readyState==4 && this.status==200) {
-      document.getElementsByTagName("h1")[0].innerHTML = this.responseText;
-      document.getElementsByTagName("h1")[0].style.color = this.responseText;
-        }
-      };
-      xhttp.open("GET", "/color.txt", true);
-      xhttp.send();
-  
 </script>
 </head>
 
