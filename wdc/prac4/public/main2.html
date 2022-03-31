@@ -4,9 +4,9 @@
 <meta charset="utf-8">
   <title>Express</title>
   <script>
-  const x = document.getElementsByClassName("hide");
-  x[0].style.display = "none";
-x[1].style.display = "none";
+ // const x = document.getElementsByClassName("hide");
+ // x[0].style.display = "none";
+//x[1].style.display = "none";
   function content() {
   var xhttp = new XMLHttpRequest();
   xhttp.onload=function() {
@@ -22,12 +22,15 @@ x[1].style.display = "none";
         b.innerHTML = "accept or else";
         document.getElementsByTagName("body").appendChild(p);
 
-            <p>accept the terms and conditions</p>
-          <button onclick="accept()">accept</button>
+            //<p>accept the terms and conditions</p>
+          //<button onclick="accept()">accept</button>
+          document.getElementsByClassName("b").setAttribute("onClick", "accept()")
      }
      else { //if accepted
         //x.innerHTML = this.responseText;
         console.log("i hate everything");
+        p.style.display = "none";
+        b.style.display = "none";
       }
       };
   xhttp.open("GET", "/content.ajax", true);
@@ -39,6 +42,7 @@ x[1].style.display = "none";
     xhttp.onload=function() {
   if (this.readyState==4 && this.status==200) {
           content();
+
      }
       };
   xhttp.open("GET", "/accept", true);
