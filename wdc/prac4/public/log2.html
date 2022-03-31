@@ -15,7 +15,7 @@ let aaa = '';
         aaa +=`<li>${arrayLog[i]}</li>`;
      }
     document.getElementById("logList").innerHTML = aaa;
-
+    logRo();
       }
       };
 
@@ -31,6 +31,7 @@ let aaa = '';
      for (var i=0;i<arrayLog.length;i++) {
         aaa +=`<li>${arrayLog[i]}</li>`;
      }
+     console.log("beans");
     document.getElementById("logList").innerHTML = aaa;
 
       }
@@ -44,7 +45,7 @@ let aaa = '';
 </script>
 </head>
 
-<body onload="logger()" onload= "logRo()">
+<body onload="logger()">
   <ul id ="logList">
 
   </ul>
