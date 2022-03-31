@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+  <title>Express</title>
+  <script>
+let aaa = ''; //me screaming youre welcome
+
+  function logger() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange=function() {
+   if (this.readyState==4 && this.status==200) {
+     var arrayLog = this.responseText;
+     if (var i=0;i<arrayLog.length;i++) {
+      aaa +=`<li>${arrayLog[i]}</li>`;
+      document.getElementById("logList").innerHTML = aaa;
+     }
+      }
+      };
+  xhttp.open("GET", "/log.json", true);
+  xhttp.send();
+  setTimeout(logger, 10000);
+  }
+</script>
+</head>
+
+<body>
+  <ul id ="logList">
+
+  </ul>
+</body>
+
+</html>
