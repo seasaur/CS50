@@ -67,9 +67,8 @@ router.get('/log.json', function(req, res, next) {
 });
 
 router.get('/log-ro.json', function(req, res, next) {
-  arrayDates+=new Date();
-  var myArray = JSON.stringify(arrayDates);
-  res.send(myArray);
+  var logroArray = JSON.stringify(arrayDates);
+  res.send(logroArray);
 });
 
 
