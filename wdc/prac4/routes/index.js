@@ -71,13 +71,19 @@ router.get('/log-ro.json', function(req, res, next) {
   res.send(logroArray);
 });
 
-let 
+let accept = 0;
 router.get('/accept', function(req, res, next) {
   res.sendStatus(200);
+  accept = 1;
 });
 
 router.get('/content.ajax', function(req, res, next) {
-  res.sendStatus(403);
+  if (accept=0) {
+    res.sendStatus(403);
+  }
+  else {
+    
+  }
 });
 
 
