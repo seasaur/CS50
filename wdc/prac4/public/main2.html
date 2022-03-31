@@ -4,15 +4,17 @@
 <meta charset="utf-8">
   <title>Express</title>
   <script>
+  var x = document.getElementById("tnc");
+  x.style.display = "none";
   function accept() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange=function() {
    if (this.readyState==4 && this.status==200) {
-       if(this.responseText == 0) {
+       if(this.responseText == 0) { //if not accepted
            x.style.display = "block"
      }
-    var x = document.getElementById("tnc");
-
+     else { //if accepted
+        
       }
       };
   xhttp.open("GET", "/content.ajax", true);
@@ -25,7 +27,7 @@
 
 <body>
   <h1>My Prac 4 Express Server</h1>
-  <div id="tnc">
+  <div id="tnc" style>
   <p>accept the terms and conditions</p>
   <button onclick="accept()">accept</button>
   </div>
