@@ -7,7 +7,7 @@
   //var x = document.getElementsByTagName("div")[0];
   //x.style.display = "none";
 
-  function accept() {
+  function content() {
   var xhttp = new XMLHttpRequest();
   xhttp.onload=function() {
    if (this.status==403) { //if not accepted
@@ -21,11 +21,21 @@
   xhttp.send();
   }
 
+  function accept() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onload=function() {
+  if (this.readyState==4 && this.status==200) {
+          content();
+     }
+      };
+  xhttp.open("GET", "/accept", true);
+  xhttp.send();
+  }
 
 </script>
 </head>
 
-<body>
+<body onload="content()">
   <h1>My Prac 4 Express Server</h1>
   <div>
   <p>accept the terms and conditions</p>
