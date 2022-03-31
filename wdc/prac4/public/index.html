@@ -10,12 +10,12 @@
     document.getElementById("timestamp").innerText = `This page was last viewed ${data}`;
     console.log(data);
   });
-  
+  function logger() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange=function() {
   xhttp.open("GET", "/log.json", true);
   xhttp.send();
-
+  }
 </script>
 </head>
 
