@@ -11,7 +11,7 @@ let aaa = '';
   xhttp.onreadystatechange=function() {
    if (this.readyState==4 && this.status==200) {
      var arrayLog = this.responseText;
-     if (var i=0;i<arrayLog.length;i++) {
+     for (var i=0;i<arrayLog.length;i++) {
         document.getElementById("logList").innerHTML = aaa;
         aaa +=`<li>${arrayLog[i]}</li>`;
      }
@@ -24,7 +24,7 @@ let aaa = '';
 </script>
 </head>
 
-<body>
+<body onload="logger()">
   <ul id ="logList">
 
   </ul>
