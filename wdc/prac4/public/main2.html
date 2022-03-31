@@ -28,9 +28,12 @@
      }
      else { //if accepted
         //x.innerHTML = this.responseText;
-        console.log("i hate everything");
         //p.style.display = "none";
         //b.style.display = "none";
+        var para = document.createElement("div");
+        para.classList.add("div");
+        para.innerHTML = this.responseText;
+        document.getElementById("bruh").appendChild(para);
       }
       };
   xhttp.open("GET", "/content.ajax", true);
