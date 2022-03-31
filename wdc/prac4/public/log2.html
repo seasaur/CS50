@@ -12,8 +12,8 @@ let aaa = '';
    if (this.readyState==4 && this.status==200) {
      var arrayLog = this.responseText;
      if (var i=0;i<arrayLog.length;i++) {
+    document.getElementById("logList").innerHTML = aaa;
       aaa +=`<li>${arrayLog[i]}</li>`;
-      document.getElementById("logList").innerHTML = aaa;
      }
       }
       };
