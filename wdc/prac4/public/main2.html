@@ -15,16 +15,16 @@
         var p = document.createElement("p");
         p.classList.add("p");
         p.innerHTML = "accept the terms and conditions";
-        document.getElementsByTagName("body").appendChild(p);
+        document.getElementById("bruh").appendChild(p);
 
         var b = document.createElement("button");
         b.classList.add("b");
         b.innerHTML = "accept or else";
-        document.getElementsByTagName("body").appendChild(p);
+        document.getElementById("bruh").appendChild(b);
 
             //<p>accept the terms and conditions</p>
           //<button onclick="accept()">accept</button>
-          document.getElementsByClassName("b").setAttribute("onClick", "accept()")
+          b.setAttribute("onClick", "accept()")
      }
      else { //if accepted
         //x.innerHTML = this.responseText;
@@ -52,7 +52,7 @@
 </script>
 </head>
 
-<body onload="content()">
+<body id="bruh" onload="content()">
   <h1>My Prac 4 Express Server</h1>
 
 </body>
