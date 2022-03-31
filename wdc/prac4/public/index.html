@@ -10,12 +10,18 @@
     document.getElementById("timestamp").innerText = `This page was last viewed ${data}`;
     console.log(data);
   });
+
+let aaa = ''; //me screaming youre welcome
+
   function logger() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange=function() {
    if (this.readyState==4 && this.status==200) {
-      this.responseText;
-        }
+     var arrayLog = this.responseText;
+     if (var i=0;i<arrayLog.length;i++) {
+      aaa +=`<li>${arrayLog[i]}</li>`;
+     }
+      }
       };
   xhttp.open("GET", "/log.json", true);
   xhttp.send();
@@ -28,7 +34,7 @@
   <h1>My Prac 4 Express Server</h1>
   <p id="timestamp"></p>
   <ul>
-  
+
   </ul>
 </body>
 
