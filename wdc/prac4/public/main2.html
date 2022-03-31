@@ -15,9 +15,12 @@ x[1].style.display = "none";
         var p = document.createElement("p");
         p.classList.add("p");
         p.innerHTML = "accept the terms and conditions";
+        document.getElementsByTagName("body").appendChild(p);
 
-        var b = 
-
+        var b = document.createElement("button");
+        b.classList.add("b");
+        b.innerHTML = "accept or else";
+        document.getElementsByTagName("body").appendChild(p);
 
             <p>accept the terms and conditions</p>
           <button onclick="accept()">accept</button>
