@@ -18,5 +18,5 @@ CREATE TABLE Enrolments (
 );
 
 ALTER TABLE Students
-MODIFY COLUMN given_name varchar
-MODIFY COLUMN family_name varchar
+MODIFY COLUMN given_name varchar,
+MODIFY COLUMN family_name varchar;
