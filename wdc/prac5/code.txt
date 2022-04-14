@@ -53,3 +53,6 @@ VALUE ('a1111111', 'COMP SCI 1102', 62),
      ('a1111114', 'COMP SCI 2000', 49);
 
 SELECT * FROM Enrolments;
+
+
+DROP DATABASE enrolment;
