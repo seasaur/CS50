@@ -1,0 +1,6 @@
+CREATE TABLE Students (
+    student_id char(8),
+    given_name char(100),
+    family_name char(100),
+    program varchar(100)
+);
