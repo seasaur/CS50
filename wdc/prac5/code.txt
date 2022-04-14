@@ -25,8 +25,8 @@ ALTER TABLE Enrolments
 MODIFY COLUMN student_id char(8);
 
 INSERT INTO Students (student_id, given_name, family_name, program)
+
 VALUES ('a1111111', 'Fang', 'Li', 'BE(Hons)(Soft)');
 VALUES ('a1111112', 'Jane', 'Brown', 'BE(Hons)(Soft)');
-
-INSERT INTO Students (student_id, given_name, family_name, program)
-VALUES ('a1111111', 'Fang', 'Li', 'BE(Hons)(Soft)');
+VALUES ('a1111113', 'Bob', 'Smith', 'BCompSc');
+VALUES ('a1111114', 'Wei', 'Zhang', 'BCompSc');
