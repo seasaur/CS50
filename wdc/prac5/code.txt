@@ -43,7 +43,8 @@ SELECT * FROM Subjects;
 
 INSERT INTO Enrolments (student_id, subject_code, mark)
 
- ('a1111111', 'COMP SCI 1102', 'BE(Hons)(Soft)'),
- ('a1111112', 'Jane', 'Brown', 'BE(Hons)(Soft)'),
- ('a1111113', 'Bob', 'Smith', 'BCompSc'),
- ('a1111114', 'Wei', 'Zhang', 'BCompSc');
+ ('a1111111', 'COMP SCI 1102', 62),
+  ('a1111111', 'COMP SCI 2000', 80),
+ ('a1111112', 'COMP SCI 1102', 55),
+  ('a1111112', 'COMP SCI 2207', 80),
+  ('a1111112', 'COMP SCI 2207', 80),
