@@ -57,3 +57,4 @@ SELECT * FROM Enrolments;
 
 DROP DATABASE enrolment;
 mysql --host=127.0.0.1 < task2-4.sql
+SHOW TABLES;
