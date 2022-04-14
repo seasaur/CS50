@@ -26,17 +26,24 @@ MODIFY COLUMN student_id char(8);
 
 INSERT INTO Students (student_id, given_name, family_name, program)
 
-VALUES ('a1111111', 'Fang', 'Li', 'BE(Hons)(Soft)');
-VALUES ('a1111112', 'Jane', 'Brown', 'BE(Hons)(Soft)');
-VALUES ('a1111113', 'Bob', 'Smith', 'BCompSc');
-VALUES ('a1111114', 'Wei', 'Zhang', 'BCompSc');
+ ('a1111111', 'Fang', 'Li', 'BE(Hons)(Soft)'),
+ ('a1111112', 'Jane', 'Brown', 'BE(Hons)(Soft)'),
+ ('a1111113', 'Bob', 'Smith', 'BCompSc'),
+ ('a1111114', 'Wei', 'Zhang', 'BCompSc');
 
 SELECT * FROM Students;
 
 INSERT INTO Subjects (subject_code, subject, faculty)
 VALUES ('COMP SCI 1102', 'Object Oriented Programming','ECMS'),
-VALUES ('COMP SCI 2207', 'Web and Database Computing','ECMS'),
-VALUES ('COMP SCI 2000', 'Computer Systems','ECMS'),
-VALUES ('PHIL 2039', 'Philosophy of Mind','Arts');
+ ('COMP SCI 2207', 'Web and Database Computing','ECMS'),
+ ('COMP SCI 2000', 'Computer Systems','ECMS'),
+ ('PHIL 2039', 'Philosophy of Mind','Arts');
 
+SELECT * FROM Subjects;
 
+INSERT INTO Enrolments (student_id, subject_code, mark)
+
+ ('a1111111', 'COMP SCI 1102', 'BE(Hons)(Soft)'),
+ ('a1111112', 'Jane', 'Brown', 'BE(Hons)(Soft)'),
+ ('a1111113', 'Bob', 'Smith', 'BCompSc'),
+ ('a1111114', 'Wei', 'Zhang', 'BCompSc');
