@@ -34,4 +34,9 @@ VALUES ('a1111114', 'Wei', 'Zhang', 'BCompSc');
 SELECT * FROM Students;
 
 INSERT INTO Subjects (subject_code, subject, faculty)
-VALUES ('COMP SCI 1102', 'Object Oriented Programming','ECMS');
+VALUES ('COMP SCI 1102', 'Object Oriented Programming','ECMS'),
+VALUES ('COMP SCI 2207', 'Web and Database Computing','ECMS'),
+VALUES ('COMP SCI 2000', 'Computer Systems','ECMS'),
+VALUES ('PHIL 2039', 'Philosophy of Mind','Arts');
+
+
