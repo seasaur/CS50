@@ -17,4 +17,5 @@ CREATE TABLE Enrolments (
     mark tinyint(3)
 );
 
-alter table Students modify given_name varchar;
+alter table Students
+modify given_name varchar;
