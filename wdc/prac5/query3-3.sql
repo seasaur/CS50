@@ -1,2 +1,3 @@
-SELECT * FROM Customers
-WHERE Country='Mexico';
+SELECT given_name, family_name
+FROM Students
+WHERE program='BCompSc';
