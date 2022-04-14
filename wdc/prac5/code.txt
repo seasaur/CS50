@@ -4,3 +4,9 @@ CREATE TABLE Students (
     family_name char(100),
     program varchar(100)
 );
+
+CREATE TABLE Subjects (
+    subject_code varchar(100),
+    subject varchar(100),
+    faculty varchar(100),
+);
