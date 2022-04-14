@@ -1,3 +1,3 @@
 SELECT given_name, family_name
-FROM Students
-WHERE program='BCompSc';
+FROM Enrolments
+WHERE subject_code='COMP SCI 2207';
