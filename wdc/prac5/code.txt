@@ -1,7 +1,7 @@
 CREATE TABLE Students (
     student_id char(8),
-    given_name char(100),
-    family_name char(100),
+    given_name varchar(100),
+    family_name varchar(100),
     program varchar(100)
 );
 
@@ -12,7 +12,9 @@ CREATE TABLE Subjects (
 );
 
 CREATE TABLE Enrolments (
-    student_id varchar(100),
+    student_id varchar(8),
     subject_code varchar(100),
-    mark tinyint(100)
+    mark tinyint(3)
 );
+
+alter table Students modify given_name varchar;
