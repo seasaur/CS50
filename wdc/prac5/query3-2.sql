@@ -1,2 +1,2 @@
-SELECT student_id,
-FROM table_name;
+SELECT student_id, program
+FROM Students;
