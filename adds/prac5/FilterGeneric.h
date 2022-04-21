@@ -7,7 +7,7 @@ class FilterGeneric {
         virtual bool g(int x) = 0;
 
     public:
-        vector<int> filter(vector<int> x);
+        std::vector<int> filter(std::vector<int> x);
 };
 
 #endif
