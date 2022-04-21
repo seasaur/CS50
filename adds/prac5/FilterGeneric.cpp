@@ -8,6 +8,6 @@ std::vector<int> FilterGeneric::filter(std::vector<int> x) {
     if (g(x[i])==0) {
         x.erase(i);
     }
-    index++;
+    i++;
     return filter(x);
 }
