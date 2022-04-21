@@ -1,12 +1,12 @@
 #include "FilterGeneric.h"
 #include <vector>
-int index = 0;
+int i = 0;
 std::vector<int> FilterGeneric::filter(std::vector<int> x) {
-    if((x.size()-1)<index) {
+    if((x.size()-1)<i) {
         return x;
     }
-    if (g(x[index])==0) {
-        x.erase(index);
+    if (g(x[i])==0) {
+        x.erase(i);
     }
     index++;
     return filter(x);
