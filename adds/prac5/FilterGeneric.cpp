@@ -6,7 +6,7 @@ std::vector<int> FilterGeneric::filter(std::vector<int> x) {
         return x;
     }
     if (g(x[i])==0) {
-        x.erase(x[i]);
+        x.erase(i);
     }
     index++;
     return filter(x);
