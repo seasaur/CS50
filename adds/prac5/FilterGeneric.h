@@ -8,7 +8,7 @@ class FilterGeneric {
         std::vector<int> store;
 
     public:
-        vector<int> filter(vector<int>);
+        vector<int> filter(vector<int> x);
 };
 
 #endif
