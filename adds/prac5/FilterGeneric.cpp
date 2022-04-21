@@ -6,6 +6,6 @@ vector<int> FilterGeneric::filter(vector<int> x) {
         return store;
     }
 
-    
+    store.push_back(g())
     return filter(x);
 }
