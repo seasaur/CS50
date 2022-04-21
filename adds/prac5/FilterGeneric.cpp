@@ -1,6 +1,6 @@
 #include "FilterGeneric.h"
 #include <vector>
-int i = 0;
+std::vector<int>::iterator i = 0;
 std::vector<int> FilterGeneric::filter(std::vector<int> x) {
     if((x.size()-1)<i) {
         return x;
