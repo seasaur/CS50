@@ -5,7 +5,7 @@ vector<int> FilterGeneric::filter(vector<int> x) {
     if((x.size()-1)<index) {
         return x;
     }
-    if (g(x)==0) {
+    if (g(x[index])==0) {
         x.erase(index);
     }
     index++;
