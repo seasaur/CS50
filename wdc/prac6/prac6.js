@@ -49,7 +49,10 @@ var vueinst = new Vue({
         show_ad: true,
         show_main: false,
         dark_mode: false
-        textColor: '#333533',
-        bgColor: '#F5CB5C'
+
+        styleObject: {
+            textColor: '#333533',
+            bgColor: '#F5CB5C'
+        }
     }
 });
