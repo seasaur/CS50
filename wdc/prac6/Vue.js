@@ -1,7 +1,6 @@
-var choose = new Vue({
+var vueinst = new Vue({
     el: '#sp',
     data: {
-      salt=true;
-      pepper=true;
+        choose: "Choose..."
     }
   })
