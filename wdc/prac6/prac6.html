@@ -38,15 +38,15 @@
 
             <div class="pad" id="ad">
                 <button class="pure-button" style="float:right;" onclick="vueinst.show_ad = false;">close</button>
-                <img src="" alt="" onclick="vueinst.special=SPECIALS[Math.floor((Math.random() * 3))];" />
+                <img src="v-for=name in SPECIALS" alt="" onclick="vueinst.special=SPECIALS[Math.floor((Math.random() * 3))];" />
                 <todo-item
                     v-for="ad in SPECIALS"
                     v-bind:name="name"
                     v-bind:price="price"
                     v-bind:url="url"
                 ></todo-item>
-                <h3>Some Name</h3>
-                <p>$Some.Price</p>
+                <h3 v-for="name in SPECIALS">{{name}}</h3>
+                <p v-for="price in SPECIALS">{{price}}</p>
             </div>
 
 
