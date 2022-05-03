@@ -47,3 +47,10 @@ var vueinst = new Vue({
         choose: "Choose..."
     }
 });
+
+var vueinst = new Vue({
+    el: '#ad',
+    data: {
+        special: "Choose..."
+    }
+});
