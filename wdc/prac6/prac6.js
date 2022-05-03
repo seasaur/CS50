@@ -51,6 +51,6 @@ var vueinst = new Vue({
 var vueinst = new Vue({
     el: '#ad',
     data: {
-        special: "Choose..."
+        special: SPECIALS[0]
     }
 });
