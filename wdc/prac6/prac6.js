@@ -48,7 +48,7 @@ var vueinst = new Vue({
     }
 });
 
-Vue.component('ads', {
+Vue.component('ad-item', {
     // The todo-item component now accepts a
     // "prop", which is like a custom attribute.
     // This prop is called todo.
