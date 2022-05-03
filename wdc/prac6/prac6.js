@@ -50,9 +50,9 @@ var vueinst = new Vue({
         show_main: false,
         dark_mode: false
 
-        return : {
-            textColor: '#333533',
-            bgColor: '#F5CB5C'
-        }
+        // return : {
+        //     textColor: '#333533',
+        //     bgColor: '#F5CB5C'
+        // }
     }
 });
