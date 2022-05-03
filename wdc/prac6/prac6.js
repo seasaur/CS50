@@ -48,11 +48,8 @@ var vueinst = new Vue({
         special: SPECIALS[0],
         show_ad: true,
         show_main: false,
-        dark_mode: false
-
-        // return : {
-        //     textColor: '#333533',
-        //     bgColor: '#F5CB5C'
-        // }
+        dark_mode: false,
+        textColor: '#333533',
+        bgColor: '#F5CB5C'
     }
 });
