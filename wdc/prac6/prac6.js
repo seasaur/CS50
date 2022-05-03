@@ -50,7 +50,7 @@ var vueinst = new Vue({
         show_main: false,
         dark_mode: false
 
-        styleObject: {
+        return : {
             textColor: '#333533',
             bgColor: '#F5CB5C'
         }
