@@ -62,7 +62,9 @@
                     <h3>Salt or Pepper?</h3>
                     <!-- TASK 1.1 -->
                     <p id="sp">
-                    <p v-if="nothing">Choose...
+                    <p v-if="nothing">Choose...</p>
+                    <p v-else-if="salt">Salt</p>
+                    <p v-else-if="pepper">Pepper!</p>
                     </p>
                     <button class="pure-button pure-u-1-4" onclick="vueinst.choose='Salt';">Salt</button>
                     <button class="pure-button pure-u-1-4" onclick="vueinst.choose='Pepper!';">Pepper</button>
