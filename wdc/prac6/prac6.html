@@ -39,6 +39,11 @@
             <div class="pad" id="ad">
                 <button class="pure-button" style="float:right;" onclick="vueinst.show_ad = false;">close</button>
                 <img src="" alt="" onclick="vueinst.special=SPECIALS[Math.floor((Math.random() * 3))];" />
+                <todo-item
+      v-for="item in groceryList"
+      v-bind:todo="item"
+      v-bind:key="item.id"
+    ></todo-item>
                 <h3>Some Name</h3>
                 <p>$Some.Price</p>
             </div>
