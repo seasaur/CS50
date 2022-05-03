@@ -39,12 +39,6 @@
             <div class="pad" id="ad">
                 <button class="pure-button" style="float:right;" onclick="vueinst.show_ad = false;">close</button>
                 <img v-bind:src="specials.url" alt="" onclick="vueinst.special=SPECIALS[Math.floor((Math.random() * 3))];" />
-                <ad-item
-                    v-for="ad in SPECIALS"
-                    v-bind:name="name"
-                    v-bind:price="price"
-                    v-bind:url="url"
-                ></aside-item>
                 <h3>{{specials.name}}</h3>
                 <p>{{specials.price}}</p>
             </div>
