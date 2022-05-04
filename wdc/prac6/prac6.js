@@ -50,8 +50,8 @@ var vueinst = new Vue({
         show_main: false,
         dark_mode: false,
         top_menu: [
-            { title:'Home',         url:'/' }
-            { title:'About',        url:'/about' }
+            { title:'Home',         url:'/' },
+            { title:'About',        url:'/about' },
             { title:'Contact Us',   url:'/contact' }
         ]
     }
