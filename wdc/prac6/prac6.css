@@ -9,7 +9,7 @@ body, #app {
     margin: 0;
 }
 
-#dark_mode {
+.darkmodeStyle {
     color: #F5CB5C;
     background-color: #333533;
 }

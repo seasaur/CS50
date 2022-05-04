@@ -49,7 +49,5 @@ var vueinst = new Vue({
         show_ad: true,
         show_main: false,
         dark_mode: false,
-        textColor: '#F5CB5C',
-        bgColor: '#333533'
     }
 });
