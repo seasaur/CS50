@@ -49,6 +49,8 @@ var vueinst = new Vue({
         show_ad: true,
         show_main: false,
         dark_mode: false,
-        top_menu
+        top_menu: [
+            
+        ]
     }
 });
