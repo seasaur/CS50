@@ -2,12 +2,14 @@
     box-sizing: border-box;
 }
 
-body, #app, #vue {
+body, #app {
     color: #333533;
     background-color: #FFFFFF;
     padding: 0;
     margin: 0;
 }
+
+
 
 nav .pure-menu-link {
     color: #CFDBD5;
