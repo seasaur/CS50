@@ -5,5 +5,5 @@ int sumOfCube(int n) {
     if(n<1) {
         return i;
     }
-    return sumOfCube(n+pow(n,3));
+    return sumOfCube(pow(n,3));
 }
