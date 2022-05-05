@@ -2,7 +2,9 @@
 //function that cubes index+1
 
 int sumOfCube(int n, int i) {
-    if
+    if(i==n) {
+        return i;
+    }
     return sumOfCube(n, i+1);
 }
 
