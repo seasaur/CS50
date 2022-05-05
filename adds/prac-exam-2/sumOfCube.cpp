@@ -6,3 +6,7 @@ int sumOfCube(int n) {
     }
     return pow(n,3)+sumOfCube(n-1);
 }
+
+int main(){
+    std::cout << sumOfCube(10) << std::endl;
+}

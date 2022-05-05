@@ -11,3 +11,7 @@ int sumOfCube(int n, int result) {
 int sumOfCube(int n) {
     return sumOfCube(n,0);
 }
+
+int main(){
+    std::cout << sumOfCube(10) << std::endl;
+}
