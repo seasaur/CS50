@@ -1,6 +1,6 @@
 #include <math.h>
 //function that cubes index+1
 int sumOfCube(int n) {
-    n+1;
+    if(n);
     return pow(n,3);
 }
