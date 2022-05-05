@@ -4,6 +4,5 @@ int sumOfCube(int n) {
     if(n<1) {
         return n;
     }
-    n=pow(n,3);
-    return sumOfCube(n-1);
+    return pow(n,3)+sumOfCube(n-1);
 }
