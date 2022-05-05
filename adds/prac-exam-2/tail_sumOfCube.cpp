@@ -2,10 +2,10 @@
 //function that cubes index+1
 
 int sumOfCube(int n, int i) {
-    if(i==n) {
+    if(n<1) {
         return i;
     }
-    return sumOfCube(n, i+1);
+    return sumOfCube(n-1, i+1);
 }
 
 int sumOfCube(int n) {
