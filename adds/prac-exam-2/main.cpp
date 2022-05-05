@@ -2,5 +2,5 @@
 #include <iostream>
 
 int main(){
-    std::cout << sumOfCube(0) << std::endl;
+    std::cout << sumOfCube(10) << std::endl;
 }
