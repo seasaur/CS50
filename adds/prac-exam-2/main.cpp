@@ -1,5 +1,6 @@
-#include "SumOfCube.cpp"
+#include "sumOfCube.cpp"
+#include <iostream>
 
 int main(){
-    sumOfCube(int n)
+    std::cout << sumOfCube(0) << std::endl;
 }
