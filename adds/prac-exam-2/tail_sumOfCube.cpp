@@ -1,9 +1,14 @@
 #include <math.h>
 //function that cubes index+1
 
-int sumOfCube(int n) {
+int sumOfCube(int n, int i) {
     if(n<1) {
-        return n;
+        return i;
     }
-    return sumOfCube(pow(n,3));
+    return sumOfCube(n-1, pow(n, 3));
+}
+
+int sumOfCube(int n) {
+    if
+    return pow(n,3);
 }
