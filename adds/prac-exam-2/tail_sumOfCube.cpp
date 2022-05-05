@@ -3,7 +3,7 @@
 
 int sumOfCube(int n, int i) {
     if
-    return pow(n,1);
+    return sumOfCube(n, i+1);
 }
 
 int sumOfCube(int n) {
