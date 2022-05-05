@@ -9,5 +9,5 @@ int sumOfCube(int n, int result) {
 }
 
 int sumOfCube(int n) {
-    return pow(n,0);
+    return sumOfCube(n,0);
 }
