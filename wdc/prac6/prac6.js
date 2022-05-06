@@ -44,7 +44,7 @@ const SPECIALS = [
 var vueinst = new Vue({
     el: '#app',
     data: {
-        choose: "Choose...",
+        choose: 'Choose...',
         special: SPECIALS[0],
         show_ad: true,
         show_main: false,
@@ -54,7 +54,7 @@ var vueinst = new Vue({
             { title:'About',        url:'/about' },
             { title:'Contact Us',   url:'/contact' }
         ]
-        c_text: "type your comment here",
+        c_text: 'type your comment here',
         c_arr: []
     }
 });
