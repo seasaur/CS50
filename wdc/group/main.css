@@ -94,6 +94,8 @@
   text-align:left;
   border-spacing: 0;
   padding: 16px;
+  width:10%;
+  white-space: nowrap;
 }
 
 tr:nth-child(even) {
