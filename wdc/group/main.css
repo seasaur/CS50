@@ -113,6 +113,6 @@ td:nth-child(even) {
 }
 
 .submitButton:hover {
-  background-color: #CCE7D9;
-  color: #FFBEC2;
+  background-color: #47CACC;
+  color: #CCE7D9;
 }
