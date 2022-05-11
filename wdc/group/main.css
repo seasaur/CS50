@@ -26,6 +26,12 @@
     margin: 1%;
   }
 
+  .eventHeading{
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+  }
+
   .share{
     float:right;
     text-decoration: underline;
