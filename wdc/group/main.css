@@ -26,11 +26,6 @@
     margin: 1%;
   }
 
-  .eventHeading{
-    display: flex;
-    justify-content: space-between;
-    width: 600px;
-  }
 
   .share{
     float:right;
@@ -39,6 +34,10 @@
 
   .pageHeading{
     margin: 1% 5%;
+  }
+
+  .eventHeading{
+    margin: 5%;
   }
 
   .titleBox{
