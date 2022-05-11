@@ -88,3 +88,8 @@
   width: 2em;
   height: auto;
 }
+
+.name {
+  margin: 2%;
+  text-align:left;
+}
