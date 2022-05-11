@@ -15,9 +15,20 @@
       height: auto;
   }
 
-  .headerButton, .submitButton{
+  .headerButton{
     float:right;
     background-color: #CCE7D9;
+    border-radius: 0.3em;
+    width: auto;
+    height: auto;
+    text-align: center;
+    padding: 0.5em;
+    margin: 1%;
+  }
+
+  .submitButton{
+    float:right;
+    background-color: #FFBEC2;
     border-radius: 0.3em;
     width: auto;
     height: auto;
@@ -77,7 +88,7 @@
   .share{
     float:right;
     text-decoration: underline;
-    background-color: #CCE7D9;
+    background-color: #FFBEC2;
   }
 
   .eventHeading{
@@ -114,6 +125,10 @@ td:nth-child(even) {
   background-color: rgba(150, 212, 212, 0.4);
 }
 
-.submitButton:hover, .share:hover, .headerButton:hover {
+.headerButton:hover{
   background-color: #47CACC;
+}
+
+.share:hover, .submitButton:hover {
+  background-color: #CB8A90;
 }
