@@ -1,0 +1,65 @@
+* {
+    box-sizing: border-box;
+  }
+
+  body{
+    color: #333533;
+    background-color: #FFFFFF;
+    padding: 0;
+    margin: 2em;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  #logo{
+      width: 5em;
+      height: auto;
+  }
+
+  .headerButton, .submitButton{
+    float:right;
+    background-color: #CCE7D9;
+    border-radius: 0.3em;
+    width: auto;
+    height: auto;
+    text-align: center;
+    padding: 0.5em;
+    margin: 1%;
+  }
+
+  .pageHeading{
+    margin: 1% 5%;
+  }
+
+  .titleBox{
+      margin: 0% 5%;
+      background-color:#D9C0D7;
+  }
+
+  .boxHeading{
+    margin: 1em;
+    margin-bottom: 0em;
+  }
+
+  .inputBox{
+      margin: 1em;
+      margin-bottom: 2em;
+      width: 95%;
+      height: auto;
+      border-radius: 0.5em;
+  }
+
+  .leftFloat{
+      margin: 2% 2.5% 2% 5%;
+      float: left;
+      width: 42%;
+      height: 30em;
+      background-color: lightgray;
+  }
+
+  .rightFloat{
+      margin: 2% 5% 2% 2.5%;
+      float: right;
+      width: 42%;
+      height: 30em;
+      background-color: lightgray;
+  }
