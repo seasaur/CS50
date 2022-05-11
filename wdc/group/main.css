@@ -82,7 +82,7 @@
   .eventHeading{
     display: flex;
     justify-content: space-between;
-    margin: 5% 15%;
+    margin: 7% 15% 3%;
   }
 
   table {
