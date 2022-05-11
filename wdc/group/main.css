@@ -95,3 +95,8 @@
   border-spacing: 0;
   padding: 16px;
 }
+
+
+td:nth-child(even) {
+  background-color: rgba(150, 212, 212, 0.4);
+}
