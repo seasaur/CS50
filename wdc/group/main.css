@@ -81,7 +81,7 @@
     width:70%;
     text-align:center;
     border-collapse: collapse;
-    padding-bottom: 10em;
+    border-spacing: 0;
 }
 
 #tick{
