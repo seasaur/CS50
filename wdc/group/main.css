@@ -36,6 +36,11 @@
     margin: 1% 5%;
   }
 
+  .eventHeading{
+    display: flex;
+    justify-content: space-between;
+    margin: 5% 15%
+  }
 
   .titleBox{
       margin: 0% 5%;
