@@ -91,9 +91,7 @@
 }
 
 .name {
-  margin: 2%;
   text-align:left;
-  border-spacing: 0;
   padding: 16px;
   width:15%;
   white-space: nowrap;
