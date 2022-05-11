@@ -32,7 +32,7 @@
 
   .titleBox{
       margin: 0% 5%;
-      background-color:#D9C0D7;
+      background-color:#D9C0D7  !important;
   }
 
   .boxHeading{
