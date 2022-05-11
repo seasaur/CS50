@@ -80,9 +80,9 @@
     margin: 5% 15%;
     width:70%;
     text-align:center;
-    border-collapse: collapse;
+    border-collapse: separate;
     border-spacing: 0;
-    table-layout: fixed
+    table-layout: fixed;
 }
 
 #tick{
