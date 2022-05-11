@@ -82,3 +82,8 @@
     text-align:center;
     border-collapse: collapse;
 }
+
+#tick{
+  width: 3em;
+  height: auto;
+}
