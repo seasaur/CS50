@@ -114,12 +114,6 @@ td:nth-child(even) {
   background-color: rgba(150, 212, 212, 0.4);
 }
 
-.submitButton:hover {
+.submitButton:hover, .share:hover, .headerButton:hover {
   background-color: #47CACC;
-  color: #CCE7D9;
-}
-
-.headerButton:hover {
-  background-color: #47CACC;
-  color: #CCE7D9;
 }
