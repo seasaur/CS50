@@ -80,8 +80,8 @@
     margin: 5% 15%;
     width:70%;
     text-align:center;
-    border-collapse: collapse;
-    border-spacing: 0;
+    border-collapse: separate;
+    border-spacing: 1;
     table-layout: fixed;
 }
 
