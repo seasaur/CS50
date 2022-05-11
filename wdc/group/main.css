@@ -26,6 +26,14 @@
     margin: 1%;
   }
 
+  #menu{
+    list-style:none;
+  }
+
+  #menu a{
+    text-decoration: none;
+  }
+
   .pageHeading{
     margin: 1% 5%;
   }
