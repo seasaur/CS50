@@ -26,6 +26,11 @@
     margin: 1%;
   }
 
+  .share{
+    float:right;
+    text-decoration: underline;
+  }
+
   .pageHeading{
     margin: 1% 5%;
   }
