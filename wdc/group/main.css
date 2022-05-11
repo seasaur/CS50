@@ -26,20 +26,8 @@
     margin: 1%;
   }
 
-
-  .share{
-    float:right;
-    text-decoration: underline;
-  }
-
   .pageHeading{
     margin: 1% 5%;
-  }
-
-  .eventHeading{
-    display: flex;
-    justify-content: space-between;
-    margin: 5% 15%
   }
 
   .titleBox{
@@ -75,3 +63,19 @@
       height: 30em;
       background-color: lightgray;
   }
+
+
+  .share{
+    float:right;
+    text-decoration: underline;
+  }
+
+  .eventHeading{
+    display: flex;
+    justify-content: space-between;
+    margin: 5% 15%
+  }
+
+  table {
+    border-collapse: collapse;
+}
