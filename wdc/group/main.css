@@ -116,3 +116,8 @@ td:nth-child(even) {
   background-color: #47CACC;
   color: #CCE7D9;
 }
+
+.headerButton:hover {
+  background-color: #47CACC;
+  color: #CCE7D9;
+}
