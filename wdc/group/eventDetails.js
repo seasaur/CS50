@@ -1,3 +1,10 @@
+var toggle = false;
 function tick() {
-    $(#you 'td').click(function() {$(this).addClass('highlighted');});
+    if (toggle === true) {
+        document.getElementById('imgplus').src  = 'Images/Minus.gif';
+    } else {
+       document.getElementById('imgplus').src = 'Images/Plus.gif';
+       alert(img);
+    }
+    toggle = !toggle;
 }
