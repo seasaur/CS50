@@ -45,10 +45,10 @@
 
         <tr id="you">
             <td class="name"><input type="text" value="Enter your name"></td>
-            <td><img src="greenTick.png" alt="tick" id="yourTick"><button type="button"
-        onclick="show()" id="toggleTick"></td>
-            <td><button class="pure-button" id="toggleTick" onclick="vueinst.show_tick = true;"></button>
-                <img v-if="show_tick" v-bind:src="greenTick.png" alt="tick" onclick="vueinst.show_tick = false;" /></td>
+            <td><button type="button" onclick="show()" id="toggleTick"><img src="greenTick.png" alt="tick" id="yourTick"></button></td>
+            <td><button class="pure-button" id="toggleTick" onclick="vueinst.show_tick = true;">
+            <img v-if="show_tick" v-bind:src="greenTick.png" alt="tick" onclick="vueinst.show_tick = false;" /></button>
+                </td>
             <td></td>
             <td></td>
             <td></td>
