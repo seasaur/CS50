@@ -144,5 +144,5 @@ input[type="text"] {
 #yourTick{
   width: 2em;
   height: auto;
-
+  display: none;
 }
