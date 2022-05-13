@@ -1,10 +1,9 @@
 var toggle = false;
 function tick() {
     if (toggle === true) {
-        document.getElementById('imgplus').src  = 'Images/Minus.gif';
+        document.getElementById('tick').src  = 'greenTick.png';
     } else {
-       document.getElementById('imgplus').src = 'Images/Plus.gif';
-       alert(img);
+       document.getElementById('tick').src = &nbsp;;
     }
     toggle = !toggle;
 }
