@@ -134,7 +134,7 @@ td:nth-child(even) {
 }
 
 .nameInput {
-  width: 100%;
+  width: 6em;
   box-sizing: border-box;
   border: 0;
   font-family: 'Montserrat', sans-serif;
