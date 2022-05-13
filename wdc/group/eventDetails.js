@@ -41,5 +41,5 @@ if (table != null) {
 }
 
 function toggleTick(tableCell) {
-    if
+    var x = document.getElementById("myDIV");
 }
