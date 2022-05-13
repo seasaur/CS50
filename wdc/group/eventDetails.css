@@ -140,3 +140,9 @@ input[type="text"] {
   font-family: 'Montserrat', sans-serif;
   color:#964F87
 }
+
+#yourTick{
+  width: 2em;
+  height: auto;
+
+}
