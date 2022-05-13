@@ -136,6 +136,6 @@ td:nth-child(even) {
 input[type="text"] {
   width: 100%;
   box-sizing: border-box;
-  border-collapse: collapse;
+  border: 0;
   font-family: 'Montserrat', sans-serif;
 }
