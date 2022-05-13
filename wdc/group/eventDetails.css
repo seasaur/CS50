@@ -133,7 +133,7 @@ td:nth-child(even) {
   background-color: #CB8A90;
 }
 
-input[type="text"] {
+.nameInput {
   width: 100%;
   box-sizing: border-box;
   border: 0;
