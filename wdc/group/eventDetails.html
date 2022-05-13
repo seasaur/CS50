@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <title>task</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="eventDetails.css">
+<link rel="stylesheet" href="main.css">
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
-<script src="eventDetails.js"></script>
+<script src="eventDetails.js" defer></script>
 
 </head>
 
-<body id="app">
+<body>
     <nav>
         <ul id="menu">
             <li><a href="home.html"><img src="images.png" alt="EZ logo" id="logo"></a></li>
@@ -20,62 +20,36 @@
             <li><div class="headerButton"><a href="#">+ NEW EVENT</a></div></li>
         </ul>
     </nav>
-    <main>
+    <main id="account">
     <h3 class="eventHeading">
     <span>EVENT NAME</span>
     <button type="button" class="share">SHARE</button>
-</h3>
+    </h3>
 
 
         <table>
         <tr class="titleBox">
             <th>&nbsp;</th>
-            <th colspan="3">MONTH</th>  <! -- dynamically change "3" to however many dates in the month -->
-            <th colspan="3">MONTH2</th>  <! -- dynamically change "3" to however many dates in the month -->
+            <th v-bind:colspan="month.dates" v-for="month in months">{{month.name}}</th>
         </tr>
         <tr class="titleBox">
             <th>&nbsp;</th>
-            <th>1</th>
-            <th>2</th>
-            <th>3</th>
-            <th>1</th>
-            <th>2</th>
-            <th>3</th>
+            <th v-for="date in dates">{{date}}</th>
         </tr>
-
         <tr id="you">
-            <td class="name"><input type="text" value="Enter your name"></td>
-            <td><button type="button" onclick="show()" id="toggleTick"><img src="greenTick.png" alt="tick" id="yourTick"></button></td>
-            <td><button class="pure-button" id="toggleTick" onclick="vueinst.show_tick = true;"></button>
-            <img v-if="show_tick" v-bind:src="greenTick.png" alt="tick" v-on:click="function();" />
-                </td>
-            <td onclick="function()"></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td class="name"><input type="text" value="entername" v-model="name" class="nameInput" ></td>
+            <td v-for="(current,index) in currentSelected">
+                <img src="greenTick.png" alt="tick" id="tick" v-if="currentSelected[index]" v-on:click="changef(index)">
+                <button type="button" v-on:click="changet(index)" v-else></button>
+                    {{current}}
+             </td>
         </tr>
-        <tr>
-            <td class="name">Mary</td>
-            <td><img src="greenTick.png" alt="tick" id="tick"></td>
-            <td><img src="greenTick.png" alt="tick" id="tick"></td>
-            <td><img src="greenTick.png" alt="tick" id="tick"></td>
-            <td></td>
-            <td></td>
-            <td></td>
+        <tr v-for="sname in other">
+            <td class="name">{{sname.name}}</td>
+            <td v-for="sdate in sname.selected"><img src="greenTick.png" alt="tick" id="tick" v-if="sdate"></td>
         </tr>
-        <tr>
-            <td class="name">Anne</td>
-            <td></td>
-            <td><img src="greenTick.png" alt="tick" id="tick"></td>
-            <td><img src="greenTick.png" alt="tick" id="tick"></td>
-            <td></td>
-            <td></td>
-            <td><img src="greenTick.png" alt="tick" id="tick"></td>
-        </tr>
-        </table>
-        <button type="button" class="submitButton">  <! -- send response to database -->
+        <button type="button" class="submitButton">
                 Done
         </button>
-
 </main>
 </body>

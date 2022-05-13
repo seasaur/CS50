@@ -1,53 +1,27 @@
-var toggle = false;
-// function tick() {
-//     var img = document.createElement("img");
-//     img.src = "grenTick.png";
-//     if (img.indexOf('greenTick.png')!=-1) {
-//         document.getElementById('tick').src  = 'greenTick.png';
-//     }
-//      else {
-//        document.getElementById('tick').src = '';
-//    }
-
-// }
-
-// function show() {
-//     document.getElementById('yourTick').style.display = "block";
-//     document.getElementById('toggleTick').style.display = "none";
-// }
-
-// var vueinst = new Vue({
-//     el: '#app',
-//     data: {
-//         show_tick=false;
-//     }
-//     greenTick: {
-//         avatar: 'greenTick.png'
-//       }
-//     methods: {
-//         click: function();
-//     }
-// });
-
-
-var tick = document.getElementById("you");
-if (table != null) {
-    for (var i = 0; i < table.rows.length; i++) {
-        for (var j = 0; j < table.rows[i].cells.length; j++)
-        table.rows[i].cells[j].onclick = function () {
-            toggleTick(this);
-        };
+var vueinst = new Vue({
+    el: '#account',
+    data: {
+        months: [
+            {name:'January', dates:'4'},
+            {name:'March', dates:'2'},
+            {name:'May', dates:'1'},
+            {name:'July', dates:'3'}
+        ],
+        dates: [1,2,3,4,5,5,6,23,12,22],
+        name:'enter name',
+        currentSelected: [false,false,false,false,false,false,false,false,false,false],
+        other:[
+            {name:'mary', selected:[true,false,true,false,true,false,true,true,false,true]},
+            {name:'anne', selected:[false,true,true,false,false,false,false,false,false,true]},
+            {name:'john', selected:[true,true,false,true,true,false,true,false,true,true]},
+        ],
+    },
+    methods:{
+        changet: function(n){
+            this.currentSelected= [true,false,true,false,true,false,true,true,false,true];
+        },
+        changef: function(n){
+            this.currentSelected = [false,true,true,false,false,false,false,false,false,true];
+        }
     }
-}
-
-function toggleTick(tableCell) {
-    if (tableCell.innerHTML == '') {
-        var img = document.createElement("img");
-        img.src = "grenTick.png";
-        img.style.display = "block";
-    }
-    else {
-        tableCell.innerHTML='';
-        img.style.display = "none";
-    }
-}
+});
