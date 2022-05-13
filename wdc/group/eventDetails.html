@@ -46,7 +46,7 @@
             <td v-for="(current,index) in currentSelected">
                 <img src="greenTick.png" alt="tick" id="tick" v-if="currentSelected[index]" v-on:click="changef(index)">
                 <button type="button" v-on:click="changet(index)" v-else></button>
-                    {{current}}
+
              </td>
         </tr>
         <tr v-for="sname in other">
