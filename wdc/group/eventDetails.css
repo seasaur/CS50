@@ -141,18 +141,6 @@ input[type="text"] {
   color:#964F87
 }
 
-#yourTick{
-  width: 2em;
-  height: auto;
-  display: none;
-}
-
-#toggleTick{
-  width: 100%;
-  box-sizing: border-box;
-  border: 0;
-}
-
 #month{
   border-right: 4px solid white;
 }
