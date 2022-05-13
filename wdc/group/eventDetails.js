@@ -35,11 +35,18 @@ if (table != null) {
     for (var i = 0; i < table.rows.length; i++) {
         for (var j = 0; j < table.rows[i].cells.length; j++)
         table.rows[i].cells[j].onclick = function () {
+            terms.setAttribute('id','choice');
             toggleTick(this);
         };
     }
 }
 
 function toggleTick(tableCell) {
-    var x = document.getElementById("myDIV");
+    var x = document.getElementById("choice");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
 }
