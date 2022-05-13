@@ -132,3 +132,10 @@ td:nth-child(even) {
 .share:hover, .submitButton:hover {
   background-color: #CB8A90;
 }
+
+input[type="text"] {
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing: border-box;
+}
