@@ -21,4 +21,7 @@ var vueinst = new Vue({
     data: {
         show_tick=false;
     }
+    greenTick: {
+        avatar: 'greenTick.png'
+      }
 });
