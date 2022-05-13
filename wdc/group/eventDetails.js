@@ -1,3 +1,3 @@
 function tick() {
-    $('td').click(function() {$(this).addClass('highlighted');});
+    $(#you 'td').click(function() {$(this).addClass('highlighted');});
 }
