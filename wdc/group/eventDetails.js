@@ -15,3 +15,10 @@ function show() {
     document.getElementById('yourTick').style.display = "block";
     document.getElementById('toggleTick').style.display = "none";
 }
+
+var vueinst = new Vue({
+    el: '#app',
+    data: {
+        show_tick=false;
+    }
+});
