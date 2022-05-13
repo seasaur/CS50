@@ -10,3 +10,8 @@ function tick() {
    }
 
 }
+
+function show() {
+    document.getElementById('yourTick').style.display = "block";
+    document.getElementById('toggleTick').style.display = "none";
+}
