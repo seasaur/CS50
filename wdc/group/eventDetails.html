@@ -47,7 +47,8 @@
             <td class="name"><input type="text" value="Enter your name"></td>
             <td><img src="greenTick.png" alt="tick" id="yourTick"><button type="button"
         onclick="show()" id="toggleTick"></td>
-            <td></td>
+            <td><button class="pure-button" style="float:right;" onclick="vueinst.show_ad = false;">close</button>
+                <img v-bind:src="special.url" alt="" onclick="vueinst.special=SPECIALS[Math.floor((Math.random() * 3))];" /></td>
             <td></td>
             <td></td>
             <td></td>
