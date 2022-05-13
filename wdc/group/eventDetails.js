@@ -1,9 +1,11 @@
 var toggle = false;
 function tick() {
-    if (toggle === true) {
+    var img = document.getElementById('tick').src;
+    if (img.indexOf('greenTick.png')!=-1) {
         document.getElementById('tick').src  = 'greenTick.png';
-    } else {
-       document.getElementById('tick').src = &nbsp;;
     }
-    toggle = !toggle;
+     else {
+       document.getElementById('tick').src = '';
+   }
+
 }
