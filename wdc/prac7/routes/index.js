@@ -20,14 +20,15 @@ router.get('/brew', function(req, res) {
 });
 
 router.post('/pass-it-on', function(req,res) {
-  var text = req.message;
+  var text = req.body.message;
+  console.log(text);
   if (text==="") {
     res.status(400).send();
   }
   else {
     res.send(text);
   }
-  
+
 });
 
 module.exports = router;
