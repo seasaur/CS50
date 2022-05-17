@@ -23,9 +23,9 @@ function addPost(title, content) {
 
 function showPosts() {
 
-   var title = document.getElementById("title").value;
-   var content = document.getElementById("content").value;
-
+//    var title = document.getElementById("title").value;
+//    var content = document.getElementById("content").value;
+    
    var xhttp = new XMLHttpRequest();
    xhttp.onreadystatechange = function() {
        if (this.readyState == 4 && this.status == 200) {
