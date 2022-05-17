@@ -18,4 +18,5 @@ router.get('/getposts', function(req,res) {
   res.send(posts);
 });
 
+
 module.exports = router;
