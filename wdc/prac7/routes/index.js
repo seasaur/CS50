@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/prac8', function(req, res, next) {
-  res.render('prac8_1-4', { title: 'helo' });
+  res.sendFile("/prac8_1-4.html", root);
 });
 
 router.get('/brew', function(req, res) {
