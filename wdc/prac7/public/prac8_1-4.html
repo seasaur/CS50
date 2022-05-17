@@ -17,8 +17,8 @@
             <form class="pure-form">
 
                 <fieldset class="pure-group">
-                    <input type="text" class="pure-input-1-2" placeholder="Blog post title">
-                    <textarea class="pure-input-1-2" placeholder="Blog Post Content"></textarea>
+                    <input type="text" id="title" class="pure-input-1-2" placeholder="Blog post title">
+                    <textarea class="pure-input-1-2" id="content" placeholder="Blog Post Content"></textarea>
                 </fieldset>
 
                 <button type="button" class="pure-button pure-input-1-2 pure-button-primary" onclick="send()">make post</button>
@@ -43,8 +43,8 @@
     <script>
         function send() {
 
-            var makePost = document.getElementById("lines").value.split('\n');
-            var suffix = document.getElementById("suffix").value;
+            var title = document.getElementById("title").value;
+            var content = document.getElementById("content").value;
 
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
@@ -52,9 +52,9 @@
                     document.getElementById("output").innerText = this.responseText;
                 }
             };
-            xhttp.open("POST", "/combine", true);
+            xhttp.open("POST", "/getposts", true);
             xhttp.setRequestHeader("Content-type", "application/json");
-            xhttp.send(JSON.stringify({ lines: lines, suffix: suffix }));
+            xhttp.send(JSON.stringify({ title: title, content: content }));
 
     </script>
   </body>
