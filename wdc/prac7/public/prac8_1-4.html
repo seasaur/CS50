@@ -51,9 +51,9 @@
                 if (this.readyState == 4 && this.status == 200) {
                     document.getElementById("output").innerText = this.responseText;
                         `<div>
-    <h2>${arrayLog[i]}</h2>
-    <p>content</p>
-</div>`
+                            <h2>${posts.title}</h2>
+                            <p>${posts.content}</p>
+                        </div>`
                 }
             };
             xhttp.open("POST", "/getposts", true);
