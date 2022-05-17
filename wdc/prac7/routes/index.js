@@ -7,15 +7,15 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/brew', function(req, res) {
-  var drink = req.query.drink;
-  if (drink=='tea') {
+  var q = req.query.drink;
+  if (q=='tea') {
   res.send('A delicious cup of tea!');
   }
-  if (drink=='coffee') {
-    res.sendStatus(418);
+  if (q=='coffee') {
+    res.status(418).send();
   }
   else {
-    res.sendStatus(400);
+    res.status(400).send();
   }
 });
 
