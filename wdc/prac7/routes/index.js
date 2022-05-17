@@ -21,7 +21,7 @@ router.get('/brew', function(req, res) {
 var lastText = "first";
 router.post('/pass-it-on', function(req,res) {
   var text = req.body.message;
-  if (text==="") {
+  if (lastText==="") {
     res.status(400).send();
   }
   else {
