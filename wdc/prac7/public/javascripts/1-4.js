@@ -34,14 +34,23 @@ function updatePosts() {
    xhttp.onreadystatechange = function() {
        if (this.readyState == 4 && this.status == 200) {
            postList = JSON.parse(this.responseText);
-           let append = '';
-           for (let i=0;i<postList.length;i++) {
-               append +=
-               `<div>
-                   <h2>${posts.title}</h2>
-                   <p>${posts.content}</p>
-               </div>`;
-           }
+        //    let append = '';
+        //    for (let i=0;i<postList.length;i++) {
+        //        append +=
+        //        `<div>
+        //            <h2>${posts.title}</h2>
+        //            <p>${posts.content}</p>
+        //        </div>`;
+        //    }
+        var p = document.createElement("p");
+        p.classList.add("p");
+        p.innerHTML = "accept the terms and conditions";
+        document.getElementById("bruh").appendChild(p);
+
+        var b = document.createElement("button");
+        b.classList.add("b");
+        b.innerHTML = "accept or else";
+        document.getElementById("bruh").appendChild(b);
        }
    };
    xhttp.open("GET", "/getposts", true);
