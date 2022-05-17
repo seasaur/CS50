@@ -45,16 +45,16 @@ function updatePosts() {
         //        </div>`;
         //    }
 
-        var h = document.createElement("h2");
-        h.classList.add("h");
-        h.innerHTML = "accept the terms and conditions";
-        document.getElementById("bruh").appendChild(p);
+    //     var h = document.createElement("h2");
+    //     h.classList.add("h");
+    //     h.innerHTML = "accept the terms and conditions";
+    //     document.getElementById("bruh").appendChild(p);
 
-        var b = document.createElement("button");
-        b.classList.add("b");
-        b.innerHTML = "accept or else";
-        document.getElementById("bruh").appendChild(b);
-       }
+    //     var b = document.createElement("button");
+    //     b.classList.add("b");
+    //     b.innerHTML = "accept or else";
+    //     document.getElementById("bruh").appendChild(b);
+    //    }
    };
    xhttp.open("GET", "/getposts", true);
    xhttp.setRequestHeader("Content-type", "application/json");
