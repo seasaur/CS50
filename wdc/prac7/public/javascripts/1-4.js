@@ -21,7 +21,7 @@ function addPost(title, content) {
     xhttp.send(JSON.stringify({ title: title, content: content }));
 }
 
-function showPosts() {
+function updatePosts() {
 
 //    var title = document.getElementById("title").value;
 //    var content = document.getElementById("content").value;
