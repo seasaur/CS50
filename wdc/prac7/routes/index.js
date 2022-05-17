@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 router.get('/brew', function(req, res) {
   var q = req.query.drink;
   if (drink=='tea') {
-  res.send('A delicious cup of tea!'+q);
+  res.send('A delicious cup of tea!');
   }
   if (drink=='coffee') {
     res.sendStatus(418);
