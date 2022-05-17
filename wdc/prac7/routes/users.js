@@ -14,7 +14,7 @@ router.post('/addpost', function(req, res) {
 });
 
 router.get('/getposts', function(req,res) {
-
+  res.send(posts);
 });
 
 module.exports = router;
