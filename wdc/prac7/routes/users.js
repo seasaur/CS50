@@ -10,6 +10,7 @@ var posts = [];
 router.post('/addpost', function(req, res) {
   var jsonPosts = JSON.parse(posts);
   jsonPosts.push(req.body);
+  posts=JSON.parse(jsonPosts);
 });
 
 module.exports = router;
