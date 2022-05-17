@@ -25,7 +25,7 @@ router.post('/pass-it-on', function(req,res) {
     res.status(400).send();
   }
   else {
-    res.send(message);
+    res.send(text);
   }
 });
 
