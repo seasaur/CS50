@@ -8,8 +8,12 @@ router.get('/', function(req, res, next) {
 
 router.get('/brew', function(req, res) {
   var drink = req.query.param1;
-  if ()
-  res.send('index', { title: 'Express' });
+  if (param1==tea) {
+  res.send('A delicious cup of tea!'+q);
+  }
+  if (param1==coffee) {
+    res.sendStatus(403);;
+    }
 });
 
 module.exports = router;
