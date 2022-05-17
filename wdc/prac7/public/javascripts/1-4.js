@@ -28,9 +28,9 @@ function updatePosts() {
 //    var title = document.getElementById("title").value;
 //    var content = document.getElementById("content").value;
 
-    for(let post of postList) {
-        addPost(post.title,post.content);
-    }
+    // for(let post of postList) {
+    //     addPost(post.title,post.content);
+    // }
 
    var xhttp = new XMLHttpRequest();
    xhttp.onreadystatechange = function() {
