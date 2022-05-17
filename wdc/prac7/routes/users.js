@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 var posts = [];
 router.post('/addpost', function(req, res) {
   var jsonPosts = JSON.parse(posts);
-  jsonPosts.push(req.body);
+  jsonPosts.unshift(req.body);
   posts=JSON.parse(jsonPosts);
 });
 
