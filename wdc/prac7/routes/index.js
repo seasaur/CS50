@@ -50,9 +50,4 @@ router.post('/combine', function(req, res) {
   res.send(anyvariablename);
 });
 
-router.post('/users/:addpost', function(req,res) {
-
-
-});
-
 module.exports = router;
