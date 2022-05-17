@@ -47,3 +47,13 @@ function updatePosts() {
    xhttp.open("GET", "/getposts", true);
    xhttp.setRequestHeader("Content-type", "application/json");
    xhttp.send();
+}
+
+function showPosts() {
+    var x = document.getElementById("postListing");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
