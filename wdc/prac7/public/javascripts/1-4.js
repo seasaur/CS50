@@ -31,7 +31,7 @@ function showPosts() {
        if (this.readyState == 4 && this.status == 200) {
            postList = JSON.parse(this.responseText);
            let append = '';
-           for (var i=0;i<jsonArray.length;i++) {
+           for (let i=0;i<postList.length;i++) {
                append +=
                `<div>
                    <h2>${posts.title}</h2>
