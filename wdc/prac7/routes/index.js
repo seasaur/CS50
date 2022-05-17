@@ -7,11 +7,11 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/brew', function(req, res) {
-  var drink = req.query.param1;
-  if (param1=='tea') {
+  var drink = req.query.drink;
+  if (drink=='tea') {
   res.send('A delicious cup of tea!'+drink);
   }
-  if (param1=='coffee') {
+  if (drink=='coffee') {
     res.sendStatus(418);
   }
   else {
