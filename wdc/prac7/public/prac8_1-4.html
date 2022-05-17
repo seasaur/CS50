@@ -52,7 +52,7 @@
                     var jsonArray = JSON.parse(this.responseText);
                 }
             };
-            xhttp.open("POST", "/getposts", true);
+            xhttp.open("POST", "/addpost", true);
             xhttp.setRequestHeader("Content-type", "application/json");
             xhttp.send(JSON.stringify({ title: title, content: content }));
         }
@@ -73,7 +73,7 @@
                         `<div>
                             <h2>${posts.title}</h2>
                             <p>${posts.content}</p>
-                        </div>`
+                        </div>`;
                             }
                 }
             };
