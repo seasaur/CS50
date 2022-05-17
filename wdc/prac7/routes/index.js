@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+router.use(express.static('public'))
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -7,7 +8,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/prac8', function(req, res, next) {
-  res.sendFile("/prac8_1-4.html", root);
+  res.sendFile("/prac8_1-4.html");
 });
 
 router.get('/brew', function(req, res) {
