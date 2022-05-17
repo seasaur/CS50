@@ -34,6 +34,12 @@ var array = [];
 router.post('/combine', function(req, res) {
   var lines = req.body.lines;
   var suffix = req.body.suffix;
+  // create empty string
+  // for each line in lines
+  // add (line + suffix + \n) to string
+  // req.send string
+
+  res.send(lines)
 
 });
 
