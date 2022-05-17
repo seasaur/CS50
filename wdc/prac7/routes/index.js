@@ -30,8 +30,10 @@ router.post('/pass-it-on', function(req,res) {
   }
 });
 
-router.get('/combine', function(req, res) {
-  
+var array = [];
+router.post('/combine', function(req, res) {
+  var lines = req.body.lines;
+  var suffix = req.body.suffix;
 
 });
 
