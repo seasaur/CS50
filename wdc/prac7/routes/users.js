@@ -6,9 +6,10 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-jsonString = [];
+var posts = [];
 router.post('/addpost', function(req, res) {
-  ;
+  var jsonPosts = JSON.parse(posts);
+  jsonPosts.push();
 });
 
 module.exports = router;
