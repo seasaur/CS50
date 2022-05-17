@@ -1,4 +1,4 @@
-var postList = [];
+
 function makePost() {
     var title = document.getElementById("title").value;
    var content = document.getElementById("content").value;
@@ -14,7 +14,7 @@ function makePost() {
    xhttp.send(JSON.stringify({ title: title, content: content }));
 }
 
-
+var postList = [];
 function showPosts() {
 
    var title = document.getElementById("title").value;
