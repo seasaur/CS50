@@ -14,7 +14,7 @@ function addPost(title, content) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            console.log("done");
+            // console.log("done");
             //getPosts();
         }
     };
@@ -54,11 +54,12 @@ function updatePosts() {
     //     b.classList.add("b");
     //     b.innerHTML = "accept or else";
     //     document.getElementById("bruh").appendChild(b);
-    //    }
+       }
    };
    xhttp.open("GET", "/getposts", true);
    xhttp.setRequestHeader("Content-type", "application/json");
    xhttp.send();
+
 }
 
 function showPosts() {
