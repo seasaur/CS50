@@ -22,6 +22,9 @@ router.get('/brew', function(req, res) {
 router.post('/pass-it-on', function(req,res) {
   var text = req.message;
   if (text=='') {
+    res.status(400).send();
+  }
+  else {
     
   }
 });
