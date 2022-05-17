@@ -42,9 +42,10 @@ function updatePosts() {
         //            <p>${posts.content}</p>
         //        </div>`;
         //    }
-        var p = document.createElement("p");
-        p.classList.add("p");
-        p.innerHTML = "accept the terms and conditions";
+
+        var h = document.createElement("h2");
+        h.classList.add("h");
+        h.innerHTML = "accept the terms and conditions";
         document.getElementById("bruh").appendChild(p);
 
         var b = document.createElement("button");
@@ -59,7 +60,7 @@ function updatePosts() {
 }
 
 function showPosts() {
-    var x = document.getElementById("postListing" style="display: none;");
+    var x = document.getElementById("postListing");
     if (x.style.display === "none") {
       x.style.display = "block";
     } else {
