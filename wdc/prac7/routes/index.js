@@ -18,9 +18,10 @@ router.get('/brew', function(req, res) {
     res.status(400).send();
   }
 });
-
+var lastText = "first";
 router.post('/pass-it-on', function(req,res) {
   var text = req.body.message;
+
   console.log(text);
   if (text==="") {
     res.status(400).send();
@@ -28,6 +29,7 @@ router.post('/pass-it-on', function(req,res) {
   else {
     res.send(text);
   }
+  lastText = text;
 
 });
 
