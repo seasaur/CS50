@@ -21,14 +21,14 @@
                     <textarea class="pure-input-1-2" id="content" placeholder="Blog Post Content"></textarea>
                 </fieldset>
 
-                <button type="button" class="pure-button pure-input-1-2 pure-button-primary" onclick="send()">make post</button>
+                <button type="button" class="pure-button pure-input-1-2 pure-button-primary" onclick="makePost()">make post</button>
             </form>
         </div>
         <hr />
         <div id="posts">
             <h2>Current Posts</h2>
             <form class="pure-form">
-                <button type="button" class="pure-button pure-input-1-2 pure-button-primary">show all posts</button>
+                <button type="button" class="pure-button pure-input-1-2 pure-button-primary" onclick="send()">show all posts</button>
             </form>
 
         </div>
@@ -41,6 +41,34 @@
 
     </div>
     <script>
+
+        function makePost() {
+             var title = document.getElementById("title").value;
+            var content = document.getElementById("content").value;
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var jsonA = JSON.parse(this.responseText);
+                    let append = '';
+                            for (var i=0;i<arrayLog.length;i++) {
+                        append +=
+                        `<div>
+                            <h2>${posts.title}</h2>
+                            <p>${posts.content}</p>
+                        </div>`
+                            }
+                }
+            };
+            xhttp.open("POST", "/getposts", true);
+            xhttp.setRequestHeader("Content-type", "application/json");
+            xhttp.send(JSON.stringify({ title: title, content: content }));
+
+
+
+        }
+
+
         function send() {
 
             var title = document.getElementById("title").value;
@@ -49,15 +77,15 @@
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    var jsonA = JSON.parse(this.responseText);
+                    var jsonArray = JSON.parse(this.responseText);
                     let append = '';
-                         for (var i=0;i<arrayLog.length;i++) {
+                            for (var i=0;i<jsonArray.length;i++) {
                         append +=
                         `<div>
                             <h2>${posts.title}</h2>
                             <p>${posts.content}</p>
                         </div>`
-                         }
+                            }
                 }
             };
             xhttp.open("POST", "/getposts", true);
