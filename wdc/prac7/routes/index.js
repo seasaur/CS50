@@ -30,4 +30,8 @@ router.post('/pass-it-on', function(req,res) {
   }
 });
 
+router.get('/combine', function(req, res) {
+
+});
+
 module.exports = router;
