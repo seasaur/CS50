@@ -59,7 +59,7 @@ function updatePosts() {
 }
 
 function showPosts() {
-    var x = document.getElementById("postListing");
+    var x = document.getElementById("postListing" style="display: none;");
     if (x.style.display === "none") {
       x.style.display = "block";
     } else {
