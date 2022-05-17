@@ -6,12 +6,12 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/brew', function(req, res) {
+router.get('/brew/:drink', function(req, res) {
   var q = req.query.drink;
-  if (drink=='tea') {
+  if (q=='tea') {
   res.send('A delicious cup of tea!');
   }
-  if (drink=='coffee') {
+  if (q=='coffee') {
     res.sendStatus(418);
   }
   else {
