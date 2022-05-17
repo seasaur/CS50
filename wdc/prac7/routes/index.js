@@ -30,17 +30,20 @@ router.post('/pass-it-on', function(req,res) {
   }
 });
 
-var array = [];
+
 router.post('/combine', function(req, res) {
   var lines = req.body.lines;
   var suffix = req.body.suffix;
+  var anyvariablename = "";
   // create empty string
   // for each line in lines
   // add (line + suffix + \n) to string
   // req.send string
+  lines.forEach(line => {
+    anyvariablename+=line+suffix+"\n";
+  });
 
-  res.send(lines)
-
+  res.send(anyvariablename);
 });
 
 module.exports = router;
