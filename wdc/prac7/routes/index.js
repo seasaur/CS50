@@ -19,6 +19,8 @@ router.get('/brew', function(req, res) {
   }
 });
 
-router.
+router.post('/pass-it-on', function(req,res) {
+
+});
 
 module.exports = router;
