@@ -49,23 +49,12 @@
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    var jsonA = JSON.parse(this.responseText);
-                    let append = '';
-                            for (var i=0;i<arrayLog.length;i++) {
-                        append +=
-                        `<div>
-                            <h2>${posts.title}</h2>
-                            <p>${posts.content}</p>
-                        </div>`
-                            }
+                    var jsonArray = JSON.parse(this.responseText);
                 }
             };
             xhttp.open("POST", "/getposts", true);
             xhttp.setRequestHeader("Content-type", "application/json");
             xhttp.send(JSON.stringify({ title: title, content: content }));
-
-
-
         }
 
 
