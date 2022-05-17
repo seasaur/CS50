@@ -68,16 +68,16 @@
                 if (this.readyState == 4 && this.status == 200) {
                     var jsonArray = JSON.parse(this.responseText);
                     let append = '';
-                            for (var i=0;i<jsonArray.length;i++) {
+                    for (var i=0;i<jsonArray.length;i++) {
                         append +=
                         `<div>
                             <h2>${posts.title}</h2>
                             <p>${posts.content}</p>
                         </div>`;
-                            }
+                    }
                 }
             };
-            xhttp.open("POST", "/getposts", true);
+            xhttp.open("GET", "/getposts", true);
             xhttp.setRequestHeader("Content-type", "application/json");
             xhttp.send(JSON.stringify({ title: title, content: content }));
 
