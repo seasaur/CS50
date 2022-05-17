@@ -11,6 +11,7 @@ router.post('/addpost', function(req, res) {
   var jsonPosts = JSON.parse(posts);
   jsonPosts.unshift(req.body);
   posts=JSON.parse(jsonPosts);
+  res.send(posts);
 });
 
 router.get('/getposts', function(req,res) {
