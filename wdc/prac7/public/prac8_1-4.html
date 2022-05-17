@@ -21,7 +21,7 @@
                     <textarea class="pure-input-1-2" placeholder="Blog Post Content"></textarea>
                 </fieldset>
 
-                <button type="button" class="pure-button pure-input-1-2 pure-button-primary">make post</button>
+                <button type="button" class="pure-button pure-input-1-2 pure-button-primary" onclick="send()">make post</button>
             </form>
         </div>
         <hr />
@@ -43,7 +43,7 @@
     <script>
         function send() {
 
-            var lines = document.getElementById("lines").value.split('\n');
+            var makePost = document.getElementById("lines").value.split('\n');
             var suffix = document.getElementById("suffix").value;
 
             var xhttp = new XMLHttpRequest();
