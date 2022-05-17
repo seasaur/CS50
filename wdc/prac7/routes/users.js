@@ -13,4 +13,8 @@ router.post('/addpost', function(req, res) {
   posts=JSON.parse(jsonPosts);
 });
 
+router.get('/getposts', function(req,res) {
+
+});
+
 module.exports = router;
