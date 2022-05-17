@@ -51,13 +51,13 @@ function updatePosts() {
 
     //     var h = document.createElement("h2");
     //     h.classList.add("h");
-    //     h.innerHTML = "accept the terms and conditions";
-    //     document.getElementById("bruh").appendChild(h);
+    //     h.innerHTML = postList.title;
+    //     document.getElementById("postListing").appendChild(h);
 
     //     var p = document.createElement("p");
     //     p.classList.add("p");
-    //     p.innerHTML = "accept or else";
-    //     document.getElementById("bruh").appendChild(b);
+    //     p.innerHTML = postList.content;
+    //     document.getElementById("postListing").appendChild(p);
        }
    };
    xhttp.open("GET", "/getposts", true);
