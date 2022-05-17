@@ -6,7 +6,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/brew/:drink', function(req, res) {
+router.get('/brew', function(req, res) {
   var q = req.query.drink;
   if (q=='tea') {
   res.send('A delicious cup of tea!');
