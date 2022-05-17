@@ -21,14 +21,13 @@ router.get('/brew', function(req, res) {
 var lastText = "first";
 router.post('/pass-it-on', function(req,res) {
   var text = req.body.message;
-  if (lastText==="") {
+  if (text==="") {
     res.status(400).send();
   }
   else {
     res.send(lastText);
+    lastText = text;
   }
-  lastText = text;
-
 });
 
 module.exports = router;
