@@ -5,7 +5,8 @@ function makePost() {
    var content = document.getElementById("content").value;
 
    addPost(title,content);
-   let obj = {title: title, content: content};
+
+
     //showPosts();
 }
 
