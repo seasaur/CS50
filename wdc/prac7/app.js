@@ -18,16 +18,17 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 var n=1;
-var myLogger = function (req, res, next) {
+var logger = function (req, res, next) {
     // console.log('Received ${n} requests');
     n+=1;
     next();
 };
 
-app.use(myLogger);
+app.use(logger);
 
 app.get('/', function(req, res) {
-    res.send('Hello World!');
+    responseText += `Received ${req.requestTime}requests`
+    res.send(responseText);
 });
 
 app.listen(3000);
