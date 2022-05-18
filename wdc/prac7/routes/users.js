@@ -19,7 +19,7 @@ router.post('/addpost', function(req, res) {
 });
 
 router.get('/getposts', function(req,res) {
-  
+  posts.reverse();
   res.send(posts);
 });
 
