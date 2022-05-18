@@ -24,7 +24,7 @@ app.use(function (req, res, next) {
     next();
 });
 
-// app.use(log);
+app.use(log);
 
 // app.get('/*', function(req, res) {
 //     let response =  'Received ${req.response}requests`;
