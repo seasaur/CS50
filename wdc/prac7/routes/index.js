@@ -48,7 +48,7 @@ router.post('/combine', function(req, res) {
 });
 
 router.get('/cookie', function(req, res) {
-  var cookie = req.task3_1;
+  var cookie = req.cookies.task3_1;
   if (cookie===null) {
     res.cookie('task3_1', 1);
   }
