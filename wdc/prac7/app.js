@@ -17,27 +17,27 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-var n=1;
-var log = function (req, res, next) {
-    // console.log('Received ${n} requests');
-    n+=1;
-    next();
-};
+// var n=1;
+// var log = function (req, res, next) {
+//     // console.log('Received ${n} requests');
+//     n+=1;
+//     next();
+// };
 
-app.use(log);
+// app.use(log);
 
-app.get('/', function(req, res) {
-    let response =  `Received ${req.response}requests`;
-    res.send(response);
-});
+// app.get('/', function(req, res) {
+//     let response =  `Received ${req.response}requests`;
+//     res.send(response);
+// });
 
-app.listen(3000);
+// app.listen(3000);
 
-// Req.use((req,res)=>{
-//     If(req.header.content-type != "Application/json")
-//       {
-//     req.send(412)
-//  }
-//  })
+// // Req.use((req,res)=>{
+// //     If(req.header.content-type != "Application/json")
+// //       {
+// //     req.send(412)
+// //  }
+// //  })
 
 module.exports = app;
