@@ -22,4 +22,10 @@ router.get('/getposts', function(req,res) {
   res.send(posts);
 });
 
+// app.use("/*",function(req,res) {
+//     if(req.header.content-type != "Application/json") {
+//         req.send(412);
+//      }
+//  });
+
 module.exports = router;
