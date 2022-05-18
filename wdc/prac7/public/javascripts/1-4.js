@@ -16,13 +16,20 @@ function makePost() {
     xhttp.send(JSON.stringify({ title: title, content: content }));
 }
 
-function updatePosts() {
+function showPosts() {
 
 
 
     // for(let post of postList) {
     //     addPost(post.title,post.content);
     // }
+
+    var x = document.getElementById("postListing");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
 
    var xhttp = new XMLHttpRequest();
    xhttp.onreadystatechange = function() {
@@ -39,19 +46,19 @@ function updatePosts() {
 
 //appendchild, innerhtml, createelement
 
-    //     var d = document.createElement("div");
-    //     h.classList.add("postDiv");
-    //     document.getElementById("postListing").appendChild(d);
+        var d = document.createElement("div");
+        h.classList.add("postDiv");
+        document.getElementById("postListing").appendChild(d);
 
-    //     var h = document.createElement("h2");
-    //     h.classList.add("h");
-    //     h.innerHTML = postList.title;
-    //     document.getElementById("postListing").appendChild(h);
+        var h = document.createElement("h2");
+        h.classList.add("h");
+        h.innerHTML = postList.title;
+        document.getElementById("postDiv").appendChild(h);
 
-    //     var p = document.createElement("p");
-    //     p.classList.add("p");
-    //     p.innerHTML = postList.content;
-    //     document.getElementById("postListing").appendChild(p);
+        var p = document.createElement("p");
+        p.classList.add("p");
+        p.innerHTML = postList.content;
+        document.getElementById("postDiv").appendChild(p);
        }
    };
    xhttp.open("GET", "/getposts", true);
@@ -59,12 +66,3 @@ function updatePosts() {
    xhttp.send();
 
 }
-
-function showPosts() {
-    var x = document.getElementById("postListing");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-  }
