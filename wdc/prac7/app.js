@@ -17,6 +17,17 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-app.
+var myLogger = function (req, res, next) {
+    console.log('LOGGED');
+    next();
+};
+
+app.use(myLogger);
+
+app.get('/', function(req, res) {
+    res.send('Hello World!');
+});
+
+app.listen(3000);
 
 module.exports = app;
