@@ -35,7 +35,7 @@ function showPosts() {
             postList.forEach(element => {
 
                 var d = document.createElement("div");
-                div.classList.add("postDiv");
+                d.classList.add("postDiv");
 
                 var h = document.createElement("h2");
                 h.classList.add("h");
@@ -52,7 +52,7 @@ function showPosts() {
 
         }
     };
-    xhttp.open("GET", "/getposts", true);
+    xhttp.open("GET", "users/getposts", true);
     xhttp.setRequestHeader("Content-type", "application/json");
     xhttp.send();
 
