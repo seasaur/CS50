@@ -25,8 +25,7 @@ function addPost(title, content) {
 
 function updatePosts() {
 
-//    var title = document.getElementById("title").value;
-//    var content = document.getElementById("content").value;
+
 
     // for(let post of postList) {
     //     addPost(post.title,post.content);
