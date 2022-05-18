@@ -18,7 +18,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 var myLogger = function (req, res, next) {
-    // console.log('LOGGED');
+    console.log('LOGGED');
     next();
 };
 
