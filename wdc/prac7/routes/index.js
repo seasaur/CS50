@@ -53,7 +53,7 @@ router.get('/cookie', function(req, res) {
     res.cookie('task3_1', 1);
   }
   else {
-    cookie.value+=1;
+    cookie+=1;
   }
 });
 
