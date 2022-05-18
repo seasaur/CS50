@@ -12,6 +12,7 @@ router.post('/addpost', function(req, res) {
   jsonPosts.unshift(req.body.title);
   var title= req.body.title
   posts=JSON.parse(jsonPosts);
+  posts.push()
   res.send(posts);
 });
 
