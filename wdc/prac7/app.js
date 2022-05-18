@@ -31,7 +31,7 @@ app.use('/users', usersRouter);
 //     res.send(response);
 // });
 
-app.listen(3000);
+
 
 // // Req.use((req,res)=>{
 // //     If(req.header.content-type != "Application/json")
@@ -47,5 +47,5 @@ app.use("*",function(req,res) {
     // //     req.send(412);
     //  }
  });
-
+ app.listen(3000);
 module.exports = app;
