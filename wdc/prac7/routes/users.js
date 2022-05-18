@@ -14,12 +14,11 @@ router.post('/addpost', function(req, res) {
     title: req.body.title,
     content: req.body.content
   };
-  posts.push(post);
+  posts.unshift(post);
   res.send(posts);
 });
 
 router.get('/getposts', function(req,res) {
-  posts.reverse(); //???
   res.send(posts);
 });
 
