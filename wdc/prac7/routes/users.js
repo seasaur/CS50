@@ -28,6 +28,7 @@ router.post("/*",function(req,res) {
     //  }
   console.log("POST from a user");
   res.send();
+  next();
  });
 
 module.exports = router;
