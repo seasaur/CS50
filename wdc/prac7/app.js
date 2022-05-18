@@ -40,9 +40,20 @@ app.use('/users', usersRouter);
 // //  }
 // //  })
 
-app.use("/users/*",function(req,res) {
-    if(req.header.content-type != "Application/json") {
-        req.send(412);
-     }
- });
+// app.use("/users/*",function(req,res) {
+//     if(req.header.content-type != "Application/json") {
+//         req.send(412);
+//      }
+//  });
+
+app.get('/cookie', function(req, res) {
+    var cookie = req.cookies.task3_1;
+    if (cookie===null) {
+      res.cookie('task3_1', 1);
+    }
+    else {
+      cookie+=1;
+    }
+  });
+
 module.exports = app;
