@@ -40,7 +40,7 @@ app.use('/users', usersRouter);
 // //  }
 // //  })
 
-// app.use("/users/*",function(req,res) {
+// app.use("/*",function(req,res) {
 //     if(req.header.content-type != "Application/json") {
 //         req.send(412);
 //      }
