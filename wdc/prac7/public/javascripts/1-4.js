@@ -31,6 +31,7 @@ function showPosts() {
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             postList = JSON.parse(this.responseText);
+            postList.forEach(element => {
 
             var d = document.createElement("div");
             h.classList.add("postDiv");
@@ -45,6 +46,8 @@ function showPosts() {
             p.classList.add("p");
             p.innerHTML = postList.content;
             document.getElementById("postDiv").appendChild(p);
+            });
+
         }
     };
     xhttp.open("GET", "/getposts", true);
