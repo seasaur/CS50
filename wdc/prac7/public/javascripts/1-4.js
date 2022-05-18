@@ -30,22 +30,24 @@ function showPosts() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
+            x.innerHTML = ""; //delete everything in the div
             postList = JSON.parse(this.responseText);
             postList.forEach(element => {
 
                 var d = document.createElement("div");
-                h.classList.add("postDiv");
-                document.getElementById("postListing").appendChild(d);
+                div.classList.add("postDiv");
 
                 var h = document.createElement("h2");
                 h.classList.add("h");
-                h.innerHTML = postList.title;
-                document.getElementById("postDiv").appendChild(h);
+                h.innerHTML = postList.title; //change to element
+                d.appendChild(h);
 
                 var p = document.createElement("p");
                 p.classList.add("p");
                 p.innerHTML = postList.content;
-                document.getElementById("postDiv").appendChild(p);
+                d.appendChild(p);
+
+                x.appendChild(d);
             });
 
         }
