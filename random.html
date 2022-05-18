@@ -14,14 +14,13 @@
     Hi <br/>
     enter your name here:
 
-    <input type="text" id="username" name="username"/>
+    <input type="text" id="name" name="name"/>
     <input type="button" value="Submit" onclick="clickFunction()">
  </p>
     <script>
         function clickFunction() {
-            
-
-
+            var name = document.getElementById("name");
+            alert(name);
         }
 
 
