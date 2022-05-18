@@ -18,8 +18,6 @@ function makePost() {
 
 function showPosts() {
 
-
-
     // for(let post of postList) {
     //     addPost(post.title,post.content);
     // }
@@ -35,7 +33,7 @@ function showPosts() {
    xhttp.onreadystatechange = function() {
        if (this.readyState == 4 && this.status == 200) {
            postList = JSON.parse(this.responseText);
-           
+
         var d = document.createElement("div");
         h.classList.add("postDiv");
         document.getElementById("postListing").appendChild(d);
