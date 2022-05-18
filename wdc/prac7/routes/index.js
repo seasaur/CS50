@@ -47,4 +47,8 @@ router.post('/combine', function(req, res) {
   res.send(anyvariablename);
 });
 
+router.get('/cookie', function(req, res) {
+  res.render('index', { title: 'Express' });
+});
+
 module.exports = router;
