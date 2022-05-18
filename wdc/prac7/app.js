@@ -19,7 +19,7 @@ app.use('/users', usersRouter);
 
 var n=1;
 var myLogger = function (req, res, next) {
-    console.log('Received ${n} requests');
+    // console.log('Received ${n} requests');
     n+=1;
     next();
 };
