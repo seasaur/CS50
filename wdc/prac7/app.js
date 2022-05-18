@@ -40,8 +40,8 @@ app.use('/users', usersRouter);
 // //  }
 // //  })
 
-app.use("/users/*",function(req,res) {
-    console.log(req.header);
+app.use("*",function(req,res) {
+    console.log(req.headers);
     // if(req.header.content-type != "Application/json") {
     // //     req.send(412);
     //  }
