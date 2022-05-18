@@ -25,7 +25,6 @@ router.get('/getposts', function(req,res) {
 router.post('/*', function(req,res, next) {
   console.log("POST from a user");
   next();
-  res.send();
  });
 
 module.exports = router;
