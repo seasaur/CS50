@@ -39,12 +39,12 @@ function showPosts() {
 
                 var h = document.createElement("h2");
                 h.classList.add("h");
-                h.innerHTML = postList.title; //change to element
+                h.innerHTML = element.title;
                 d.appendChild(h);
 
                 var p = document.createElement("p");
                 p.classList.add("p");
-                p.innerHTML = postList.content;
+                p.innerHTML = element.content;
                 d.appendChild(p);
 
                 x.appendChild(d);
