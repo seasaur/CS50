@@ -53,7 +53,6 @@ app.get('/cookie', function(req, res) {
     else {
       req.cookies.task3_1+=1;
     }
-    res.send(req.cookies.task3_1);
   });
 
 module.exports = app;
