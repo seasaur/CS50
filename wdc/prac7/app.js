@@ -41,10 +41,8 @@ app.use('/users', usersRouter);
 // //  })
 
 app.use("*",function(req,res) {
-    console.log("anything");
-    console.log(req.headers);
-    // if(req.header.content-type != "Application/json") {
-    // //     req.send(412);
-    //  }
+    if(req.header.content-type != "Application/json") {
+        req.send(412);
+     }
  });
 module.exports = app;
