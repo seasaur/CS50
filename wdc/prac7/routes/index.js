@@ -48,7 +48,9 @@ router.post('/combine', function(req, res) {
 });
 
 router.get('/cookie', function(req, res) {
-  res.render('index', { title: 'Express' });
+  if (!Request.Cookies["task3_1"] !== null) {
+    
+  }
 });
 
 module.exports = router;
