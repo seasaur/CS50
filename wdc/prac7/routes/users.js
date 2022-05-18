@@ -27,7 +27,6 @@ router.post("/*",function(req,res, next) {
     //     req.send(412);
     //  }
   console.log(`POST from a user`);
-  res.send();
   next();
  });
 

@@ -19,8 +19,8 @@ app.use('/users', usersRouter);
 
 var n=1;
 app.use(function (req, res, next) {
-    console.log(`Received ${n} requests`);
     n++;
+    console.log(`Received ${n} requests`);
     next();
 });
 
