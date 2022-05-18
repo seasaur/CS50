@@ -17,6 +17,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
+app.use(log);
+
 var n=1;
 app.use(function (req, res, next) {
     console.log(`Received ${n} requests`);
@@ -24,27 +26,6 @@ app.use(function (req, res, next) {
     next();
 });
 
-app.use(log);
-
-// app.get('/*', function(req, res) {
-//     let response =  'Received ${req.response}requests`;
-//     console.log(response);
-// });
-
-
-
-// // Req.use((req,res)=>{
-// //     If(req.header.content-type != "Application/json")
-// //       {
-// //     req.send(412)
-// //  }
-// //  })
-
-// app.use("/*",function(req,res) {
-//     if(req.header.content-type != "Application/json") {
-//         req.send(412);
-//      }
-//  });
 
 
 module.exports = app;
