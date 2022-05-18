@@ -13,13 +13,13 @@ router.post('/addpost', function(req, res) {
   var post={
     title: req.body.title,
     content: req.body.content
-  }
-  posts.push(post)
+  };
+  posts.push(post);
   res.send(posts);
 });
 
 router.get('/getposts', function(req,res) {
-  posts.reverse();
+  posts.reverse(); //???
   res.send(posts);
 });
 
