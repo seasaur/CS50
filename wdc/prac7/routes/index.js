@@ -48,8 +48,12 @@ router.post('/combine', function(req, res) {
 });
 
 router.get('/cookie', function(req, res) {
-  if (!Cookies["task3_1"] !== null) {
-    Request.Cookies["task3_1"] = 1;
+  var cookie = req.task3_1;
+  if (cookie===null) {
+    res.cookie('task3_1', 1)
+  }
+  else {
+    
   }
 });
 
