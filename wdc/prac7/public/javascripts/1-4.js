@@ -5,7 +5,7 @@ function makePost() {
     var content = document.getElementById("content").value;
 
     var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
+    xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             // console.log("done");
             //getPosts();
@@ -24,33 +24,31 @@ function showPosts() {
 
     var x = document.getElementById("postListing");
     if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
+        x.style.display = "block";
     }
 
-   var xhttp = new XMLHttpRequest();
-   xhttp.onreadystatechange = function() {
-       if (this.readyState == 4 && this.status == 200) {
-           postList = JSON.parse(this.responseText);
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            postList = JSON.parse(this.responseText);
 
-        var d = document.createElement("div");
-        h.classList.add("postDiv");
-        document.getElementById("postListing").appendChild(d);
+            var d = document.createElement("div");
+            h.classList.add("postDiv");
+            document.getElementById("postListing").appendChild(d);
 
-        var h = document.createElement("h2");
-        h.classList.add("h");
-        h.innerHTML = postList.title;
-        document.getElementById("postDiv").appendChild(h);
+            var h = document.createElement("h2");
+            h.classList.add("h");
+            h.innerHTML = postList.title;
+            document.getElementById("postDiv").appendChild(h);
 
-        var p = document.createElement("p");
-        p.classList.add("p");
-        p.innerHTML = postList.content;
-        document.getElementById("postDiv").appendChild(p);
-       }
-   };
-   xhttp.open("GET", "/getposts", true);
-   xhttp.setRequestHeader("Content-type", "application/json");
-   xhttp.send();
+            var p = document.createElement("p");
+            p.classList.add("p");
+            p.innerHTML = postList.content;
+            document.getElementById("postDiv").appendChild(p);
+        }
+    };
+    xhttp.open("GET", "/getposts", true);
+    xhttp.setRequestHeader("Content-type", "application/json");
+    xhttp.send();
 
 }
