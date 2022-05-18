@@ -41,7 +41,7 @@ app.use('/users', usersRouter);
 // //  })
 
 app.use((req,res)=>{
-    if(req.header.Content-type != "Application/json") {
+    if(req.header.content-type != "Application/json") {
         req.send(412);
     }
  });
