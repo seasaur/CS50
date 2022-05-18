@@ -47,5 +47,4 @@ app.use("*",function(req,res) {
     // //     req.send(412);
     //  }
  });
- app.listen(3000);
 module.exports = app;
