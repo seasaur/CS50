@@ -17,7 +17,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-app.use(log);
+// app.use(log);
 
 var n=1;
 app.use(function (req, res, next) {
