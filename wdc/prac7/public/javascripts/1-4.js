@@ -18,7 +18,7 @@ function addPost(title, content) {
             //getPosts();
         }
     };
-    xhttp.open("POST", "/addpost", true);
+    xhttp.open("POST", "/users/addpost", true);
     xhttp.setRequestHeader("Content-type", "application/json");
     xhttp.send(JSON.stringify({ title: title, content: content }));
 }
