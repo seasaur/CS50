@@ -22,7 +22,7 @@ router.get('/getposts', function(req,res) {
   res.send(posts);
 });
 
-router.post("/*",function(req,res, next) {
+app.post(function(req,res, next) {
     // if(req.header.content-type != "Application/json") {
     //     req.send(412);
     //  }
