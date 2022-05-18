@@ -31,7 +31,7 @@ app.use('/users', usersRouter);
 //     res.send(response);
 // });
 
-// app.listen(3000);
+app.listen(3000);
 
 // // Req.use((req,res)=>{
 // //     If(req.header.content-type != "Application/json")
