@@ -17,12 +17,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-// var n=1;
-// var log = function (req, res, next) {
-//     // console.log('Received ${n} requests');
-//     n+=1;
-//     next();
-// };
+var n=1;
+app.use(function (req, res, next) {
+    console.log(`Received ${n} requests`);
+    n++;
+    next();
+});
 
 // app.use(log);
 
