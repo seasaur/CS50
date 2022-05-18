@@ -48,10 +48,10 @@ app.use('/users', usersRouter);
 
 app.get('/cookie', function(req, res) {
     if (req.cookies.task3_1===null) {
-      res.cookie('task3_1', ++req.cookies.task3_1);
+      res.cookie('task3_1', 1);
     }
     else {
-      req.cookies.task3_1+=1;
+      res.cookie('task3_1', ++req.cookies.task3_1);
     }
     res.send();
   });
