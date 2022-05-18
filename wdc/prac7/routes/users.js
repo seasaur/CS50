@@ -26,7 +26,7 @@ app.post(function(req,res, next) {
     // if(req.header.content-type != "Application/json") {
     //     req.send(412);
     //  }
-  console.log(`POST from a user`);
+  console.log("POST from a user");
   next();
  });
 
