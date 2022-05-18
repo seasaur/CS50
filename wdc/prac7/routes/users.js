@@ -26,7 +26,7 @@ router.post("/*",function(req,res) {
     // if(req.header.content-type != "Application/json") {
     //     req.send(412);
     //  }
-  console.log(POST from a user);
+  console.log("POST from a user");
   res.send();
  });
 
