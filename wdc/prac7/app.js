@@ -3,6 +3,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
@@ -14,11 +16,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-
-// app.use(log);
-
 var n=1;
 app.use(function (req, res, next) {
     console.log(`Received ${n} requests`);
@@ -26,5 +23,7 @@ app.use(function (req, res, next) {
     next();
 });
 
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
 
 module.exports = app;
