@@ -26,9 +26,9 @@ app.use('/users', usersRouter);
 
 // app.use(log);
 
-// app.get('/', function(req, res) {
+// app.get('*', function(req, res) {
 //     let response =  `Received ${req.response}requests`;
-//     res.send(response);
+//     console.log(response);
 // });
 
 
