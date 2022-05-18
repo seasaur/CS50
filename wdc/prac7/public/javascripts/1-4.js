@@ -35,17 +35,7 @@ function showPosts() {
    xhttp.onreadystatechange = function() {
        if (this.readyState == 4 && this.status == 200) {
            postList = JSON.parse(this.responseText);
-        //    let append = '';
-        //    for (let i=0;i<postList.length;i++) {
-        //        append +=
-        //        `<div>
-        //            <h2>${posts.title}</h2>
-        //            <p>${posts.content}</p>
-        //        </div>`;
-        //    }
-
-//appendchild, innerhtml, createelement
-
+           
         var d = document.createElement("div");
         h.classList.add("postDiv");
         document.getElementById("postListing").appendChild(d);
