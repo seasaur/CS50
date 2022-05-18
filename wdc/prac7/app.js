@@ -41,7 +41,7 @@ app.use('/users', usersRouter);
 // //  })
 
 app.use("*",function(req,res) {
-    console.log(req);
+    console.log("anything");
     console.log(req.headers);
     // if(req.header.content-type != "Application/json") {
     // //     req.send(412);
