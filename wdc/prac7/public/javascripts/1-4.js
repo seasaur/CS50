@@ -33,19 +33,19 @@ function showPosts() {
             postList = JSON.parse(this.responseText);
             postList.forEach(element => {
 
-            var d = document.createElement("div");
-            h.classList.add("postDiv");
-            document.getElementById("postListing").appendChild(d);
+                var d = document.createElement("div");
+                h.classList.add("postDiv");
+                document.getElementById("postListing").appendChild(d);
 
-            var h = document.createElement("h2");
-            h.classList.add("h");
-            h.innerHTML = postList.title;
-            document.getElementById("postDiv").appendChild(h);
+                var h = document.createElement("h2");
+                h.classList.add("h");
+                h.innerHTML = postList.title;
+                document.getElementById("postDiv").appendChild(h);
 
-            var p = document.createElement("p");
-            p.classList.add("p");
-            p.innerHTML = postList.content;
-            document.getElementById("postDiv").appendChild(p);
+                var p = document.createElement("p");
+                p.classList.add("p");
+                p.innerHTML = postList.content;
+                document.getElementById("postDiv").appendChild(p);
             });
 
         }
