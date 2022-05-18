@@ -33,4 +33,11 @@ app.get('/', function(req, res) {
 
 app.listen(3000);
 
+Req.use((req,res)=>{
+    If(req.header.content-type != "Application/json")
+      {
+    req.send(412)
+ }
+ })
+
 module.exports = app;
