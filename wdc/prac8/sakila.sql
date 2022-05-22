@@ -1,4 +1,4 @@
--- Sakila Sample Database Schema
+n-- Sakila Sample Database Schema
 -- Version 1.2
 
 -- Copyright (c) 2006, 2019, Oracle and/or its affiliates.
@@ -185,9 +185,9 @@ CREATE TABLE film_category (
 
 --
 -- Table structure for table `film_text`
--- 
+--
 -- InnoDB added FULLTEXT support in 5.6.10. If you use an
--- earlier version, then consider upgrading (recommended) or 
+-- earlier version, then consider upgrading (recommended) or
 -- changing InnoDB to MyISAM as the film_text engine
 --
 
