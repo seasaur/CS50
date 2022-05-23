@@ -1,0 +1,2 @@
+SELECT * FROM rental
+ORDER BY rental_date DESC;
