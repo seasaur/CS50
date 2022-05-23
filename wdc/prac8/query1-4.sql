@@ -1,4 +1,4 @@
-SELECT inventory.film_id store.store_id
+SELECT store.address
 FROM film
 INNER JOIN inventory ON film_id='918' AND mark<50 AND inventory.store_id = store.store_id;
 
