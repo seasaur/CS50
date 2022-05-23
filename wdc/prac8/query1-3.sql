@@ -1,2 +1,3 @@
 SELECT * FROM rental
-ORDER BY rental_date DESC;
+ORDER BY rental_date DESC
+LIMIT 1;
