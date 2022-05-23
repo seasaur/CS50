@@ -1,10 +1,9 @@
-SELECT film.film_id, film.title
-FROM film
-WHERE film.title= "TWISTED PIRATES"
+SELECT DISTINCT address.address
+FROM address
+INNER JOIN store
+ON store.address_id=address.address_id
 INNER JOIN inventory
-ON film_id='918' AND mark<50 AND inventory.store_id = store.store_id;
-
-- film id 918
-- stores table- get address id that has film id (only one address id, no duplicates)
-- address table- get address from address table from address id
-- only one address per store
+ON inventory.store_id=store.store_id
+INNER JOIN film
+ON film.film_id=inventory.film_id
+WHERE film.title= 'TWISTED PIRATES';
