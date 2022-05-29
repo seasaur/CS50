@@ -1,6 +1,5 @@
 {
     "files.associations": {
-        "*.html": "jinja-html",
         "array": "cpp",
         "atomic": "cpp",
         "bit": "cpp",
