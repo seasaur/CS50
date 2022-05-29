@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>
+            Account
+        </title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link rel="stylesheet" href="main.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+        <script src="account.js" defer></script>
+    </head>
+    <body>
+        <nav>
+            <ul id="menu">
+                <li><a href="home.html"><img src="image.png" alt="EZ logo" id="logo"></a></li>
+                <li><div class="headerButton"><a href="account.html">ACCOUNT</a></div></li>
+                <li><div class="headerButton"><a href="createEvent.html">+ NEW EVENT</a></div></li>
+                <li><p class="greeting">Hi, username!</p></li>
+            </ul>
+        </nav>
+        <main id="account">
+            <h1 class="pageHeading">USER DETAILS</h1>
+            <div class="titleBox">
+                <h2 class="boxHeading">USERNAME</h2>
+                <input type="text" class="inputBox" v-bind:value="username" v-model="username"></input>
+                <h2 class="boxHeading">EMAIL</h2>
+                <input type="email" class="inputBox"v-bind:value="email" v-model="email"></input>
+                <h2 class="boxHeading">PASSWORD</h2>
+                <input type="password" class="inputBox"v-bind:value="password" v-model="password"></input>
+            </div>
+            <button class="submitButton" height="2em">
+                EDIT DETAILS
+            </button>
+            <h1 class="pageHeading">USER EVENTS</h1>
+            <div class="titleBox" v-for="event in events">
+                <div class="eventBox" >
+                    <h2 class="boxHeading">{{event.name}}
+                    <a v-bind:href="event.url" class="viewEvent">VIEW EVENT</a>
+                    </h2>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
