@@ -1,0 +1,315 @@
+* {
+    box-sizing: border-box;
+  }
+
+  body{
+    color: #333533;
+    background-color: #FFFFFF;
+    padding: 0;
+    margin: 2em;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  #logo{
+      width: 5em;
+      height: auto;
+  }
+  #menu{
+    list-style:none;
+  }
+
+  #menu li{
+    display:inline;
+  }
+
+  #menu a{
+    text-decoration: none;
+    color: black;
+  }
+
+  .headerButton, .submitButton{
+    float:right;
+    background-color: #CCE7D9;
+    border-radius: 0.3em;
+    width: auto;
+    height: auto;
+    text-align: center;
+    padding: 0.5em;
+    margin: 1%;
+    cursor:pointer;
+    border:none;
+  }
+  .returnButton{
+    float:left;
+    background-color: #CCE7D9;
+    border-radius: 0.3em;
+    width: auto;
+    height: auto;
+    text-align: center;
+    padding: 0.5em;
+    margin: 1%;
+    cursor:pointer;
+    border:none;
+  }
+  .headerButton:hover{
+    background-color: #47CACC;
+  }
+
+  .submitButton:hover, #planButton:hover, .returnButton:hover {
+    background-color: #CB8A90;
+  }
+
+  .pageHeading{
+    margin: 1% 5%;
+  }
+
+  .titleBox{
+      padding: 1em;
+      margin: 1% 5%;
+      background-color:#D9C0D7  !important;
+  }
+
+  .boxHeading{
+    margin: 0.1em 1em;
+  }
+
+  .inputBox{
+      margin: 1em;
+      margin-bottom: 2em;
+      width: 95%;
+      height: 3em;
+      border-radius: 0.5em;
+  }
+
+  .leftFloat{
+      margin: 2% 2.5% 2% 5%;
+      float: left;
+      width: 42%;
+      height: 30em;
+      background-color: lightgray;
+  }
+
+  .rightFloat{
+      margin: 2% 5% 2% 2.5%;
+      float: right;
+      width: 42%;
+      height: 30em;
+      background-color: lightgray;
+  }
+
+
+  .share{
+    float:right;
+    text-decoration: underline;
+    background-color: #CCE7D9;
+  }
+
+  .eventHeading{
+    display: flex;
+    justify-content: space-between;
+    margin: 5% 15%;
+  }
+
+  table {
+    margin: 5% 15%;
+    width:70%;
+    text-align:center;
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+}
+
+#tick{
+  width: 2em;
+  height: auto;
+}
+
+.name {
+  text-align:left;
+  padding: 16px;
+  width:15%;
+  white-space: nowrap;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(150, 212, 212, 0.4);
+}
+
+td:nth-child(even) {
+  background-color: rgba(150, 212, 212, 0.4);
+}
+
+.viewEvent{
+  float: right;
+}
+
+.eventBox{
+  padding: 0.5em;
+}
+
+#stripe{
+  margin:0px;
+  margin-top:200px;
+  padding: 100px;
+  background-color:#D9C0D7;
+  width: 100%; height: 400px;
+
+}
+
+#planButton{
+  float:left;
+  background-color: #CCE7D9;
+  border-radius: 0.3em;
+  width: auto;
+  height: auto;
+  text-align: center;
+  text-align: center;
+  padding: 1em;
+  border:none;
+  text-decoration: none;
+}
+
+#homeText{
+  width:350px;
+}
+
+#homePic{
+  margin:0;
+  float:right;
+  display:flex;
+}
+
+#adminSearch{
+  margin-top:5%;
+  padding: 1em;
+  background-color: #D9C0D7;
+  width:100%;
+}
+
+#userNameSearch{
+  margin:1em;
+  width: 98%;
+  height: 50px;
+}
+
+#eventNameSearch{
+  margin:1em;
+  width: 98%;
+  height: 50px;
+}
+
+.nameInput {
+  width: 100%;
+  box-sizing: border-box;
+  border: 0;
+  font-family: 'Montserrat', sans-serif;
+  color:#964F87
+}
+
+#month{
+  border-right: 4px solid white;
+}
+
+.login{
+  margin: 2% 2.5% 2% 17%;
+  float: left;
+  width: 30%;
+  height: auto;
+  text-align: center;
+}
+
+.signUp{
+  margin: 1% 17% 2% 2.5%;
+  float: right;
+  width: 30%;
+  height: auto;
+  text-align: center;
+}
+
+.loginBody{
+  background-color: #D9C0D7;
+  height: auto;
+  padding: 10%;
+  text-align: left;
+}
+
+.signUpBody{
+  background-color: #D9C0D7;
+  height: auto;
+  padding: 10%;
+  text-align: left;
+}
+
+p{
+color: black;
+font-size: large;
+}
+
+.loginInputBox{
+  width: 100%;
+  height: 3em;
+  border: none;
+  font-size: large;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.input #loginCheckBox{
+border: none;
+margin: 0px, 0px, 0px, 0px;
+}
+
+.icon{
+padding-top: 30px;
+text-align: center;
+}
+
+#google{
+width: 15%;
+height: auto;
+margin-right: 50px;
+cursor:pointer;
+}
+
+#facebook{
+width: 17%;
+height: auto;
+margin-left: 50px;
+cursor:pointer;
+}
+
+.loginButton{
+float:right;
+background-color: #CCE7D9;
+border-radius: 0.3em;
+width: 7em;
+height: 3em;
+text-align: center;
+padding: 2em;
+margin: 1%;
+}
+
+.fa-circle-info{
+color: grey;
+padding-left: 0.5em;
+}
+
+.warning{
+color: red;
+}
+
+.greeting{
+  float: right;
+}
+© 2022 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+Loading complete
