@@ -14,7 +14,7 @@ router.get('/actors', function(req, res, next) {
       return;
     }
 
-    let query = "SELECT first_name, last_name FROM actor;";
+    let query = "SELECT username, email, password FROM tablename;";
     connection.query(query, function(error, rows, fields) {
       connection.release();
       if(error){
