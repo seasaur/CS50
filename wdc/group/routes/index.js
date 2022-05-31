@@ -6,7 +6,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/actors', function(req, res, next) {
+router.get('/account', function(req, res, next) {
   req.pool.getConnection(function(error,connection){
     if(error){
       console.log(error);
@@ -14,7 +14,7 @@ router.get('/actors', function(req, res, next) {
       return;
     }
 
-    let query = "SELECT username, email, password FROM tablename;";
+    let query = "SELECT Users.username, Users.password, Notification.email";
     connection.query(query, function(error, rows, fields) {
       connection.release();
       if(error){
