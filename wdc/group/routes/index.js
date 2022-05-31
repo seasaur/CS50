@@ -22,8 +22,6 @@ router.get('/account', function(req, res, next) {
         res.sendStatus(500);
         return;
       }
-      // actorArray[index] = String(rows);
-      // index++;
       res.json(rows);
     });
   });
