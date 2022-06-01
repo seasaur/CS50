@@ -38,6 +38,8 @@ function get_list(){
 
 }
 
+
+//not done
 var newActorArray = [];
 
 function add_actor(){
