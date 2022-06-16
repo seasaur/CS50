@@ -1,15 +1,16 @@
-var dateList = [];
+var dateList = [2,3,4];
 function getDates(){
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-        dateList = JSON.parse(this.responseText);
+        // dateList = JSON.parse(this.responseText);
         console.log(dateList);
         for (var i = 0; i < dateList.length; i++) {
             var list = document.getElementById("searchDates");
             var newOption = document.createElement("option");
             newOption.setAttribute('value', dateList[i]);
             newOption.innerHTML=dateList[i];
+            list.appendChild(newOption);
         }
       }
     };
