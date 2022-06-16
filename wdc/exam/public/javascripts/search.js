@@ -156,6 +156,8 @@ for (var i = 0; i < seatList.length; i=i+2) {
     newDiv.appendChild(img);
     newDiv.appendChild(img2);
 
+    <input type="checkbox" name="coffee" value="cream">With cream
+
     // <img src="/images/seat.png" alt="available seat" id="seat"></img>
 
   //   var button = document.createElement("button");
