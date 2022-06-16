@@ -100,7 +100,7 @@ function getSeats(){
       }
     };
 
-    xhttp.open("GET", "/searchSeats", true);
+    xhttp.open("POST", "/searchSeats", true);
     xhttp.send(JSON.stringify({date: selectedDate, name: selectedName})); //or just selected??
 
 }
