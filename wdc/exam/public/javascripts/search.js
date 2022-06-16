@@ -172,7 +172,7 @@ for (var i = 0; i < seatList.length; i=i+2) {
       checkbox2.style.display="inline-block";
       // label2.style.display="block";
       span2.style.display="inline";
-      span2.innerHTML = seatList[i].seat;
+      span2.innerHTML = seatList[i+1].seat;
       checkbox2.type = "checkbox";
       checkbox2.value = seatList[i+1].seat;
       console.log(checkbox2.value,"value checkbox");
@@ -188,6 +188,7 @@ for (var i = 0; i < seatList.length; i=i+2) {
 
     newDiv.appendChild(img);
     newDiv.appendChild(img2);
+    newDiv.appendChild(br);
     newDiv.appendChild(checkbox);
     // newDiv.appendChild(label);
     newDiv.appendChild(span);
