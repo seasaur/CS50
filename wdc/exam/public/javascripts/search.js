@@ -57,9 +57,11 @@ function getFilms(){
 var seatList = [];
 function getSeats(){
     document.getElementById("seats").innerHTML = ""; //clear out previous search results first
-    var select = document.getElementById("searchName");
-    var selected = select.options[select.selectedIndex].selected;
-    console.log(selected);
+    var name = document.getElementById("searchName");
+    // var selected = select.options[select.selectedIndex].selected;
+    var date = document.getElementById("searchDate");
+    console.log(name);
+    console.log(date);
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
