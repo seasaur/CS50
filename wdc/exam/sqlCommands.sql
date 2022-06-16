@@ -47,4 +47,4 @@ INSERT INTO Seats VALUES (6, 'C02', false, 3);
 INSERT INTO Seats VALUES (7, 'D01', false, 4);
 INSERT INTO Seats VALUES (8, 'D02', false, 4);
 INSERT INTO Bookings VALUES (1, 1);
-INSERT INTO Bookings VALUES (3, 1);
+INSERT INTO Bookings VALUES (5, 1);
