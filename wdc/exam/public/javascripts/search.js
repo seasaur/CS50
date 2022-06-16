@@ -9,7 +9,7 @@ function getDates(){
             var list = document.getElementById("searchDate");
             var newOption = document.createElement("option");
             newOption.value=dateList[i].dates;
-            newOption.maxlength=10;
+            newOption.maxlength='10';
             newOption.innerHTML=dateList[i].dates;
             list.appendChild(newOption);
         }
