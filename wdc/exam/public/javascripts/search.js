@@ -5,6 +5,11 @@ function getDates(){
       if (this.readyState == 4 && this.status == 200) {
         dateList = JSON.parse(this.responseText);
         console.log(dateList);
+        var withoutT = [];
+        dateList.foreach(u => {
+           withoutT.push(u.split("T")[0]);
+        });
+        console.log(withoutT);
         for (var i = 0; i < dateList.length; i++) {
             var list = document.getElementById("searchDate");
             var newOption = document.createElement("option");
