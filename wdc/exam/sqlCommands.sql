@@ -40,7 +40,7 @@ INSERT INTO Films VALUES (3,'Xmen', '2022-06-16','13:00:00');
 INSERT INTO Films VALUES (4,'Xmen', '2022-06-16','19:00:00');
 INSERT INTO Seats VALUES (1, 'A01', true, 1);
 INSERT INTO Seats VALUES (2, 'A02', false, 1);
-INSERT INTO Seats VALUES (3, 'B01', true, 1);
+INSERT INTO Seats VALUES (3, 'B01', false, 1);
 INSERT INTO Seats VALUES (4, 'B02', false, 1);
 INSERT INTO Seats VALUES (5, 'C01', true, 1);
 INSERT INTO Seats VALUES (6, 'C02', false, 1);
