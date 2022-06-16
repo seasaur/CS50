@@ -58,7 +58,7 @@ var seatList = [];
 function getSeats(){
     document.getElementById("seats").innerHTML = ""; //clear out previous search results first
     var select = document.getElementById("searchName");
-    var selected = select.options[select.selectedIndex].text
+    var selected = select.options[select.selectedIndex].selected;
     console.log(selected);
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
