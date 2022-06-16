@@ -46,3 +46,7 @@ INSERT INTO Seats VALUES (5, 'C01', true, 1);
 INSERT INTO Seats VALUES (6, 'C02', false, 1);
 INSERT INTO Bookings VALUES (1, 1);
 INSERT INTO Bookings VALUES (3, 1);
+
+UPDATE Customers
+SET ContactName='Juan'
+WHERE Country='Mexico';
