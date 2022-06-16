@@ -13,7 +13,7 @@ function getSeats(){
             break;
         }
         for (var i = 0; i < seatList.length; i++) {
-            var list = document.getElementById("users");
+            var list = document.getElementById("seats");
             var newDiv = document.createElement("div");
             newDiv.setAttribute('class', 'eventBox');
             var username = document.createElement("h2");
@@ -40,22 +40,7 @@ function getSeats(){
       }
     };
 
-    xhttp.open("GET", "/searchUsers", true);
+    xhttp.open("GET", "/searchseats", true);
     xhttp.send(searchBar);
-
-}
-
-function viewAUser(username) { // view specific event
-  console.log(username, "view user"); //correct name
-
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      window.location.replace("adminViewUser.html?username="+username);
-    }
-  };
-
-  xhttp.open("POST", "/usernameSearched", true);
-  xhttp.send();
 
 }
