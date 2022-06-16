@@ -1,7 +1,7 @@
 
 var seatList = [];
-function getUsers(){
-    document.getElementById("users").innerHTML = ""; //clear out previous search results first
+function getSeats(){
+    document.getElementById("seats").innerHTML = ""; //clear out previous search results first
     var searchBar = document.getElementById("userNameSearch").value;
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
