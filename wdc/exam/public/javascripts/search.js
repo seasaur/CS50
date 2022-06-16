@@ -1,9 +1,5 @@
 var datesList = [];
 function getDates(){
-    document.getElementById("seats").innerHTML = ""; //clear out previous search results first
-    var select = document.getElementById("searchName").value;
-    var selected = select.options[select.selectedIndex].text
-    console.log(selected);
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
@@ -11,8 +7,8 @@ function getDates(){
         console.log(dateList);
         for (var i = 0; i < dateList.length; i++) {
             var list = document.getElementById("searchDates");
-            var newDiv = document.createElement("div");
-            newDiv.setAttribute('class', 'eventBox');
+            var newOption = document.createElement("option");
+            newOption.setAttribute('value', 'eventBox');
             var filmName = document.createElement("h2");
             filmName.setAttribute('class', 'boxHeading');
             filmName.innerHTML = seatList[i].filmName;
