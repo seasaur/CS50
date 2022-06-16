@@ -21,14 +21,14 @@ CREATE TABLE Seats (
   seatID INT UNSIGNED NOT NULL AUTO_INCREMENT,
   seat VARCHAR(3),
   booked BOOLEAN,
-  filmID INT,
+  filmID INT UNSIGNED NOT NULL,
   PRIMARY KEY  (seatID),
   FOREIGN KEY (filmID) REFERENCES Films (filmID)
 );
 
 CREATE TABLE Bookings (
-  seatID INT,
-  userID INT,
+  seatID INT UNSIGNED NOT NULL,
+  userID INT UNSIGNED NOT NULL,
   FOREIGN KEY (seatID) REFERENCES Seats (seatID),
   FOREIGN KEY (userID) REFERENCES Users (userID)
 );
