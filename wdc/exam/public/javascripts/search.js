@@ -141,9 +141,9 @@ for (var i = 0; i < seatList.length; i=i+2) {
       checkbox.value = seatList[i].seat;
       console.log(checkbox.value,"value checkbox");
 
-      var label = document.createElement('label')
+      var label = document.createElement('label');
       label.htmlFor = "id";
-      label.appendChild(document.createTextNode('text for label after checkbox'));
+      label.appendChild(document.createTextNode(seatList[i].seat));
     }
     else {
       img.src = "/images/unav.png";
@@ -165,6 +165,7 @@ for (var i = 0; i < seatList.length; i=i+2) {
     newDiv.appendChild(img);
     newDiv.appendChild(img2);
     newDiv.appendChild(checkbox);
+    newDiv.appendChild(label);
 
     // <input type="checkbox" name="coffee" value="cream">With cream</input>
 
