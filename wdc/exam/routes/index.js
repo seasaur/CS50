@@ -28,6 +28,27 @@ router.get('/dates', function(req, res, next) { //account.html: getting a list o
   });
 });
 
+router.get('/name', function(req, res, next) { //account.html: getting a list of all events created by user
+  req.pool.getConnection(function(error,connection){
+    if(error){
+      console.log(error);
+      res.sendStatus(500);
+      return;
+    }
+
+    let query = "SELECT name FROM Films;";
+    connection.query(query, function(error, rows, fields) {
+      connection.release();
+      if(error){
+        console.log(error);
+        res.sendStatus(500);
+        return;
+      }
+      console.log(rows);
+      res.json(rows);
+    });
+  });
+});
 
 router.get('/searchSeats', function(req, res, next) { //admin search route
   req.pool.getConnection(function(error,connection){

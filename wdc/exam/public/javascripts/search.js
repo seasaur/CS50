@@ -24,6 +24,7 @@ function getDates(){
     xhttp.open("GET", "/dates", true);
     xhttp.send();
 
+    getFilms();
 }
 
 
@@ -44,7 +45,7 @@ function getFilms(){
       }
     };
 
-    xhttp.open("GET", "/dates", true);
+    xhttp.open("GET", "/name", true);
     xhttp.send();
 
 }
