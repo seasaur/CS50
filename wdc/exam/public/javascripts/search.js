@@ -18,17 +18,17 @@ function getSeats(){
             var list = document.getElementById("seats");
             var newDiv = document.createElement("div");
             newDiv.setAttribute('class', 'eventBox');
-            var username = document.createElement("h2");
-            username.setAttribute('class', 'boxHeading');
-            username.innerHTML = seatList[i].username;
-            newDiv.appendChild(username);
+            var filmName = document.createElement("h2");
+            filmName.setAttribute('class', 'boxHeading');
+            filmName.innerHTML = seatList[i].filmName;
+            newDiv.appendChild(filmName);
 
             var button = document.createElement("button");
             button.innerHTML = "VIEW USER";
-            button.id = seatList[i].username;
+            button.id = seatList[i].filmName;
             button.setAttribute('class', 'submitButton');
 
-            console.log(button.id, "username");
+            console.log(button.id, "filmName");
 
 
             button.onclick = function(user) {
