@@ -1,9 +1,9 @@
-var dateList = [2,3,4];
+var dateList = [];
 function getDates(){
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-        // dateList = JSON.parse(this.responseText);
+        dateList = JSON.parse(this.responseText);
         console.log(dateList);
         for (var i = 0; i < dateList.length; i++) {
             var list = document.getElementById("searchDate");
