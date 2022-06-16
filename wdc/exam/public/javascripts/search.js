@@ -129,10 +129,12 @@ for (var i = 0; i < seatList.length; i=i+2) {
 
     var img = document.createElement("img");
     img.src = "/images/seat.png";
+    img.id = "seat";
+    img.alt = "available seat";
     var src = document.getElementById("header");
-    src.appendChild(img);
+    list.appendChild(img);
 
-    <img src="/images/seat.png" alt="available seat" id="seat"></img>
+    // <img src="/images/seat.png" alt="available seat" id="seat"></img>
 
   //   var button = document.createElement("button");
   //   button.innerHTML = "VIEW USER";
