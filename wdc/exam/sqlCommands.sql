@@ -23,6 +23,6 @@ CREATE TABLE Seats (
 );
 
 CREATE TABLE Bookings (
-  FOREIGN KEY (seatID) REFERENCES Seats (seatID)
-  FOREIGN KEY (userID) REFERENCES Seats (userID)
+  FOREIGN KEY (seatID) REFERENCES Seats (seatID),
+  FOREIGN KEY (userID) REFERENCES Users (userID)
 );
