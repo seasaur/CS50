@@ -112,7 +112,7 @@ function forLoop(seatList) {
     alert("There are no screen times matching your selected filters.");
     return;
 }
-for (var i = 0; i < seatList.length; i++) {
+for (var i = 0; i < seatList.length; i=i+2) {
     var list = document.getElementById("seats");
     var newDiv = document.createElement("div");
     newDiv.setAttribute('class', 'eventBox');
