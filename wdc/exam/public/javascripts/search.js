@@ -151,7 +151,7 @@ for (var i = 0; i < seatList.length; i=i+2) {
       img.id = "seat";
       img.alt = "unavailable seat";
     }
-  }
+
     newDiv.appendChild(img);
 
     // <img src="/images/seat.png" alt="available seat" id="seat"></img>
