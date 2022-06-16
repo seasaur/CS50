@@ -14,7 +14,7 @@ CREATE TABLE Films (
   name VARCHAR(63),
   dates DATE,
   time TIME,
-  PRIMARY KEY  (filmID),
+  PRIMARY KEY  (filmID)
 );
 
 CREATE TABLE Seats (
