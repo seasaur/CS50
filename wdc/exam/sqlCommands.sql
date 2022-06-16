@@ -34,4 +34,5 @@ CREATE TABLE Bookings (
 );
 
 INSERT INTO Users VALUES (1, sea@gmail.com, sea123);
-INSERT INTO Films VALUES (1,'Mission Impossible', '2022-06-16','')
+INSERT INTO Films VALUES (1,'Mission Impossible', '2022-06-16','10:00:00');
+INSERT INTO Seats VLAUES (1, 'A01', true)
