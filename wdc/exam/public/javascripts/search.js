@@ -11,8 +11,8 @@ function getDates(){
         console.log(seatList);
         if(seatList.length==0) {
             alert("There are no screen times matching your selected filters.");
-            break;
         }
+        else {
         for (var i = 0; i < seatList.length; i++) {
             var list = document.getElementById("seats");
             var newDiv = document.createElement("div");
@@ -39,6 +39,7 @@ function getDates(){
 
         }
       }
+    }
     };
 
     xhttp.open("GET", "/searchSeats", true);
