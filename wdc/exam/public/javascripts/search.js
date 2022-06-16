@@ -6,9 +6,9 @@ function getDates(){
         // dateList = JSON.parse(this.responseText);
         console.log(dateList);
         for (var i = 0; i < dateList.length; i++) {
-            var list = document.getElementById("searchDates");
+            var list = document.getElementById("searchDate");
             var newOption = document.createElement("option");
-            newOption.setAttribute('value', dateList[i]);
+            newOption.value=dateList[i];
             newOption.innerHTML=dateList[i];
             list.appendChild(newOption);
         }
