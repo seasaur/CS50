@@ -67,6 +67,20 @@ function inputCheck() {
 }
 
 //search function
+function sendInfo() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      getSeats();
+      }
+    };
+
+  xhttp.open("POST", "/storage", true); //send change info request to database
+  xhttp.setRequestHeader("Content-type", "application/json");
+  xhttp.send(JSON.stringify({date: date, name: name}));
+}
+
+
 var seatList = [];
 function getSeats(){
     document.getElementById("seats").innerHTML = ""; //clear out previous search results first
@@ -113,7 +127,7 @@ function getSeats(){
       }
     };
 
-    xhttp.open("POST", "/searchSeats", true);
-    xhttp.send(JSON.stringify({date: date, name: name})); //or just selected??
+    xhttp.open("GET", "/searchSeats", true);
+    xhttp.send();
 
 }

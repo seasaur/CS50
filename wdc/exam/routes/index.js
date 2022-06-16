@@ -50,7 +50,29 @@ router.get('/name', function(req, res, next) {
   });
 });
 
-router.post('/searchSeats', function(req, res, next) {
+
+router.post('/storage', function(req, res, next) {
+  req.pool.getConnection(function(error,connection){
+    if(error){
+      console.log(error);
+      res.sendStatus(500);
+      return;
+    }
+
+    let query = "UPDATE Users SET first_name = ?, email = ? WHERE user_ID = ?;";
+    connection.query(query, [req.body.first_name, req.body.email, loggedInUser], function(error, rows, fields) {
+      connection.release();
+      if(error){
+        console.log(error);
+        res.sendStatus(500);
+        return;
+      }
+      res.end();
+    });
+  });
+});
+
+router.get('/searchSeats', function(req, res, next) {
   req.pool.getConnection(function(error,connection){
     if(error){
       console.log(error);
