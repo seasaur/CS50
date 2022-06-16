@@ -52,7 +52,7 @@ function getFilms(){
 }
 
 
-function inputCheck() {
+function inputCheck() { //onclick
   var name = document.getElementById("searchName").value;
   var dates = document.getElementById("searchDate").value;
   //working
