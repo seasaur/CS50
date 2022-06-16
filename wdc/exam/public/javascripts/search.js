@@ -138,18 +138,22 @@ for (var i = 0; i < seatList.length; i=i+2) {
     var label2 = document.createElement('label');
     label2.style.display="none";
 
+    var span = document.createElement('span');
+    span.style.display="none";
     //there are 2 seats in every screening
     if(seatList[i].booked==0) {
       img.src = "/images/available.png";
       img.id = "seat";
       img.alt = "available seat";
-      checkbox.style.display="inline-block";
-      label.style.display="block";
+      checkbox.style.display="block";
+      // label.style.display="block";
       checkbox.type = "checkbox";
       checkbox.value = seatList[i].seat;
       console.log(checkbox.value,"value checkbox");
-      label.htmlFor = "value";
-      label.appendChild(document.createTextNode(seatList[i].seat));
+      // label.htmlFor = "value";
+      // label.appendChild(document.createTextNode(seatList[i].seat));
+      span.style.display="inline-block";
+      
     }
     else {
       img.src = "/images/unav.png";
@@ -177,8 +181,8 @@ for (var i = 0; i < seatList.length; i=i+2) {
 
     newDiv.appendChild(img);
     newDiv.appendChild(img2);
-    newDiv.appendChild(label);
     newDiv.appendChild(checkbox);
+    newDiv.appendChild(label);
 
     newDiv.appendChild(checkbox2);
     newDiv.appendChild(label2);
