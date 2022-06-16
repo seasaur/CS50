@@ -6,7 +6,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/dates', function(req, res, next) { //account.html: getting a list of all events created by user
+router.get('/dates', function(req, res, next) {
   req.pool.getConnection(function(error,connection){
     if(error){
       console.log(error);
@@ -28,7 +28,7 @@ router.get('/dates', function(req, res, next) { //account.html: getting a list o
   });
 });
 
-router.get('/name', function(req, res, next) { //account.html: getting a list of all events created by user
+router.get('/name', function(req, res, next) {
   req.pool.getConnection(function(error,connection){
     if(error){
       console.log(error);
@@ -50,7 +50,7 @@ router.get('/name', function(req, res, next) { //account.html: getting a list of
   });
 });
 
-router.get('/searchSeats', function(req, res, next) { //admin search route
+router.get('/searchSeats', function(req, res, next) {
   req.pool.getConnection(function(error,connection){
     if(error){
       console.log(error);
@@ -58,7 +58,7 @@ router.get('/searchSeats', function(req, res, next) { //admin search route
       return;
     }
 
-    let query = "SELECT username FROM Users WHERE username LIKE '%?%';"; //NOT COMPLETE: need containing "search word"
+    let query = "SELECT username FROM Users WHERE username = ?;"; //NOT COMPLETE: need containing "search word"
     connection.query(query, [req.body.selected], function(error, rows, fields) {
       connection.release();
       if(error){
@@ -68,7 +68,7 @@ router.get('/searchSeats', function(req, res, next) { //admin search route
       }
       if(rows.length>0){
         console.log(rows, "ah");
-        res.json(rows); //return username of user
+        res.json(rows);
       }
       else{
         res.sendStatus(401);
