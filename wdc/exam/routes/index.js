@@ -68,7 +68,7 @@ router.get('/searchSeats', function(req, res, next) {
       return;
     }
 
-    let query = "SELECT username FROM Users WHERE username = ?;"; //NOT COMPLETE: need containing "search word"
+    let query = "";
     connection.query(query, [req.body.selected], function(error, rows, fields) {
       connection.release();
       if(error){
