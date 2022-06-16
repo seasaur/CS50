@@ -19,4 +19,5 @@ CREATE TABLE Seats (
   dates DATE UNSIGNED NOT NULL,
   time TIME UNSIGNED NOT NULL,
   PRIMARY KEY  (seatID),
+  `fk_address_city` FOREIGN KEY (city_id) REFERENCES city (city_id)
 )
