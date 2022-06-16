@@ -118,7 +118,7 @@ for (var i = 0; i < seatList.length; i++) {
     newDiv.setAttribute('class', 'eventBox');
     var filmName = document.createElement("h2");
     filmName.setAttribute('class', 'boxHeading');
-    filmName.innerHTML = seatList[i].filmName;
+    filmName.innerHTML = seatList[i].name;
     newDiv.appendChild(filmName);
 
   //   var button = document.createElement("button");
