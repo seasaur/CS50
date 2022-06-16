@@ -128,11 +128,11 @@ for (var i = 0; i < seatList.length; i=i+2) {
     newDiv.appendChild(filmName);
 
     var img = document.createElement("img");
-    img.src = "/images/seat.png";
+    img.src = "/images/available.png";
     img.id = "seat";
     img.alt = "available seat";
     var src = document.getElementById("header");
-    list.appendChild(img);
+    newDiv.appendChild(img);
 
     // <img src="/images/seat.png" alt="available seat" id="seat"></img>
 
