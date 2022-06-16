@@ -1,5 +1,5 @@
-var seatList = [];
-function getSeats(){
+var datesList = [];
+function getDates(){
     document.getElementById("seats").innerHTML = ""; //clear out previous search results first
     var select = document.getElementById("searchName").value;
     var selected = select.options[select.selectedIndex].text
