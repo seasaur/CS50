@@ -185,13 +185,7 @@ background-color: #D9C0D7;
 width:100%;
 }
 
-#userNameSearch{
-margin:1em;
-width: 98%;
-height: 50px;
-}
-
-#eventNameSearch{
+#searchDate, #searchName{
 margin:1em;
 width: 98%;
 height: 50px;
