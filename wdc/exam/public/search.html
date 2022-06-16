@@ -10,33 +10,15 @@
         <script src="/javascripts/search.js" defer></script>
     </head>
     <body id="body">
-        <div id="adminSearch">
             <h2>SEARCH BY DATE</h2>
-            <input type="text" id="userNameSearch">
-            <!-- <button class="submitButton" height="2em" onclick="getUsers()" id="edit">
-                SEARCH
-            </button> -->
+            <input type="text" id="searchDate">
 
-            <!-- <div>
-                <table id="userAccounts"></table>
-
-            </div> -->
-            <br/>
-            <div class="titleBox" id="users">
-                <!-- <div class="eventBox">
-                    <h2 class="boxHeading">{{event.name}}
-                    <a v-bind:href="event.url" class="viewEvent">VIEW EVENT</a>
-                    </h2>
-                </div> -->
-            </div>
-
-
-            <h2>SEARCH BY FILM</h2>
-            <input type="text" id="eventNameSearch">
-            <button class="submitButton" height="2em" onclick="searchEvents()" id="edit">
+            <h2>SEARCH BY FILM NAME</h2>
+            <input type="text" id="searchName">
+            <button class="submitButton" height="2em" onclick="searchFilms()" id="edit">
                 SEARCH
             </button>
-            <div class="titleBox" id="users">
+            <div class="titleBox" id="films">
                 <!-- <table id="events"></table> -->
             </div>
         </div>
