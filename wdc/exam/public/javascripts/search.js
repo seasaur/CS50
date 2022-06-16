@@ -7,14 +7,10 @@ function getDates(){
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-        seatList = JSON.parse(this.responseText);
-        console.log(seatList);
-        if(seatList.length==0) {
-            alert("There are no screen times matching your selected filters.");
-        }
-        else {
-        for (var i = 0; i < seatList.length; i++) {
-            var list = document.getElementById("seats");
+        dateList = JSON.parse(this.responseText);
+        console.log(dateList);
+        for (var i = 0; i < dateList.length; i++) {
+            var list = document.getElementById("searchDates");
             var newDiv = document.createElement("div");
             newDiv.setAttribute('class', 'eventBox');
             var filmName = document.createElement("h2");
@@ -39,7 +35,6 @@ function getDates(){
 
         }
       }
-    }
     };
 
     xhttp.open("GET", "/dates", true);
