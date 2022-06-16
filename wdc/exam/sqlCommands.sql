@@ -49,10 +49,11 @@ INSERT INTO Seats VALUES (8, 'D02', false, 4);
 INSERT INTO Bookings VALUES (1, 1);
 INSERT INTO Bookings VALUES (3, 1);
 
-SELECT Films.name, Seats.seat FROM
-INNER JOIN Seats
-ON Seats.filmID=Film.filmID
-WHERE Date = '2022-06-20';
+SELECT Films.name, Seats.seat
+FROM Seats
+INNER JOIN Films
+ON Seats.filmID=Films.filmID
+WHERE dates = '2022-06-20';
 
  SELECT DISTINCT address.address
 FROM address
