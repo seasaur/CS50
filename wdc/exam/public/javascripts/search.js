@@ -129,12 +129,29 @@ for (var i = 0; i < seatList.length; i=i+2) {
 
     var img = document.createElement("img");
 
-    if()
-    img.src = "/images/available.png";
-    img.id = "seat";
-    img.alt = "available seat";
+    //there are 2 seats in every screening
+    if(seatList[i].booked==0) {
+      img.src = "/images/available.png";
+      img.id = "seat";
+      img.alt = "available seat";
+    }
+    else {
+      img.src = "/images/unavailable.png";
+      img.id = "seat";
+      img.alt = "unavailable seat";
+    }
 
-
+    if(seatList[i+1].booked==0) {
+      img.src = "/images/available.png";
+      img.id = "seat";
+      img.alt = "available seat";
+    }
+    else {
+      img.src = "/images/unavailable.png";
+      img.id = "seat";
+      img.alt = "unavailable seat";
+    }
+  }
     newDiv.appendChild(img);
 
     // <img src="/images/seat.png" alt="available seat" id="seat"></img>
