@@ -127,9 +127,7 @@ for (var i = 0; i < seatList.length; i=i+2) {
     filmName.innerHTML = "Film Title: " + seatList[i].name + "<br/>Screening Date: "  + withoutT[i] + " Screening Time: " + seatList[i].time;
     newDiv.appendChild(filmName);
 
-    for(var j=0;j<seatList.length;j++) {
-      
-    }
+    <img src="/images/greenTick.png" alt="tick" id="tick"></img>
 
   //   var button = document.createElement("button");
   //   button.innerHTML = "VIEW USER";
