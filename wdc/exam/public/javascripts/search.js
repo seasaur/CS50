@@ -9,7 +9,8 @@ function getUsers(){
         seatList = JSON.parse(this.responseText);
         console.log(seatList);
         if(seatList.length==0) {
-            
+            alert("There are no screen times matching your selected filters.");
+            break;
         }
         for (var i = 0; i < seatList.length; i++) {
             var list = document.getElementById("users");
