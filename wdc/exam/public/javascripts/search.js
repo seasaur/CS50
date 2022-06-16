@@ -145,14 +145,14 @@ for (var i = 0; i < seatList.length; i=i+2) {
       img.src = "/images/available.png";
       img.id = "seat";
       img.alt = "available seat";
-      checkbox.style.display="inline-block";
+      checkbox.style.display="block";
       // label.style.display="block";
       checkbox.type = "checkbox";
       checkbox.value = seatList[i].seat;
       console.log(checkbox.value,"value checkbox");
       // label.htmlFor = "value";
       // label.appendChild(document.createTextNode(seatList[i].seat));
-      span.style.display="inline-block";
+      span.style.display="inline";
       span.innerHTML = seatList[i].seat;
     }
     else {
