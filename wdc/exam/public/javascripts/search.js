@@ -9,6 +9,7 @@ function getDates(){
             var list = document.getElementById("searchDates");
             var newOption = document.createElement("option");
             newOption.setAttribute('value', dateList[i]);
+            newOption.innerHTML=dateList[i];
             var filmName = document.createElement("h2");
             filmName.setAttribute('class', 'boxHeading');
             filmName.innerHTML = seatList[i].filmName;
