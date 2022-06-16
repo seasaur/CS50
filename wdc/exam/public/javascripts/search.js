@@ -116,9 +116,15 @@ for (var i = 0; i < seatList.length; i++) {
     var list = document.getElementById("seats");
     var newDiv = document.createElement("div");
     newDiv.setAttribute('class', 'eventBox');
-    var filmName = document.createElement("h2");
+    var withoutT = [];
+    seatList.forEach(u => {
+      withoutT.push(u.dates.split("T")[0]);
+   });
+   console.log(withoutT);
+
+    var filmName = document.createElement("h3");
     filmName.setAttribute('class', 'boxHeading');
-    filmName.innerHTML = seatList[i].name;
+    filmName.innerHTML = seatList[i].name + withoutT[i];
     newDiv.appendChild(filmName);
 
   //   var button = document.createElement("button");
