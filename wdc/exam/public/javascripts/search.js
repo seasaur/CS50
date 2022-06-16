@@ -51,10 +51,11 @@ function getFilms(){
 
 }
 
+var name = document.getElementById("searchName").value;
+var dates = document.getElementById("searchDate").value;
 function inputCheck() {
   document.getElementById("seats").innerHTML = ""; //clear out previous search results first
-  var name = document.getElementById("searchName").value;
-  var dates = document.getElementById("searchDate").value;
+
   if(name=="Any" && date=="Any") {
     console.log("any2");
   }
