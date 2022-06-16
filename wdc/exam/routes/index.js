@@ -78,7 +78,7 @@ router.get('/searchSeats', function(req, res, next) {
         res.sendStatus(500);
         return;
       }
-        console.log(rows, "ah");
+        console.log(rows, "both yay");
         res.json(rows);
     });
   });
@@ -93,14 +93,14 @@ router.get('/any', function(req, res, next) {
     }
 
     let query = "SELECT Films.name, Films.dates, Films.time, Seats.seat FROM Seats INNER JOIN Films ON Seats.filmID=Films.filmID";
-    connection.query(query, [dates, name], function(error, rows, fields) {
+    connection.query(query, function(error, rows, fields) {
       connection.release();
       if(error){
         console.log(error);
         res.sendStatus(500);
         return;
       }
-        console.log(rows, "ah");
+        console.log(rows, "any yay");
         res.json(rows);
     });
   });
@@ -115,17 +115,40 @@ router.get('/datesAny', function(req, res, next) {
     }
 
     let query = "SELECT Films.name, Films.dates, Films.time, Seats.seat FROM Seats INNER JOIN Films ON Seats.filmID=Films.filmID WHERE dates = ?;";
-    connection.query(query, [dates, name], function(error, rows, fields) {
+    connection.query(query, [dates], function(error, rows, fields) {
       connection.release();
       if(error){
         console.log(error);
         res.sendStatus(500);
         return;
       }
-        console.log(rows, "ah");
+        console.log(rows, "dates yay");
         res.json(rows);
     });
   });
 });
+
+router.get('/nameAny', function(req, res, next) {
+  req.pool.getConnection(function(error,connection){
+    if(error){
+      console.log(error);
+      res.sendStatus(500);
+      return;
+    }
+
+    let query = "SELECT Films.name, Films.dates, Films.time, Seats.seat FROM Seats INNER JOIN Films ON Seats.filmID=Films.filmID WHERE name = ?;";
+    connection.query(query, [name], function(error, rows, fields) {
+      connection.release();
+      if(error){
+        console.log(error);
+        res.sendStatus(500);
+        return;
+      }
+        console.log(rows, "name yay");
+        res.json(rows);
+    });
+  });
+});
+
 
 module.exports = router;
