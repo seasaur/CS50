@@ -49,6 +49,4 @@ INSERT INTO Seats VALUES (8, 'D02', false, 4);
 INSERT INTO Bookings VALUES (1, 1);
 INSERT INTO Bookings VALUES (5, 1);
 
-UPDATE Bookings
-SET seatID=5
-WHERE seatID=3;
+mysqldump --host=127.0.0.1 --databases Cinema > cinema.sql
