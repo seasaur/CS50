@@ -33,7 +33,7 @@ function getFilms(){
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-        dateList = JSON.parse(this.responseText);
+        filmList = JSON.parse(this.responseText);
         console.log(filmList);
         for (var i = 0; i < dateList.length; i++) {
             var list = document.getElementById("searchName");
