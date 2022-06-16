@@ -127,6 +127,11 @@ for (var i = 0; i < seatList.length; i=i+2) {
     filmName.innerHTML = "Film Title: " + seatList[i].name + "<br/>Screening Date: "  + withoutT[i] + " Screening Time: " + seatList[i].time;
     newDiv.appendChild(filmName);
 
+    var img = document.createElement("img");
+    img.src = "/images/seat.png";
+    var src = document.getElementById("header");
+    src.appendChild(img);
+
     <img src="/images/seat.png" alt="available seat" id="seat"></img>
 
   //   var button = document.createElement("button");
