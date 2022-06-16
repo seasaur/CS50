@@ -78,14 +78,8 @@ router.get('/searchSeats', function(req, res, next) {
         res.sendStatus(500);
         return;
       }
-      // if(rows.length>0){
         console.log(rows, "ah");
         res.json(rows);
-      // }
-      // else{
-      //   res.sendStatus(401);
-      // }
-
     });
   });
 });
@@ -106,14 +100,30 @@ router.get('/any', function(req, res, next) {
         res.sendStatus(500);
         return;
       }
-      // if(rows.length>0){
         console.log(rows, "ah");
         res.json(rows);
-      // }
-      // else{
-      //   res.sendStatus(401);
-      // }
+    });
+  });
+});
 
+router.get('/datesAny', function(req, res, next) {
+  req.pool.getConnection(function(error,connection){
+    if(error){
+      console.log(error);
+      res.sendStatus(500);
+      return;
+    }
+
+    let query = "SELECT Films.name, Films.dates, Films.time, Seats.seat FROM Seats INNER JOIN Films ON Seats.filmID=Films.filmID WHERE dates = ?;";
+    connection.query(query, [dates, name], function(error, rows, fields) {
+      connection.release();
+      if(error){
+        console.log(error);
+        res.sendStatus(500);
+        return;
+      }
+        console.log(rows, "ah");
+        res.json(rows);
     });
   });
 });
