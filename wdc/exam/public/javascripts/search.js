@@ -129,7 +129,7 @@ for (var i = 0; i < seatList.length; i=i+2) {
 
     var img = document.createElement("img");
     var img2 = document.createElement("img");
-    var checkbox = "";
+    var checkbox = document.createElement('input');
 
     //there are 2 seats in every screening
     if(seatList[i].booked==0) {
@@ -140,6 +140,10 @@ for (var i = 0; i < seatList.length; i=i+2) {
       checkbox.type = "checkbox";
       checkbox.value = seatList[i].seat;
       console.log(checkbox.value,"value checkbox");
+
+      var label = document.createElement('label')
+      label.htmlFor = "id";
+      label.appendChild(document.createTextNode('text for label after checkbox'));
     }
     else {
       img.src = "/images/unav.png";
