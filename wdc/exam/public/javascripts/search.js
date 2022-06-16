@@ -15,7 +15,7 @@ function getDates(){
             var newOption = document.createElement("option");
             newOption.value=dateList[i].dates;
             // var splitDate = String.split("T")[0];
-            newOption.innerHTML=withoutT[i];
+            newOption.innerHTML=withoutT[i][0];
             list.appendChild(newOption);
         }
       }
