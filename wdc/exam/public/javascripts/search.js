@@ -137,11 +137,10 @@ for (var i = 0; i < seatList.length; i=i+2) {
       img.alt = "available seat";
     }
     else {
-      img.src = "/images/unavailable.png";
+      img.src = "/images/unav.png";
       img.id = "seat";
       img.alt = "unavailable seat";
     }
-
 
     if(seatList[i+1].booked==0) {
       img2.src = "/images/available.png";
@@ -149,7 +148,7 @@ for (var i = 0; i < seatList.length; i=i+2) {
       img2.alt = "available seat";
     }
     else {
-      img2.src = "/images/unavailable.png";
+      img2.src = "/images/unav.png";
       img2.id = "seat";
       img2.alt = "unavailable seat";
     }
