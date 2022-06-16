@@ -1,25 +1,26 @@
 
-var userList = [];
+var filmList = [];
 function getUsers(){
     document.getElementById("users").innerHTML = ""; //clear out previous search results first
     var searchBar = document.getElementById("userNameSearch").value;
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-        userList = JSON.parse(this.responseText);
-        console.log(userList);
-        for (var i = 0; i < userList.length; i++) {
+        filmList = JSON.parse(this.responseText);
+        console.log(filmList);
+        if(filmList)
+        for (var i = 0; i < filmList.length; i++) {
             var list = document.getElementById("users");
             var newDiv = document.createElement("div");
             newDiv.setAttribute('class', 'eventBox');
             var username = document.createElement("h2");
             username.setAttribute('class', 'boxHeading');
-            username.innerHTML = userList[i].username;
+            username.innerHTML = filmList[i].username;
             newDiv.appendChild(username);
 
             var button = document.createElement("button");
             button.innerHTML = "VIEW USER";
-            button.id = userList[i].username;
+            button.id = filmList[i].username;
             button.setAttribute('class', 'submitButton');
 
             console.log(button.id, "username");
