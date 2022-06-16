@@ -121,19 +121,19 @@ for (var i = 0; i < seatList.length; i++) {
     filmName.innerHTML = seatList[i].filmName;
     newDiv.appendChild(filmName);
 
-    var button = document.createElement("button");
-    button.innerHTML = "VIEW USER";
-    button.id = seatList[i].filmName;
-    button.setAttribute('class', 'submitButton');
+  //   var button = document.createElement("button");
+  //   button.innerHTML = "VIEW USER";
+  //   button.id = seatList[i].filmName;
+  //   button.setAttribute('class', 'submitButton');
 
-    console.log(button.id, "filmName");
+  //   console.log(button.id, "filmName");
 
 
-    button.onclick = function(user) {
-      viewAUser(this.id)
-   }
+  //   button.onclick = function(user) {
+  //     viewAUser(this.id)
+  //  }
 
-    newDiv.appendChild(button);
+  //   newDiv.appendChild(button);
     list.appendChild(newDiv);
 
 }
