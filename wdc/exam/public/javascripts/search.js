@@ -98,39 +98,43 @@ function getSeats(){
       if (this.readyState == 4 && this.status == 200) {
         seatList = JSON.parse(this.responseText);
         console.log(seatList);
-        if(seatList.length==0) {
-            alert("There are no screen times matching your selected filters.");
-            return;
-        }
-        for (var i = 0; i < seatList.length; i++) {
-            var list = document.getElementById("seats");
-            var newDiv = document.createElement("div");
-            newDiv.setAttribute('class', 'eventBox');
-            var filmName = document.createElement("h2");
-            filmName.setAttribute('class', 'boxHeading');
-            filmName.innerHTML = seatList[i].filmName;
-            newDiv.appendChild(filmName);
-
-            var button = document.createElement("button");
-            button.innerHTML = "VIEW USER";
-            button.id = seatList[i].filmName;
-            button.setAttribute('class', 'submitButton');
-
-            console.log(button.id, "filmName");
-
-
-            button.onclick = function(user) {
-              viewAUser(this.id)
-           }
-
-            newDiv.appendChild(button);
-            list.appendChild(newDiv);
-
-        }
+        forLoop(seatList);
       }
     };
 
     xhttp.open("GET", "/searchSeats", true);
     xhttp.send();
 
+}
+
+function forLoop(seatList) {
+  if(seatList.length==0) {
+    alert("There are no screen times matching your selected filters.");
+    return;
+}
+for (var i = 0; i < seatList.length; i++) {
+    var list = document.getElementById("seats");
+    var newDiv = document.createElement("div");
+    newDiv.setAttribute('class', 'eventBox');
+    var filmName = document.createElement("h2");
+    filmName.setAttribute('class', 'boxHeading');
+    filmName.innerHTML = seatList[i].filmName;
+    newDiv.appendChild(filmName);
+
+    var button = document.createElement("button");
+    button.innerHTML = "VIEW USER";
+    button.id = seatList[i].filmName;
+    button.setAttribute('class', 'submitButton');
+
+    console.log(button.id, "filmName");
+
+
+    button.onclick = function(user) {
+      viewAUser(this.id)
+   }
+
+    newDiv.appendChild(button);
+    list.appendChild(newDiv);
+
+}
 }
