@@ -34,7 +34,7 @@ function getFilms(){
       if (this.readyState == 4 && this.status == 200) {
         filmList = JSON.parse(this.responseText);
         console.log(filmList);
-        for (var i = 0; i < dateList.length; i++) {
+        for (var i = 0; i < filmList.length; i++) {
             var list = document.getElementById("searchName");
             var newOption = document.createElement("option");
             newOption.value=filmList[i].name;
