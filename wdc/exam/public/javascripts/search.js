@@ -54,10 +54,10 @@ function getFilms(){
 
 function inputCheck() {
   var name = document.getElementById("searchName").value;
-var dates = document.getElementById("searchDate").value;
-
-console.log(name);
-console.log(dates);
+  var dates = document.getElementById("searchDate").value;
+  //working
+  console.log(name);
+  console.log(dates);
 
   if(name=="any" && dates=="any") {
     console.log("any2");
@@ -96,9 +96,7 @@ var seatList = [];
 function getSeats(){
     document.getElementById("seats").innerHTML = ""; //clear out previous search results first
     var name = document.getElementById("searchName").value;
-    // var selectedName = name.options[name.selectedIndex].value;
     var dates = document.getElementById("searchDate").value;
-    // var selectedDate = name.options[name.selectedIndex].value;
     console.log(name);
     console.log(dates);
     var xhttp = new XMLHttpRequest();
