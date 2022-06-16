@@ -66,6 +66,6 @@ function getDates(){
 //     };
 
 //     xhttp.open("GET", "/searchSeats", true);
-//     xhttp.send();
+//     xhttp.send(JSON.stringify(selected));
 
 // }
