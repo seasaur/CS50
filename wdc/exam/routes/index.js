@@ -136,7 +136,7 @@ router.get('/nameAny', function(req, res, next) {
       return;
     }
 
-    let query = "SELECT Films.name, Films.dates, Films.time, Seats.seat FROM Seats INNER JOIN Films ON Seats.filmID=Films.filmID WHERE dates = ?;";
+    let query = "SELECT Films.name, Films.dates, Films.time, Seats.seat, Seat.booked FROM Seats INNER JOIN Films ON Seats.filmID=Films.filmID WHERE dates = ?;";
     connection.query(query, [dates], function(error, rows, fields) {
       connection.release();
       if(error){
