@@ -50,7 +50,7 @@ router.get('/name', function(req, res, next) {
   });
 });
 
-router.get('/searchSeats', function(req, res, next) {
+router.post('/searchSeats', function(req, res, next) {
   req.pool.getConnection(function(error,connection){
     if(error){
       console.log(error);
