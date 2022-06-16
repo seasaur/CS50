@@ -136,7 +136,7 @@ for (var i = 0; i < seatList.length; i=i+2) {
       img.src = "/images/available.png";
       img.id = "seat";
       img.alt = "available seat";
-      checkbox = document.createElement("input");
+      checkbox = document.createElement('input');
       checkbox.type = "checkbox";
       checkbox.value = seatList[i].seat;
     }
