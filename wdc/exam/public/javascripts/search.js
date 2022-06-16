@@ -41,6 +41,6 @@ function getSeats(){
     };
 
     xhttp.open("GET", "/searchseats", true);
-    xhttp.send(searchBar);
+    xhttp.send();
 
 }
