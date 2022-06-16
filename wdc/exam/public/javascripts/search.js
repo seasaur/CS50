@@ -1,4 +1,4 @@
-var datesList = [];
+var dateList = [];
 function getDates(){
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -8,7 +8,7 @@ function getDates(){
         for (var i = 0; i < dateList.length; i++) {
             var list = document.getElementById("searchDates");
             var newOption = document.createElement("option");
-            newOption.setAttribute('value', 'eventBox');
+            newOption.setAttribute('value', dateList[i]);
             var filmName = document.createElement("h2");
             filmName.setAttribute('class', 'boxHeading');
             filmName.innerHTML = seatList[i].filmName;
