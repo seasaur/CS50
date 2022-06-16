@@ -53,4 +53,4 @@ mysqldump --host=127.0.0.1 --databases Cinema > cinema.sql
 
 --queries--
 --to get dates and append to list
-SELECT dates FROM Films;
+SELECT * FROM Films.dates;
