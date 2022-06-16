@@ -58,7 +58,7 @@ SELECT dates FROM Films;
 --get searched dates and name--
 SELECT username, first_name, email FROM Users WHERE user_ID = ?;
 
-SELECT Films.name, Films.DSeats.seat
+SELECT Films.name, Films.dates, Films.time, Seats.seat
 FROM Seats
 INNER JOIN Films
 ON Seats.filmID=Films.filmID

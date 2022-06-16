@@ -56,6 +56,8 @@ var name;
 router.post('/storage', function(req, res, next) {
       dates=req.body.dates;
       name=req.body.name;
+      console.log(dates);
+      console.log(name);
       res.end();
 
 });
@@ -68,7 +70,7 @@ router.get('/searchSeats', function(req, res, next) {
       return;
     }
 
-    let query = "";
+    let query = "SELECT Films.name, Films.dates, Films.time, Seats.seat FROM Seats INNER JOIN Films ON Seats.filmID=Films.filmID WHERE dates = ? AND name = ?;";
     connection.query(query, dates, name, function(error, rows, fields) {
       connection.release();
       if(error){

@@ -52,26 +52,26 @@ function getFilms(){
 }
 
 
-function inputCheck() { //onclick
-  var name = document.getElementById("searchName").value;
-  var dates = document.getElementById("searchDate").value;
-  //working
-  console.log(name);
-  console.log(dates);
+// function inputCheck() {
+//   var name = document.getElementById("searchName").value;
+//   var dates = document.getElementById("searchDate").value;
+//   //working
+//   console.log(name);
+//   console.log(dates);
 
-  if(name=="any" && dates=="any") {
-    console.log("any2");
-  }
-  else if(dates=="any") {
-    console.log("any date");
-  }
-  else if(name=="any"){
-    console.log("any name");
-  }
-  else {
-    getSeats();
-  }
-}
+//   if(name=="any" && dates=="any") {
+//     console.log("any2");
+//   }
+//   else if(dates=="any") {
+//     console.log("any date");
+//   }
+//   else if(name=="any"){
+//     console.log("any name");
+//   }
+//   else {
+//     getSeats();
+//   }
+// }
 
 //search function
 function sendInfo() {
@@ -124,7 +124,7 @@ function getSeats(){
   else {
     xhttp.open("GET", "/searchSeats", true);
   }
-  
+
     xhttp.send();
 
 }
