@@ -101,6 +101,6 @@ function getSeats(){
     };
 
     xhttp.open("GET", "/searchSeats", true);
-    xhttp.send(JSON.stringify(selected)); //or just selected??
+    xhttp.send(JSON.stringify({first_name: document.getElementById("firstName").value, email: document.getElementById("email").value})); //or just selected??
 
 }
