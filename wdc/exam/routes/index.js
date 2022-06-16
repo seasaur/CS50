@@ -115,7 +115,7 @@ router.get('/datesAny', function(req, res, next) {
     }
 
     let query = "SELECT Films.name, Films.dates, Films.time, Seats.seat FROM Seats INNER JOIN Films ON Seats.filmID=Films.filmID WHERE dates = ?;";
-    connection.query(query, [dates], function(error, rows, fields) {
+    connection.query(query, dates, function(error, rows, fields) {
       connection.release();
       if(error){
         console.log(error);
