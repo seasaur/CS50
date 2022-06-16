@@ -33,4 +33,5 @@ CREATE TABLE Bookings (
   FOREIGN KEY (userID) REFERENCES Users (userID)
 );
 
-INSERT INTO Users
+INSERT INTO Users VALUES (1, sea@gmail.com, sea123);
+INSERT INTO Films VALUES ()
