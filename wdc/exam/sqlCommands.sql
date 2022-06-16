@@ -35,18 +35,16 @@ CREATE TABLE Bookings (
 
 INSERT INTO Users VALUES (1, 'sea@gmail.com', 'sea123');
 INSERT INTO Films VALUES (1,'Mission Impossible', '2022-06-16','10:00:00');
-INSERT INTO Films VALUES (2,'Mission Impossible', '2022-06-16','22:00:00');
-INSERT INTO Films VALUES (3,'Xmen', '2022-06-16','13:00:00');
-INSERT INTO Films VALUES (4,'Xmen', '2022-06-16','19:00:00');
+INSERT INTO Films VALUES (2,'Mission Impossible', '2022-06-18','22:00:00');
+INSERT INTO Films VALUES (3,'Xmen', '2022-06-20','10:00:00');
+INSERT INTO Films VALUES (4,'Xmen', '2022-06-22','22:00:00');
 INSERT INTO Seats VALUES (1, 'A01', true, 1);
 INSERT INTO Seats VALUES (2, 'A02', false, 1);
 INSERT INTO Seats VALUES (3, 'B01', false, 1);
 INSERT INTO Seats VALUES (4, 'B02', false, 1);
 INSERT INTO Seats VALUES (5, 'C01', true, 1);
 INSERT INTO Seats VALUES (6, 'C02', false, 1);
+INSERT INTO Seats VALUES (5, 'D01', false, 1);
+INSERT INTO Seats VALUES (6, 'D02', false, 1);
 INSERT INTO Bookings VALUES (1, 1);
 INSERT INTO Bookings VALUES (3, 1);
-
-UPDATE Customers
-SET ContactName='Juan'
-WHERE Country='Mexico';
