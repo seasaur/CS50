@@ -114,8 +114,8 @@ router.get('/datesAny', function(req, res, next) {
       return;
     }
 
-    let query = "SELECT Films.name, Films.dates, Films.time, Seats.seat FROM Seats INNER JOIN Films ON Seats.filmID=Films.filmID WHERE dates = ?;";
-    connection.query(query, dates, function(error, rows, fields) {
+    let query = "SELECT Films.name, Films.dates, Films.time, Seats.seat FROM Seats INNER JOIN Films ON Seats.filmID=Films.filmID WHERE name = ?;";
+    connection.query(query, [name], function(error, rows, fields) {
       connection.release();
       if(error){
         console.log(error);
@@ -136,8 +136,8 @@ router.get('/nameAny', function(req, res, next) {
       return;
     }
 
-    let query = "SELECT Films.name, Films.dates, Films.time, Seats.seat FROM Seats INNER JOIN Films ON Seats.filmID=Films.filmID WHERE name = ?;";
-    connection.query(query, [name], function(error, rows, fields) {
+    let query = "SELECT Films.name, Films.dates, Films.time, Seats.seat FROM Seats INNER JOIN Films ON Seats.filmID=Films.filmID WHERE dates = ?;";
+    connection.query(query, [dates], function(error, rows, fields) {
       connection.release();
       if(error){
         console.log(error);
