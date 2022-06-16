@@ -7,7 +7,7 @@ function getDates(){
         console.log(dateList);
         var withoutT = [];
         dateList.forEach(u => {
-           withoutT.push(u.dates.split("T"));
+           withoutT.push(u.dates.split("T")[0]);
         });
         console.log(withoutT);
         for (var i = 0; i < dateList.length; i++) {
@@ -15,7 +15,7 @@ function getDates(){
             var newOption = document.createElement("option");
             newOption.value=dateList[i].dates;
             // var splitDate = String.split("T")[0];
-            newOption.innerHTML=withoutT[i][0];
+            newOption.innerHTML=withoutT[i];
             list.appendChild(newOption);
         }
       }
