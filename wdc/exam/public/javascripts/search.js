@@ -42,7 +42,7 @@ function getDates(){
     }
     };
 
-    xhttp.open("GET", "/searchSeats", true);
+    xhttp.open("GET", "/dates", true);
     xhttp.send();
 
 }
