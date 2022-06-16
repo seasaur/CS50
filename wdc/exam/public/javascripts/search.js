@@ -130,18 +130,19 @@ for (var i = 0; i < seatList.length; i=i+2) {
     var img = document.createElement("img");
     var img2 = document.createElement("img");
     var checkbox = document.createElement('input');
+    checkbox.display.style="hidden";
+    var label = document.createElement('label');
+    label.display.style="hidden";
 
     //there are 2 seats in every screening
     if(seatList[i].booked==0) {
       img.src = "/images/available.png";
       img.id = "seat";
       img.alt = "available seat";
-      checkbox = document.createElement('input');
+      // checkbox = document.createElement('input');
       checkbox.type = "checkbox";
       checkbox.value = seatList[i].seat;
       console.log(checkbox.value,"value checkbox");
-
-      var label = document.createElement('label');
       label.htmlFor = "id";
       label.appendChild(document.createTextNode(seatList[i].seat));
     }
