@@ -15,7 +15,7 @@ router.get('/searchSeats', function(req, res, next) { //admin search route
     }
 
     let query = "SELECT username FROM Users WHERE username LIKE '%?%';"; //NOT COMPLETE: need containing "search word"
-    connection.query(query, [req.body], function(error, rows, fields) {
+    connection.query(query, [req.body.selected], function(error, rows, fields) {
       connection.release();
       if(error){
         console.log(error);

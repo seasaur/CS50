@@ -42,7 +42,7 @@ function getSeats(){
       }
     };
 
-    xhttp.open("GET", "/searchseats", true);
+    xhttp.open("GET", "/searchSeats", true);
     xhttp.send();
 
 }
