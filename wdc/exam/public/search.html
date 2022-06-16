@@ -9,3 +9,44 @@
         <link rel="stylesheet" href="/stylesheets/style.css">
         <script src="/javascripts/search.js" defer></script>
     </head>
+    <body id="body">
+        <nav id = "navigation">
+            <ul id="menu">
+                <li><div class="headerButton">LOG OUT</div></li>
+                <li><div class="headerButton" ><a href="account.html">ACCOUNT</a></div></li>
+            </ul>
+        </nav>
+        <div id="adminSearch">
+            <h2>USER SEARCH</h2>
+            <input type="text" id="userNameSearch">
+            <button class="submitButton" height="2em" onclick="getUsers()" id="edit">
+                GET ALL USERS
+            </button>
+            <br/>
+            <!-- <div>
+                <table id="userAccounts"></table>
+
+            </div> -->
+            <br/>
+            <div class="titleBox" id="users">
+                <!-- <div class="eventBox">
+                    <h2 class="boxHeading">{{event.name}}
+                    <a v-bind:href="event.url" class="viewEvent">VIEW EVENT</a>
+                    </h2>
+                </div> -->
+            </div>
+
+
+
+
+            <!-- <h2>EVENT SEARCH</h2>
+            <input type="text" id="eventNameSearch">
+            <button class="submitButton" height="2em" onclick="searchEvents()" id="edit">
+                SEARCH
+            </button>
+            <div>
+                <table id="events"></table>
+            </div> -->
+        </div>
+    </body>
+    </html>
