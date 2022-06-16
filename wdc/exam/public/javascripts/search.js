@@ -58,10 +58,11 @@ var seatList = [];
 function getSeats(){
     document.getElementById("seats").innerHTML = ""; //clear out previous search results first
     var name = document.getElementById("searchName");
-    // var selected = select.options[select.selectedIndex].selected;
+    var selectedName = name.options[name.selectedIndex].value;
     var date = document.getElementById("searchDate");
-    console.log(name);
-    console.log(date);
+    var selectedDate = name.options[name.selectedIndex].value;
+    console.log(selectedName);
+    console.log(selectedDate);
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
