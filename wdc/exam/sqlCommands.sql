@@ -49,6 +49,6 @@ INSERT INTO Seats VALUES (8, 'D02', false, 4);
 INSERT INTO Bookings VALUES (1, 1);
 INSERT INTO Bookings VALUES (5, 1);
 
-UPDATE Customers
-SET ContactName='Juan'
+UPDATE Bookings
+SET seatID='Juan'
 WHERE Country='Mexico';
