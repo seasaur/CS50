@@ -128,6 +128,7 @@ for (var i = 0; i < seatList.length; i=i+2) {
     newDiv.appendChild(filmName);
 
     var img = document.createElement("img");
+    var img2 = document.createElement("img");
 
     //there are 2 seats in every screening
     if(seatList[i].booked==0) {
@@ -141,7 +142,6 @@ for (var i = 0; i < seatList.length; i=i+2) {
       img.alt = "unavailable seat";
     }
 
-    var img2 = document.createElement("img");
 
     if(seatList[i+1].booked==0) {
       img2.src = "/images/available.png";
