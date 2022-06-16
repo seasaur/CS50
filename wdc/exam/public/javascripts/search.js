@@ -6,8 +6,8 @@ function getDates(){
         dateList = JSON.parse(this.responseText);
         console.log(dateList);
         var withoutT = [];
-        dateList.foreach(u => {
-           withoutT.push(u.split("T")[0]);
+        dateList.forEach(u => {
+           withoutT.push(u.dates.split("T"));
         });
         console.log(withoutT);
         for (var i = 0; i < dateList.length; i++) {
@@ -15,7 +15,30 @@ function getDates(){
             var newOption = document.createElement("option");
             newOption.value=dateList[i].dates;
             // var splitDate = String.split("T")[0];
-            newOption.innerHTML=dateList[i].dates;
+            newOption.innerHTML=withoutT[i].dates;
+            list.appendChild(newOption);
+        }
+      }
+    };
+
+    xhttp.open("GET", "/dates", true);
+    xhttp.send();
+
+}
+
+
+var filmList = [];
+function getFilms(){
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        dateList = JSON.parse(this.responseText);
+        console.log(filmList);
+        for (var i = 0; i < dateList.length; i++) {
+            var list = document.getElementById("searchName");
+            var newOption = document.createElement("option");
+            newOption.value=filmList[i].name;
+            newOption.innerHTML=filmList[i].name;
             list.appendChild(newOption);
         }
       }
