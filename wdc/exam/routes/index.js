@@ -78,13 +78,13 @@ router.get('/searchSeats', function(req, res, next) {
         res.sendStatus(500);
         return;
       }
-      if(rows.length>0){
+      // if(rows.length>0){
         console.log(rows, "ah");
         res.json(rows);
-      }
-      else{
-        res.sendStatus(401);
-      }
+      // }
+      // else{
+      //   res.sendStatus(401);
+      // }
 
     });
   });
