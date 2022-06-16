@@ -107,9 +107,23 @@ function getSeats(){
         forLoop(seatList);
       }
     };
-    if(name=='any') {
+
+  if(name=="any" && dates=="any") {
+    console.log("any2");
+    xhttp.open("GET", "/any", true);
+
+  }
+  else if(dates=="any") {
+    console.log("any date");
+    xhttp.open("GET", "/datesAny", true);
+  }
+  else if(name=="any"){
+    console.log("any name");
+    xhttp.open("GET", "/nameAny", true);
+  }
+  else {
     xhttp.open("GET", "/searchSeats", true);
-    }
+  }
     xhttp.send();
 
 }
