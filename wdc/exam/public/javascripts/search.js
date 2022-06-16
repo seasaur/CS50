@@ -123,7 +123,7 @@ for (var i = 0; i < seatList.length; i++) {
    console.log(withoutT);
 
     var filmName = document.createElement("h3");
-    filmName.setAttribute('class', 'boxHeading');
+    filmName.setAttribute('class', 'body');
     filmName.innerHTML = "Film Title: " + seatList[i].name + "<br/>Screening Date: "  + withoutT[i] + " Screening Time: " + seatList[i].time;
     newDiv.appendChild(filmName);
 
