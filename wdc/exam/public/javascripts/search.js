@@ -139,6 +139,8 @@ for (var i = 0; i < seatList.length; i=i+2) {
     // label2.style.display="none";
     br = document.createElement("span");
     br.innerHTML = "<br/>";
+    br2 = document.createElement("span");
+    br2.innerHTML = "<br/>";
 
     var span = document.createElement('span');
     span.style.display="none";
@@ -192,7 +194,7 @@ for (var i = 0; i < seatList.length; i=i+2) {
     newDiv.appendChild(checkbox);
     // newDiv.appendChild(label);
     newDiv.appendChild(span);
-    newDiv.appendChild(br);
+    newDiv.appendChild(br2);
     newDiv.appendChild(checkbox2);
     newDiv.appendChild(span2);
     // newDiv.appendChild(label2);
