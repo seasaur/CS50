@@ -51,7 +51,7 @@ function getFilms(){
 
 }
 
-
+function
 
 //search function
 var seatList = [];
