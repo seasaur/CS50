@@ -54,7 +54,7 @@ var dates;
 var name;
 
 router.post('/storage', function(req, res, next) {
-      date=req.body.dates;
+      dates=req.body.dates;
       name=req.body.name;
       res.end();
 
