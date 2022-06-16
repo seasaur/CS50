@@ -4,7 +4,7 @@ function getSeats(){
     document.getElementById("seats").innerHTML = ""; //clear out previous search results first
     var select = document.getElementById("searchName").value;
     var selected = select.options[select.selectedIndex].text
-    console.log(search);
+    console.log(selected);
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
