@@ -124,7 +124,7 @@ for (var i = 0; i < seatList.length; i++) {
 
     var filmName = document.createElement("h3");
     filmName.setAttribute('class', 'boxHeading');
-    filmName.innerHTML = seatList[i].name + \n + withoutT[i];
+    filmName.innerHTML = seatList[i].name + "<br/>" + withoutT[i];
     newDiv.appendChild(filmName);
 
   //   var button = document.createElement("button");
