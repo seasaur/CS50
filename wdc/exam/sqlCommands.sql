@@ -50,5 +50,5 @@ INSERT INTO Bookings VALUES (1, 1);
 INSERT INTO Bookings VALUES (5, 1);
 
 UPDATE Bookings
-SET seatID='Juan'
-WHERE Country='Mexico';
+SET seatID=5
+WHERE seatID=3;
