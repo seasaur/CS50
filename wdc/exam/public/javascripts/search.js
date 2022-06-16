@@ -2,7 +2,8 @@
 var seatList = [];
 function getSeats(){
     document.getElementById("seats").innerHTML = ""; //clear out previous search results first
-    var search = document.getElementById("searchName").selected;
+    var select = document.getElementById("searchName").value;
+    var selected = select.options[select.selectedIndex].text
     console.log(search);
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
