@@ -77,7 +77,7 @@ function sendInfo() {
 
   xhttp.open("POST", "/storage", true); //send change info request to database
   xhttp.setRequestHeader("Content-type", "application/json");
-  xhttp.send(JSON.stringify({date: date, name: name}));
+  xhttp.send(JSON.stringify({dates: dates, name: name}));
 }
 
 
