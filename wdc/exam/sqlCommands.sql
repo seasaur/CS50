@@ -1,6 +1,6 @@
 CREATE TABLE Users (
   userID INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  email VARCHAR(63) UNSIGNED,
+  email VARCHAR(63),
   password VARCHAR(63),
   PRIMARY KEY  (userID)
 );
