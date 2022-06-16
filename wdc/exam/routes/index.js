@@ -36,7 +36,7 @@ router.get('/name', function(req, res, next) { //account.html: getting a list of
       return;
     }
 
-    let query = "SELECT name FROM Films;";
+    let query = "SELECT DISTINCT name FROM Films;";
     connection.query(query, function(error, rows, fields) {
       connection.release();
       if(error){
