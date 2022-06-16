@@ -69,7 +69,7 @@ router.get('/searchSeats', function(req, res, next) {
     }
 
     let query = "";
-    connection.query(query, [req.body.selected], function(error, rows, fields) {
+    connection.query(query, dates, name, function(error, rows, fields) {
       connection.release();
       if(error){
         console.log(error);
