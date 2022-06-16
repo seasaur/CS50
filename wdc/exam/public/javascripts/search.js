@@ -124,6 +124,7 @@ function getSeats(){
   else {
     xhttp.open("GET", "/searchSeats", true);
   }
+  
     xhttp.send();
 
 }
