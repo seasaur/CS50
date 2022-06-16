@@ -51,16 +51,29 @@ function getFilms(){
 
 }
 
-function
+function inputCheck() {
+  document.getElementById("seats").innerHTML = ""; //clear out previous search results first
+  var name = document.getElementById("searchName").value;
+  var date = document.getElementById("searchDate").value;
+  if(name=="Any") {
+    console.log("any");
+  }
+  else if(date=="Any") {
+    console.log("any date");
+  }
+  else {
+    getSeats();
+  }
+}
 
 //search function
 var seatList = [];
 function getSeats(){
     document.getElementById("seats").innerHTML = ""; //clear out previous search results first
-    var name = document.getElementById("searchName");
-    var selectedName = name.options[name.selectedIndex].value;
-    var date = document.getElementById("searchDate");
-    var selectedDate = name.options[name.selectedIndex].value;
+    var name = document.getElementById("searchName").value;
+    // var selectedName = name.options[name.selectedIndex].value;
+    var date = document.getElementById("searchDate").value;
+    // var selectedDate = name.options[name.selectedIndex].value;
     console.log(selectedName);
     console.log(selectedDate);
     var xhttp = new XMLHttpRequest();
@@ -101,6 +114,6 @@ function getSeats(){
     };
 
     xhttp.open("POST", "/searchSeats", true);
-    xhttp.send(JSON.stringify({date: selectedDate, name: selectedName})); //or just selected??
+    xhttp.send(JSON.stringify({date: date, name: name})); //or just selected??
 
 }
