@@ -145,7 +145,7 @@ for (var i = 0; i < seatList.length; i=i+2) {
       img.src = "/images/available.png";
       img.id = "seat";
       img.alt = "available seat";
-      checkbox.style.display="block";
+      checkbox.style.display="inline";
       // label.style.display="block";
       checkbox.type = "checkbox";
       checkbox.value = seatList[i].seat;
@@ -154,6 +154,7 @@ for (var i = 0; i < seatList.length; i=i+2) {
       // label.appendChild(document.createTextNode(seatList[i].seat));
       span.style.display="inline";
       span.innerHTML = seatList[i].seat;
+      document.createElement('br\')
     }
     else {
       img.src = "/images/unav.png";
