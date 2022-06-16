@@ -56,8 +56,8 @@ var name;
 router.post('/storage', function(req, res, next) {
       dates=req.body.dates;
       name=req.body.name;
-      console.log(dates);
-      console.log(name);
+      console.log(dates, "index dates");
+      console.log(name, "index name");
       res.end();
 
 });

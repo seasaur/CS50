@@ -97,8 +97,8 @@ function getSeats(){
     document.getElementById("seats").innerHTML = ""; //clear out previous search results first
     var name = document.getElementById("searchName").value;
     var dates = document.getElementById("searchDate").value;
-    console.log(name);
-    console.log(dates);
+    console.log(name, "js name");
+    console.log(dates, "js dates");
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
