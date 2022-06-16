@@ -54,12 +54,15 @@ function getFilms(){
 function inputCheck() {
   document.getElementById("seats").innerHTML = ""; //clear out previous search results first
   var name = document.getElementById("searchName").value;
-  var date = document.getElementById("searchDate").value;
-  if(name=="Any") {
-    console.log("any");
+  var dates = document.getElementById("searchDate").value;
+  if(name=="Any" && date=="Any") {
+    console.log("any2");
   }
-  else if(date=="Any") {
+  else if(dates=="Any") {
     console.log("any date");
+  }
+  else if(name=="Any"){
+    console.log("any name");
   }
   else {
     getSeats();
