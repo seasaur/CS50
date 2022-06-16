@@ -51,7 +51,7 @@ INSERT INTO Bookings VALUES (3, 1);
 
 SELECT Films.name, Seats.seat FROM
 INNER JOIN Seats
-ON Seats.seatID
+ON Seats.filmID=Film.filmID
 WHERE Date = '2022-06-20';
 
  SELECT DISTINCT address.address
