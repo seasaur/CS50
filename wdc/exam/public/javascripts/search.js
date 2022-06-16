@@ -69,8 +69,9 @@ function inputCheck() {
 //search function
 function sendInfo() {
   var name = document.getElementById("searchName").value;
-  // var selectedName = name.options[name.selectedIndex].value;
   var dates = document.getElementById("searchDate").value;
+  console.log(name);
+  console.log(dates);
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
