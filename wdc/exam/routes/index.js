@@ -14,9 +14,8 @@ router.get('/dates', function(req, res, next) { //account.html: getting a list o
       return;
     }
 
-    let query = "SELECT Events.event_ID, Events.event_name FROM Events INNER JOIN Hosts ON Events.event_ID = Hosts.event_ID WHERE Hosts.user_ID = ?;";
-    console.log(loggedInUser, "sometext");
-    connection.query(query, [loggedInUser], function(error, rows, fields) {
+    let query = "SELECT dates FROM Films;";
+    connection.query(query, function(error, rows, fields) {
       connection.release();
       if(error){
         console.log(error);
