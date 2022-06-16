@@ -32,3 +32,5 @@ CREATE TABLE Bookings (
   FOREIGN KEY (seatID) REFERENCES Seats (seatID),
   FOREIGN KEY (userID) REFERENCES Users (userID)
 );
+
+INSERT INTO Users
