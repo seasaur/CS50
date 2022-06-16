@@ -107,8 +107,9 @@ function getSeats(){
         forLoop(seatList);
       }
     };
-
+    if(name=='any') {
     xhttp.open("GET", "/searchSeats", true);
+    }
     xhttp.send();
 
 }
