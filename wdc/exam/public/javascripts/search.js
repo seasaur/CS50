@@ -130,20 +130,25 @@ for (var i = 0; i < seatList.length; i=i+2) {
     var img = document.createElement("img");
     var img2 = document.createElement("img");
     var checkbox = document.createElement('input');
-    checkbox.display.style="hidden";
+    checkbox.style.display="none";
+    var checkbox2 = document.createElement('input');
+    checkbox2.style.display="none";
     var label = document.createElement('label');
-    label.display.style="hidden";
+    label.style.display="none";
+    var label2 = document.createElement('label');
+    label2.style.display="none";
 
     //there are 2 seats in every screening
     if(seatList[i].booked==0) {
       img.src = "/images/available.png";
       img.id = "seat";
       img.alt = "available seat";
-      // checkbox = document.createElement('input');
+      checkbox.style.display="inline-block";
+      label.style.display="block";
       checkbox.type = "checkbox";
       checkbox.value = seatList[i].seat;
       console.log(checkbox.value,"value checkbox");
-      label.htmlFor = "id";
+      label.htmlFor = "value";
       label.appendChild(document.createTextNode(seatList[i].seat));
     }
     else {
@@ -156,6 +161,13 @@ for (var i = 0; i < seatList.length; i=i+2) {
       img2.src = "/images/available.png";
       img2.id = "seat";
       img2.alt = "available seat";
+      checkbox2.style.display="inline-block";
+      label2.style.display="block";
+      checkbox2.type = "checkbox";
+      checkbox2.value = seatList[i+1].seat;
+      console.log(checkbox2.value,"value checkbox");
+      label2.htmlFor = "value";
+      label2.appendChild(document.createTextNode(seatList[i+1].seat));
     }
     else {
       img2.src = "/images/unav.png";
@@ -165,8 +177,12 @@ for (var i = 0; i < seatList.length; i=i+2) {
 
     newDiv.appendChild(img);
     newDiv.appendChild(img2);
-    newDiv.appendChild(checkbox);
     newDiv.appendChild(label);
+    newDiv.appendChild(checkbox);
+
+    newDiv.appendChild(checkbox2);
+    newDiv.appendChild(label2);
+
 
     // <input type="checkbox" name="coffee" value="cream">With cream</input>
 
