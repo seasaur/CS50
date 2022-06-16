@@ -53,4 +53,4 @@ mysqldump --host=127.0.0.1 --databases Cinema > cinema.sql
 
 --queries--
 --to get dates and append to list
-SELECT Events.event_ID, Events.event_name FROM Events INNER JOIN Hosts ON Events.event_ID = Hosts.event_ID WHERE Hosts.user_ID = ?;
+SELECT dates FROM Films;
