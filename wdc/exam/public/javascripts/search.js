@@ -51,18 +51,21 @@ function getFilms(){
 
 }
 
-var name = document.getElementById("searchName").value;
-var dates = document.getElementById("searchDate").value;
-function inputCheck() {
-  document.getElementById("seats").innerHTML = ""; //clear out previous search results first
 
-  if(name=="Any" && date=="Any") {
+function inputCheck() {
+  var name = document.getElementById("searchName").value;
+var dates = document.getElementById("searchDate").value;
+
+console.log(name);
+console.log(dates);
+
+  if(name=="any" && dates=="any") {
     console.log("any2");
   }
-  else if(dates=="Any") {
+  else if(dates=="any") {
     console.log("any date");
   }
-  else if(name=="Any"){
+  else if(name=="any"){
     console.log("any name");
   }
   else {
