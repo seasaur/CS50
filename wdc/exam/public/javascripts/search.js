@@ -139,6 +139,7 @@ for (var i = 0; i < seatList.length; i=i+2) {
       checkbox = document.createElement('input');
       checkbox.type = "checkbox";
       checkbox.value = seatList[i].seat;
+      console.log(checkbox.value,"value checkbox");
     }
     else {
       img.src = "/images/unav.png";
