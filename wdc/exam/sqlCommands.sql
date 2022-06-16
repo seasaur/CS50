@@ -49,4 +49,17 @@ INSERT INTO Seats VALUES (8, 'D02', false, 4);
 INSERT INTO Bookings VALUES (1, 1);
 INSERT INTO Bookings VALUES (3, 1);
 
-SELECT Films.name, Seats.seat FROM Users WHERE Date = '2022-06-20';
+SELECT Films.name, Seats.seat FROM
+INNER JOIN Seats
+ON Seats.seatID
+WHERE Date = '2022-06-20';
+
+ SELECT DISTINCT address.address
+FROM address
+INNER JOIN store
+ON store.address_id=address.address_id
+INNER JOIN inventory
+ON inventory.store_id=store.store_id
+INNER JOIN film
+ON film.film_id=inventory.film_id
+WHERE film.title= 'TWISTED PIRATES';
