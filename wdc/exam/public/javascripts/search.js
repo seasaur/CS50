@@ -155,7 +155,7 @@ for (var i = 0; i < seatList.length; i=i+2) {
    button.innerHTML="BOOK SEATS";
    button.id="book";
    button.onclick=function() {
-      test();
+      book();
    }
 
     //there are 2 seats in every screening
@@ -210,33 +210,12 @@ for (var i = 0; i < seatList.length; i=i+2) {
     newDiv.appendChild(checkbox2);
     newDiv.appendChild(span2);
 
-    // newDiv.appendChild(label2);
-
-
-    // <input type="checkbox" name="coffee" value="cream">With cream</input>
-
-    // <img src="/images/seat.png" alt="available seat" id="seat"></img>
-
-  //   var button = document.createElement("button");
-  //   button.innerHTML = "VIEW USER";
-  //   button.id = seatList[i].filmName;
-  //   button.setAttribute('class', 'submitButton');
-
-  //   console.log(button.id, "filmName");
-
-
-  //   button.onclick = function(user) {
-  //     viewAUser(this.id)
-  //  }
-
-  //   newDiv.appendChild(button);
-
     list.appendChild(newDiv);
 }
 list.appendChild(button);
 list.appendChild(br3);
 }
 
-function test() {
+function book() {
     console.log("hello");
 }
