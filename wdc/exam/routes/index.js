@@ -150,5 +150,7 @@ router.get('/nameAny', function(req, res, next) {
   });
 });
 
+var currentUser;
+
 
 module.exports = router;
