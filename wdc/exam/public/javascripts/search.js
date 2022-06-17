@@ -289,5 +289,5 @@ function sendUser(booking) {
   xhttp.open("POST", "/user", true);
   xhttp.setRequestHeader("Content-type", "application/json");
   xhttp.send(JSON.stringify({seatID: booking}));
-  getSeats();
+  // getSeats();
 }
