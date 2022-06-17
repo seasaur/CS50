@@ -154,7 +154,7 @@ for (var i = 0; i < seatList.length; i=i+2) {
    button.class="submitButton";
    button.innerHTML="BOOK SEATS";
    button.id="book";
-   button
+   button.onclick=function();
 
     //there are 2 seats in every screening
     if(seatList[i].booked==0) {
