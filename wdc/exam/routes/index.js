@@ -171,7 +171,7 @@ router.post('/book', function(req, res, next) { //account route: send updated us
   });
 });
 
-var currentUser = 1;
+var currentUser = 1; //as login is not being implemented, current userID will be set as 1.
 router.post('/user', function(req, res, next) {
   req.pool.getConnection(function(error,connection){
     if(error){

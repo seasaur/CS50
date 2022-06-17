@@ -222,6 +222,8 @@ list.appendChild(br3);
 
 // var bookedList = [];
 var booking;
+
+//function for when i tried checkboxes
 // function book() {
 //   var selected = document.getElementsByName("booked");
 //   // bookedList=[];
