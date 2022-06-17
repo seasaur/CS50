@@ -12,10 +12,10 @@ body{
 
 .submitButton{
   float:right;
-  background-color: #CCE7D9;
-  border-radius: 0.3em;
   width: auto;
   height: auto;
+  background-color: #CCE7D9;
+  border-radius: 0.3em;
   text-align: center;
   padding: 0.5em;
   margin: 1%;
