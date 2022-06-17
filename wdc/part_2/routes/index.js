@@ -35,6 +35,7 @@ router.get('/posts', function(req, res, next) {
   });
 
 });
+
 router.get('/posts/:post_id/comments', function(req, res, next) {
 
   if('user' in req.session){
@@ -71,7 +72,8 @@ router.get('/posts/:post_id/comments', function(req, res, next) {
 router.use('/posts/*', function(req, res, next) {
   if('user' in req.session){
       next();
-  } else {
+  }
+  else {
       res.sendStatus(401);
   }
 });
@@ -79,7 +81,8 @@ router.use('/posts/*', function(req, res, next) {
 router.use('/comments/new', function(req, res, next) {
   if('user' in req.session){
       next();
-  } else {
+  }
+  else {
       res.sendStatus(401);
   }
 });
@@ -201,8 +204,5 @@ router.post('/comments/new', function(req, res, next) {
   }
 
 });
-
-
-
 
 module.exports = router;
