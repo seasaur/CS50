@@ -150,7 +150,26 @@ router.get('/nameAny', function(req, res, next) {
   });
 });
 
-var currentUser;
+router.post('/book', function(req, res, next) { //account route: send updated user info to database
+  req.pool.getConnection(function(error,connection){
+    if(error){
+      console.log(error);
+      res.sendStatus(500);
+      return;
+    }
+
+    let query = "UPDATE Users SET first_name = ?, email = ? WHERE user_ID = ?;";
+    connection.query(query, [req.body.first_name, req.body.email, loggedInUser], function(error, rows, fields) {
+      connection.release();
+      if(error){
+        console.log(error);
+        res.sendStatus(500);
+        return;
+      }
+      res.end();
+    });
+  });
+});
 
 
 module.exports = router;
