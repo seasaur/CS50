@@ -119,10 +119,10 @@ router.use(function(req,res,next) {
 
 router.post('/posts/:post_id/delete', function(req, res, next) {
 
-  if(!('user' in req.session)){
-    res.sendStatus(401);
-    return;
-  }
+  // if(!('user' in req.session)){
+  //   res.sendStatus(401);
+  //   return;
+  // }
 
   switch(req.session.user.role){
     case 'user':
@@ -169,10 +169,10 @@ router.use('/posts/*', function(req,res,next) {
 
 router.post('/comments/new', function(req, res, next) {
 
-  if(!('user' in req.session)){
-    res.sendStatus(401);
-    return;
-  }
+  // if(!('user' in req.session)){
+  //   res.sendStatus(401);
+  //   return;
+  // }
 
   if( "title" in req.body && req.body.title !== null &&
       "content" in req.body && req.body.content !== null &&
