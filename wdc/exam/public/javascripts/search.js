@@ -162,6 +162,8 @@ for (var i = 0; i < seatList.length; i=i+2) {
       book();
    }
 
+
+
     //there are 2 seats in every screening
     if(seatList[i].booked==0) {
       img.src = "/images/available.png";
@@ -176,6 +178,12 @@ for (var i = 0; i < seatList.length; i=i+2) {
       // label.appendChild(document.createTextNode(seatList[i].seat));
       span.style.display="inline";
       span.innerHTML = seatList[i].seat;
+      var b = document.createElement("button");
+      b.innerHTML="book seat";
+     //  b.id="book";
+      b.onclick=function(event) {
+         send(this.id);
+      }
     }
     else {
       img.src = "/images/unav.png";
@@ -194,6 +202,12 @@ for (var i = 0; i < seatList.length; i=i+2) {
       checkbox2.type = "checkbox";
       checkbox2.value = seatList[i+1].seatID;
       console.log(checkbox2.value,"value checkbox");
+      var b = document.createElement("button");
+      b.innerHTML="book seat";
+     //  b.id="book";
+      b.onclick=function(event) {
+         send(this.id);
+      }
 
       // label2.htmlFor = "value";
       // label2.appendChild(document.createTextNode(seatList[i+1].seat));
