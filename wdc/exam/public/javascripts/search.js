@@ -131,12 +131,12 @@ for (var i = 0; i < seatList.length; i=i+2) {
     var img2 = document.createElement("img");
     var checkbox = document.createElement('input');
     checkbox.style.display="none";
-    checkbox.name="booked";
-    console.log(checkbox.name);
+    checkbox.id="booked";
+    console.log(checkbox.id);
     var checkbox2 = document.createElement('input');
     checkbox2.style.display="none";
-    checkbox2.name="booked";
-    console.log(checkbox2.name);
+    checkbox2.id="booked";
+    console.log(checkbox2.id);
 
     // var label = document.createElement('label');
     // label.style.display="none";
@@ -158,8 +158,8 @@ for (var i = 0; i < seatList.length; i=i+2) {
    button.classList.add('submitButton');
    button.innerHTML="BOOK SEATS";
    button.id="book";
-   button.onclick=function(button) {
-      book(button);
+   button.onclick=function() {
+      book();
    }
 
     //there are 2 seats in every screening
@@ -222,6 +222,7 @@ list.appendChild(br3);
 
 var bookedList = [];
 function book(button) {
+  var buttons = document.getElementById("booked");
     // for(var i=0;i<8;i++) { //8=total # of seats
     //   bookedList.push(booked[i].value);
     // }
