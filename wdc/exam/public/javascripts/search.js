@@ -226,7 +226,9 @@ function book(button) {
   bookedList=selected.value;
    for(var checkbox of selected) {
     if (checkbox.checked) {
-    bookedList.push(checkbox.value);
+    console.log(checkbox.value);
+    // bookedList.push(checkbox.value);
+
     // bookedList.push(selected);
    }
     // for(var i=0;i<8;i++) { //8=total # of seats
