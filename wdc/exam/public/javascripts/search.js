@@ -223,7 +223,7 @@ list.appendChild(br3);
 var bookedList = [];
 function book() {
   var selected = document.getElementsByName("booked");
-  // bookedList=selected.value;
+  bookedList=[];
    for(var checkbox of selected) {
     if (checkbox.checked) {
     console.log(checkbox.value);
