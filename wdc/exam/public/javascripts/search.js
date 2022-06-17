@@ -185,6 +185,7 @@ for (var i = 0; i < seatList.length; i=i+2) {
       span.innerHTML = seatList[i].seat;
       b.style.display="inline-block";
       b.innerHTML="book seat";
+      b.id=seatList[i].seatID;
      //  b.id="book";
       b.onclick=function(event) {
          send(this.id);
@@ -209,6 +210,7 @@ for (var i = 0; i < seatList.length; i=i+2) {
       console.log(checkbox2.value,"value checkbox");
       b2.style.display="inline";
       b2.innerHTML="book seat";
+      b2.id=seatList[i].seatID;
      //  b.id="book";
       b2.onclick=function(event) {
          send(this.id);
