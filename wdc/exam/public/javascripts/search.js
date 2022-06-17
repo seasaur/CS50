@@ -223,21 +223,21 @@ list.appendChild(br3);
 var bookedList = [];
 function book() {
   var selected = document.getElementsByName("booked");
-  bookedList=selected.value;
+  // bookedList=selected.value;
    for(var checkbox of selected) {
     if (checkbox.checked) {
       var hello=checkbox.value;
       console.log(hello);
-      send(hello);
+      // send(hello);
     // console.log(checkbox.value);
-    // bookedList.push(hello);
+    bookedList.push(hello);
 
     // bookedList.push(selected);
    }
     // for(var i=0;i<8;i++) { //8=total # of seats
       // bookedList.push(booked[i].value);
     }
-    // console.log(bookedList);
+    console.log(bookedList);
 }
 
 function send(booked) {
