@@ -270,28 +270,22 @@ function send() {
   xhttp.setRequestHeader("Content-type", "application/json");
   xhttp.send(JSON.stringify({seatID: booking}));
   sendUser(booking);
-  getSeats();
+  // getSeats();
 }
 
 function sendUser(booking) {
-  var selected = document.getElementsByName("booked");
-  // bookedList=[];
-   for(var radio of selected) {
-    if (radio.checked) {
-      booking=radio.value;
-    console.log(booking);
-    }
-  }
+
+   console.log(booking);
+
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      alert("Booking successful!");
+      console.log("bookings table updated!");
       }
     };
 
-  xhttp.open("POST", "/book", true); //send change info request to database
+  xhttp.open("POST", "/user", true); //send change info request to database
   xhttp.setRequestHeader("Content-type", "application/json");
   xhttp.send(JSON.stringify({seatID: booking}));
-    sendUser(booking);
   getSeats();
 }

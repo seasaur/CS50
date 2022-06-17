@@ -172,7 +172,7 @@ router.post('/book', function(req, res, next) { //account route: send updated us
 });
 
 var currentUser = 1;
-router.post('/user', function(req, res, next) { //account route: send updated user info to database
+router.post('/user', function(req, res, next) {
   req.pool.getConnection(function(error,connection){
     if(error){
       console.log(error);
@@ -180,8 +180,8 @@ router.post('/user', function(req, res, next) { //account route: send updated us
       return;
     }
 
-    let query = "INSERT INTO Bookings SET userID = ? WHERE seatID = ?;";
-    connection.query(query, [currentUser, req.body.booked], function(error, rows, fields) {
+    let query = "INSERT INTO Bookings (userID, seatID) VALUES (?,?);";
+    connection.query(query, [currentUser, req.body.seatID], function(error, rows, fields) {
       connection.release();
       if(error){
         console.log(error);
