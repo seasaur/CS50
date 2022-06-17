@@ -225,10 +225,12 @@ function book(button) {
   var selected = document.getElementsByName("booked");
   bookedList=selected.value;
    for(var checkbox of selected) {
-    bookedList.push(selected.value);
+    if (checkbox.checked) {
+    bookedList.push(checkbox.value);
+    // bookedList.push(selected);
    }
-  //   // for(var i=0;i<8;i++) { //8=total # of seats
-    //   bookedList.push(booked[i].value);
-    // }
+    // for(var i=0;i<8;i++) { //8=total # of seats
+      // bookedList.push(booked[i].value);
+    }
     console.log(bookedList);
 }
