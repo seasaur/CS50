@@ -62,7 +62,7 @@ router.post('/storage', function(req, res, next) {
 
 });
 
-router.get('/searchSeats', function(req, res, next) {
+router.get('/searchSeats', function(req, res, next) { //4 queries below depend on what filters the user selects
   req.pool.getConnection(function(error,connection){
     if(error){
       console.log(error);
@@ -150,7 +150,7 @@ router.get('/nameAny', function(req, res, next) {
   });
 });
 
-router.post('/book', function(req, res, next) { //account route: send updated user info to database
+router.post('/book', function(req, res, next) { //updating seat info to booked
   req.pool.getConnection(function(error,connection){
     if(error){
       console.log(error);
@@ -172,7 +172,7 @@ router.post('/book', function(req, res, next) { //account route: send updated us
 });
 
 var currentUser = 1; //as login is not being implemented, current userID will be set as 1.
-router.post('/user', function(req, res, next) {
+router.post('/user', function(req, res, next) { //updating bookings table
   req.pool.getConnection(function(error,connection){
     if(error){
       console.log(error);
