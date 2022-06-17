@@ -162,7 +162,8 @@ for (var i = 0; i < seatList.length; i=i+2) {
       book();
    }
 
-
+   var b = document.createElement("button");
+   b.style.display="none"
 
     //there are 2 seats in every screening
     if(seatList[i].booked==0) {
@@ -178,7 +179,7 @@ for (var i = 0; i < seatList.length; i=i+2) {
       // label.appendChild(document.createTextNode(seatList[i].seat));
       span.style.display="inline";
       span.innerHTML = seatList[i].seat;
-      var b = document.createElement("button");
+      b.style.display="inline";
       b.innerHTML="book seat";
      //  b.id="book";
       b.onclick=function(event) {
@@ -227,7 +228,6 @@ for (var i = 0; i < seatList.length; i=i+2) {
     newDiv.appendChild(br2);
     newDiv.appendChild(checkbox2);
     newDiv.appendChild(span2);
-
     list.appendChild(newDiv);
 }
 list.appendChild(button);
