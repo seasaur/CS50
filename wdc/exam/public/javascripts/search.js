@@ -150,7 +150,7 @@ for (var i = 0; i < seatList.length; i=i+2) {
     span2.style.display="none";
 
    var button = document.createElement("button");
-   button.class="submitButton";
+   button.classList.add('submitButton');
    button.innerHTML="BOOK SEATS";
    button.id="book";
    button.onclick=function() {
