@@ -238,3 +238,17 @@ function book() {
     }
     // console.log(bookedList);
 }
+
+function send() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      alert("Booking successful!");
+      }
+    };
+
+  xhttp.open("POST", "/book", true); //send change info request to database
+  xhttp.setRequestHeader("Content-type", "application/json");
+  xhttp.send(JSON.stringify({seatID: document.getElementById("firstName").value, email: document.getElementById("email").value}));
+
+}
