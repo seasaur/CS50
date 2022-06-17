@@ -235,7 +235,7 @@ function book() {
       // bookedList.push(booked[i].value);
     }
     console.log(bookedList);
-    if(bookList.length==0) {
+    if(bookedList.length==0) {
       alert("You did not select any seats.");
       return;
     }

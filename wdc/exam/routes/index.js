@@ -171,5 +171,27 @@ router.post('/book', function(req, res, next) { //account route: send updated us
   });
 });
 
+var currentUser = 1;
+router.post('/user', function(req, res, next) { //account route: send updated user info to database
+  req.pool.getConnection(function(error,connection){
+    if(error){
+      console.log(error);
+      res.sendStatus(500);
+      return;
+    }
+
+    let query = "INSERT INTO Bookings SET userID = ? WHERE seatID = ?;";
+    connection.query(query, [currentUser, req.body.booked], function(error, rows, fields) {
+      connection.release();
+      if(error){
+        console.log(error);
+        res.sendStatus(500);
+        return;
+      }
+      res.end();
+    });
+  });
+});
+
 
 module.exports = router;
