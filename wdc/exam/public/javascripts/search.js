@@ -83,7 +83,6 @@ function getSeats(){
         seatList = JSON.parse(this.responseText);
         console.log(seatList);
         forLoop(seatList);
-        document.getElementById("book").style = "block";
       }
     };
 
@@ -166,7 +165,7 @@ for (var i = 0; i < seatList.length; i=i+2) {
       checkbox.style.display="inline";
       // label.style.display="block";
       checkbox.type = "checkbox";
-      checkbox.value = seatList[i].seat;
+      checkbox.value = seatList[i].seatID;
       console.log(checkbox.value,"value checkbox");
       // label.htmlFor = "value";
       // label.appendChild(document.createTextNode(seatList[i].seat));
