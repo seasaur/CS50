@@ -1,6 +1,7 @@
 var argon2 = require('argon2');
 var express = require('express');
 var router = express.Router();
+var sanitizeHtml = require('sanitize-html');
 
 router.post('/login', function(req, res, next) {
 
@@ -15,7 +16,7 @@ router.post('/login', function(req, res, next) {
             }
             var query = `SELECT u_id,given_name,family_name,username,email,role,password_hash
                             FROM users WHERE username = ?`;
-            connection.query(query,[req.body.username], async function(err, rows, fields) {
+            connection.query(query,[sanitizeHtml(req.body.username)], async function(err, rows, fields) {
               connection.release(); // release connection
               if (err) {
                 console.log(err);
