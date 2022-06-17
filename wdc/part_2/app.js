@@ -12,7 +12,7 @@ var app = express();
 
 var dbConnectionPool = mysql.createPool({
     host: 'localhost',
-    database: '',
+    database: 'wdc22_final_p2',
     // port: 3306,
     // user: 'MySQL Username',
     // password : 'MySQL Password',
