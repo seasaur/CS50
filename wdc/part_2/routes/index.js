@@ -39,10 +39,10 @@ router.get('/posts', function(req, res, next) {
 
 router.post('/posts/new', function(req, res, next) {
 
-    if(!('user' in req.session)){
-      res.sendStatus(401);
-      return;
-    }
+    // if(!('user' in req.session)){
+    //   res.sendStatus(401);
+    //   return;
+    // }
 
     if( "title" in req.body && req.body.title !== null &&
         "content" in req.body && req.body.content !== null ) {
