@@ -16,7 +16,7 @@ router.post('/login', function(req, res, next) {
             }
             var query = `SELECT u_id,given_name,family_name,username,email,role,password_hash
                             FROM users WHERE username = ?`;
-            connection.query(query,[sanitizeHtml(req.body.username)], async function(err, rows, fields) {
+            connection.query(query,[req.body.username], async function(err, rows, fields) {
               connection.release(); // release connection
               if (err) {
                 console.log(err);
