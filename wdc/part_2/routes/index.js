@@ -193,7 +193,15 @@ router.post('/comments/new', function(req, res, next) {
 
 });
 
-router.use('/posts/*')
+//added
+router.use('/posts/*', function(req,res,next) {
+  if('user' in req.session) {
+    next();
+  }
+  else {
+    res.sendStatus(401);
+  }
+});
 
 
 module.exports = router;
