@@ -225,8 +225,8 @@ for (var i = 0; i < seatList.length; i=i+2) {
     newDiv.appendChild(img2);
     newDiv.appendChild(br);
     newDiv.appendChild(checkbox);
-    newDiv.appendChild(b);
     newDiv.appendChild(span);
+    newDiv.appendChild(b);
     newDiv.appendChild(br2);
     newDiv.appendChild(checkbox2);
     newDiv.appendChild(span2);
