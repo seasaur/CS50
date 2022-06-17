@@ -70,7 +70,7 @@ router.get('/searchSeats', function(req, res, next) {
       return;
     }
 
-    let query = "SELECT Films.name, Films.dates, Films.time, Seats.seat, Seats.booked FROM Seats INNER JOIN Films ON Seats.filmID=Films.filmID WHERE dates = ? AND name = ?;";
+    let query = "SELECT Films.name, Films.dates, Films.time, Seats.seatID, Seats.seat, Seats.booked FROM Seats INNER JOIN Films ON Seats.filmID=Films.filmID WHERE dates = ? AND name = ?;";
     connection.query(query, [dates, name], function(error, rows, fields) {
       connection.release();
       if(error){
@@ -92,7 +92,7 @@ router.get('/any', function(req, res, next) {
       return;
     }
 
-    let query = "SELECT Films.name, Films.dates, Films.time, Seats.seat, Seats.booked FROM Seats INNER JOIN Films ON Seats.filmID=Films.filmID";
+    let query = "SELECT Films.name, Films.dates, Films.time, Seats.seatID, Seats.seat, Seats.booked FROM Seats INNER JOIN Films ON Seats.filmID=Films.filmID";
     connection.query(query, function(error, rows, fields) {
       connection.release();
       if(error){
@@ -114,7 +114,7 @@ router.get('/datesAny', function(req, res, next) {
       return;
     }
 
-    let query = "SELECT Films.name, Films.dates, Films.time, Seats.seat, Seats.booked FROM Seats INNER JOIN Films ON Seats.filmID=Films.filmID WHERE name = ?;";
+    let query = "SELECT Films.name, Films.dates, Films.time, Seats.seatID, Seats.seat, Seats.booked FROM Seats INNER JOIN Films ON Seats.filmID=Films.filmID WHERE name = ?;";
     connection.query(query, [name], function(error, rows, fields) {
       connection.release();
       if(error){
