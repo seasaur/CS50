@@ -83,6 +83,7 @@ function getSeats(){
         seatList = JSON.parse(this.responseText);
         console.log(seatList);
         forLoop(seatList);
+        document.getElementById("book").value.style = "block";
       }
     };
 
