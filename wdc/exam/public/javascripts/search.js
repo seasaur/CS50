@@ -187,7 +187,7 @@ for (var i = 0; i < seatList.length; i=i+2) {
       span2.style.display="inline";
       span2.innerHTML = seatList[i+1].seat;
       checkbox2.type = "checkbox";
-      checkbox2.value = seatList[i+1].seat;
+      checkbox2.value = seatList[i+1].seatID;
       console.log(checkbox2.value,"value checkbox");
 
       // label2.htmlFor = "value";
