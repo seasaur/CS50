@@ -129,14 +129,14 @@ for (var i = 0; i < seatList.length; i=i+2) {
 
     var img = document.createElement("img");
     var img2 = document.createElement("img");
-    var checkbox = document.createElement('input');
-    checkbox.style.display="none";
-    checkbox.name="booked";
-    console.log(checkbox.name);
-    var checkbox2 = document.createElement('input');
-    checkbox2.style.display="none";
-    checkbox2.name="booked";
-    console.log(checkbox2.name);
+    var radio = document.createElement('input');
+    radio.style.display="none";
+    radio.name="booked";
+    console.log(radio.name);
+    var radio2 = document.createElement('input');
+    radio2.style.display="none";
+    radio2.name="booked";
+    console.log(radio2.name);
 
     // var label = document.createElement('label');
     // label.style.display="none";
@@ -168,11 +168,11 @@ for (var i = 0; i < seatList.length; i=i+2) {
       img.src = "/images/available.png";
       img.id = "seat";
       img.alt = "available seat";
-      checkbox.style.display="inline";
+      radio.style.display="inline";
       // label.style.display="block";
-      checkbox.type = "checkbox";
-      checkbox.value = seatList[i].seatID;
-      console.log(checkbox.value,"value checkbox");
+      radio.type = "radio";
+      radio.value = seatList[i].seatID;
+      console.log(radio.value,"value radio");
       // label.htmlFor = "value";
       // label.appendChild(document.createTextNode(seatList[i].seat));
       span.style.display="inline";
@@ -188,13 +188,13 @@ for (var i = 0; i < seatList.length; i=i+2) {
       img2.src = "/images/available.png";
       img2.id = "seat";
       img2.alt = "available seat";
-      checkbox2.style.display="inline-block";
+      radio2.style.display="inline-block";
       // label2.style.display="block";
       span2.style.display="inline";
       span2.innerHTML = seatList[i+1].seat;
-      checkbox2.type = "checkbox";
-      checkbox2.value = seatList[i+1].seatID;
-      console.log(checkbox2.value,"value checkbox");
+      radio2.type = "radio";
+      radio2.value = seatList[i+1].seatID;
+      console.log(radio2.value,"value radio");
 
       // label2.htmlFor = "value";
       // label2.appendChild(document.createTextNode(seatList[i+1].seat));
@@ -208,11 +208,11 @@ for (var i = 0; i < seatList.length; i=i+2) {
     newDiv.appendChild(img);
     newDiv.appendChild(img2);
     newDiv.appendChild(br);
-    newDiv.appendChild(checkbox);
+    newDiv.appendChild(radio);
     // newDiv.appendChild(label);
     newDiv.appendChild(span);
     newDiv.appendChild(br2);
-    newDiv.appendChild(checkbox2);
+    newDiv.appendChild(radio2);
     newDiv.appendChild(span2);
     list.appendChild(newDiv);
 }
@@ -220,22 +220,24 @@ list.appendChild(button);
 list.appendChild(br3);
 }
 
-var bookedList = [];
+// var bookedList = [];
+var booking;
 function book() {
   var selected = document.getElementsByName("booked");
-  bookedList=[];
-   for(var checkbox of selected) {
-    if (checkbox.checked) {
-    console.log(checkbox.value);
-    bookedList.push(checkbox.value);
+  // bookedList=[];
+   for(var radio of selected) {
+    if (radio.checked) {
+      booking=radio.value;
+    console.log(booking);
+    // bookedList.push(radio.value);
 
     // bookedList.push(selected);
    }
     // for(var i=0;i<8;i++) { //8=total # of seats
       // bookedList.push(booked[i].value);
     }
-    console.log(bookedList);
-    if(bookedList.length==0) {
+    // console.log(bookedList);
+    if(booking=undefined) {
       alert("You did not select any seats.");
       return;
     }
