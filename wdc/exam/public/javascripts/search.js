@@ -210,6 +210,7 @@ for (var i = 0; i < seatList.length; i=i+2) {
     newDiv.appendChild(checkbox2);
     newDiv.appendChild(span2);
     newDiv.appendChild(br3);
+
     // newDiv.appendChild(label2);
 
 
@@ -231,7 +232,7 @@ for (var i = 0; i < seatList.length; i=i+2) {
 
   //   newDiv.appendChild(button);
     list.appendChild(newDiv);
-
+    newDiv.appendChild(button);
 }
 }
 
