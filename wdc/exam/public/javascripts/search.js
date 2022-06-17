@@ -162,6 +162,7 @@ for (var i = 0; i < seatList.length; i=i+2) {
       book();
    }
 
+
     //there are 2 seats in every screening
     if(seatList[i].booked==0) {
       img.src = "/images/available.png";
@@ -208,6 +209,7 @@ for (var i = 0; i < seatList.length; i=i+2) {
     newDiv.appendChild(img2);
     newDiv.appendChild(br);
     newDiv.appendChild(checkbox);
+    // newDiv.appendChild(label);
     newDiv.appendChild(span);
     newDiv.appendChild(br2);
     newDiv.appendChild(checkbox2);
