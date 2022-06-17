@@ -15,8 +15,7 @@ var dbConnectionPool = mysql.createPool({
     // port: 3306,
     // user: 'MySQL Username',
     // password : 'MySQL Password',
-    multipleStatements: true,
-    database: 'wdc22_final_p2'
+    multipleStatements: true
 });
 
 app.use(function(req, res, next) {
