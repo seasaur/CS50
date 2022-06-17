@@ -155,6 +155,18 @@ router.post('/posts/:post_id/delete', function(req, res, next) {
 
 });
 
+//added
+router.use('/posts/*', function(req,res,next) {
+  if('user' in req.session) {
+    next();
+  }
+  else {
+    res.sendStatus(401);
+  }
+});
+
+
+
 router.post('/comments/new', function(req, res, next) {
 
   if(!('user' in req.session)){
@@ -191,16 +203,6 @@ router.post('/comments/new', function(req, res, next) {
       res.sendStatus(400);
   }
 
-});
-
-//added
-router.use('/posts/*', function(req,res,next) {
-  if('user' in req.session) {
-    next();
-  }
-  else {
-    res.sendStatus(401);
-  }
 });
 
 
