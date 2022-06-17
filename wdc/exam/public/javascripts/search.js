@@ -131,8 +131,13 @@ for (var i = 0; i < seatList.length; i=i+2) {
     var img2 = document.createElement("img");
     var checkbox = document.createElement('input');
     checkbox.style.display="none";
+    checkbox.name="booked";
+    console.log(checkbox.name);
     var checkbox2 = document.createElement('input');
     checkbox2.style.display="none";
+    checkbox2.name="booked";
+    console.log(checkbox2.name);
+
     // var label = document.createElement('label');
     // label.style.display="none";
     // var label2 = document.createElement('label');
@@ -215,6 +220,10 @@ list.appendChild(button);
 list.appendChild(br3);
 }
 
+var bookedList = [];
 function book() {
-    console.log("hello");
+    for(var i=0;i<8;i++) { //8=total # of seats
+      bookedList.push(booked[i].value);
+    }
+    console.log(bookedList);
 }
