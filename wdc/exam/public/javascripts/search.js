@@ -149,6 +149,13 @@ for (var i = 0; i < seatList.length; i=i+2) {
     span.style.display="none";
     var span2 = document.createElement('span');
     span2.style.display="none";
+
+   var button = document.createElement("button");
+   button.class="submitButton";
+   button.innerHTML="BOOK SEATS";
+   button.id="book";
+   button
+
     //there are 2 seats in every screening
     if(seatList[i].booked==0) {
       img.src = "/images/available.png";
