@@ -156,7 +156,7 @@ for (var i = 0; i < seatList.length; i=i+2) {
 
    var button = document.createElement("button");
    button.classList.add('submitButton');
-   button.innerHTML="BOOK SEATS";
+   button.innerHTML="BOOK SEAT";
    button.id="book";
    button.onclick=function() {
       book();
