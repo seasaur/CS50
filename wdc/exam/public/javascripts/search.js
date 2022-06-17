@@ -239,8 +239,8 @@ function book() {
       alert("You did not select any seats.");
       return;
     }
-    for(var i=0;i<bookedList) {
-
+    for(var i=0;i<bookedList;i++) {
+        send(bookedList[i]);
     }
 }
 
