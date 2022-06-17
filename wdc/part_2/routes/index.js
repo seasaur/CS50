@@ -107,6 +107,16 @@ router.get('/posts/:post_id/comments', function(req, res, next) {
 
 });
 
+//added
+router.use(function(req,res,next) {
+  if('user' in req.session) {
+    next();
+  }
+  else {
+    res.sendStatus(401);
+  }
+});
+
 router.post('/posts/:post_id/delete', function(req, res, next) {
 
   if(!('user' in req.session)){
