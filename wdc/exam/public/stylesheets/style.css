@@ -10,24 +10,7 @@ body{
   font-family: 'Montserrat', sans-serif;
 }
 
-#logo{
-    width: 8em;
-    height: auto;
-}
-#menu{
-  list-style:none;
-}
-
-#menu li{
-  display:inline;
-}
-
-#menu a{
-  text-decoration: none;
-  color: black;
-}
-
-.headerButton, .submitButton{
+.submitButton{
   float:right;
   background-color: #CCE7D9;
   border-radius: 0.3em;
@@ -51,11 +34,8 @@ body{
   cursor:pointer;
   border:none;
 }
-.headerButton:hover{
-  background-color: #47CACC;
-}
 
-.submitButton:hover, #planButton:hover, .returnButton:hover {
+.submitButton:hover {
   background-color: #CB8A90;
 }
 
@@ -76,70 +56,15 @@ body{
   display: inline-block;
 }
 
-.inputBox{
-    margin: 1em;
-    margin-bottom: 2em;
-    width: 95%;
-    height: 3em;
-    border-radius: 0.5em;
-}
-
-.leftFloat{
-    margin: 2% 2.5% 2% 5%;
-    float: left;
-    width: 42%;
-    height: 30em;
-    background-color: lightgray;
-}
-
-.rightFloat{
-    margin: 2% 5% 2% 2.5%;
-    float: right;
-    width: 42%;
-    height: 30em;
-    background-color: lightgray;
-}
-
-
-.share{
-  float:right;
-  text-decoration: underline;
-  background-color: #CCE7D9;
-}
-
 .eventHeading{
   display: flex;
   justify-content: space-between;
   margin: 5% 15%;
 }
 
-table {
-  margin: 5% 15%;
-  width:70%;
-  text-align:center;
-  border-collapse: collapse;
-  border-spacing: 0;
-  table-layout: fixed;
-}
-
 #seat{
 width: 2em;
 height: auto;
-}
-
-.name {
-text-align:left;
-padding: 16px;
-width:15%;
-white-space: nowrap;
-}
-
-tr:nth-child(even) {
-background-color: rgba(150, 212, 212, 0.4);
-}
-
-td:nth-child(even) {
-background-color: rgba(150, 212, 212, 0.4);
 }
 
 .eventBox{
@@ -153,29 +78,6 @@ padding: 100px;
 background-color:#D9C0D7;
 width: 100%; height: 400px;
 
-}
-
-#planButton{
-float:left;
-background-color: #CCE7D9;
-border-radius: 0.3em;
-width: auto;
-height: auto;
-text-align: center;
-text-align: center;
-padding: 1em;
-border:none;
-text-decoration: none;
-}
-
-#homeText{
-width:350px;
-}
-
-#homePic{
-margin:0;
-float:right;
-display:flex;
 }
 
 #search{
@@ -197,17 +99,5 @@ box-sizing: border-box;
 border: 0;
 font-family: 'Montserrat', sans-serif;
 color:#964F87
-}
-
-#month{
-border-right: 4px solid white;
-}
-
-.login{
-margin: 1.7% 2.5% 2% 17%;
-float: left;
-width: 30%;
-height: auto;
-text-align: center;
 }
 
