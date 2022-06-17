@@ -229,7 +229,7 @@ function book() {
       var hello=checkbox.value;
       console.log(hello);
     console.log(checkbox.value);
-    // bookedList.push(hello);
+    bookedList.push(hello);
 
     // bookedList.push(selected);
    }
