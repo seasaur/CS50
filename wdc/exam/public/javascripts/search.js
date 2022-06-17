@@ -268,7 +268,7 @@ function send() {
       }
     };
 
-  xhttp.open("POST", "/book", true); //send change info request to database
+  xhttp.open("POST", "/book", true);
   xhttp.setRequestHeader("Content-type", "application/json");
   xhttp.send(JSON.stringify({seatID: booking}));
   sendUser(booking);
@@ -286,7 +286,7 @@ function sendUser(booking) {
       }
     };
 
-  xhttp.open("POST", "/user", true); //send change info request to database
+  xhttp.open("POST", "/user", true);
   xhttp.setRequestHeader("Content-type", "application/json");
   xhttp.send(JSON.stringify({seatID: booking}));
   getSeats();
