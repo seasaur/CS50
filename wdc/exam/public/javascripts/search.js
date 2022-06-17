@@ -159,7 +159,7 @@ for (var i = 0; i < seatList.length; i=i+2) {
    button.innerHTML="BOOK SEAT";
    button.id="book";
    button.onclick=function() {
-      book();
+      send();
    }
 
 
@@ -246,7 +246,15 @@ function book() {
     // }
 }
 
-function send(booked) {
+function send() {
+  var selected = document.getElementsByName("booked");
+  // bookedList=[];
+   for(var radio of selected) {
+    if (radio.checked) {
+      booking=radio.value;
+    console.log(booking);
+    }
+  }
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -256,6 +264,6 @@ function send(booked) {
 
   xhttp.open("POST", "/book", true); //send change info request to database
   xhttp.setRequestHeader("Content-type", "application/json");
-  xhttp.send(JSON.stringify({seatID: booked}));
+  xhttp.send(JSON.stringify({seatID: selected}));
 
 }
