@@ -22,18 +22,6 @@ body{
   cursor:pointer;
   border:none;
 }
-.returnButton{
-  float:left;
-  background-color: #CCE7D9;
-  border-radius: 0.3em;
-  width: auto;
-  height: auto;
-  text-align: center;
-  padding: 0.5em;
-  margin: 1%;
-  cursor:pointer;
-  border:none;
-}
 
 .submitButton:hover {
   background-color: #CB8A90;

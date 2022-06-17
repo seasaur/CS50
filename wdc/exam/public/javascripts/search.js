@@ -163,10 +163,10 @@ for (var i = 0; i < seatList.length; i=i+2) {
    }
 
    var b = document.createElement("button");
-   b.classList.add('returnButton');
+  //  b.classList.add('submitButton');
    b.style.display="none";
    var b2 = document.createElement("button");
-   b2.classList.add('returnButton');
+  //  b2.classList.add('submitButton');
    b2.style.display="none";
 
     //there are 2 seats in every screening
