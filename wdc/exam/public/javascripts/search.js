@@ -266,4 +266,5 @@ function send() {
   xhttp.setRequestHeader("Content-type", "application/json");
   xhttp.send(JSON.stringify({seatID: selected}));
 
+  getSeats();
 }
