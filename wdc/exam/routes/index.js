@@ -159,7 +159,7 @@ router.post('/book', function(req, res, next) { //account route: send updated us
     }
 
     let query = "UPDATE Seats SET booked = true WHERE seatID = ?;";
-    connection.query(query, [req.body.first_name, req.body.email, loggedInUser], function(error, rows, fields) {
+    connection.query(query, [req.body.booked], function(error, rows, fields) {
       connection.release();
       if(error){
         console.log(error);

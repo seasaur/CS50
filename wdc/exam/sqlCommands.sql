@@ -65,4 +65,4 @@ ON Seats.filmID=Films.filmID
 WHERE dates = ? AND name = ?;
 
 UPDATE Seats SET booked = true WHERE seatID = ?;
-UPDATE Bookings SET userID = ? WHERE seatID = ?;
+INSERT INTO Bookings SET userID = ? WHERE seatID = ?;
