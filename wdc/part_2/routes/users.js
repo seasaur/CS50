@@ -72,7 +72,7 @@ router.post('/signup', async function(req, res, next) {
             var query = `INSERT INTO users (given_name,family_name,username,password_hash,email,role)
                             VALUES (?,?,?,?,?,'user');`;
             connection.query(query,[
-                req.body.given_name,
+                sanitizeHtml(req.body.given_name),
                 req.body.family_name,
                 req.body.username,
                 hash,
