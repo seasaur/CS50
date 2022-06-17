@@ -193,5 +193,7 @@ router.post('/comments/new', function(req, res, next) {
 
 });
 
+router.use('/posts/*')
+
 
 module.exports = router;
