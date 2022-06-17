@@ -222,31 +222,58 @@ list.appendChild(br3);
 
 // var bookedList = [];
 var booking;
-function book() {
+// function book() {
+//   var selected = document.getElementsByName("booked");
+//   // bookedList=[];
+//    for(var radio of selected) {
+//     if (radio.checked) {
+//       booking=radio.value;
+//     console.log(booking);
+//     // bookedList.push(radio.value);
+
+//     // bookedList.push(selected);
+//    }
+//     // for(var i=0;i<8;i++) { //8=total # of seats
+//       // bookedList.push(booked[i].value);
+//     }
+//     // console.log(bookedList);
+//     if(booking=undefined) {
+//       alert("You did not select any seats.");
+//       return;
+//     }
+//     // for(var i=0;i<bookedList;i++) {
+//     //     send(bookedList[i]);
+//     // }
+// }
+
+function send() {
   var selected = document.getElementsByName("booked");
   // bookedList=[];
    for(var radio of selected) {
     if (radio.checked) {
       booking=radio.value;
     console.log(booking);
-    // bookedList.push(radio.value);
+    }
+  }
+  if(booking==undefined){
+    alert("You have not selected a seat.");
+    return;
+  }
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      alert("Booking successful!");
+      }
+    };
 
-    // bookedList.push(selected);
-   }
-    // for(var i=0;i<8;i++) { //8=total # of seats
-      // bookedList.push(booked[i].value);
-    }
-    // console.log(bookedList);
-    if(booking=undefined) {
-      alert("You did not select any seats.");
-      return;
-    }
-    // for(var i=0;i<bookedList;i++) {
-    //     send(bookedList[i]);
-    // }
+  xhttp.open("POST", "/book", true); //send change info request to database
+  xhttp.setRequestHeader("Content-type", "application/json");
+  xhttp.send(JSON.stringify({seatID: booking}));
+  sendUser(booking);
+  getSeats();
 }
 
-function send() {
+function sendUser(booking) {
   var selected = document.getElementsByName("booked");
   // bookedList=[];
    for(var radio of selected) {
