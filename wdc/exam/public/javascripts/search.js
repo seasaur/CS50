@@ -158,8 +158,8 @@ for (var i = 0; i < seatList.length; i=i+2) {
    button.classList.add('submitButton');
    button.innerHTML="BOOK SEATS";
    button.id="book";
-   button.onclick=function() {
-      book();
+   button.onclick=function(button) {
+      book(button);
    }
 
     //there are 2 seats in every screening
@@ -221,9 +221,9 @@ list.appendChild(br3);
 }
 
 var bookedList = [];
-function book() {
-    for(var i=0;i<8;i++) { //8=total # of seats
-      bookedList.push(booked[i].value);
-    }
-    console.log(bookedList);
+function book(button) {
+    // for(var i=0;i<8;i++) { //8=total # of seats
+    //   bookedList.push(booked[i].value);
+    // }
+    // console.log(bookedList);
 }
