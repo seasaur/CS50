@@ -222,7 +222,10 @@ list.appendChild(br3);
 
 var bookedList = [];
 function book(button) {
-  var buttons = document.getElementById("booked");
+  var selected = document.getElementById("book");
+   for(var checkbox of selected) {
+    console.log("h");
+   }
     // for(var i=0;i<8;i++) { //8=total # of seats
     //   bookedList.push(booked[i].value);
     // }
