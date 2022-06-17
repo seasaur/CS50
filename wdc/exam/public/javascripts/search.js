@@ -265,6 +265,7 @@ function send() {
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       alert("Booking successful!");
+      getSeats(); //update page with booked seats
       }
     };
 
