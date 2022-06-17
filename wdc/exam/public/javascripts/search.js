@@ -221,7 +221,7 @@ list.appendChild(br3);
 }
 
 var bookedList = [];
-function book(button) {
+function book() {
   var selected = document.getElementsByName("booked");
   bookedList=selected.value;
    for(var checkbox of selected) {
