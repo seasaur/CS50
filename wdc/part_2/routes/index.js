@@ -39,7 +39,7 @@ router.get('/posts', function(req, res, next) {
 
 router.post('/posts/new', function(req, res, next) {
 
-    if(!'user' in req.session){
+    if(!('user' in req.session)){
       res.sendStatus(401);
       return;
     }
@@ -147,7 +147,7 @@ router.post('/posts/:post_id/delete', function(req, res, next) {
 
 router.post('/comments/new', function(req, res, next) {
 
-  if(!'user' in req.session){
+  if(!('user' in req.session)){
     res.sendStatus(401);
     return;
   }
