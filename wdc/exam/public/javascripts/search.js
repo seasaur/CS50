@@ -231,9 +231,11 @@ for (var i = 0; i < seatList.length; i=i+2) {
   //  }
 
   //   newDiv.appendChild(button);
+
     list.appendChild(newDiv);
-    newDiv.appendChild(button);
 }
+list.appendChild(button);
+
 }
 
 function test() {
