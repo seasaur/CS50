@@ -64,4 +64,4 @@ INNER JOIN Films
 ON Seats.filmID=Films.filmID
 WHERE dates = ? AND name = ?;
 
-UPDATE Seats SET booked = true, email = ? WHERE user_ID = ?
+UPDATE Seats SET booked = true WHERE seatID = ?;
