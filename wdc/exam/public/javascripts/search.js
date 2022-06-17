@@ -226,11 +226,8 @@ function book() {
   // bookedList=selected.value;
    for(var checkbox of selected) {
     if (checkbox.checked) {
-      var hello=checkbox.value;
-      console.log(hello);
-      // send(hello);
-    // console.log(checkbox.value);
-    bookedList.push(hello);
+    console.log(checkbox.value);
+    bookedList.push(checkbox.value);
 
     // bookedList.push(selected);
    }
