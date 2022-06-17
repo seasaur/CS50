@@ -249,6 +249,6 @@ function send() {
 
   xhttp.open("POST", "/book", true); //send change info request to database
   xhttp.setRequestHeader("Content-type", "application/json");
-  xhttp.send(JSON.stringify({seatID: document.getElementById("firstName").value, email: document.getElementById("email").value}));
+  xhttp.send(JSON.stringify({seatID: bookedList}));
 
 }
