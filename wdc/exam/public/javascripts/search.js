@@ -163,8 +163,10 @@ for (var i = 0; i < seatList.length; i=i+2) {
    }
 
    var b = document.createElement("button");
+   b.classList.add('returnButton');
    b.style.display="none";
    var b2 = document.createElement("button");
+   b2.classList.add('returnButton');
    b2.style.display="none";
 
     //there are 2 seats in every screening
@@ -181,7 +183,7 @@ for (var i = 0; i < seatList.length; i=i+2) {
       // label.appendChild(document.createTextNode(seatList[i].seat));
       span.style.display="inline";
       span.innerHTML = seatList[i].seat;
-      b.style.display="inline";
+      b.style.display="inline-block";
       b.innerHTML="book seat";
      //  b.id="book";
       b.onclick=function(event) {
