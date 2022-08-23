@@ -159,7 +159,7 @@ int main(){
     cin >> a >> b >> base;
 
     // Function Call
-    sum = sumBaseB(a, b, base);
+    sum = add(a, b);
     product = multiply(a,b);
     cout << sum << " " << product << endl;
     return 0;
