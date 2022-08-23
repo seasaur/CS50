@@ -71,7 +71,7 @@ int main(){
 
     // Function Call
     sum = sumBaseB(a, b, base);
-    product = multiply(a,b);
+    // product = multiply(a,b);
     cout << sum << " " << product << endl;
     return 0;
 }
