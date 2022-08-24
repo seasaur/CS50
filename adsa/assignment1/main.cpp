@@ -25,14 +25,13 @@ string add(string left, string right, int base) {
     for (int i = length-1; i > -1; i--) {
       colSum = (left[i]-'0') + (right[i]-'0') + carry; //converting to int for calculations
       carry = colSum/base;
-    //   result.insert(0,to_string(colSum % base));
+
     result = to_string(colSum % base) + result;
     }
 
     if (carry > 0) {
         result = to_string(carry) + result;
     }
-    //   result.insert(0,to_string(carry));
 
     // remove leading zeros
     return result.erase(0, min(result.find_first_not_of('0'), result.length()-1));
@@ -53,31 +52,33 @@ string subtract(string left, string right, int base) {
 
     for (int i = length-1; i > -1; i--) {
         diff = (left[i]-'0') - (right[i]-'0');
-        if (diff >= 0) {
+        if (diff >= 0) { //if no need to borrow
             result = to_string(diff) + result;
 
         }
-            // result.insert(0, to_string(diff));
         else {
 
             // borrowing
             int j = i - 1;
-            while (j >=-1) {
+            while (j > -1) {
                 left[j] = ((left[j]-'0') - 1) % base + '0';
-                if (left[j] != (base + '0')-1) { //9??
+                if (left[j] != (base - '0')-1) {
                     break;
                 }
                 else {
                     j--;
                 }
             }
-            // result.insert(0, to_string(diff+base));
             result = to_string(diff+base) + result;
         }
 
     }
+    while(result[0] == '0' && result.length() > 1) {
+        result = result.substr(1,result.length()-1);
+    }
 
-    return result.erase(0, min(result.find_first_not_of('0'), result.size()-1));
+    return result;
+    // return result.erase(0, min(result.find_first_not_of('0'), result.size()-1));
 }
 
 string multiply(string left, string right, int base) {
@@ -92,7 +93,7 @@ string multiply(string left, string right, int base) {
     }
 
     if (length == 1) {
-        return to_string((left[0]-'0')*(right[0]-'0'));
+        return to_string((left[0]-'0')*(right[0]-'0')); //do school method
     }
     string left0 = left.substr(0,length/2);
     string left1 = left.substr(length/2,length-length/2);
@@ -118,11 +119,6 @@ string multiply(string left, string right, int base) {
     return result.erase(0, min(result.find_first_not_of('0'), result.length()-1));
 }
 
-// string schoolMultiply(string x, int base) {
-
-
-// }
-
 int main() {
     string a = "";
     string b = "";
@@ -130,13 +126,14 @@ int main() {
     // string product = "";
     int base;
     string product="";
-
+    string difference = "";
     cin >> a >> b >> base;
 
     // Function Call
     sum = add(a, b, base);
+    difference = subtract(a,b,base);
     product = multiply(a,b, base);
     // cout << "main ab" << a << " " << b << endl;
-    cout << sum << " " << product << endl;
+    cout << difference << " " << sum << " " << product << endl;
     return 0;
 }
