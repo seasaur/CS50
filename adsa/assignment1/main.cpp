@@ -80,10 +80,20 @@ string subtract(string left, string right, int base) {
     return result.erase(0, min(result.find_first_not_of('0'), result.size()-1));
 }
 
-string multiplication(string a1, string a2, string b) {
+string multiply(string a1, string a2, string b) {
 
     string result = "";
-    int length = setSameLength(a1,a2);
+    int length = max(a1.length(), a2.length());
+    int diff = 0;
+    // string result = "";
+
+    while (a1.length() < length) {
+      a1 = "0" + a1;
+    }
+
+    while (a2.length() < length) {
+      a2 = "0" + a2;
+    }
     int mult = 0;
 
     for (int i = 0; i < length; i++) {
@@ -93,7 +103,7 @@ string multiplication(string a1, string a2, string b) {
 
         for (int j = length-1; j >= 0; j--) {
 
-            mult = ctoi(a2.at(i)) * ctoi(a1.at(j)) + carry;
+            mult = a2[i] - '0' * a1[j] - '0' + carry;
 
             if (mult >= stoi(b) && j > 0) {
                 tempResult = to_string(mult%stoi(b)) + tempResult;
@@ -109,7 +119,7 @@ string multiplication(string a1, string a2, string b) {
         }
 
         result += "0";
-        result = addition(result,tempResult,b);
+        result = add(result,tempResult,b);
     }
 
     while(result.at(0) == '0' && result.length() > 1) {
@@ -167,13 +177,14 @@ int main() {
     string b = "";
     string sum = "";
     // string product = "";
-    int base;
+    // int base;
+    string base = "";
     string product="";
 
     cin >> a >> b >> base;
 
     // Function Call
-    sum = add(a, b, base);
+    // sum = add(a, b, base);
     product = multiply(a,b, base);
     // cout << "main ab" << a << " " << b << endl;
     cout << sum << " " << product << endl;
