@@ -118,6 +118,11 @@ string multiply(string left, string right, int base) {
     return result.erase(0, min(result.find_first_not_of('0'), result.length()-1));
 }
 
+string schoolMultiply(string x, int base) {
+
+
+}
+
 int main() {
     string a = "";
     string b = "";
