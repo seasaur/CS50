@@ -134,6 +134,6 @@ int main() {
     difference = subtract(a,b,base);
     product = multiply(a,b, base);
     // cout << "main ab" << a << " " << b << endl;
-    cout << difference << " " << sum << " " << product << endl;
+    cout << sum << " " << product << endl;
     return 0;
 }
