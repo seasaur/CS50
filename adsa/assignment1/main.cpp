@@ -64,7 +64,7 @@ string subtract(string left, string right, int base) {
             int j = i - 1;
             while (j > -1) {
                 left[j] = ((left[j]-'0') - 1) % base + '0';
-                if (left[j] != '9') {
+                if (left[j] != base-1) {
                     break;
                 }
                 else {
@@ -118,10 +118,10 @@ string multiply(string left, string right, int base) {
     return result.erase(0, min(result.find_first_not_of('0'), result.length()-1));
 }
 
-string schoolMultiply(string x, int base) {
+// string schoolMultiply(string x, int base) {
 
 
-}
+// }
 
 int main() {
     string a = "";
