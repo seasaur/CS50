@@ -99,21 +99,21 @@ string multiply(string left, string right, int base) {
     string right0 = right.substr(0,length/2);
     string right1 = right.substr(length/2,length-length/2);
 
-    string calc0 = multiply(left0,right0, base);
-    string calc1 = multiply(left1,right1, base);
-    string calc2 = multiply(add(left0,left1, base),add(right0,right1, base), base);
-    string calc3 = subtract(calc2,add(calc0,calc1, base), base);
+    string p0 = multiply(left0,right0, base);
+    string p1 = multiply(left1,right1, base);
+    string p2 = multiply(add(left0,left1, base),add(right0,right1, base), base);
+    string p3 = subtract(p2,add(p0,p1, base), base);
 
     for (int i = 0; i < 2*(length-length/2); i++) {
         // p0.append("0");
-        calc0+="0";
+        p0+="0";
     }
     for (int i = 0; i < length-length/2; i++) {
         // p3.append("0");
-        calc3+="0";
+        p3+="0";
     }
 
-    string result = add(add(calc0,calc1, base),calc3, base);
+    string result = add(add(p0,p1, base),p3, base);
 
     return result.erase(0, min(result.find_first_not_of('0'), result.length()-1));
 }
