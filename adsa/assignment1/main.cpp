@@ -34,7 +34,11 @@ string add(string left, string right, int base) {
     }
 
     // remove leading zeros
-    return result.erase(0, min(result.find_first_not_of('0'), result.length()-1));
+    while(result[0] == '0' && result.length() > 1) {
+        result = result.substr(1,result.length()-1);
+    }
+
+    return result;
 }
 
 string subtract(string left, string right, int base) {
@@ -78,7 +82,6 @@ string subtract(string left, string right, int base) {
     }
 
     return result;
-    // return result.erase(0, min(result.find_first_not_of('0'), result.size()-1));
 }
 
 string multiply(string left, string right, int base) {
@@ -93,7 +96,17 @@ string multiply(string left, string right, int base) {
     }
 
     if (length == 1) {
-        return to_string((left[0]-'0')*(right[0]-'0')); //do school method
+
+        int mult = (left[0]-'0')*(right[0]-'0');
+
+        int digit = mult%base;
+        int carry = (mult - mult % base)/base;
+
+        return to_string(carry) + to_string(digit);
+
+        // string r = schoolMultiply(left[0], right[0], base);
+        // return r;
+        // return to_string((left[0]-'0')*(right[0]-'0')); //do school method
     }
     string left0 = left.substr(0,length/2);
     string left1 = left.substr(length/2,length-length/2);
@@ -116,8 +129,43 @@ string multiply(string left, string right, int base) {
 
     string result = add(add(p0,p1, base),p3, base);
 
-    return result.erase(0, min(result.find_first_not_of('0'), result.length()-1));
+    while(result[0] == '0' && result.length() > 1) {
+        result = result.substr(1,result.length()-1);
+    }
+
+    return result;
 }
+
+
+
+// string schoolMultiply(char x, char y, int base) {
+//       // Looping over y
+//       string result = "";
+//         int carry = 0;
+//         string temp = "";
+
+//             int num = (y - '0') * (x - '0') + carry;
+
+//             if (num > base-1 && j > 0)
+//             {
+//                 temp = to_string(num % base) + temp;
+//                 carry = num / base;
+//             }
+//             // else the digit is append to intermediate result
+//             //And assign carry as zero
+//             else
+//             {
+//                 temp = to_string(num) + temp;
+//                 carry = 0;
+//             }
+
+
+//         result = (result[i] - '0') * base;
+//         result = (result[i] - '0') + stoi(temp);
+
+//     return result;
+
+// }
 
 int main() {
     string a = "";
