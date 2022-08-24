@@ -64,7 +64,7 @@ string subtract(string left, string right, int base) {
             int j = i - 1;
             while (j > -1) {
                 left[j] = ((left[j]-'0') - 1) % base + '0';
-                if (left[j] != base-1 + '0') {
+                if (left[j] != (base + '0')-1) {
                     break;
                 }
                 else {
