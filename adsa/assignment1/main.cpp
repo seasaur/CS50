@@ -6,24 +6,24 @@
 #include <vector>
 using namespace std;
 
-string add(string lhs, string rhs, int base) {
-    int length = max(lhs.length(), rhs.length());
+string add(string left, string right, int base) {
+    int length = max(left.length(), right.length());
     int carry = 0;
     int colSum = 0;  // sum of two digits in the same column
     string result = "";
 
     // padding the shorter string with zeros
-    while (lhs.length() < length) {
-      lhs = "0" + lhs;
+    while (left.length() < length) {
+      left = "0" + left;
     }
 
-    while (rhs.length() < length) {
-      rhs = "0" + rhs;
+    while (right.length() < length) {
+      right = "0" + right;
     }
 
     // build result string from right to left
     for (int i = length-1; i > -1; i--) {
-      colSum = (lhs[i]-'0') + (rhs[i]-'0') + carry; //converting to int for calculations
+      colSum = (left[i]-'0') + (right[i]-'0') + carry; //converting to int for calculations
       carry = colSum/base;
     //   result.insert(0,to_string(colSum % base));
     result = to_string(colSum % base) + result;
@@ -38,21 +38,21 @@ string add(string lhs, string rhs, int base) {
     return result.erase(0, min(result.find_first_not_of('0'), result.length()-1));
 }
 
-string subtract(string lhs, string rhs, int base) {
-    int length = max(lhs.length(), rhs.length());
+string subtract(string left, string right, int base) {
+    int length = max(left.length(), right.length());
     int diff = 0;
     string result = "";
 
-    while (lhs.length() < length) {
-      lhs = "0" + lhs;
+    while (left.length() < length) {
+      left = "0" + left;
     }
 
-    while (rhs.length() < length) {
-      rhs = "0" + rhs;
+    while (right.length() < length) {
+      right = "0" + right;
     }
 
     for (int i = length-1; i > -1; i--) {
-        diff = (lhs[i]-'0') - (rhs[i]-'0');
+        diff = (left[i]-'0') - (right[i]-'0');
         if (diff >= 0) {
             result = to_string(diff) + result;
 
@@ -63,8 +63,8 @@ string subtract(string lhs, string rhs, int base) {
             // borrowing
             int j = i - 1;
             while (j > -1) {
-                lhs[j] = ((lhs[j]-'0') - 1) % base + '0';
-                if (lhs[j] != '9') {
+                left[j] = ((left[j]-'0') - 1) % base + '0';
+                if (left[j] != '9') {
                     break;
                 }
                 else {
@@ -80,40 +80,36 @@ string subtract(string lhs, string rhs, int base) {
     return result.erase(0, min(result.find_first_not_of('0'), result.size()-1));
 }
 
-string multiply(string lhs, string rhs, int base) {
-    int length = max(lhs.length(), rhs.length());
+string multiply(string left, string right, int base) {
+    int length = max(left.length(), right.length());
 
-    while (lhs.length() < length) {
-      lhs = "0" + lhs;
+    while (left.length() < length) {
+      left = "0" + left;
     }
 
-    while (rhs.length() < length) {
-      rhs = "0" + rhs;
+    while (right.length() < length) {
+      right = "0" + right;
     }
 
     if (length == 1) {
-        return to_string((lhs[0]-'0')*(rhs[0]-'0'));
+        return to_string((left[0]-'0')*(right[0]-'0'));
     }
-    string lhs0 = lhs.substr(0,length/2);
-    string lhs1 = lhs.substr(length/2,length-length/2);
-    string rhs0 = rhs.substr(0,length/2);
-    string rhs1 = rhs.substr(length/2,length-length/2);
+    string left0 = left.substr(0,length/2);
+    string left1 = left.substr(length/2,length-length/2);
+    string right0 = right.substr(0,length/2);
+    string right1 = right.substr(length/2,length-length/2);
+//(z2 × 10 ^ (m2 × 2)) + ((z1 - z2 - z0) × 10 ^ m2) + z0
+    string calc0 = multiply(left0,right0, base);
+    string calc1 = multiply(left1,right1, base);
+    string calc2 = multiply(add(left0,left1, base),add(right0,right1, base), base);
+    string calc3 = subtract(calc2,add(calc0,calc1, base), base);
 
-    string p0 = multiply(lhs0,rhs0, base);
-    string p1 = multiply(lhs1,rhs1, base);
-    string p2 = multiply(add(lhs0,lhs1, base),add(rhs0,rhs1, base), base);
-    string p3 = subtract(p2,add(p0,p1, base), base);
+    for (int i = 0; i < 2*(length-length/2); i++)
+        calc0.append("0");
+    for (int i = 0; i < length-length/2; i++)
+        calc3.append("0");
 
-    for (int i = 0; i < 2*(length-length/2); i++) {
-        // p0.append("0");
-        p0+="0";
-    }
-    for (int i = 0; i < length-length/2; i++) {
-        // p3.append("0");
-        p3+="0";
-    }
-
-    string result = add(add(p0,p1, base),p3, base);
+    string result = add(add(calc0,calc1, base),calc3, base);
 
     return result.erase(0, min(result.find_first_not_of('0'), result.length()-1));
 }
