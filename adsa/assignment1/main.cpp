@@ -80,43 +80,82 @@ string subtract(string left, string right, int base) {
     return result.erase(0, min(result.find_first_not_of('0'), result.size()-1));
 }
 
-string multiply(string left, string right, int base) {
-    int length = max(left.length(), right.length());
+string multiplication(string a1, string a2, string b) {
 
-    while (left.length() < length) {
-      left = "0" + left;
+    string result = "";
+    int length = setSameLength(a1,a2);
+    int mult = 0;
+
+    for (int i = 0; i < length; i++) {
+
+        int carry = 0;
+        string tempResult = "";
+
+        for (int j = length-1; j >= 0; j--) {
+
+            mult = ctoi(a2.at(i)) * ctoi(a1.at(j)) + carry;
+
+            if (mult >= stoi(b) && j > 0) {
+                tempResult = to_string(mult%stoi(b)) + tempResult;
+                carry = mult/stoi(b);
+            } else {
+                if (mult/stoi(b) != 0) {
+                    tempResult = to_string(mult/stoi(b)) + to_string(mult%stoi(b)) + tempResult;
+                } else {
+                    tempResult = to_string(mult%stoi(b)) + tempResult;
+                }
+                carry = 0;
+            }
+        }
+
+        result += "0";
+        result = addition(result,tempResult,b);
     }
 
-    while (right.length() < length) {
-      right = "0" + right;
+    while(result.at(0) == '0' && result.length() > 1) {
+        result = result.substr(1,result.length()-1);
     }
 
-    if (length == 1) {
-        return to_string((left[0]-'0')*(right[0]-'0'));
-    }
-    string left0 = left.substr(0,length/2);
-    string left1 = left.substr(length/2,length-length/2);
-    string right0 = right.substr(0,length/2);
-    string right1 = right.substr(length/2,length-length/2);
-
-    string calc0 = multiply(left0,right0, base);
-    string calc1 = multiply(left1,right1, base);
-    string calc2 = multiply(add(left0,left1, base),add(right0,right1, base), base);
-    string calc3 = subtract(calc2,add(calc0,calc1, base), base);
-
-    for (int i = 0; i < 2*(length-length/2); i++) {
-        // p0.append("0");
-        calc0+="0";
-    }
-    for (int i = 0; i < length-length/2; i++) {
-        // p3.append("0");
-        calc3+="0";
-    }
-
-    string result = add(add(calc0,calc1, base),calc3, base);
-
-    return result.erase(0, min(result.find_first_not_of('0'), result.length()-1));
+    return result;
 }
+
+// string multiply(string left, string right, int base) {
+//     int length = max(left.length(), right.length());
+
+//     while (left.length() < length) {
+//       left = "0" + left;
+//     }
+
+//     while (right.length() < length) {
+//       right = "0" + right;
+//     }
+
+//     if (length == 1) {
+//         return to_string((left[0]-'0')*(right[0]-'0'));
+//     }
+//     string left0 = left.substr(0,length/2);
+//     string left1 = left.substr(length/2,length-length/2);
+//     string right0 = right.substr(0,length/2);
+//     string right1 = right.substr(length/2,length-length/2);
+
+//     string calc0 = multiply(left0,right0, base);
+//     string calc1 = multiply(left1,right1, base);
+//     string calc2 = multiply(add(left0,left1, base),add(right0,right1, base), base);
+//     string calc3 = subtract(calc2,add(calc0,calc1, base), base);
+
+//     for (int i = 0; i < 2*(length-length/2); i++) {
+//         // p0.append("0");
+//         calc0+="0";
+//     }
+//     for (int i = 0; i < length-length/2; i++) {
+//         // p3.append("0");
+//         calc3+="0";
+//     }
+
+//     string result = add(add(calc0,calc1, base),calc3, base);
+
+//     return result.erase(0, min(result.find_first_not_of('0'), result.length()-1));
+// }
 
 // string schoolMultiply(string x, int base) {
 
