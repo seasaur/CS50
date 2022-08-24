@@ -7,59 +7,72 @@
 using namespace std;
 
 string add(string lhs, string rhs, int base) {
-    int length = max(lhs.size(), rhs.size());
+    int length = max(lhs.length(), rhs.length());
     int carry = 0;
-    int sum_col;  // sum of two digits in the same column
+    int colSum;  // sum of two digits in the same column
     string result;
 
-    // pad the shorter string with zeros
-    while (lhs.size() < length)
-      lhs.insert(0,"0");
-
-    while (rhs.size() < length)
-      rhs.insert(0,"0");
-
-    // build result string from right to left
-    for (int i = length-1; i >= 0; i--) {
-      sum_col = (lhs[i]-'0') + (rhs[i]-'0') + carry;
-      carry = sum_col/base;
-      result.insert(0,to_string(sum_col % base));
+    // padding the shorter string with zeros
+    while (lhs.length() < length) {
+      lhs = "0" + lhs;
     }
 
-    if (carry)
-      result.insert(0,to_string(carry));
+    while (rhs.length() < length) {
+      rhs = "0" + rhs;
+    }
+
+    // build result string from right to left
+    for (int i = length-1; i > -1; i--) {
+      colSum = (lhs[i]-'0') + (rhs[i]-'0') + carry; //converting to int for calculations
+      carry = colSum/base;
+    //   result.insert(0,to_string(colSum % base));
+    result = to_string(colSum % base) + result;
+    }
+
+    if (carry) {
+        result = to_string(carry) + result;
+    }
+    //   result.insert(0,to_string(carry));
 
     // remove leading zeros
-    return result.erase(0, min(result.find_first_not_of('0'), result.size()-1));
+    return result.erase(0, min(result.find_first_not_of('0'), result.length()-1));
 }
 
 string subtract(string lhs, string rhs, int base) {
-    int length = max(lhs.size(), rhs.size());
+    int length = max(lhs.length(), rhs.length());
     int diff;
     string result;
 
-    while (lhs.size() < length)
-      lhs.insert(0,"0");
+    while (lhs.length() < length) {
+      lhs = "0" + lhs;
+    }
 
-    while (rhs.size() < length)
-      rhs.insert(0,"0");
+    while (rhs.length() < length) {
+      rhs = "0" + rhs;
+    }
 
-    for (int i = length-1; i >= 0; i--) {
+    for (int i = length-1; i > -1; i--) {
         diff = (lhs[i]-'0') - (rhs[i]-'0');
-        if (diff >= 0)
-            result.insert(0, to_string(diff));
+        if (diff >= 0) {
+            result = to_string(diff) + result;
+
+        }
+            // result.insert(0, to_string(diff));
         else {
 
-            // borrow from the previous column
+            // borrowing
             int j = i - 1;
-            while (j >= 0) {
+            while (j > -1) {
                 lhs[j] = ((lhs[j]-'0') - 1) % base + '0';
-                if (lhs[j] != '9')
+                if (lhs[j] != '9') {
                     break;
-                else
+                }
+                else {
                     j--;
+                }
             }
-            result.insert(0, to_string(diff+base));
+            // result.insert(0, to_string(diff+base));
+            result = to_string(diff+base) + result;
         }
 
     }
@@ -70,11 +83,12 @@ string subtract(string lhs, string rhs, int base) {
 string multiply(string lhs, string rhs, int base) {
     int length = max(lhs.size(), rhs.size());
 
-    while (lhs.size() < length)
+    while (lhs.size() < length) {
       lhs.insert(0,"0");
-
-    while (rhs.size() < length)
+    }
+    while (rhs.size() < length) {
       rhs.insert(0,"0");
+    }
 
     if (length == 1)
         return to_string((lhs[0]-'0')*(rhs[0]-'0'));
