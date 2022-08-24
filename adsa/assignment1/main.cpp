@@ -10,7 +10,7 @@ string add(string lhs, string rhs, int base) {
     int length = max(lhs.length(), rhs.length());
     int carry = 0;
     int colSum;  // sum of two digits in the same column
-    string result;
+    string result = "";
 
     // padding the shorter string with zeros
     while (lhs.length() < length) {
