@@ -98,16 +98,20 @@ string multiply(string left, string right, int base) {
     string left1 = left.substr(length/2,length-length/2);
     string right0 = right.substr(0,length/2);
     string right1 = right.substr(length/2,length-length/2);
-//(z2 × 10 ^ (m2 × 2)) + ((z1 - z2 - z0) × 10 ^ m2) + z0
+
     string calc0 = multiply(left0,right0, base);
     string calc1 = multiply(left1,right1, base);
     string calc2 = multiply(add(left0,left1, base),add(right0,right1, base), base);
     string calc3 = subtract(calc2,add(calc0,calc1, base), base);
 
-    for (int i = 0; i < 2*(length-length/2); i++)
-        calc0.append("0");
-    for (int i = 0; i < length-length/2; i++)
-        calc3.append("0");
+    for (int i = 0; i < 2*(length-length/2); i++) {
+        // p0.append("0");
+        calc0+="0";
+    }
+    for (int i = 0; i < length-length/2; i++) {
+        // p3.append("0");
+        calc3+="0";
+    }
 
     string result = add(add(calc0,calc1, base),calc3, base);
 
