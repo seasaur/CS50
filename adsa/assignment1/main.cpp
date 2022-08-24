@@ -138,35 +138,6 @@ string multiply(string left, string right, int base) {
 
 
 
-// string schoolMultiply(char x, char y, int base) {
-//       // Looping over y
-//       string result = "";
-//         int carry = 0;
-//         string temp = "";
-
-//             int num = (y - '0') * (x - '0') + carry;
-
-//             if (num > base-1 && j > 0)
-//             {
-//                 temp = to_string(num % base) + temp;
-//                 carry = num / base;
-//             }
-//             // else the digit is append to intermediate result
-//             //And assign carry as zero
-//             else
-//             {
-//                 temp = to_string(num) + temp;
-//                 carry = 0;
-//             }
-
-
-//         result = (result[i] - '0') * base;
-//         result = (result[i] - '0') + stoi(temp);
-
-//     return result;
-
-// }
-
 int main() {
     string a = "";
     string b = "";
