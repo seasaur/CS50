@@ -1,9 +1,6 @@
 #include <string>
 #include <iostream>
 #include <math.h>
-#include <algorithm>
-#include <sstream>
-#include <vector>
 using namespace std;
 
 string add(string left, string right, int base) {
@@ -46,6 +43,7 @@ string subtract(string left, string right, int base) {
     int diff = 0;
     string result = "";
 
+    //padding shorter string with 0
     while (left.length() < length) {
       left = "0" + left;
     }
@@ -61,7 +59,6 @@ string subtract(string left, string right, int base) {
 
         }
         else {
-
             // borrowing
             int j = i - 1;
             while (j > -1) {
@@ -77,6 +74,7 @@ string subtract(string left, string right, int base) {
         }
 
     }
+    //removing leading 0s
     while(result[0] == '0' && result.length() > 1) {
         result = result.substr(1,result.length()-1);
     }
@@ -87,6 +85,7 @@ string subtract(string left, string right, int base) {
 string multiply(string left, string right, int base) {
     int length = max(left.length(), right.length());
 
+    //padding shorter string with 0s
     while (left.length() < length) {
       left = "0" + left;
     }
@@ -95,23 +94,20 @@ string multiply(string left, string right, int base) {
       right = "0" + right;
     }
 
-    if (length == 1) {
-
+    if (length == 1) { //base case
         int mult = (left[0]-'0')*(right[0]-'0');
 
         int digit = mult%base;
         int carry = (mult - mult % base)/base;
 
         return to_string(carry) + to_string(digit);
-
-        // string r = schoolMultiply(left[0], right[0], base);
-        // return r;
-        // return to_string((left[0]-'0')*(right[0]-'0')); //do school method
     }
+    //karatsuba recursion calculations
     string left0 = left.substr(0,length/2);
     string left1 = left.substr(length/2,length-length/2);
     string right0 = right.substr(0,length/2);
     string right1 = right.substr(length/2,length-length/2);
+
 
     string p0 = multiply(left0,right0, base);
     string p1 = multiply(left1,right1, base);
@@ -119,16 +115,16 @@ string multiply(string left, string right, int base) {
     string p3 = subtract(p2,add(p0,p1, base), base);
 
     for (int i = 0; i < 2*(length-length/2); i++) {
-        // p0.append("0");
         p0+="0";
     }
+
     for (int i = 0; i < length-length/2; i++) {
-        // p3.append("0");
         p3+="0";
     }
 
     string result = add(add(p0,p1, base),p3, base);
 
+    //removing leading 0s
     while(result[0] == '0' && result.length() > 1) {
         result = result.substr(1,result.length()-1);
     }
@@ -136,23 +132,18 @@ string multiply(string left, string right, int base) {
     return result;
 }
 
-
-
 int main() {
     string a = "";
     string b = "";
     string sum = "";
-    // string product = "";
     int base;
     string product="";
-    string difference = "";
+    // string difference = "";
     cin >> a >> b >> base;
 
-    // Function Call
     sum = add(a, b, base);
-    difference = subtract(a,b,base);
+    // difference = subtract(a,b,base);
     product = multiply(a,b, base);
-    // cout << "main ab" << a << " " << b << endl;
     cout << sum << " " << product << endl;
     return 0;
 }
