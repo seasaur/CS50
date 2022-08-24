@@ -9,7 +9,7 @@ using namespace std;
 string add(string lhs, string rhs, int base) {
     int length = max(lhs.length(), rhs.length());
     int carry = 0;
-    int colSum;  // sum of two digits in the same column
+    int colSum = 0;  // sum of two digits in the same column
     string result = "";
 
     // padding the shorter string with zeros
@@ -29,7 +29,7 @@ string add(string lhs, string rhs, int base) {
     result = to_string(colSum % base) + result;
     }
 
-    if (carry) {
+    if (carry > 0) {
         result = to_string(carry) + result;
     }
     //   result.insert(0,to_string(carry));
@@ -40,8 +40,8 @@ string add(string lhs, string rhs, int base) {
 
 string subtract(string lhs, string rhs, int base) {
     int length = max(lhs.length(), rhs.length());
-    int diff;
-    string result;
+    int diff = 0;
+    string result = "";
 
     while (lhs.length() < length) {
       lhs = "0" + lhs;
@@ -81,18 +81,19 @@ string subtract(string lhs, string rhs, int base) {
 }
 
 string multiply(string lhs, string rhs, int base) {
-    int length = max(lhs.size(), rhs.size());
+    int length = max(lhs.length(), rhs.length());
 
-    while (lhs.size() < length) {
-      lhs.insert(0,"0");
-    }
-    while (rhs.size() < length) {
-      rhs.insert(0,"0");
+    while (lhs.length() < length) {
+      lhs = "0" + lhs;
     }
 
-    if (length == 1)
+    while (rhs.length() < length) {
+      rhs = "0" + rhs;
+    }
+
+    if (length == 1) {
         return to_string((lhs[0]-'0')*(rhs[0]-'0'));
-
+    }
     string lhs0 = lhs.substr(0,length/2);
     string lhs1 = lhs.substr(length/2,length-length/2);
     string rhs0 = rhs.substr(0,length/2);
@@ -103,14 +104,18 @@ string multiply(string lhs, string rhs, int base) {
     string p2 = multiply(add(lhs0,lhs1, base),add(rhs0,rhs1, base), base);
     string p3 = subtract(p2,add(p0,p1, base), base);
 
-    for (int i = 0; i < 2*(length-length/2); i++)
-        p0.append("0");
-    for (int i = 0; i < length-length/2; i++)
-        p3.append("0");
+    for (int i = 0; i < 2*(length-length/2); i++) {
+        // p0.append("0");
+        p0+="0";
+    }
+    for (int i = 0; i < length-length/2; i++) {
+        // p3.append("0");
+        p3+="0";
+    }
 
     string result = add(add(p0,p1, base),p3, base);
 
-    return result.erase(0, min(result.find_first_not_of('0'), result.size()-1));
+    return result.erase(0, min(result.find_first_not_of('0'), result.length()-1));
 }
 
 int main() {
