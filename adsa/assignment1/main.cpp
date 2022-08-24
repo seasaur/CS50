@@ -119,7 +119,8 @@ string multiply(string a1, string a2, string b) {
         }
 
         result += "0";
-        result = add(result,tempResult,b);
+        int s = stoi(b);
+        result = add(result,tempResult,s);
     }
 
     while(result.at(0) == '0' && result.length() > 1) {
