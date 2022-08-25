@@ -135,22 +135,21 @@ string multiply(string left, string right, int base) {
 string schoolMultiply(string left, string right, int base) {
     string result = "";
     string zero = "";
-    for(int i = l1.length()-1; i > -1; i--){
+    for(int i = left.length()-1; i > -1; i--){
         string carry1 = zero;
         int digit = char2Int[l1.at(i)];
         int carry = 0;
-        for(int j = l2.length()-1; j >= 0; j--){
+        for(int j = right.length()-1; j >= 0; j--){
 
             int tempRes = carry + digit * char2Int[l2.at(j)];
 
             curMult = int2char[tempRes%base] + curMult;
 
             carry = (tempRes - tempRes % base)/base;
-
-
         }
+
         if (carry > 0){
-            curMult = int2char[carry] + curMult;
+            curMult = carry + "0" + curMult;
         }
         output = schoolAddition(output, curMult, base);
         zero += "0";
@@ -158,7 +157,7 @@ string schoolMultiply(string left, string right, int base) {
 
     return result;
 }
-}
+
 
 int main() {
     string a = "";
