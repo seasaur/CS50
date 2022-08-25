@@ -82,6 +82,30 @@ string subtract(string left, string right, int base) {
     return result;
 }
 
+string schoolMultiply(string left, string right, int base) {
+    string result = "";
+    string zero = "";
+    for(int i = left.length()-1; i > -1; i--){ //left number in multiplication
+        string carry1 = zero;
+        int digit = (left[i] - '0');
+        int carry = 0;
+
+        for(int j = right.length()-1; j > -1; j--){ //right number in multiplication
+            int temp = digit * (right[j] - '0') + carry;
+            carry1 = to_string(temp % base) + carry1;
+            carry = (temp - temp % base)/base;
+        }
+
+        if (carry > 0){
+            carry1 = to_string(carry) + carry1;
+        }
+        result = add(result, carry1, base);
+        zero = zero + '0';
+    }
+
+    return result;
+}
+
 string multiply(string left, string right, int base) {
     int length = max(left.length(), right.length());
 
@@ -94,14 +118,19 @@ string multiply(string left, string right, int base) {
       right = "0" + right;
     }
 
-    if (length == 1) { //base case
-        int mult = (left[0]-'0')*(right[0]-'0');
+    if (length < 4) { //base case, use school method multiplication if n < 4
 
-        int digit = mult%base;
-        int carry = (mult - mult % base)/base;
+    return schoolMultiply(left, right, base);
 
-        return to_string(carry) + to_string(digit);
+        //commented out code is multiplying for single digits only (if length == 1 instead of < 4)
+        // int mult = (left[0]-'0')*(right[0]-'0');
+
+        // int digit = mult%base;
+        // int carry = (mult - mult % base)/base;
+
+        // return to_string(carry) + to_string(digit);
     }
+
     //karatsuba recursion calculations
     string left0 = left.substr(0,length/2);
     string left1 = left.substr(length/2,length-length/2);
@@ -131,33 +160,6 @@ string multiply(string left, string right, int base) {
 
     return result;
 }
-
-string schoolMultiply(string left, string right, int base) {
-    string result = "";
-    string zero = "";
-    for(int i = left.length()-1; i > -1; i--){
-        string carry1 = zero;
-        int digit = char2Int[l1.at(i)];
-        int carry = 0;
-        for(int j = right.length()-1; j >= 0; j--){
-
-            int tempRes = carry + digit * char2Int[l2.at(j)];
-
-            curMult = int2char[tempRes%base] + curMult;
-
-            carry = (tempRes - tempRes % base)/base;
-        }
-
-        if (carry > 0){
-            curMult = carry + "0" + curMult;
-        }
-        output = schoolAddition(output, curMult, base);
-        zero += "0";
-    }
-
-    return result;
-}
-
 
 int main() {
     string a = "";
