@@ -85,13 +85,13 @@ string subtract(string left, string right, int base) {
 string schoolMultiply(string left, string right, int base) {
     string result = "";
     string zero = "";
-    for(int i = left.length()-1; i > -1; i--){ //left number in multiplication
+    for(int i = left.length()-1; i > -1; i--) { //left number in multiplication
         string carry1 = zero;
-        int digit = (left[i] - '0');
+        int current = (left[i] - '0'); //current digit
         int carry = 0;
 
-        for(int j = right.length()-1; j > -1; j--){ //right number in multiplication
-            int temp = digit * (right[j] - '0') + carry;
+        for(int j = right.length()-1; j > -1; j--) { //right number in multiplication
+            int temp = current * (right[j] - '0') + carry;
             carry1 = to_string(temp % base) + carry1;
             carry = (temp - temp % base)/base;
         }
