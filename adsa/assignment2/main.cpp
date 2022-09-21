@@ -1,10 +1,7 @@
 #include <iostream>
 #include <vector>
+// #include<bits/stdc++.h>
 using namespace std;
-
-
-/* A binary tree node has data, pointer to left child
-and a pointer to right child */
 
 class Node
 {
@@ -15,9 +12,6 @@ class Node
 	int height;
 };
 
-/* Helper function that allocates a
-new node with the given data and
-NULL left and right pointers. */
 Node* newNode(int data)
 {
 	Node* node = new Node();
@@ -28,70 +22,41 @@ Node* newNode(int data)
 	return node;
 }
 
-
-/* Given a binary tree, print its nodes according to the
-"bottom-up" postorder traversal. */
 void printPostorder(Node* node)
 {
 	if (node == NULL)
 		return;
 
-	// first recur on left subtree
 	printPostorder(node->left);
-
-	// then recur on right subtree
 	printPostorder(node->right);
 
-	// now deal with the node
 	cout << node->data << " ";
 }
 
-/* Given a binary tree, print its nodes in inorder*/
 void printInorder(Node* node)
 {
 	if (node == NULL) {
 		return;
 	}
 
-	/* first recur on left child */
 	printInorder(node->left);
 
-	/* then print the data of node */
 	cout << node->data << " ";
 
-	/* now recur on right child */
 	printInorder(node->right);
 }
 
-/* Given a binary tree, print its nodes in preorder*/
 void printPreorder(Node* node)
 {
 	if (node == NULL)
 		return;
 
-	/* first print data of node */
 	cout << node->data << " ";
 
-	/* then recur on left subtree */
 	printPreorder(node->left);
-
-	/* now recur on right subtree */
 	printPreorder(node->right);
 }
 
-// C++ program to insert a node in AVL tree
-#include<bits/stdc++.h>
-using namespace std;
-
-// An AVL tree node
-
-
-// A utility function to get maximum
-// of two integers
-int max(int a, int b);
-
-// A utility function to get the
-// height of the tree
 int height(Node *N)
 {
 	if (N == NULL)
@@ -99,17 +64,11 @@ int height(Node *N)
 	return N->height;
 }
 
-// A utility function to get maximum
-// of two integers
 int max(int a, int b)
 {
 	return (a > b)? a : b;
 }
 
-
-// A utility function to right
-// rotate subtree rooted with y
-// See the diagram given above.
 Node *rightRotate(Node *y)
 {
 	Node *x = y->left;
@@ -125,13 +84,10 @@ Node *rightRotate(Node *y)
 	x->height = max(height(x->left),
 					height(x->right)) + 1;
 
-	// Return new root
+	// new root
 	return x;
 }
 
-// A utility function to left
-// rotate subtree rooted with x
-// See the diagram given above.
 Node *leftRotate(Node *x)
 {
 	Node *y = x->right;
@@ -147,11 +103,10 @@ Node *leftRotate(Node *x)
 	y->height = max(height(y->left),
 					height(y->right)) + 1;
 
-	// Return new root
+	// new root
 	return y;
 }
 
-// Get Balance factor of node N
 int getBalance(Node *N)
 {
 	if (N == NULL)
@@ -159,9 +114,6 @@ int getBalance(Node *N)
 	return height(N->left) - height(N->right);
 }
 
-// Recursive function to insert a data
-// in the subtree rooted with node and
-// returns the new root of the subtree.
 Node* insert(Node* node, int data)
 {
 	/* 1. Perform the normal BST insertion */
@@ -179,37 +131,34 @@ Node* insert(Node* node, int data)
 	node->height = 1 + max(height(node->left),
 						height(node->right));
 
-	/* 3. Get the balance factor of this ancestor
-		node to check whether this node became
-		unbalanced */
+	/* 3. Get the balance */
 	int balance = getBalance(node);
 
-	// If this node becomes unbalanced, then
-	// there are 4 cases
+	// If unbalanced
 
-	// Left Left Case
+	// Left Left
 	if (balance > 1 && data < node->left->data)
 		return rightRotate(node);
 
-	// Right Right Case
+	// Right Right
 	if (balance < -1 && data > node->right->data)
 		return leftRotate(node);
 
-	// Left Right Case
+	// Left Right
 	if (balance > 1 && data > node->left->data)
 	{
 		node->left = leftRotate(node->left);
 		return rightRotate(node);
 	}
 
-	// Right Left Case
+	// Right Left
 	if (balance < -1 && data < node->right->data)
 	{
 		node->right = rightRotate(node->right);
 		return leftRotate(node);
 	}
 
-	/* return the (unchanged) node pointer */
+	/* node pointer */
 	return node;
 }
 
@@ -260,22 +209,17 @@ Node* deleteNode(Node* root, int data)
             // node with two children: Get the inorder
             // successor (smallest in the right subtree)
 
+		/* loop down to find the leftmost leaf */
+		Node* temp = root->right;
+		while (temp->left != NULL) {
+			temp = root->left;
+		}
+		// Copy the inorder successor's
+		// data to this node
+		root->data = temp->data;
 
-
-    /* loop down to find the leftmost leaf */
-	Node* temp = root->right;
-    while (temp->left != NULL) {
-		temp = root->left;
-	}
-
-
-            // Copy the inorder successor's
-            // data to this node
-            root->data = temp->data;
-
-            // Delete the inorder successor
-            root->right = deleteNode(root->right,
-                                     temp->data);
+		// Delete the inorder successor
+		root->right = deleteNode(root->right,temp->data);
         }
     }
 
@@ -410,8 +354,6 @@ int main()
     }
 
 	// cout << root << endl;
-
-
 
 	// printInorder(root);
 	// cout << root << endl;
