@@ -41,7 +41,7 @@ public:
 
     Event(int par_event_time, int par_customer_id, int par_priority)
     {
-        event_time = par_event_time; 
+        event_time = par_event_time;
         customer_id = par_customer_id;
         priority = par_priority;
     }
