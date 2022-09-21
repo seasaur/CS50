@@ -290,99 +290,105 @@ bool ifNodeExists(struct Node* node, int key)
     return res2;
 }
 
+int main() {
+	string test;
+	cin >> test;
+	cout << "helloooo" << endl;
 
-// Driver Code
-int main()
-{
-	Node *root = NULL;
-    string rawInput;
-    vector<string> input;
-    getline(cin, rawInput); //take input including space
-	int inst = 1; //check if it's A or D
-	int end = 0; //end loop
-	string ins = "";
-    string temp = "";
-
-	for(int i=0;i<rawInput.length();i++){
-
-		if(rawInput[i]==' '){ //add A and D here
-			input.push_back(temp);
-			temp = "";
-			inst=1;
-
-			if((rawInput[i+1]=='P') || (rawInput[i+1]=='I')) {
-				end=1;
-			}
-		}
-		else{
-				if ((inst==1) && (end==0)) {
-					ins=ins+rawInput[i];
-					inst=0;
-				}
-				else {
-					temp.push_back(rawInput[i]);
-				}
-		}
-
-	}
-	input.push_back(temp);
-
-   int size = input.size();
-
-    // for (int i=0; i<size; i++) {
-
-	// 	cout << input.at(i) << endl;
-
-    // }
-	// cout << ins << endl;
-
-    for (int i=0; i<size-1; i++) { //not counting finishing move
-        if(ins[i]=='A') {
-			if(ifNodeExists(root, stoi(input.at(i)))!=true) {
-				root = insert(root, stoi(input.at(i)));
-			}
-		}
-
-		if(ins[i]=='D') {
-			if(ifNodeExists(root, stoi(input.at(i)))==true) {
-				root = deleteNode(root, stoi(input.at(i)));
-			}
-		}
-
-		// cout << input.at(i) << endl;
-		// cout << root << endl;
-    }
-
-	// cout << root << endl;
-
-	// printInorder(root);
-	// cout << root << endl;
-
-	if(root==NULL) {
-        cout << "EMPTY" << endl;
-        return -1;
-    }
-
-    if (input.at(size-1) == "IN") {
-		// cout << "bruh" << endl;
-        printInorder(root);
-		cout << '\n';
-		// cout << root << endl;
-        return 0;
-    }
-
-    if (input.at(size-1) == "PRE") {
-		// cout << "saasd" << endl;
-        printPreorder(root);
-		cout << '\n';
-        return 0;
-    }
-
-    if (input.at(size-1) == "POST") {
-        printPostorder(root);
-		cout << '\n';
-        return 0;
-    }
-
-	return 0;
 }
+
+// // Driver Code
+// int main()
+// {
+// 	Node *root = NULL;
+//     string rawInput;
+//     vector<string> input;
+//     getline(cin, rawInput); //take input including space
+// 	int inst = 1; //check if it's A or D
+// 	int end = 0; //end loop
+// 	string ins = "";
+//     string temp = "";
+
+// 	for(int i=0;i<rawInput.length();i++){
+
+// 		if(rawInput[i]==' '){ //add A and D here
+// 			input.push_back(temp);
+// 			temp = "";
+// 			inst=1;
+
+// 			if((rawInput[i+1]=='P') || (rawInput[i+1]=='I')) {
+// 				end=1;
+// 			}
+// 		}
+// 		else{
+// 				if ((inst==1) && (end==0)) {
+// 					ins=ins+rawInput[i];
+// 					inst=0;
+// 				}
+// 				else {
+// 					temp.push_back(rawInput[i]);
+// 				}
+// 		}
+
+// 	}
+// 	input.push_back(temp);
+
+//    int size = input.size();
+
+//     // for (int i=0; i<size; i++) {
+
+// 	// 	cout << input.at(i) << endl;
+
+//     // }
+// 	// cout << ins << endl;
+
+//     for (int i=0; i<size-1; i++) { //not counting finishing move
+//         if(ins[i]=='A') {
+// 			if(ifNodeExists(root, stoi(input.at(i)))!=true) {
+// 				root = insert(root, stoi(input.at(i)));
+// 			}
+// 		}
+
+// 		if(ins[i]=='D') {
+// 			if(ifNodeExists(root, stoi(input.at(i)))==true) {
+// 				root = deleteNode(root, stoi(input.at(i)));
+// 			}
+// 		}
+
+// 		// cout << input.at(i) << endl;
+// 		// cout << root << endl;
+//     }
+
+// 	// cout << root << endl;
+
+// 	// printInorder(root);
+// 	// cout << root << endl;
+
+// 	if(root==NULL) {
+//         cout << "EMPTY" << endl;
+//         return -1;
+//     }
+
+//     if (input.at(size-1) == "IN") {
+// 		// cout << "bruh" << endl;
+//         printInorder(root);
+// 		cout << '\n';
+// 		// cout << root << endl;
+//         return 0;
+//     }
+
+//     if (input.at(size-1) == "PRE") {
+// 		// cout << "saasd" << endl;
+//         printPreorder(root);
+// 		cout << '\n';
+//         return 0;
+//     }
+
+//     if (input.at(size-1) == "POST") {
+//         printPostorder(root);
+// 		cout << '\n';
+//         return 0;
+//     }
+
+// 	return 0;
+// }
