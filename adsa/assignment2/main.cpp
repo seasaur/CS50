@@ -1,10 +1,9 @@
 #include <iostream>
 #include <vector>
-// #include<bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
-class Node
-{
+class Node {
 	public:
 	int data;
 	Node *left;
@@ -103,8 +102,9 @@ Node *leftRotate(Node *x) {
 }
 
 int getBalance(Node *N) {
-	if (N == NULL)
+	if (N == NULL) {
 		return 0;
+	}
 	return height(N->left) - height(N->right);
 }
 
@@ -184,13 +184,10 @@ Node* deleteNode(Node* root, int data) {
     else {
         // node with only one child or no child
         if((root->left == NULL) || (root->right == NULL)) {
-            Node *temp = root->left ?
-                         root->left :
-                         root->right;
+            Node *temp = root->left ? root->left : root->right; //keep not null
 
             // No child case
-            if (temp == NULL)
-            {
+            if (temp == NULL) {
                 temp = root;
                 root = NULL;
             }
@@ -199,6 +196,7 @@ Node* deleteNode(Node* root, int data) {
                            // the non-empty child
             free(temp);
         }
+
         else {
             // node with two children: Get the inorder
             // successor (smallest in the right subtree)
@@ -276,37 +274,33 @@ bool ifNodeExists(struct Node* node, int key) {
     return res2;
 }
 
-
-// Driver Code
 int main() {
 	Node *root = NULL;
     string rawInput;
     vector<string> input;
     getline(cin, rawInput); //take input including space
-	int inst = 1; //check if it's A or D
-	int end = 0; //end loop
-	string ins = "";
+
+	string instruction = "";
     string temp = "";
 	// cout << rawInput << endl;
 	for(int i=0;i<rawInput.length();i++) {
 
-		if(rawInput[i]==' '){ //add A and D here
+		// if(!(isdigit(rawInput[i]))){ //add A and D here
+		if(rawInput[i]==' ') {
 			input.push_back(temp);
 			temp = "";
-			inst=1;
-
-			if((rawInput[i+1]=='P') || (rawInput[i+1]=='I')) {
-				end=1;
-			}
+			// inst=1;
 		}
-		else{
-				if ((inst==1) && (end==0)) {
-					ins=ins+rawInput[i];
-					inst=0;
-				}
-				else {
-					temp.push_back(rawInput[i]);
-				}
+		else if((rawInput[i]=='A') || (rawInput[i]=='D')) {
+			// temp.push_back(rawInput[i]);
+			// input.push_back(temp);
+			// temp = "";
+			instruction = instruction + rawInput[i];
+		}
+		// }
+
+		else {
+			temp.push_back(rawInput[i]);
 		}
 
 	}
@@ -314,21 +308,21 @@ int main() {
 
    int size = input.size();
 
-    // for (int i=0; i<size; i++) {
+    for (int i=0; i<size; i++) {
 
-	// 	cout << input.at(i) << endl;
+		cout << input.at(i) << endl;
 
-    // }
-	// cout << ins << endl;
+    }
+	cout << instruction << endl;
 
     for (int i=0; i<size-1; i++) { //not counting finishing move
-        if(ins[i]=='A') {
+        if(instruction[i]=='A') {
 			if(ifNodeExists(root, stoi(input.at(i)))!=true) {
 				root = insert(root, stoi(input.at(i)));
 			}
 		}
 
-		else if(ins[i]=='D') {
+		else if(instruction[i]=='D') {
 			if(ifNodeExists(root, stoi(input.at(i)))==true) {
 				root = deleteNode(root, stoi(input.at(i)));
 			}
