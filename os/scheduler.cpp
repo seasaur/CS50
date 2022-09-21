@@ -8,7 +8,7 @@
 #include <fstream>
 #include <deque>
 #include <vector>
-#include<algorithm>
+#include <algorithm>
 // std is a namespace: https://www.cplusplus.com/doc/oldtutorial/namespaces/
 const int TIME_ALLOWANCE = 10;  // allow to use up to this number of time slots at once
 const int PRINT_LOG = 0; // print detailed execution trace
@@ -146,11 +146,11 @@ int main(int argc, char *argv[])
             }
             arrival_events.pop_front();
         }
-        
+
          // check if we need to take a customer off the machine
         if (current_id >= 0)
         {
-            if (current_time == time_out) //change this  && customers[current_id].slots_remaining > (TIME_ALLOWANCE / 2) 
+            if (current_time == time_out) //change this  && customers[current_id].slots_remaining > (TIME_ALLOWANCE / 2)
             {
                 int last_run = current_time - customers[current_id].playing_since;
                 customers[current_id].slots_remaining -= last_run;
@@ -162,7 +162,7 @@ int main(int argc, char *argv[])
                     }
                     else{ //else add to normal queue
                         queue.push_back(current_id);
-                    }                   
+                    }
                 }
                 current_id = -1; // the machine is free now
             }
@@ -208,8 +208,8 @@ int main(int argc, char *argv[])
                     customers[current_id].playing_since = current_time;
                 }
                 count = 0;
-            }    
-            
+            }
+
         }
         print_state(out_file, current_time, current_id, arrival_events, queue, prioQueue);
 
