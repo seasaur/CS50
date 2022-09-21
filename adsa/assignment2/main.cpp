@@ -290,6 +290,8 @@ bool ifNodeExists(struct Node* node, int key)
     return res2;
 }
 
+
+// Driver Code
 int main()
 {
 	Node *root = NULL;
@@ -300,7 +302,7 @@ int main()
 	int end = 0; //end loop
 	string ins = "";
     string temp = "";
-
+	// cout << rawInput << endl;
 	for(int i=0;i<rawInput.length();i++){
 
 		if(rawInput[i]==' '){ //add A and D here
@@ -329,7 +331,7 @@ int main()
 
     // for (int i=0; i<size; i++) {
 
-	// 	input.at(i) = "1";
+	// 	cout << input.at(i) << endl;
 
     // }
 	// cout << ins << endl;
@@ -341,7 +343,7 @@ int main()
 			}
 		}
 
-		if(ins[i]=='D') {
+		else if(ins[i]=='D') {
 			if(ifNodeExists(root, stoi(input.at(i)))==true) {
 				root = deleteNode(root, stoi(input.at(i)));
 			}
@@ -356,30 +358,27 @@ int main()
 	// printInorder(root);
 	// cout << root << endl;
 
-	if(root==NULL) {
-        cout << "EMPTY" << endl;
-        return -1;
-    }
+	// if(root==NULL) {
+    //     cout << "EMPTY" << endl;
+    //     return -1;
+    // }
 
     if (input.at(size-1) == "IN") {
 		// cout << "bruh" << endl;
         printInorder(root);
 		cout << '\n';
 		// cout << root << endl;
-        return 0;
     }
 
-    if (input.at(size-1) == "PRE") {
+    else if (input.at(size-1) == "PRE") {
 		// cout << "saasd" << endl;
         printPreorder(root);
 		cout << '\n';
-        return 0;
     }
 
-    if (input.at(size-1) == "POST") {
+    else if (input.at(size-1) == "POST") {
         printPostorder(root);
 		cout << '\n';
-        return 0;
     }
 
 	return 0;
