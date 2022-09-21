@@ -213,26 +213,138 @@ Node* insert(Node* node, int data)
 	return node;
 }
 
-// bool ifNodeExists(struct Node* node, int key)
-// {
-//     if (node == NULL)
-//         return false;
+Node* deleteNode(Node* root, int data)
+{
 
-//     if (node->data == key)
-//         return true;
+    // STEP 1: PERFORM STANDARD BST DELETE
+    if (root == NULL)
+        return root;
 
-//     /* then recur on left subtree */
-//     bool res1 = ifNodeExists(node->left, key);
-//     // node found, no need to look further
-//     if(res1) {
-//         return true;
-//     }
-//     /* node is not found in left,
-//     so recur on right subtree */
-//     bool res2 = ifNodeExists(node->right, key);
+    // If the key to be deleted is smaller
+    // than the root's key, then it lies
+    // in left subtree
+    if ( data < root->data)
+        root->left = deleteNode(root->left, data);
 
-//     return res2;
-// }
+    // If the key to be deleted is greater
+    // than the root's key, then it lies
+    // in right subtree
+    else if( data > root->data)
+        root->right = deleteNode(root->right, data);
+
+    // if key is same as root's key, then
+    // This is the node to be deleted
+    else
+    {
+        // node with only one child or no child
+        if( (root->left == NULL) ||
+            (root->right == NULL) )
+        {
+            Node *temp = root->left ?
+                         root->left :
+                         root->right;
+
+            // No child case
+            if (temp == NULL)
+            {
+                temp = root;
+                root = NULL;
+            }
+            else // One child case
+            *root = *temp; // Copy the contents of
+                           // the non-empty child
+            free(temp);
+        }
+        else
+        {
+            // node with two children: Get the inorder
+            // successor (smallest in the right subtree)
+
+
+
+    /* loop down to find the leftmost leaf */
+	Node* temp = root->right;
+    while (temp->left != NULL) {
+		temp = root->left;
+	}
+
+
+            // Copy the inorder successor's
+            // data to this node
+            root->data = temp->data;
+
+            // Delete the inorder successor
+            root->right = deleteNode(root->right,
+                                     temp->data);
+        }
+    }
+
+    // If the tree had only one node
+    // then return
+    if (root == NULL)
+    return root;
+
+    // STEP 2: UPDATE HEIGHT OF THE CURRENT NODE
+    root->height = 1 + max(height(root->left),
+                           height(root->right));
+
+    // STEP 3: GET THE BALANCE FACTOR OF
+    // THIS NODE (to check whether this
+    // node became unbalanced)
+    int balance = getBalance(root);
+
+    // If this node becomes unbalanced,
+    // then there are 4 cases
+
+    // Left Left Case
+    if (balance > 1 &&
+        getBalance(root->left) >= 0)
+        return rightRotate(root);
+
+    // Left Right Case
+    if (balance > 1 &&
+        getBalance(root->left) < 0)
+    {
+        root->left = leftRotate(root->left);
+        return rightRotate(root);
+    }
+
+    // Right Right Case
+    if (balance < -1 &&
+        getBalance(root->right) <= 0)
+        return leftRotate(root);
+
+    // Right Left Case
+    if (balance < -1 &&
+        getBalance(root->right) > 0)
+    {
+        root->right = rightRotate(root->right);
+        return leftRotate(root);
+    }
+
+    return root;
+}
+
+bool ifNodeExists(struct Node* node, int key)
+{
+    if (node == NULL)
+        return false;
+
+    if (node->data == key)
+        return true;
+
+    /* then recur on left subtree */
+    bool res1 = ifNodeExists(node->left, key);
+    // node found, no need to look further
+    if(res1) {
+        return true;
+    }
+    /* node is not found in left,
+    so recur on right subtree */
+    bool res2 = ifNodeExists(node->right, key);
+
+    return res2;
+}
 
 
 // Driver Code
@@ -242,17 +354,30 @@ int main()
     string rawInput;
     vector<string> input;
     getline(cin, rawInput); //take input including space
-
-    //converting to string vector separated by space
+	int inst = 1; //check if it's A or D
+	int end = 0; //end loop
+	string ins = "";
     string temp = "";
+
 	for(int i=0;i<rawInput.length();i++){
 
-		if(rawInput[i]==' '){
+		if(rawInput[i]==' '){ //add A and D here
 			input.push_back(temp);
 			temp = "";
+			inst=1;
+
+			if((rawInput[i+1]=='P') || (rawInput[i+1]=='I')) {
+				end=1;
+			}
 		}
 		else{
-			temp.push_back(rawInput[i]);
+				if ((inst==1) && (end==0)) {
+					ins=ins+rawInput[i];
+					inst=0;
+				}
+				else {
+					temp.push_back(rawInput[i]);
+				}
 		}
 
 	}
@@ -260,39 +385,62 @@ int main()
 
    int size = input.size();
 
-    for (int i=0; i<size-1; i++) { //not counting finishing move
+    // for (int i=0; i<size; i++) {
 
-        // if(ifNodeExists(root, stoi(input.at(i)))!=true) {
-            root = insert(root, stoi(input.at(i)));
-        // }
+	// 	cout << input.at(i) << endl;
+
+    // }
+	// cout << ins << endl;
+
+    for (int i=0; i<size-1; i++) { //not counting finishing move
+        if(ins[i]=='A') {
+			if(ifNodeExists(root, stoi(input.at(i)))!=true) {
+				root = insert(root, stoi(input.at(i)));
+			}
+		}
+
+		if(ins[i]=='D') {
+			if(ifNodeExists(root, stoi(input.at(i)))==true) {
+				root = deleteNode(root, stoi(input.at(i)));
+			}
+		}
+
 		// cout << input.at(i) << endl;
 		// cout << root << endl;
     }
 
-	// printInorder(root);
+	// cout << root << endl;
 
-    // if(root=NULL) {
-    //     cout << "EMPTY" << endl;
-    //     return -1;
-    // }
+
+
+	// printInorder(root);
+	// cout << root << endl;
+
+	if(root==NULL) {
+        cout << "EMPTY" << endl;
+        return -1;
+    }
 
     if (input.at(size-1) == "IN") {
-		cout << "bruh" << endl;
+		// cout << "bruh" << endl;
         printInorder(root);
-        // return 0;
+		cout << '\n';
+		// cout << root << endl;
+        return 0;
     }
 
     if (input.at(size-1) == "PRE") {
-		cout << "saasd" << endl;
+		// cout << "saasd" << endl;
         printPreorder(root);
-        // return 0;
+		cout << '\n';
+        return 0;
     }
 
     if (input.at(size-1) == "POST") {
         printPostorder(root);
-        // return 0;
+		cout << '\n';
+        return 0;
     }
-
 
 	return 0;
 }
