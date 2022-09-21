@@ -301,38 +301,38 @@ int main()
 	string ins = "";
     string temp = "";
 
-	for(int i=0;i<rawInput.length();i++){
+// 	for(int i=0;i<rawInput.length();i++){
 
-		if(rawInput[i]==' '){ //add A and D here
-			input.push_back(temp);
-			temp = "";
-			inst=1;
+// 		if(rawInput[i]==' '){ //add A and D here
+// 			input.push_back(temp);
+// 			temp = "";
+// 			inst=1;
 
-			if((rawInput[i+1]=='P') || (rawInput[i+1]=='I')) {
-				end=1;
-			}
-		}
-		else{
-				if ((inst==1) && (end==0)) {
-					ins=ins+rawInput[i];
-					inst=0;
-				}
-				else {
-					temp.push_back(rawInput[i]);
-				}
-		}
+// 			if((rawInput[i+1]=='P') || (rawInput[i+1]=='I')) {
+// 				end=1;
+// 			}
+// 		}
+// 		else{
+// 				if ((inst==1) && (end==0)) {
+// 					ins=ins+rawInput[i];
+// 					inst=0;
+// 				}
+// 				else {
+// 					temp.push_back(rawInput[i]);
+// 				}
+// 		}
 
-	}
-	input.push_back(temp);
+// 	}
+// 	input.push_back(temp);
 
    int size = input.size();
 
-    // for (int i=0; i<size; i++) {
+    for (int i=0; i<size; i++) {
 
-	// 	cout << input.at(i) << endl;
+		input.at(i) = "1";
 
-    // }
-	// cout << ins << endl;
+    }
+	cout << ins << endl;
 
     for (int i=0; i<size-1; i++) { //not counting finishing move
         if(ins[i]=='A') {
