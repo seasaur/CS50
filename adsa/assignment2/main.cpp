@@ -269,12 +269,12 @@ int main()
 		// cout << root << endl;
     }
 
-	printInorder(root);
+	// printInorder(root);
 
-    if(root=NULL) {
-        cout << "EMPTY" << endl;
-        return -1;
-    }
+    // if(root=NULL) {
+    //     cout << "EMPTY" << endl;
+    //     return -1;
+    // }
 
     if (input.at(size-1) == "IN") {
 		cout << "bruh" << endl;
