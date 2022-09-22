@@ -160,99 +160,99 @@ Node* insert(Node* node, int data) {
 	return node;
 }
 
-Node* deleteNode(Node* root, int data) {
+// Node* deleteNode(Node* root, int data) {
 
-    // STEP 1: PERFORM STANDARD BST DELETE
-    if (root == NULL) {
-        return root;
-	}
+//     // STEP 1: PERFORM STANDARD BST DELETE
+//     if (root == NULL) {
+//         return root;
+// 	}
 
-    // If the key to be deleted is smaller
-    // than the root's key, then it lies
-    // in left subtree
-    if ( data < root->data) {
-        root->left = deleteNode(root->left, data);
-	}
-    // If the key to be deleted is greater
-    // than the root's key, then it lies
-    // in right subtree
-    else if( data > root->data) {
-        root->right = deleteNode(root->right, data);
-	}
-    // if key is same as root's key, then
-    // This is the node to be deleted
-    else {
-        // node with only one child or no child
-        if((root->left == NULL) || (root->right == NULL)) {
-            Node *temp = root->left ? root->left : root->right; //keep not null
+//     // If the key to be deleted is smaller
+//     // than the root's key, then it lies
+//     // in left subtree
+//     if ( data < root->data) {
+//         root->left = deleteNode(root->left, data);
+// 	}
+//     // If the key to be deleted is greater
+//     // than the root's key, then it lies
+//     // in right subtree
+//     else if( data > root->data) {
+//         root->right = deleteNode(root->right, data);
+// 	}
+//     // if key is same as root's key, then
+//     // This is the node to be deleted
+//     else {
+//         // node with only one child or no child
+//         if((root->left == NULL) || (root->right == NULL)) {
+//             Node *temp = root->left ? root->left : root->right; //keep not null
 
-            // No child case
-            if (temp == NULL) {
-                temp = root;
-                root = NULL;
-            }
-            else // One child case
-            *root = *temp; // Copy the contents of
-                           // the non-empty child
-            free(temp);
-        }
+//             // No child case
+//             if (temp == NULL) {
+//                 temp = root;
+//                 root = NULL;
+//             }
+//             else // One child case
+//             *root = *temp; // Copy the contents of
+//                            // the non-empty child
+//             free(temp);
+//         }
 
-        else {
-            // node with two children: Get the inorder
-            // successor (smallest in the right subtree)
+//         else {
+//             // node with two children: Get the inorder
+//             // successor (smallest in the right subtree)
 
-		/* loop down to find the leftmost leaf */
-		Node* temp = root->right;
-		while (temp->left != NULL) {
-			temp = root->left;
-		}
-		// Copy the inorder successor's
-		// data to this node
-		root->data = temp->data;
+// 		/* loop down to find the leftmost leaf */
+// 		Node* temp = root->right;
+// 		while (temp->left != NULL) {
+// 			temp = root->left;
+// 		}
+// 		// Copy the inorder successor's
+// 		// data to this node
+// 		root->data = temp->data;
 
-		// Delete the inorder successor
-		root->right = deleteNode(root->right,temp->data);
-        }
-    }
+// 		// Delete the inorder successor
+// 		root->right = deleteNode(root->right,temp->data);
+//         }
+//     }
 
-    // If the tree had only one node
-    // then return
-    if (root == NULL) {
-    	return root;
-	}
-    // STEP 2: UPDATE HEIGHT OF THE CURRENT NODE
-    root->height = 1 + max(height(root->left), height(root->right));
+//     // If the tree had only one node
+//     // then return
+//     if (root == NULL) {
+//     	return root;
+// 	}
+//     // STEP 2: UPDATE HEIGHT OF THE CURRENT NODE
+//     root->height = 1 + max(height(root->left), height(root->right));
 
-    // STEP 3: GET THE BALANCE FACTOR OF
-    // THIS NODE (to check whether this
-    // node became unbalanced)
-    int balance = getBalance(root);
+//     // STEP 3: GET THE BALANCE FACTOR OF
+//     // THIS NODE (to check whether this
+//     // node became unbalanced)
+//     int balance = getBalance(root);
 
-    // If this node becomes unbalanced,
-    // then there are 4 cases
+//     // If this node becomes unbalanced,
+//     // then there are 4 cases
 
-    // Left Left Case
-    if (balance > 1 && getBalance(root->left) >= 0) {
-        return rightRotate(root);
-	}
-    // Left Right Case
-    if (balance > 1 && getBalance(root->left) < 0) {
-        root->left = leftRotate(root->left);
-        return rightRotate(root);
-    }
+//     // Left Left Case
+//     if (balance > 1 && getBalance(root->left) >= 0) {
+//         return rightRotate(root);
+// 	}
+//     // Left Right Case
+//     if (balance > 1 && getBalance(root->left) < 0) {
+//         root->left = leftRotate(root->left);
+//         return rightRotate(root);
+//     }
 
-    // Right Right Case
-    if (balance < -1 && getBalance(root->right) <= 0) {
-        return leftRotate(root);
-	}
-    // Right Left Case
-    if (balance < -1 && getBalance(root->right) > 0) {
-        root->right = rightRotate(root->right);
-        return leftRotate(root);
-    }
+//     // Right Right Case
+//     if (balance < -1 && getBalance(root->right) <= 0) {
+//         return leftRotate(root);
+// 	}
+//     // Right Left Case
+//     if (balance < -1 && getBalance(root->right) > 0) {
+//         root->right = rightRotate(root->right);
+//         return leftRotate(root);
+//     }
 
-    return root;
-}
+//     return root;
+// }
 
 bool ifNodeExists(Node* node, int key) {
     if (node == NULL) {
@@ -272,6 +272,47 @@ bool ifNodeExists(Node* node, int key) {
     bool res2 = ifNodeExists(node->right, key);
 
     return res2;
+}
+Node* deleteNode(Node* rt,int val)
+{
+	if(rt == NULL)
+		return NULL;
+	else if(val < rt->data)
+		rt->left = deleteNode(rt->left,val);
+	else if(val > rt->data)
+		rt->right = deleteNode(rt->right,val);
+	else
+	{
+		if(rt->left == NULL && rt->right == NULL)
+		{
+			delete rt;
+			rt = NULL;
+		}
+		else if(rt->left == NULL)
+		{
+			Node* temp = rt->right;
+			delete rt;
+			rt = temp;
+		}
+		else if(rt->right == NULL)
+		{
+			Node* temp = rt->left;
+			delete rt;
+			rt = temp;
+		}
+		else
+		{
+			Node* temp = rt;
+			while(temp && temp->left != NULL) {
+				temp = temp->left;
+
+			}
+			rt->data = temp->data;
+			rt->right = deleteNode(rt->right,rt->data);
+		}
+		return rt;
+	}
+	return rt;
 }
 
 int main() {
@@ -325,6 +366,7 @@ int main() {
 		else if(instruction[i]=='D') {
 			if(ifNodeExists(root, stoi(input.at(i)))==true) {
 				root = deleteNode(root, stoi(input.at(i)));
+				// cout << "here";
 			}
 		}
 
