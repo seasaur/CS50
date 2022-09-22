@@ -254,7 +254,7 @@ Node* deleteNode(Node* root, int data) {
     return root;
 }
 
-bool ifNodeExists(struct Node* node, int key) {
+bool ifNodeExists(Node* node, int key) {
     if (node == NULL) {
         return false;
 	}
@@ -276,40 +276,89 @@ bool ifNodeExists(struct Node* node, int key) {
 
 int main() {
 	Node *root = NULL;
-    string instruction;
+    string rawInput;
+    vector<string> input;
+    getline(cin, rawInput); //take input including space
 
-	do {
-		cin >> instruction;
+	string instruction = "";
+    string temp = "";
+	// cout << rawInput << endl;
+	for(int i=0;i<rawInput.length();i++) {
 
-		if(instruction[0] =='A') {
-			root = insert(root, stoi(instruction.substr(1,instruction.size())));
+		// if(!(isdigit(rawInput[i]))){ //add A and D here
+		if(rawInput[i]==' ') {
+			input.push_back(temp);
+			temp = "";
+			// inst=1;
 		}
-		else if(instruction[0] == 'D') {
-			root = deleteNode(root,stoi(instruction.substr(1,instruction.size())));
+		else if((rawInput[i]=='A') || (rawInput[i]=='D')) {
+			// temp.push_back(rawInput[i]);
+			// input.push_back(temp);
+			// temp = "";
+			instruction = instruction + rawInput[i];
 		}
-	} while(instruction[0] == 'A' || instruction[0] == 'D');
+		// }
 
+		else {
+			temp.push_back(rawInput[i]);
+		}
+
+	}
+	input.push_back(temp);
+
+   int size = input.size();
+
+    // for (int i=0; i<size; i++) {
+
+	// 	cout << input.at(i) << endl;
+
+    // }
+	// cout << instruction << endl;
+
+    for (int i=0; i<size-1; i++) { //not counting finishing move
+        if(instruction[i]=='A') {
+			if(ifNodeExists(root, stoi(input.at(i)))!=true) {
+				root = insert(root, stoi(input.at(i)));
+			}
+		}
+
+		else if(instruction[i]=='D') {
+			if(ifNodeExists(root, stoi(input.at(i)))==true) {
+				root = deleteNode(root, stoi(input.at(i)));
+			}
+		}
+
+		// cout << input.at(i) << endl;
+		// cout << root << endl;
+    }
+
+	// cout << root << endl;
+
+	// printInorder(root);
+	// cout << root << endl;
 
 	if(root==NULL) {
         cout << "EMPTY" << endl;
-        // return -1;
+        return -1;
     }
 
-    else if (instruction == "IN") {
+    else if (input.at(size-1) == "IN") {
 		// cout << "bruh" << endl;
         printInorder(root);
 		cout << '\n';
 		// cout << root << endl;
     }
 
-    else if (instruction == "PRE") {
+    else if (input.at(size-1) == "PRE") {
 		// cout << "saasd" << endl;
         printPreorder(root);
 		cout << '\n';
     }
 
-    else if (instruction == "POST") {
+    else if (input.at(size-1) == "POST") {
         printPostorder(root);
 		cout << '\n';
     }
+
+	return 0;
 }
