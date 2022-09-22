@@ -69,43 +69,43 @@ int max(int a, int b) {
 	return b;
 }
 
-Node *rightRotate(Node * node) {
-	Node *x = node->left;
-	Node *y = x->right;
+Node *rightRotate(Node *y) {
+	Node *x = y->left;
+	Node *T2 = x->right;
 
 	// Perform rotation
-	x->right = node;
-	node->left = y;
+	x->right = y;
+	y->left = T2;
 
 	// Update heights
-	node->height = max(height(node->left), height(node->right)) + 1;
+	y->height = max(height(y->left), height(y->right)) + 1;
 	x->height = max(height(x->left), height(x->right)) + 1;
 
 	// new root
 	return x;
 }
 
-Node *leftRotate(Node *node) {
-	Node *x = node->right;
-	Node *y = x->left;
+Node *leftRotate(Node *x) {
+	Node *y = x->right;
+	Node *T2 = y->left;
 
 	// Perform rotation
-	x->left = node;
-	node->right = y;
+	y->left = x;
+	x->right = T2;
 
 	// Update heights
-	node->height = max(height(node->left), height(node->right)) + 1;
 	x->height = max(height(x->left), height(x->right)) + 1;
+	y->height = max(height(y->left), height(y->right)) + 1;
 
 	// new root
 	return y;
 }
 
-int getBalance(Node * node) {
-	if (node == NULL) {
+int getBalance(Node *N) {
+	if (N == NULL) {
 		return 0;
 	}
-	return height(node->left) - height(node->right);
+	return height(N->left) - height(N->right);
 }
 
 Node* insert(Node* node, int data) {
@@ -160,26 +160,27 @@ Node* insert(Node* node, int data) {
 	return node;
 }
 
-bool ifNodeExists(Node* node, int data) {
+bool ifNodeExists(Node* node, int key) {
     if (node == NULL) {
         return false;
 	}
-    if (node->data == data) {
+    if (node->data == key) {
         return true;
 	}
-
-    bool left = ifNodeExists(node->left, data);
-
-    if(left) {
+    /* then recur on left subtree */
+    bool res1 = ifNodeExists(node->left, key);
+    // node found, no need to look further
+    if(res1) {
         return true;
     }
+    /* node is not found in left,
+    so recur on right subtree */
+    bool res2 = ifNodeExists(node->right, key);
 
-    bool right = ifNodeExists(node->right, data);
-
-    return right;
+    return res2;
 }
 
-Node * deleteNode(Node *root,int data) {
+Node * deleteNode(struct Node *root,int data) {
     if (root == NULL) {
         return root;
     }
@@ -188,7 +189,7 @@ Node * deleteNode(Node *root,int data) {
         root->left = deleteNode(root->left,data);
     }
 
-	else if (data > root->data) {
+	else if (data >  root->data) {
         root->right = deleteNode(root->right,data);
     }
 
