@@ -179,75 +179,63 @@ bool ifNodeExists(Node* node, int key) {
 
     return res2;
 }
-Node* deleteNode(Node* root,int val) {
-	if(root== NULL) {
-		return NULL;
-	}
-	else if(val < root->data)
-		root->left = deleteNode(root->left,val);
-	else if(val > root->data)
-		root->right = deleteNode(root->right,val);
-	else
-	{
-		if(root->left == NULL && root->right == NULL)
-		{
-			delete root;
-			root= NULL;
-		}
-		else if(root->left == NULL)
-		{
-			Node* temp = root->right;
-			delete root;
-			root= temp;
-		}
-		else if(root->right == NULL)
-		{
-			Node* temp = root->left;
-			delete root;
-			root= temp;
-		}
-		else
-		{
-			Node* temp = root->right;
-			while(temp && temp->left != NULL) {
-				temp = temp->left;
 
-			}
-			root->data = temp->data;
-			root->right = deleteNode(root->right,root->data);
-		}
-		return root;
-	}
-	if (root == NULL) {
-    	return root;
-	}
-    // STEP 2: UPDATE HEIGHT OF THE CURRENT NODE
-    root->height = 1 + max(height(root->left), height(root->right));
+Node * deleteNode(struct Node *root,int data) {
+    //check if node exists
+    if (root == NULL) {
+        return root;
+    }
 
-    // STEP 3: GET THE BALANCE FACTOR OF
-    // THIS NODE (to check whether this
-    // node became unbalanced)
+    //find data
+    //left or right
+    if (data < root->data) {
+        root->left = deleteNode(root->left,data);
+    } else if (data >  root->data) {
+        root->right = deleteNode(root->right,data);
+    } else {
+        //found node
+        //delete
+        if (root->left == NULL || root->right == NULL) {
+            Node * tempNode = root->left ? root->left : root->right;
+            if ( tempNode == NULL) {
+                tempNode = root;
+                root = NULL;
+            } else {
+                *root = *tempNode;
+                free(tempNode);
+            }
+        } else {
+			Node * temp = root->left;
+			while(temp->right != NULL) {
+        		temp = temp->right;
+    		}
+
+            root->data = temp->data;
+            root->left = deleteNode(root->left,temp->data);
+        }
+    }
+
+    if (root == NULL) return NULL;
+
+    root->height = 1 + max(height(root->left),height(root->right));
     int balance = getBalance(root);
 
-    // If this node becomes unbalanced,
-    // then there are 4 cases
-
-    // Left Left Case
+    //left rotate
     if (balance > 1 && getBalance(root->left) >= 0) {
         return rightRotate(root);
-	}
-    // Left Right Case
+    }
+
     if (balance > 1 && getBalance(root->left) < 0) {
         root->left = leftRotate(root->left);
         return rightRotate(root);
     }
 
-    // Right Right Case
+    //rigth rotate
     if (balance < -1 && getBalance(root->right) <= 0) {
         return leftRotate(root);
-	}
-    // Right Left Case
-    if (balance < -1 && getBalance(root->right) > 0) {
+    }
+
+    if (balance < -1 && getBalance(root->right) > 0 ) {
         root->right = rightRotate(root->right);
         return leftRotate(root);
     }
