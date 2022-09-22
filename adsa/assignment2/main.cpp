@@ -54,12 +54,12 @@ void printPreorder(Node* node) {
 	printPreorder(node->right);
 }
 
-int height(Node *N) {
-	if (N == NULL) {
+int height(Node * node) {
+	if (node == NULL) {
 		return 0;
 	}
 
-	return N->height;
+	return node->height;
 }
 
 int max(int a, int b) {
@@ -71,11 +71,11 @@ int max(int a, int b) {
 
 Node *rightRotate(Node *y) {
 	Node *x = y->left;
-	Node *T2 = x->right;
+	Node *node = x->right;
 
 	// Perform rotation
 	x->right = y;
-	y->left = T2;
+	y->left = node;
 
 	// Update heights
 	y->height = max(height(y->left), height(y->right)) + 1;
@@ -87,11 +87,11 @@ Node *rightRotate(Node *y) {
 
 Node *leftRotate(Node *x) {
 	Node *y = x->right;
-	Node *T2 = y->left;
+	Node *node = y->left;
 
 	// Perform rotation
 	y->left = x;
-	x->right = T2;
+	x->right = node;
 
 	// Update heights
 	x->height = max(height(x->left), height(x->right)) + 1;
@@ -101,15 +101,14 @@ Node *leftRotate(Node *x) {
 	return y;
 }
 
-int getBalance(Node *N) {
-	if (N == NULL) {
+int getBalance(Node *node) {
+	if (node == NULL) {
 		return 0;
 	}
-	return height(N->left) - height(N->right);
+	return height(node->left) - height(node->right);
 }
 
 Node* insert(Node* node, int data) {
-	/* 1. Perform the normal BST insertion */
 	if (node == NULL) {
 		return(newNode(data));
 	}
@@ -126,61 +125,53 @@ Node* insert(Node* node, int data) {
 		return node;
 	}
 
-	/* 2. Update height of this ancestor node */
 	node->height = 1 + max(height(node->left), height(node->right));
 
-	/* 3. Get the balance */
 	int balance = getBalance(node);
 
 	// If unbalanced
 
-	// Left Left
 	if (balance > 1 && data < node->left->data) {
 		return rightRotate(node);
 	}
 
-	// Right Right
 	if (balance < -1 && data > node->right->data) {
 		return leftRotate(node);
 	}
 
-	// Left Right
 	if (balance > 1 && data > node->left->data) {
 		node->left = leftRotate(node->left);
 		return rightRotate(node);
 	}
 
-	// Right Left
 	if (balance < -1 && data < node->right->data) {
 		node->right = rightRotate(node->right);
 		return leftRotate(node);
 	}
 
-	/* node pointer */
 	return node;
 }
 
-bool ifNodeExists(Node* node, int key) {
+bool ifNodeExists(Node* node, int data) {
     if (node == NULL) {
         return false;
 	}
-    if (node->data == key) {
+    if (node->data == data) {
         return true;
 	}
-    /* then recur on left subtree */
-    bool res1 = ifNodeExists(node->left, key);
-    // node found, no need to look further
-    if(res1) {
+
+    bool LT = ifNodeExists(node->left, data);
+
+    if(LT) {
         return true;
     }
-    /* node is not found in left,
-    so recur on right subtree */
-    bool res2 = ifNodeExists(node->right, key);
 
-    return res2;
+    bool RT = ifNodeExists(node->right, data);
+
+    return RT;
 }
 
-Node * deleteNode(struct Node *root,int data) {
+Node * deleteNode(Node *root, int data) {
     if (root == NULL) {
         return root;
     }
