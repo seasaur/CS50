@@ -27,9 +27,18 @@ class h {
 
 void h::insert(string k) {
     int i = hash(k);
+    string search = find(k);
 
-    while(table[i].s != "never used") {
+    if(search=="found") {
+        return;
+    }
+//  cout << i << endl;
+    while(table[i].s == "occupied") {
         i++;
+        // cout << i << endl;
+        if(i>=26) { //wrap around table
+            i=0;
+        }
     }
 
     table[i].k = k;
@@ -63,10 +72,17 @@ void h::remove(string k) {
         return;
     }
 
-    else {
-        table[i].s = "tombstone";
-        table[i].k = "";
+    while(table[i].k != k) {
+        i++;
+        // cout << i << endl;
+        if(i>=26) { //wrap around table
+            i=0;
+        }
     }
+
+    table[i].s = "tombstone";
+    table[i].k = "";
+
 }
 
 void h::display() {
