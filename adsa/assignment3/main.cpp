@@ -55,8 +55,8 @@ string h::find(string k) {
         }
         i++;
 
-        if(i>26) { //wrap around table
-            i-=26;
+        if(i>=26) { //wrap around table
+            i=0;
         }
     }
 
