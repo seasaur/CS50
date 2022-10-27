@@ -13,9 +13,7 @@ int weight(char x) { //weight conversion (working)
     return x-'G'; //lower case is 26-51
 }
 
-
-int parent(int a, int root[])                                                       //find the parent of the given node
-{
+int parent(int a, int root[]) {
     while(a != root[a])
     {
         root[a] = root[root[a]];
@@ -24,8 +22,7 @@ int parent(int a, int root[])                                                   
     return a;
 }
 
-void union_find(int a, int b, int root[], int rank[])                                         //check if the given two vertices are in the same “union” or not
-{
+void union_find(int a, int b, int root[], int rank[])  {
     int d = parent(a, root);
     int e = parent(b, root);
 
@@ -44,8 +41,7 @@ void union_find(int a, int b, int root[], int rank[])                           
 }
 
 
-int kruskal(pair <int, pair<int, int>> edges[], pair <int, pair<int, int>> existing[], int size)
-{
+int kruskal(pair <int, pair<int, int>> edges[], pair <int, pair<int, int>> existing[], int size) {
     int a = 0;
     int b = 0;
     int cost = 0;
@@ -53,8 +49,8 @@ int kruskal(pair <int, pair<int, int>> edges[], pair <int, pair<int, int>> exist
 
     int root[size];
     int rank[size];
-    for(int i = 0;i < size;i++)                                       //initialize the array groups
-    {
+
+    for(int i = 0;i < size;i++) {
         root[i] = i;
         rank[i] = 0;
     }
@@ -96,8 +92,7 @@ int kruskal(pair <int, pair<int, int>> edges[], pair <int, pair<int, int>> exist
 
         // cout << "cost " << cost << endl;
 
-        if(parent(a, root) != parent(b, root))                                  //only select edge if it does not create a cycle (ie the two nodes forming it have different root nodes)
-        {
+        if(parent(a, root) != parent(b, root)) {   //only select edge if it does not create a cycle (ie the two nodes forming it have different root nodes)
             minCost += cost;
             union_find(a, b, root, rank);
             // cout << "if mincost " << minCost << endl;
@@ -107,7 +102,6 @@ int kruskal(pair <int, pair<int, int>> edges[], pair <int, pair<int, int>> exist
         // }
 
      }
-
 
     return minCost;
 }
@@ -132,7 +126,6 @@ int main() {
     //     }
 
     // }
-
 
 
     // string str = "";
@@ -189,18 +182,15 @@ int main() {
         }
     }
 
-
-
-
     int size = sqrt(c.size());
     // cout << "size " << size << endl;
 
     int country[size][size];
     //{{0,0,0},{0,0,0},{0,0,0}};
     //{{0,1,1},{1,0,1},{1,1,0}};
-    int build[size][size];
+    char build[size][size];
     // = {{'A','B','D'},{'B','A','C'},{'D','C','A'}};
-    int destroy[size][size];
+    char destroy[size][size];
 
     // country.push_back(c);
     // build.push_back(b);
@@ -223,7 +213,8 @@ int main() {
     // for(int i=0;i<size;i++) {
     //     for(int j=0;j<size;j++) {
     //         cout << "country " << country[i][j] << endl;
-    //         cout << "c " << c[i] << endl;
+    //         cout << "b " << build[i][j] << endl;
+    //         cout << "d " << destroy[i][j] << endl;
     //     }
     // }
 
@@ -246,29 +237,11 @@ int main() {
     // cout << "first parse " << firstParse << endl;
 
 
-
-    pair <int, pair<int, int>> edges[size]; //build + edge
-    pair<int, pair<int, int>> existing[size]; //destroy + edge
+    pair <int, pair<int, int>> edges[size]; //build + edges
+    pair<int, pair<int, int>> existing[size]; //destroy + edges
 
     int u = 0;
     int v = 0;
-
-    // for (int i = 0; i < size; i++) { //building
-    //     for(int j=0; j<size;j++) {
-    //         if(i>j) { //must be different countries & avoiding duplicate edges
-    //             if(c[i] == 0) { //if no existing road
-    //                 edges[u] = make_pair(weight(b[i]), make_pair(i,j));
-    //                 u++;
-    //             }
-    //             else { //existing road
-    //                 existing[v] = make_pair(weight(d[i]), make_pair(i, j));
-    //                 v++;
-
-    //             }
-    //         }
-    //     }
-
-    // }
 
     for (int i = 0; i < size; i++) { //building
         for(int j=0; j<size;j++) {
@@ -287,7 +260,6 @@ int main() {
 
     }
 
-
     std::sort(existing,existing+size); // need descending
     std::sort(edges,edges+size);
 
@@ -298,7 +270,7 @@ int main() {
     //     }
     // }
 
-    int j = size-1;
+    int j = size-1; //copy over sorted existing array and reverse it (so that in functions, can take away edge with min cost as it goes in last)
     for(int i=0;i<size;i++) {
         sortE[i]=make_pair(get<0>(existing[j]),make_pair(get<1>(existing[j]).first,get<1>(existing[j]).second));
         j--;
