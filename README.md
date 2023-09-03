@@ -29,4 +29,6 @@ If the system is occupied for too long, the current player is also required to r
 
 Exam- Cinema seating and ticketing website with mySQL database implementation.
 
-Group- Event Planning Web and Database project.
+Group- Event Planning Web and Database project. 
+Please view a video of the final version here: https://drive.google.com/file/d/1CsM85LWeupyJIpq9VxGfrkDzL9IaUV1S/view?usp=sharing
+
